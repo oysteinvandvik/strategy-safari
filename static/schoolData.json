@@ -1,0 +1,12 @@
+{
+  "Design": { "group": "Prescriptive", "values": [5, 2, 3, 2, 1] },
+  "Planning": { "group": "Prescriptive", "values": [5, 1, 3, 2, 2] },
+  "Positioning": { "group": "Prescriptive", "values": [4, 2, 5, 2, 4] },
+  "Entrepreneurial": { "group": "Descriptive", "values": [3, 3, 3, 5, 4] },
+  "Cognitive": { "group": "Descriptive", "values": [2, 3, 2, 5, 1] },
+  "Learning": { "group": "Descriptive", "values": [2, 5, 3, 4, 2] },
+  "Power": { "group": "Descriptive", "values": [3, 4, 4, 3, 5] },
+  "Cultural": { "group": "Descriptive", "values": [2, 5, 3, 5, 1] },
+  "Environmental": { "group": "Descriptive", "values": [1, 4, 4, 2, 2] },
+  "Configuration": { "group": "Descriptive", "values": [4, 4, 4, 4, 3] }
+}
