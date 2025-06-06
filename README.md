@@ -1,38 +1,26 @@
-# sv
+# 📊 Strategy Safari Visualizer
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+An interactive visualization tool built with **SvelteKit** and **Chart.js**, designed to illustrate how different strategy schools from Mintzberg's *Strategy Safari* emphasize the five P's of strategy: **Plan, Pattern, Position, Perspective, and Ploy**.
 
-## Creating a project
+## ✨ Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- 🕸️ Interactive radar chart
+- 📚 Grouping of schools by type: *Prescriptive* and *Descriptive*
+- ✅ Checkbox toggles to show/hide individual schools
+- 📱 Responsive and mobile-friendly layout
+- 🚀 Default display of “Design” and “Learning” schools on load
 
-```bash
-# create a new project in the current directory
-npx sv create
+## 🧱 Project Structure
 
-# create a new project in my-app
-npx sv create my-app
-```
+- `+page.svelte`: Main component containing logic and layout
+- `static/schoolData.json`: JSON data file with school values and group labels
 
-## Developing
+### Example `schoolData.json`
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```json
+{
+  "Design": { "group": "Prescriptive", "values": [5, 2, 3, 2, 1] },
+  "Planning": { "group": "Prescriptive", "values": [5, 1, 3, 2, 2] },
+  "Positioning": { "group": "Prescriptive", "values": [4, 2, 5, 2, 4] },
+  "Learning": { "group": "Descriptive", "values": [2, 5, 3, 4, 2] }
+}

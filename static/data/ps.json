@@ -1,0 +1,33 @@
+[
+    {
+      "id": "plan",
+      "label": "Plan",
+      "description": "Strategy as a conscious, structured plan to achieve goals. Deliberate and analytical in nature.",
+      "color": "#3366cc"
+    },
+    {
+      "id": "pattern",
+      "label": "Pattern",
+      "description": "Strategy as a pattern in a stream of actions — not necessarily intended, but visible in hindsight.",
+      "color": "#dc3912"
+    },
+    {
+      "id": "position",
+      "label": "Position",
+      "description": "Strategy as the place or niche the organization occupies in the external environment.",
+      "color": "#ff9900"
+    },
+    {
+      "id": "perspective",
+      "label": "Perspective",
+      "description": "Strategy as a deeply embedded worldview or shared mindset that shapes actions.",
+      "color": "#109618"
+    },
+    {
+      "id": "ploy",
+      "label": "Ploy",
+      "description": "Strategy as a specific maneuver or tactical action to outwit competitors.",
+      "color": "#990099"
+    }
+  ]
+  

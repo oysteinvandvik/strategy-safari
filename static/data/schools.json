@@ -1,0 +1,62 @@
+[
+    {
+      "id": "design",
+      "name": "Design School",
+      "description": "Strategy as a process of conception — clear, deliberate design through internal fit.",
+      "group": "Prescriptive"
+    },
+    {
+      "id": "planning",
+      "name": "Planning School",
+      "description": "Strategy as a formal process — rigorous steps from analysis to implementation.",
+      "group": "Prescriptive"
+    },
+    {
+      "id": "positioning",
+      "name": "Positioning School",
+      "description": "Strategy as analytical positioning in the marketplace based on economic forces.",
+      "group": "Prescriptive"
+    },
+    {
+      "id": "entrepreneurial",
+      "name": "Entrepreneurial School",
+      "description": "Strategy as vision — the leader's intuitive sense shaping direction.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "cognitive",
+      "name": "Cognitive School",
+      "description": "Strategy as a mental process — shaped by how people perceive and process information.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "learning",
+      "name": "Learning School",
+      "description": "Strategy as emergent — evolving through learning and adaptation.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "power",
+      "name": "Power School",
+      "description": "Strategy as negotiation — the result of political and power-based games.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "cultural",
+      "name": "Cultural School",
+      "description": "Strategy as a collective process — rooted in shared values and culture.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "environmental",
+      "name": "Environmental School",
+      "description": "Strategy as a reactive process — shaped by external forces and the environment.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "configuration",
+      "name": "Configuration School",
+      "description": "Strategy as transformation — matching structure and context through periodic change.",
+      "group": "Descriptive"
+    }
+  ]

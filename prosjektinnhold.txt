@@ -1,3 +1,135 @@
+📁 FIL- OG MAPPESTRUKTUR:
+  .
+  ./node_modules
+  ./static
+  ./static/data
+  ./.svelte-kit
+  ./.svelte-kit/generated
+  ./.svelte-kit/generated/server
+  ./.svelte-kit/generated/client
+  ./.svelte-kit/generated/client/nodes
+  ./.svelte-kit/types
+  ./.svelte-kit/types/src
+  ./.svelte-kit/types/src/routes
+  ./.svelte-kit/types/src/routes/about
+  ./.svelte-kit/types/src/routes/ps
+  ./.svelte-kit/types/src/routes/radar
+  ./.svelte-kit/types/src/routes/schools
+  ./.git
+  ./src
+  ./src/lib
+  ./src/lib/components
+  ./src/lib/data
+  ./src/routes
+  ./src/routes/about
+  ./src/routes/ps
+  ./src/routes/radar
+  ./src/routes/schools
+
+📄 VIKTIGE FILER MED INNHOLD:
+
+===== START ./svelte.config.js =====
+import adapter from '@sveltejs/adapter-auto';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	// Consult https://svelte.dev/docs/kit/integrations
+	// for more information about preprocessors
+	preprocess: vitePreprocess(),
+
+	kit: {
+		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
+		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
+		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
+		adapter: adapter()
+	}
+};
+
+export default config;
+===== SLUTT ./svelte.config.js =====
+
+===== START ./tailwind.config.js =====
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
+
+export default {
+  content: ['./src/**/*.{html,js,svelte,ts}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        muted: 'hsl(var(--muted))',
+        'muted-foreground': 'hsl(var(--muted-foreground))',
+        border: 'hsl(var(--border))',
+        primary: 'hsl(var(--primary))',
+        'primary-foreground': 'hsl(var(--primary-foreground))',
+        secondary: 'hsl(var(--secondary))',
+        'secondary-foreground': 'hsl(var(--secondary-foreground))',
+        card: 'hsl(var(--card))',
+        'card-foreground': 'hsl(var(--card-foreground))',
+      },
+      fontFamily: {
+        sans: ['system-ui', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [forms, typography],
+};===== SLUTT ./tailwind.config.js =====
+
+===== START ./vitest-setup-client.ts =====
+import '@testing-library/jest-dom/vitest';
+import { vi } from 'vitest';
+
+// required for svelte5 + jsdom as jsdom does not support matchMedia
+Object.defineProperty(window, 'matchMedia', {
+	writable: true,
+	enumerable: true,
+	value: vi.fn().mockImplementation((query) => ({
+		matches: false,
+		media: query,
+		onchange: null,
+		addEventListener: vi.fn(),
+		removeEventListener: vi.fn(),
+		dispatchEvent: vi.fn()
+	}))
+});
+
+// add more mocks here if you need them
+===== SLUTT ./vitest-setup-client.ts =====
+
+===== START ./README.md =====
+# 📊 Strategy Safari Visualizer
+
+An interactive visualization tool built with **SvelteKit** and **Chart.js**, designed to illustrate how different strategy schools from Mintzberg's *Strategy Safari* emphasize the five P's of strategy: **Plan, Pattern, Position, Perspective, and Ploy**.
+
+## ✨ Features
+
+- 🕸️ Interactive radar chart
+- 📚 Grouping of schools by type: *Prescriptive* and *Descriptive*
+- ✅ Checkbox toggles to show/hide individual schools
+- 📱 Responsive and mobile-friendly layout
+- 🚀 Default display of “Design” and “Learning” schools on load
+
+## 🧱 Project Structure
+
+- `+page.svelte`: Main component containing logic and layout
+- `static/schoolData.json`: JSON data file with school values and group labels
+
+### Example `schoolData.json`
+
+```json
+{
+  "Design": { "group": "Prescriptive", "values": [5, 2, 3, 2, 1] },
+  "Planning": { "group": "Prescriptive", "values": [5, 1, 3, 2, 2] },
+  "Positioning": { "group": "Prescriptive", "values": [4, 2, 5, 2, 4] },
+  "Learning": { "group": "Descriptive", "values": [2, 5, 3, 4, 2] }
+}
+===== SLUTT ./README.md =====
+
+===== START ./package-lock.json =====
 {
 	"name": "strategy-safari",
 	"version": "0.0.1",
@@ -16,23 +148,25 @@
 				"@sveltejs/adapter-auto": "^6.0.0",
 				"@sveltejs/kit": "^2.16.0",
 				"@sveltejs/vite-plugin-svelte": "^5.0.0",
-				"@tailwindcss/forms": "^0.5.7",
-				"@tailwindcss/typography": "^0.5.10",
+				"@tailwindcss/forms": "^0.5.10",
+				"@tailwindcss/postcss": "^4.1.8",
+				"@tailwindcss/typography": "^0.5.16",
+				"@tailwindcss/vite": "^4.0.0",
 				"@testing-library/jest-dom": "^6.6.3",
 				"@testing-library/svelte": "^5.2.4",
-				"autoprefixer": "^10.4.17",
+				"autoprefixer": "^10.4.21",
 				"eslint": "^9.18.0",
 				"eslint-config-prettier": "^10.0.1",
 				"eslint-plugin-svelte": "^3.0.0",
 				"globals": "^16.0.0",
 				"jsdom": "^26.0.0",
-				"postcss": "^8.4.33",
+				"postcss": "^8.5.4",
 				"prettier": "^3.4.2",
 				"prettier-plugin-svelte": "^3.3.3",
 				"prettier-plugin-tailwindcss": "^0.6.11",
 				"svelte": "^5.0.0",
 				"svelte-check": "^4.0.0",
-				"tailwindcss": "^3.4.1",
+				"tailwindcss": "^4.1.8",
 				"typescript": "^5.0.0",
 				"typescript-eslint": "^8.20.0",
 				"vite": "^6.2.6",
@@ -900,22 +1034,17 @@
 				"url": "https://github.com/sponsors/nzakas"
 			}
 		},
-		"node_modules/@isaacs/cliui": {
-			"version": "8.0.2",
-			"resolved": "https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz",
-			"integrity": "sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==",
+		"node_modules/@isaacs/fs-minipass": {
+			"version": "4.0.1",
+			"resolved": "https://registry.npmjs.org/@isaacs/fs-minipass/-/fs-minipass-4.0.1.tgz",
+			"integrity": "sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==",
 			"dev": true,
 			"license": "ISC",
 			"dependencies": {
-				"string-width": "^5.1.2",
-				"string-width-cjs": "npm:string-width@^4.2.0",
-				"strip-ansi": "^7.0.1",
-				"strip-ansi-cjs": "npm:strip-ansi@^6.0.1",
-				"wrap-ansi": "^8.1.0",
-				"wrap-ansi-cjs": "npm:wrap-ansi@^7.0.0"
+				"minipass": "^7.0.4"
 			},
 			"engines": {
-				"node": ">=12"
+				"node": ">=18.0.0"
 			}
 		},
 		"node_modules/@jridgewell/gen-mapping": {
@@ -1013,17 +1142,6 @@
 			},
 			"engines": {
 				"node": ">= 8"
-			}
-		},
-		"node_modules/@pkgjs/parseargs": {
-			"version": "0.11.0",
-			"resolved": "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz",
-			"integrity": "sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==",
-			"dev": true,
-			"license": "MIT",
-			"optional": true,
-			"engines": {
-				"node": ">=14"
 			}
 		},
 		"node_modules/@polka/url": {
@@ -1406,22 +1524,298 @@
 			}
 		},
 		"node_modules/@tailwindcss/forms": {
-			"version": "0.5.7",
-			"resolved": "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.7.tgz",
-			"integrity": "sha512-QE7X69iQI+ZXwldE+rzasvbJiyV/ju1FGHH0Qn2W3FKbuYtqp8LKcy6iSw79fVUT5/Vvf+0XgLCeYVG+UV6hOw==",
+			"version": "0.5.10",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.10.tgz",
+			"integrity": "sha512-utI1ONF6uf/pPNO68kmN1b8rEwNXv3czukalo8VtJH8ksIkZXr3Q3VYudZLkCsDd4Wku120uF02hYK25XGPorw==",
 			"dev": true,
 			"license": "MIT",
 			"dependencies": {
 				"mini-svg-data-uri": "^1.2.3"
 			},
 			"peerDependencies": {
-				"tailwindcss": ">=3.0.0 || >= 3.0.0-alpha.1"
+				"tailwindcss": ">=3.0.0 || >= 3.0.0-alpha.1 || >= 4.0.0-alpha.20 || >= 4.0.0-beta.1"
+			}
+		},
+		"node_modules/@tailwindcss/node": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/node/-/node-4.1.8.tgz",
+			"integrity": "sha512-OWwBsbC9BFAJelmnNcrKuf+bka2ZxCE2A4Ft53Tkg4uoiE67r/PMEYwCsourC26E+kmxfwE0hVzMdxqeW+xu7Q==",
+			"dev": true,
+			"license": "MIT",
+			"dependencies": {
+				"@ampproject/remapping": "^2.3.0",
+				"enhanced-resolve": "^5.18.1",
+				"jiti": "^2.4.2",
+				"lightningcss": "1.30.1",
+				"magic-string": "^0.30.17",
+				"source-map-js": "^1.2.1",
+				"tailwindcss": "4.1.8"
+			}
+		},
+		"node_modules/@tailwindcss/oxide": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide/-/oxide-4.1.8.tgz",
+			"integrity": "sha512-d7qvv9PsM5N3VNKhwVUhpK6r4h9wtLkJ6lz9ZY9aeZgrUWk1Z8VPyqyDT9MZlem7GTGseRQHkeB1j3tC7W1P+A==",
+			"dev": true,
+			"hasInstallScript": true,
+			"license": "MIT",
+			"dependencies": {
+				"detect-libc": "^2.0.4",
+				"tar": "^7.4.3"
+			},
+			"engines": {
+				"node": ">= 10"
+			},
+			"optionalDependencies": {
+				"@tailwindcss/oxide-android-arm64": "4.1.8",
+				"@tailwindcss/oxide-darwin-arm64": "4.1.8",
+				"@tailwindcss/oxide-darwin-x64": "4.1.8",
+				"@tailwindcss/oxide-freebsd-x64": "4.1.8",
+				"@tailwindcss/oxide-linux-arm-gnueabihf": "4.1.8",
+				"@tailwindcss/oxide-linux-arm64-gnu": "4.1.8",
+				"@tailwindcss/oxide-linux-arm64-musl": "4.1.8",
+				"@tailwindcss/oxide-linux-x64-gnu": "4.1.8",
+				"@tailwindcss/oxide-linux-x64-musl": "4.1.8",
+				"@tailwindcss/oxide-wasm32-wasi": "4.1.8",
+				"@tailwindcss/oxide-win32-arm64-msvc": "4.1.8",
+				"@tailwindcss/oxide-win32-x64-msvc": "4.1.8"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-android-arm64": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-android-arm64/-/oxide-android-arm64-4.1.8.tgz",
+			"integrity": "sha512-Fbz7qni62uKYceWYvUjRqhGfZKwhZDQhlrJKGtnZfuNtHFqa8wmr+Wn74CTWERiW2hn3mN5gTpOoxWKk0jRxjg==",
+			"cpu": [
+				"arm64"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"android"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-darwin-arm64": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-darwin-arm64/-/oxide-darwin-arm64-4.1.8.tgz",
+			"integrity": "sha512-RdRvedGsT0vwVVDztvyXhKpsU2ark/BjgG0huo4+2BluxdXo8NDgzl77qh0T1nUxmM11eXwR8jA39ibvSTbi7A==",
+			"cpu": [
+				"arm64"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"darwin"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-darwin-x64": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-darwin-x64/-/oxide-darwin-x64-4.1.8.tgz",
+			"integrity": "sha512-t6PgxjEMLp5Ovf7uMb2OFmb3kqzVTPPakWpBIFzppk4JE4ix0yEtbtSjPbU8+PZETpaYMtXvss2Sdkx8Vs4XRw==",
+			"cpu": [
+				"x64"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"darwin"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-freebsd-x64": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-freebsd-x64/-/oxide-freebsd-x64-4.1.8.tgz",
+			"integrity": "sha512-g8C8eGEyhHTqwPStSwZNSrOlyx0bhK/V/+zX0Y+n7DoRUzyS8eMbVshVOLJTDDC+Qn9IJnilYbIKzpB9n4aBsg==",
+			"cpu": [
+				"x64"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"freebsd"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-linux-arm-gnueabihf": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm-gnueabihf/-/oxide-linux-arm-gnueabihf-4.1.8.tgz",
+			"integrity": "sha512-Jmzr3FA4S2tHhaC6yCjac3rGf7hG9R6Gf2z9i9JFcuyy0u79HfQsh/thifbYTF2ic82KJovKKkIB6Z9TdNhCXQ==",
+			"cpu": [
+				"arm"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"linux"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-linux-arm64-gnu": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm64-gnu/-/oxide-linux-arm64-gnu-4.1.8.tgz",
+			"integrity": "sha512-qq7jXtO1+UEtCmCeBBIRDrPFIVI4ilEQ97qgBGdwXAARrUqSn/L9fUrkb1XP/mvVtoVeR2bt/0L77xx53bPZ/Q==",
+			"cpu": [
+				"arm64"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"linux"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-linux-arm64-musl": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm64-musl/-/oxide-linux-arm64-musl-4.1.8.tgz",
+			"integrity": "sha512-O6b8QesPbJCRshsNApsOIpzKt3ztG35gfX9tEf4arD7mwNinsoCKxkj8TgEE0YRjmjtO3r9FlJnT/ENd9EVefQ==",
+			"cpu": [
+				"arm64"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"linux"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-linux-x64-gnu": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-gnu/-/oxide-linux-x64-gnu-4.1.8.tgz",
+			"integrity": "sha512-32iEXX/pXwikshNOGnERAFwFSfiltmijMIAbUhnNyjFr3tmWmMJWQKU2vNcFX0DACSXJ3ZWcSkzNbaKTdngH6g==",
+			"cpu": [
+				"x64"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"linux"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-linux-x64-musl": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.1.8.tgz",
+			"integrity": "sha512-s+VSSD+TfZeMEsCaFaHTaY5YNj3Dri8rST09gMvYQKwPphacRG7wbuQ5ZJMIJXN/puxPcg/nU+ucvWguPpvBDg==",
+			"cpu": [
+				"x64"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"linux"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-wasm32-wasi": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.1.8.tgz",
+			"integrity": "sha512-CXBPVFkpDjM67sS1psWohZ6g/2/cd+cq56vPxK4JeawelxwK4YECgl9Y9TjkE2qfF+9/s1tHHJqrC4SS6cVvSg==",
+			"bundleDependencies": [
+				"@napi-rs/wasm-runtime",
+				"@emnapi/core",
+				"@emnapi/runtime",
+				"@tybys/wasm-util",
+				"@emnapi/wasi-threads",
+				"tslib"
+			],
+			"cpu": [
+				"wasm32"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"dependencies": {
+				"@emnapi/core": "^1.4.3",
+				"@emnapi/runtime": "^1.4.3",
+				"@emnapi/wasi-threads": "^1.0.2",
+				"@napi-rs/wasm-runtime": "^0.2.10",
+				"@tybys/wasm-util": "^0.9.0",
+				"tslib": "^2.8.0"
+			},
+			"engines": {
+				"node": ">=14.0.0"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-win32-arm64-msvc": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-win32-arm64-msvc/-/oxide-win32-arm64-msvc-4.1.8.tgz",
+			"integrity": "sha512-7GmYk1n28teDHUjPlIx4Z6Z4hHEgvP5ZW2QS9ygnDAdI/myh3HTHjDqtSqgu1BpRoI4OiLx+fThAyA1JePoENA==",
+			"cpu": [
+				"arm64"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"win32"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/oxide-win32-x64-msvc": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/oxide-win32-x64-msvc/-/oxide-win32-x64-msvc-4.1.8.tgz",
+			"integrity": "sha512-fou+U20j+Jl0EHwK92spoWISON2OBnCazIc038Xj2TdweYV33ZRkS9nwqiUi2d/Wba5xg5UoHfvynnb/UB49cQ==",
+			"cpu": [
+				"x64"
+			],
+			"dev": true,
+			"license": "MIT",
+			"optional": true,
+			"os": [
+				"win32"
+			],
+			"engines": {
+				"node": ">= 10"
+			}
+		},
+		"node_modules/@tailwindcss/postcss": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/postcss/-/postcss-4.1.8.tgz",
+			"integrity": "sha512-vB/vlf7rIky+w94aWMw34bWW1ka6g6C3xIOdICKX2GC0VcLtL6fhlLiafF0DVIwa9V6EHz8kbWMkS2s2QvvNlw==",
+			"dev": true,
+			"license": "MIT",
+			"dependencies": {
+				"@alloc/quick-lru": "^5.2.0",
+				"@tailwindcss/node": "4.1.8",
+				"@tailwindcss/oxide": "4.1.8",
+				"postcss": "^8.4.41",
+				"tailwindcss": "4.1.8"
 			}
 		},
 		"node_modules/@tailwindcss/typography": {
-			"version": "0.5.10",
-			"resolved": "https://registry.npmjs.org/@tailwindcss/typography/-/typography-0.5.10.tgz",
-			"integrity": "sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==",
+			"version": "0.5.16",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/typography/-/typography-0.5.16.tgz",
+			"integrity": "sha512-0wDLwCVF5V3x3b1SGXPCDcdsbDHMBe+lkFzBRaHeLvNi+nrrnZ1lA18u+OTWO8iSWU2GxUOCvlXtDuqftc1oiA==",
 			"dev": true,
 			"license": "MIT",
 			"dependencies": {
@@ -1431,7 +1825,22 @@
 				"postcss-selector-parser": "6.0.10"
 			},
 			"peerDependencies": {
-				"tailwindcss": ">=3.0.0 || insiders"
+				"tailwindcss": ">=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1"
+			}
+		},
+		"node_modules/@tailwindcss/vite": {
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/@tailwindcss/vite/-/vite-4.1.8.tgz",
+			"integrity": "sha512-CQ+I8yxNV5/6uGaJjiuymgw0kEQiNKRinYbZXPdx1fk5WgiyReG0VaUx/Xq6aVNSUNJFzxm6o8FNKS5aMaim5A==",
+			"dev": true,
+			"license": "MIT",
+			"dependencies": {
+				"@tailwindcss/node": "4.1.8",
+				"@tailwindcss/oxide": "4.1.8",
+				"tailwindcss": "4.1.8"
+			},
+			"peerDependencies": {
+				"vite": "^5.2.0 || ^6"
 			}
 		},
 		"node_modules/@testing-library/dom": {
@@ -2027,47 +2436,6 @@
 				"url": "https://github.com/chalk/ansi-styles?sponsor=1"
 			}
 		},
-		"node_modules/any-promise": {
-			"version": "1.3.0",
-			"resolved": "https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz",
-			"integrity": "sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A==",
-			"dev": true,
-			"license": "MIT"
-		},
-		"node_modules/anymatch": {
-			"version": "3.1.3",
-			"resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz",
-			"integrity": "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==",
-			"dev": true,
-			"license": "ISC",
-			"dependencies": {
-				"normalize-path": "^3.0.0",
-				"picomatch": "^2.0.4"
-			},
-			"engines": {
-				"node": ">= 8"
-			}
-		},
-		"node_modules/anymatch/node_modules/picomatch": {
-			"version": "2.3.1",
-			"resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
-			"integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">=8.6"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/jonschlinkert"
-			}
-		},
-		"node_modules/arg": {
-			"version": "5.0.2",
-			"resolved": "https://registry.npmjs.org/arg/-/arg-5.0.2.tgz",
-			"integrity": "sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==",
-			"dev": true,
-			"license": "MIT"
-		},
 		"node_modules/argparse": {
 			"version": "2.0.1",
 			"resolved": "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz",
@@ -2096,9 +2464,9 @@
 			}
 		},
 		"node_modules/autoprefixer": {
-			"version": "10.4.17",
-			"resolved": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.17.tgz",
-			"integrity": "sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==",
+			"version": "10.4.21",
+			"resolved": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.21.tgz",
+			"integrity": "sha512-O+A6LWV5LDHSJD3LjHYoNi4VLsj/Whi7k6zG12xTYaU4cQ8oxQGckXNX8cRHK5yOZ/ppVHe0ZBXGzSV9jXdVbQ==",
 			"dev": true,
 			"funding": [
 				{
@@ -2116,11 +2484,11 @@
 			],
 			"license": "MIT",
 			"dependencies": {
-				"browserslist": "^4.22.2",
-				"caniuse-lite": "^1.0.30001578",
+				"browserslist": "^4.24.4",
+				"caniuse-lite": "^1.0.30001702",
 				"fraction.js": "^4.3.7",
 				"normalize-range": "^0.1.2",
-				"picocolors": "^1.0.0",
+				"picocolors": "^1.1.1",
 				"postcss-value-parser": "^4.2.0"
 			},
 			"bin": {
@@ -2149,19 +2517,6 @@
 			"integrity": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==",
 			"dev": true,
 			"license": "MIT"
-		},
-		"node_modules/binary-extensions": {
-			"version": "2.3.0",
-			"resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz",
-			"integrity": "sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">=8"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/sindresorhus"
-			}
 		},
 		"node_modules/brace-expansion": {
 			"version": "1.1.11",
@@ -2238,16 +2593,6 @@
 			"license": "MIT",
 			"engines": {
 				"node": ">=6"
-			}
-		},
-		"node_modules/camelcase-css": {
-			"version": "2.0.1",
-			"resolved": "https://registry.npmjs.org/camelcase-css/-/camelcase-css-2.0.1.tgz",
-			"integrity": "sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">= 6"
 			}
 		},
 		"node_modules/caniuse-lite": {
@@ -2340,6 +2685,16 @@
 				"url": "https://paulmillr.com/funding/"
 			}
 		},
+		"node_modules/chownr": {
+			"version": "3.0.0",
+			"resolved": "https://registry.npmjs.org/chownr/-/chownr-3.0.0.tgz",
+			"integrity": "sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==",
+			"dev": true,
+			"license": "BlueOak-1.0.0",
+			"engines": {
+				"node": ">=18"
+			}
+		},
 		"node_modules/clsx": {
 			"version": "2.1.1",
 			"resolved": "https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz",
@@ -2369,16 +2724,6 @@
 			"integrity": "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==",
 			"dev": true,
 			"license": "MIT"
-		},
-		"node_modules/commander": {
-			"version": "4.1.1",
-			"resolved": "https://registry.npmjs.org/commander/-/commander-4.1.1.tgz",
-			"integrity": "sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">= 6"
-			}
 		},
 		"node_modules/concat-map": {
 			"version": "0.0.1",
@@ -2528,8 +2873,6 @@
 			"integrity": "sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==",
 			"dev": true,
 			"license": "Apache-2.0",
-			"optional": true,
-			"peer": true,
 			"engines": {
 				"node": ">=8"
 			}
@@ -2541,31 +2884,10 @@
 			"dev": true,
 			"license": "MIT"
 		},
-		"node_modules/didyoumean": {
-			"version": "1.2.2",
-			"resolved": "https://registry.npmjs.org/didyoumean/-/didyoumean-1.2.2.tgz",
-			"integrity": "sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==",
-			"dev": true,
-			"license": "Apache-2.0"
-		},
-		"node_modules/dlv": {
-			"version": "1.1.3",
-			"resolved": "https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz",
-			"integrity": "sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==",
-			"dev": true,
-			"license": "MIT"
-		},
 		"node_modules/dom-accessibility-api": {
 			"version": "0.6.3",
 			"resolved": "https://registry.npmjs.org/dom-accessibility-api/-/dom-accessibility-api-0.6.3.tgz",
 			"integrity": "sha512-7ZgogeTnjuHbo+ct10G9Ffp0mif17idi0IyWNVA/wcwcm7NPOD/WEHVP3n7n3MhXqxoIYm8d6MuZohYWIZ4T3w==",
-			"dev": true,
-			"license": "MIT"
-		},
-		"node_modules/eastasianwidth": {
-			"version": "0.2.0",
-			"resolved": "https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz",
-			"integrity": "sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==",
 			"dev": true,
 			"license": "MIT"
 		},
@@ -2576,12 +2898,19 @@
 			"dev": true,
 			"license": "ISC"
 		},
-		"node_modules/emoji-regex": {
-			"version": "9.2.2",
-			"resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz",
-			"integrity": "sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==",
+		"node_modules/enhanced-resolve": {
+			"version": "5.18.1",
+			"resolved": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.18.1.tgz",
+			"integrity": "sha512-ZSW3ma5GkcQBIpwZTSRAI8N71Uuwgs93IezB7mf7R60tC8ZbJideoDNKjHn2O9KIlx6rkGTTEk1xUCK2E1Y2Yg==",
 			"dev": true,
-			"license": "MIT"
+			"license": "MIT",
+			"dependencies": {
+				"graceful-fs": "^4.2.4",
+				"tapable": "^2.2.0"
+			},
+			"engines": {
+				"node": ">=10.13.0"
+			}
 		},
 		"node_modules/entities": {
 			"version": "6.0.0",
@@ -2776,35 +3105,6 @@
 				"svelte": {
 					"optional": true
 				}
-			}
-		},
-		"node_modules/eslint-plugin-svelte/node_modules/postcss": {
-			"version": "8.5.4",
-			"resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.4.tgz",
-			"integrity": "sha512-QSa9EBe+uwlGTFmHsPKokv3B/oEMQZxfqW0QqNCyhpa6mB1afzulwn8hihglqAb2pOw+BJgNlmXQ8la2VeHB7w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/postcss/"
-				},
-				{
-					"type": "tidelift",
-					"url": "https://tidelift.com/funding/github/npm/postcss"
-				},
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/ai"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"nanoid": "^3.3.11",
-				"picocolors": "^1.1.1",
-				"source-map-js": "^1.2.1"
-			},
-			"engines": {
-				"node": "^10 || ^12 || >=14"
 			}
 		},
 		"node_modules/eslint-scope": {
@@ -3095,23 +3395,6 @@
 			"dev": true,
 			"license": "ISC"
 		},
-		"node_modules/foreground-child": {
-			"version": "3.3.1",
-			"resolved": "https://registry.npmjs.org/foreground-child/-/foreground-child-3.3.1.tgz",
-			"integrity": "sha512-gIXjKqtFuWEgzFRJA9WCQeSJLZDjgJUOMCMzxtvFq/37KojM1BFGufqsCy0r4qSQmYLsZYMeyRqzIWOMup03sw==",
-			"dev": true,
-			"license": "ISC",
-			"dependencies": {
-				"cross-spawn": "^7.0.6",
-				"signal-exit": "^4.0.1"
-			},
-			"engines": {
-				"node": ">=14"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/isaacs"
-			}
-		},
 		"node_modules/fraction.js": {
 			"version": "4.3.7",
 			"resolved": "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz",
@@ -3141,37 +3424,6 @@
 				"node": "^8.16.0 || ^10.6.0 || >=11.0.0"
 			}
 		},
-		"node_modules/function-bind": {
-			"version": "1.1.2",
-			"resolved": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz",
-			"integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==",
-			"dev": true,
-			"license": "MIT",
-			"funding": {
-				"url": "https://github.com/sponsors/ljharb"
-			}
-		},
-		"node_modules/glob": {
-			"version": "10.4.5",
-			"resolved": "https://registry.npmjs.org/glob/-/glob-10.4.5.tgz",
-			"integrity": "sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==",
-			"dev": true,
-			"license": "ISC",
-			"dependencies": {
-				"foreground-child": "^3.1.0",
-				"jackspeak": "^3.1.2",
-				"minimatch": "^9.0.4",
-				"minipass": "^7.1.2",
-				"package-json-from-dist": "^1.0.0",
-				"path-scurry": "^1.11.1"
-			},
-			"bin": {
-				"glob": "dist/esm/bin.mjs"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/isaacs"
-			}
-		},
 		"node_modules/glob-parent": {
 			"version": "6.0.2",
 			"resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz",
@@ -3183,32 +3435,6 @@
 			},
 			"engines": {
 				"node": ">=10.13.0"
-			}
-		},
-		"node_modules/glob/node_modules/brace-expansion": {
-			"version": "2.0.1",
-			"resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.1.tgz",
-			"integrity": "sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"balanced-match": "^1.0.0"
-			}
-		},
-		"node_modules/glob/node_modules/minimatch": {
-			"version": "9.0.5",
-			"resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.5.tgz",
-			"integrity": "sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==",
-			"dev": true,
-			"license": "ISC",
-			"dependencies": {
-				"brace-expansion": "^2.0.1"
-			},
-			"engines": {
-				"node": ">=16 || 14 >=14.17"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/isaacs"
 			}
 		},
 		"node_modules/globals": {
@@ -3223,6 +3449,13 @@
 			"funding": {
 				"url": "https://github.com/sponsors/sindresorhus"
 			}
+		},
+		"node_modules/graceful-fs": {
+			"version": "4.2.11",
+			"resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz",
+			"integrity": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
+			"dev": true,
+			"license": "ISC"
 		},
 		"node_modules/graphemer": {
 			"version": "1.4.0",
@@ -3239,19 +3472,6 @@
 			"license": "MIT",
 			"engines": {
 				"node": ">=8"
-			}
-		},
-		"node_modules/hasown": {
-			"version": "2.0.2",
-			"resolved": "https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz",
-			"integrity": "sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"function-bind": "^1.1.2"
-			},
-			"engines": {
-				"node": ">= 0.4"
 			}
 		},
 		"node_modules/html-encoding-sniffer": {
@@ -3355,35 +3575,6 @@
 				"node": ">=8"
 			}
 		},
-		"node_modules/is-binary-path": {
-			"version": "2.1.0",
-			"resolved": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
-			"integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"binary-extensions": "^2.0.0"
-			},
-			"engines": {
-				"node": ">=8"
-			}
-		},
-		"node_modules/is-core-module": {
-			"version": "2.16.1",
-			"resolved": "https://registry.npmjs.org/is-core-module/-/is-core-module-2.16.1.tgz",
-			"integrity": "sha512-UfoeMA6fIJ8wTYFEUjelnaGI67v6+N7qXJEvQuIGa99l4xsCruSYOVSQ0uPANn4dAzm8lkYPaKLrrijLq7x23w==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"hasown": "^2.0.2"
-			},
-			"engines": {
-				"node": ">= 0.4"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/ljharb"
-			}
-		},
 		"node_modules/is-extglob": {
 			"version": "2.1.1",
 			"resolved": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
@@ -3392,16 +3583,6 @@
 			"license": "MIT",
 			"engines": {
 				"node": ">=0.10.0"
-			}
-		},
-		"node_modules/is-fullwidth-code-point": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz",
-			"integrity": "sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">=8"
 			}
 		},
 		"node_modules/is-glob": {
@@ -3451,30 +3632,12 @@
 			"dev": true,
 			"license": "ISC"
 		},
-		"node_modules/jackspeak": {
-			"version": "3.4.3",
-			"resolved": "https://registry.npmjs.org/jackspeak/-/jackspeak-3.4.3.tgz",
-			"integrity": "sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==",
-			"dev": true,
-			"license": "BlueOak-1.0.0",
-			"dependencies": {
-				"@isaacs/cliui": "^8.0.2"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/isaacs"
-			},
-			"optionalDependencies": {
-				"@pkgjs/parseargs": "^0.11.0"
-			}
-		},
 		"node_modules/jiti": {
 			"version": "2.4.2",
 			"resolved": "https://registry.npmjs.org/jiti/-/jiti-2.4.2.tgz",
 			"integrity": "sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==",
 			"dev": true,
 			"license": "MIT",
-			"optional": true,
-			"peer": true,
 			"bin": {
 				"jiti": "lib/jiti-cli.mjs"
 			}
@@ -3607,8 +3770,6 @@
 			"integrity": "sha512-xi6IyHML+c9+Q3W0S4fCQJOym42pyurFiJUHEcEyHS0CeKzia4yZDEsLlqOFykxOdHpNy0NmvVO31vcSqAxJCg==",
 			"dev": true,
 			"license": "MPL-2.0",
-			"optional": true,
-			"peer": true,
 			"dependencies": {
 				"detect-libc": "^2.0.3"
 			},
@@ -3645,7 +3806,6 @@
 			"os": [
 				"darwin"
 			],
-			"peer": true,
 			"engines": {
 				"node": ">= 12.0.0"
 			},
@@ -3667,7 +3827,6 @@
 			"os": [
 				"darwin"
 			],
-			"peer": true,
 			"engines": {
 				"node": ">= 12.0.0"
 			},
@@ -3689,7 +3848,6 @@
 			"os": [
 				"freebsd"
 			],
-			"peer": true,
 			"engines": {
 				"node": ">= 12.0.0"
 			},
@@ -3711,7 +3869,6 @@
 			"os": [
 				"linux"
 			],
-			"peer": true,
 			"engines": {
 				"node": ">= 12.0.0"
 			},
@@ -3733,7 +3890,6 @@
 			"os": [
 				"linux"
 			],
-			"peer": true,
 			"engines": {
 				"node": ">= 12.0.0"
 			},
@@ -3755,7 +3911,6 @@
 			"os": [
 				"linux"
 			],
-			"peer": true,
 			"engines": {
 				"node": ">= 12.0.0"
 			},
@@ -3777,7 +3932,6 @@
 			"os": [
 				"linux"
 			],
-			"peer": true,
 			"engines": {
 				"node": ">= 12.0.0"
 			},
@@ -3799,7 +3953,6 @@
 			"os": [
 				"linux"
 			],
-			"peer": true,
 			"engines": {
 				"node": ">= 12.0.0"
 			},
@@ -3821,7 +3974,6 @@
 			"os": [
 				"win32"
 			],
-			"peer": true,
 			"engines": {
 				"node": ">= 12.0.0"
 			},
@@ -3843,7 +3995,6 @@
 			"os": [
 				"win32"
 			],
-			"peer": true,
 			"engines": {
 				"node": ">= 12.0.0"
 			},
@@ -3861,13 +4012,6 @@
 			"engines": {
 				"node": ">=10"
 			}
-		},
-		"node_modules/lines-and-columns": {
-			"version": "1.2.4",
-			"resolved": "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz",
-			"integrity": "sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==",
-			"dev": true,
-			"license": "MIT"
 		},
 		"node_modules/locate-character": {
 			"version": "3.0.0",
@@ -4034,6 +4178,35 @@
 				"node": ">=16 || 14 >=14.17"
 			}
 		},
+		"node_modules/minizlib": {
+			"version": "3.0.2",
+			"resolved": "https://registry.npmjs.org/minizlib/-/minizlib-3.0.2.tgz",
+			"integrity": "sha512-oG62iEk+CYt5Xj2YqI5Xi9xWUeZhDI8jjQmC5oThVH5JGCTgIjr7ciJDzC7MBzYd//WvR1OTmP5Q38Q8ShQtVA==",
+			"dev": true,
+			"license": "MIT",
+			"dependencies": {
+				"minipass": "^7.1.2"
+			},
+			"engines": {
+				"node": ">= 18"
+			}
+		},
+		"node_modules/mkdirp": {
+			"version": "3.0.1",
+			"resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-3.0.1.tgz",
+			"integrity": "sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==",
+			"dev": true,
+			"license": "MIT",
+			"bin": {
+				"mkdirp": "dist/cjs/src/bin.js"
+			},
+			"engines": {
+				"node": ">=10"
+			},
+			"funding": {
+				"url": "https://github.com/sponsors/isaacs"
+			}
+		},
 		"node_modules/mri": {
 			"version": "1.2.0",
 			"resolved": "https://registry.npmjs.org/mri/-/mri-1.2.0.tgz",
@@ -4060,18 +4233,6 @@
 			"integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
 			"dev": true,
 			"license": "MIT"
-		},
-		"node_modules/mz": {
-			"version": "2.7.0",
-			"resolved": "https://registry.npmjs.org/mz/-/mz-2.7.0.tgz",
-			"integrity": "sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"any-promise": "^1.0.0",
-				"object-assign": "^4.0.1",
-				"thenify-all": "^1.0.0"
-			}
 		},
 		"node_modules/nanoid": {
 			"version": "3.3.11",
@@ -4106,16 +4267,6 @@
 			"dev": true,
 			"license": "MIT"
 		},
-		"node_modules/normalize-path": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz",
-			"integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">=0.10.0"
-			}
-		},
 		"node_modules/normalize-range": {
 			"version": "0.1.2",
 			"resolved": "https://registry.npmjs.org/normalize-range/-/normalize-range-0.1.2.tgz",
@@ -4132,26 +4283,6 @@
 			"integrity": "sha512-/ieB+mDe4MrrKMT8z+mQL8klXydZWGR5Dowt4RAGKbJ3kIGEx3X4ljUo+6V73IXtUPWgfOlU5B9MlGxFO5T+cA==",
 			"dev": true,
 			"license": "MIT"
-		},
-		"node_modules/object-assign": {
-			"version": "4.1.1",
-			"resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
-			"integrity": "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">=0.10.0"
-			}
-		},
-		"node_modules/object-hash": {
-			"version": "3.0.0",
-			"resolved": "https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz",
-			"integrity": "sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">= 6"
-			}
 		},
 		"node_modules/optionator": {
 			"version": "0.9.4",
@@ -4203,13 +4334,6 @@
 				"url": "https://github.com/sponsors/sindresorhus"
 			}
 		},
-		"node_modules/package-json-from-dist": {
-			"version": "1.0.1",
-			"resolved": "https://registry.npmjs.org/package-json-from-dist/-/package-json-from-dist-1.0.1.tgz",
-			"integrity": "sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==",
-			"dev": true,
-			"license": "BlueOak-1.0.0"
-		},
 		"node_modules/parent-module": {
 			"version": "1.0.1",
 			"resolved": "https://registry.npmjs.org/parent-module/-/parent-module-1.0.1.tgz",
@@ -4256,30 +4380,6 @@
 				"node": ">=8"
 			}
 		},
-		"node_modules/path-parse": {
-			"version": "1.0.7",
-			"resolved": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz",
-			"integrity": "sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==",
-			"dev": true,
-			"license": "MIT"
-		},
-		"node_modules/path-scurry": {
-			"version": "1.11.1",
-			"resolved": "https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz",
-			"integrity": "sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==",
-			"dev": true,
-			"license": "BlueOak-1.0.0",
-			"dependencies": {
-				"lru-cache": "^10.2.0",
-				"minipass": "^5.0.0 || ^6.0.2 || ^7.0.0"
-			},
-			"engines": {
-				"node": ">=16 || 14 >=14.18"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/isaacs"
-			}
-		},
 		"node_modules/pathe": {
 			"version": "2.0.3",
 			"resolved": "https://registry.npmjs.org/pathe/-/pathe-2.0.3.tgz",
@@ -4317,30 +4417,10 @@
 				"url": "https://github.com/sponsors/jonschlinkert"
 			}
 		},
-		"node_modules/pify": {
-			"version": "2.3.0",
-			"resolved": "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz",
-			"integrity": "sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">=0.10.0"
-			}
-		},
-		"node_modules/pirates": {
-			"version": "4.0.7",
-			"resolved": "https://registry.npmjs.org/pirates/-/pirates-4.0.7.tgz",
-			"integrity": "sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">= 6"
-			}
-		},
 		"node_modules/postcss": {
-			"version": "8.4.33",
-			"resolved": "https://registry.npmjs.org/postcss/-/postcss-8.4.33.tgz",
-			"integrity": "sha512-Kkpbhhdjw2qQs2O2DGX+8m5OVqEcbB9HRBvuYM9pgrjEFUg30A9LmXNlTAUj4S9kgtGyrMbTzVjH7E+s5Re2yg==",
+			"version": "8.5.4",
+			"resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.4.tgz",
+			"integrity": "sha512-QSa9EBe+uwlGTFmHsPKokv3B/oEMQZxfqW0QqNCyhpa6mB1afzulwn8hihglqAb2pOw+BJgNlmXQ8la2VeHB7w==",
 			"dev": true,
 			"funding": [
 				{
@@ -4358,50 +4438,12 @@
 			],
 			"license": "MIT",
 			"dependencies": {
-				"nanoid": "^3.3.7",
-				"picocolors": "^1.0.0",
-				"source-map-js": "^1.0.2"
+				"nanoid": "^3.3.11",
+				"picocolors": "^1.1.1",
+				"source-map-js": "^1.2.1"
 			},
 			"engines": {
 				"node": "^10 || ^12 || >=14"
-			}
-		},
-		"node_modules/postcss-import": {
-			"version": "15.1.0",
-			"resolved": "https://registry.npmjs.org/postcss-import/-/postcss-import-15.1.0.tgz",
-			"integrity": "sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"postcss-value-parser": "^4.0.0",
-				"read-cache": "^1.0.0",
-				"resolve": "^1.1.7"
-			},
-			"engines": {
-				"node": ">=14.0.0"
-			},
-			"peerDependencies": {
-				"postcss": "^8.0.0"
-			}
-		},
-		"node_modules/postcss-js": {
-			"version": "4.0.1",
-			"resolved": "https://registry.npmjs.org/postcss-js/-/postcss-js-4.0.1.tgz",
-			"integrity": "sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"camelcase-css": "^2.0.1"
-			},
-			"engines": {
-				"node": "^12 || ^14 || >= 16"
-			},
-			"funding": {
-				"type": "opencollective",
-				"url": "https://opencollective.com/postcss/"
-			},
-			"peerDependencies": {
-				"postcss": "^8.4.21"
 			}
 		},
 		"node_modules/postcss-load-config": {
@@ -4442,46 +4484,6 @@
 			"license": "ISC",
 			"engines": {
 				"node": ">= 6"
-			}
-		},
-		"node_modules/postcss-nested": {
-			"version": "6.2.0",
-			"resolved": "https://registry.npmjs.org/postcss-nested/-/postcss-nested-6.2.0.tgz",
-			"integrity": "sha512-HQbt28KulC5AJzG+cZtj9kvKB93CFCdLvog1WFLf1D+xmMvPGlBstkpTEZfK5+AN9hfJocyBFCNiqyS48bpgzQ==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/postcss/"
-				},
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/ai"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"postcss-selector-parser": "^6.1.1"
-			},
-			"engines": {
-				"node": ">=12.0"
-			},
-			"peerDependencies": {
-				"postcss": "^8.2.14"
-			}
-		},
-		"node_modules/postcss-nested/node_modules/postcss-selector-parser": {
-			"version": "6.1.2",
-			"resolved": "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz",
-			"integrity": "sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"cssesc": "^3.0.0",
-				"util-deprecate": "^1.0.2"
-			},
-			"engines": {
-				"node": ">=4"
 			}
 		},
 		"node_modules/postcss-safe-parser": {
@@ -4741,16 +4743,6 @@
 			"dev": true,
 			"license": "MIT"
 		},
-		"node_modules/read-cache": {
-			"version": "1.0.0",
-			"resolved": "https://registry.npmjs.org/read-cache/-/read-cache-1.0.0.tgz",
-			"integrity": "sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"pify": "^2.3.0"
-			}
-		},
 		"node_modules/readdirp": {
 			"version": "4.1.2",
 			"resolved": "https://registry.npmjs.org/readdirp/-/readdirp-4.1.2.tgz",
@@ -4777,27 +4769,6 @@
 			},
 			"engines": {
 				"node": ">=8"
-			}
-		},
-		"node_modules/resolve": {
-			"version": "1.22.10",
-			"resolved": "https://registry.npmjs.org/resolve/-/resolve-1.22.10.tgz",
-			"integrity": "sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"is-core-module": "^2.16.0",
-				"path-parse": "^1.0.7",
-				"supports-preserve-symlinks-flag": "^1.0.0"
-			},
-			"bin": {
-				"resolve": "bin/resolve"
-			},
-			"engines": {
-				"node": ">= 0.4"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/ljharb"
 			}
 		},
 		"node_modules/resolve-from": {
@@ -4982,19 +4953,6 @@
 			"dev": true,
 			"license": "ISC"
 		},
-		"node_modules/signal-exit": {
-			"version": "4.1.0",
-			"resolved": "https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz",
-			"integrity": "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==",
-			"dev": true,
-			"license": "ISC",
-			"engines": {
-				"node": ">=14"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/isaacs"
-			}
-		},
 		"node_modules/sirv": {
 			"version": "3.0.1",
 			"resolved": "https://registry.npmjs.org/sirv/-/sirv-3.0.1.tgz",
@@ -5034,103 +4992,6 @@
 			"dev": true,
 			"license": "MIT"
 		},
-		"node_modules/string-width": {
-			"version": "5.1.2",
-			"resolved": "https://registry.npmjs.org/string-width/-/string-width-5.1.2.tgz",
-			"integrity": "sha512-HnLOCR3vjcY8beoNLtcjZ5/nxn2afmME6lhrDrebokqMap+XbeW8n9TXpPDOqdGK5qcI3oT0GKTW6wC7EMiVqA==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"eastasianwidth": "^0.2.0",
-				"emoji-regex": "^9.2.2",
-				"strip-ansi": "^7.0.1"
-			},
-			"engines": {
-				"node": ">=12"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/sindresorhus"
-			}
-		},
-		"node_modules/string-width-cjs": {
-			"name": "string-width",
-			"version": "4.2.3",
-			"resolved": "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz",
-			"integrity": "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"emoji-regex": "^8.0.0",
-				"is-fullwidth-code-point": "^3.0.0",
-				"strip-ansi": "^6.0.1"
-			},
-			"engines": {
-				"node": ">=8"
-			}
-		},
-		"node_modules/string-width-cjs/node_modules/emoji-regex": {
-			"version": "8.0.0",
-			"resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",
-			"integrity": "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==",
-			"dev": true,
-			"license": "MIT"
-		},
-		"node_modules/string-width-cjs/node_modules/strip-ansi": {
-			"version": "6.0.1",
-			"resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz",
-			"integrity": "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"ansi-regex": "^5.0.1"
-			},
-			"engines": {
-				"node": ">=8"
-			}
-		},
-		"node_modules/strip-ansi": {
-			"version": "7.1.0",
-			"resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.1.0.tgz",
-			"integrity": "sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"ansi-regex": "^6.0.1"
-			},
-			"engines": {
-				"node": ">=12"
-			},
-			"funding": {
-				"url": "https://github.com/chalk/strip-ansi?sponsor=1"
-			}
-		},
-		"node_modules/strip-ansi-cjs": {
-			"name": "strip-ansi",
-			"version": "6.0.1",
-			"resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz",
-			"integrity": "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"ansi-regex": "^5.0.1"
-			},
-			"engines": {
-				"node": ">=8"
-			}
-		},
-		"node_modules/strip-ansi/node_modules/ansi-regex": {
-			"version": "6.1.0",
-			"resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.1.0.tgz",
-			"integrity": "sha512-7HSX4QQb4CspciLpVFwyRe79O3xsIZDDLER21kERQ71oaPodF8jL725AgJMFAYbooIqolJoRLuM81SpeUkpkvA==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">=12"
-			},
-			"funding": {
-				"url": "https://github.com/chalk/ansi-regex?sponsor=1"
-			}
-		},
 		"node_modules/strip-indent": {
 			"version": "3.0.0",
 			"resolved": "https://registry.npmjs.org/strip-indent/-/strip-indent-3.0.0.tgz",
@@ -5157,29 +5018,6 @@
 				"url": "https://github.com/sponsors/sindresorhus"
 			}
 		},
-		"node_modules/sucrase": {
-			"version": "3.35.0",
-			"resolved": "https://registry.npmjs.org/sucrase/-/sucrase-3.35.0.tgz",
-			"integrity": "sha512-8EbVDiu9iN/nESwxeSxDKe0dunta1GOlHufmSSXxMD2z2/tMZpDMpvXQGsc+ajGo8y2uYUmixaSRUc/QPoQ0GA==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"@jridgewell/gen-mapping": "^0.3.2",
-				"commander": "^4.0.0",
-				"glob": "^10.3.10",
-				"lines-and-columns": "^1.1.6",
-				"mz": "^2.7.0",
-				"pirates": "^4.0.1",
-				"ts-interface-checker": "^0.1.9"
-			},
-			"bin": {
-				"sucrase": "bin/sucrase",
-				"sucrase-node": "bin/sucrase-node"
-			},
-			"engines": {
-				"node": ">=16 || 14 >=14.17"
-			}
-		},
 		"node_modules/supports-color": {
 			"version": "7.2.0",
 			"resolved": "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz",
@@ -5191,19 +5029,6 @@
 			},
 			"engines": {
 				"node": ">=8"
-			}
-		},
-		"node_modules/supports-preserve-symlinks-flag": {
-			"version": "1.0.0",
-			"resolved": "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz",
-			"integrity": "sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">= 0.4"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/ljharb"
 			}
 		},
 		"node_modules/svelte": {
@@ -5285,35 +5110,6 @@
 				}
 			}
 		},
-		"node_modules/svelte-eslint-parser/node_modules/postcss": {
-			"version": "8.5.4",
-			"resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.4.tgz",
-			"integrity": "sha512-QSa9EBe+uwlGTFmHsPKokv3B/oEMQZxfqW0QqNCyhpa6mB1afzulwn8hihglqAb2pOw+BJgNlmXQ8la2VeHB7w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/postcss/"
-				},
-				{
-					"type": "tidelift",
-					"url": "https://tidelift.com/funding/github/npm/postcss"
-				},
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/ai"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"nanoid": "^3.3.11",
-				"picocolors": "^1.1.1",
-				"source-map-js": "^1.2.1"
-			},
-			"engines": {
-				"node": "^10 || ^12 || >=14"
-			}
-		},
 		"node_modules/svelte-eslint-parser/node_modules/postcss-selector-parser": {
 			"version": "7.1.0",
 			"resolved": "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-7.1.0.tgz",
@@ -5336,201 +5132,38 @@
 			"license": "MIT"
 		},
 		"node_modules/tailwindcss": {
-			"version": "3.4.1",
-			"resolved": "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.1.tgz",
-			"integrity": "sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==",
+			"version": "4.1.8",
+			"resolved": "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.8.tgz",
+			"integrity": "sha512-kjeW8gjdxasbmFKpVGrGd5T4i40mV5J2Rasw48QARfYeQ8YS9x02ON9SFWax3Qf616rt4Cp3nVNIj6Hd1mP3og==",
+			"dev": true,
+			"license": "MIT"
+		},
+		"node_modules/tapable": {
+			"version": "2.2.2",
+			"resolved": "https://registry.npmjs.org/tapable/-/tapable-2.2.2.tgz",
+			"integrity": "sha512-Re10+NauLTMCudc7T5WLFLAwDhQ0JWdrMK+9B2M8zR5hRExKmsRDCBA7/aV/pNJFltmBFO5BAMlQFi/vq3nKOg==",
 			"dev": true,
 			"license": "MIT",
-			"dependencies": {
-				"@alloc/quick-lru": "^5.2.0",
-				"arg": "^5.0.2",
-				"chokidar": "^3.5.3",
-				"didyoumean": "^1.2.2",
-				"dlv": "^1.1.3",
-				"fast-glob": "^3.3.0",
-				"glob-parent": "^6.0.2",
-				"is-glob": "^4.0.3",
-				"jiti": "^1.19.1",
-				"lilconfig": "^2.1.0",
-				"micromatch": "^4.0.5",
-				"normalize-path": "^3.0.0",
-				"object-hash": "^3.0.0",
-				"picocolors": "^1.0.0",
-				"postcss": "^8.4.23",
-				"postcss-import": "^15.1.0",
-				"postcss-js": "^4.0.1",
-				"postcss-load-config": "^4.0.1",
-				"postcss-nested": "^6.0.1",
-				"postcss-selector-parser": "^6.0.11",
-				"resolve": "^1.22.2",
-				"sucrase": "^3.32.0"
-			},
-			"bin": {
-				"tailwind": "lib/cli.js",
-				"tailwindcss": "lib/cli.js"
-			},
 			"engines": {
-				"node": ">=14.0.0"
+				"node": ">=6"
 			}
 		},
-		"node_modules/tailwindcss/node_modules/chokidar": {
-			"version": "3.6.0",
-			"resolved": "https://registry.npmjs.org/chokidar/-/chokidar-3.6.0.tgz",
-			"integrity": "sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"anymatch": "~3.1.2",
-				"braces": "~3.0.2",
-				"glob-parent": "~5.1.2",
-				"is-binary-path": "~2.1.0",
-				"is-glob": "~4.0.1",
-				"normalize-path": "~3.0.0",
-				"readdirp": "~3.6.0"
-			},
-			"engines": {
-				"node": ">= 8.10.0"
-			},
-			"funding": {
-				"url": "https://paulmillr.com/funding/"
-			},
-			"optionalDependencies": {
-				"fsevents": "~2.3.2"
-			}
-		},
-		"node_modules/tailwindcss/node_modules/chokidar/node_modules/glob-parent": {
-			"version": "5.1.2",
-			"resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
-			"integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
+		"node_modules/tar": {
+			"version": "7.4.3",
+			"resolved": "https://registry.npmjs.org/tar/-/tar-7.4.3.tgz",
+			"integrity": "sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==",
 			"dev": true,
 			"license": "ISC",
 			"dependencies": {
-				"is-glob": "^4.0.1"
+				"@isaacs/fs-minipass": "^4.0.0",
+				"chownr": "^3.0.0",
+				"minipass": "^7.1.2",
+				"minizlib": "^3.0.1",
+				"mkdirp": "^3.0.1",
+				"yallist": "^5.0.0"
 			},
 			"engines": {
-				"node": ">= 6"
-			}
-		},
-		"node_modules/tailwindcss/node_modules/jiti": {
-			"version": "1.21.7",
-			"resolved": "https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz",
-			"integrity": "sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==",
-			"dev": true,
-			"license": "MIT",
-			"bin": {
-				"jiti": "bin/jiti.js"
-			}
-		},
-		"node_modules/tailwindcss/node_modules/picomatch": {
-			"version": "2.3.1",
-			"resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
-			"integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">=8.6"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/jonschlinkert"
-			}
-		},
-		"node_modules/tailwindcss/node_modules/postcss-load-config": {
-			"version": "4.0.2",
-			"resolved": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-4.0.2.tgz",
-			"integrity": "sha512-bSVhyJGL00wMVoPUzAVAnbEoWyqRxkjv64tUl427SKnPrENtq6hJwUojroMz2VB+Q1edmi4IfrAPpami5VVgMQ==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/postcss/"
-				},
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/ai"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"lilconfig": "^3.0.0",
-				"yaml": "^2.3.4"
-			},
-			"engines": {
-				"node": ">= 14"
-			},
-			"peerDependencies": {
-				"postcss": ">=8.0.9",
-				"ts-node": ">=9.0.0"
-			},
-			"peerDependenciesMeta": {
-				"postcss": {
-					"optional": true
-				},
-				"ts-node": {
-					"optional": true
-				}
-			}
-		},
-		"node_modules/tailwindcss/node_modules/postcss-load-config/node_modules/lilconfig": {
-			"version": "3.1.3",
-			"resolved": "https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.3.tgz",
-			"integrity": "sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">=14"
-			},
-			"funding": {
-				"url": "https://github.com/sponsors/antonk52"
-			}
-		},
-		"node_modules/tailwindcss/node_modules/postcss-selector-parser": {
-			"version": "6.1.2",
-			"resolved": "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz",
-			"integrity": "sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"cssesc": "^3.0.0",
-				"util-deprecate": "^1.0.2"
-			},
-			"engines": {
-				"node": ">=4"
-			}
-		},
-		"node_modules/tailwindcss/node_modules/readdirp": {
-			"version": "3.6.0",
-			"resolved": "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz",
-			"integrity": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"picomatch": "^2.2.1"
-			},
-			"engines": {
-				"node": ">=8.10.0"
-			}
-		},
-		"node_modules/thenify": {
-			"version": "3.3.1",
-			"resolved": "https://registry.npmjs.org/thenify/-/thenify-3.3.1.tgz",
-			"integrity": "sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"any-promise": "^1.0.0"
-			}
-		},
-		"node_modules/thenify-all": {
-			"version": "1.6.0",
-			"resolved": "https://registry.npmjs.org/thenify-all/-/thenify-all-1.6.0.tgz",
-			"integrity": "sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"thenify": ">= 3.1.0 < 4"
-			},
-			"engines": {
-				"node": ">=0.8"
+				"node": ">=18"
 			}
 		},
 		"node_modules/tinybench": {
@@ -5675,13 +5308,6 @@
 			"peerDependencies": {
 				"typescript": ">=4.8.4"
 			}
-		},
-		"node_modules/ts-interface-checker": {
-			"version": "0.1.13",
-			"resolved": "https://registry.npmjs.org/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz",
-			"integrity": "sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==",
-			"dev": true,
-			"license": "Apache-2.0"
 		},
 		"node_modules/type-check": {
 			"version": "0.4.0",
@@ -5879,35 +5505,6 @@
 				"url": "https://opencollective.com/vitest"
 			}
 		},
-		"node_modules/vite/node_modules/postcss": {
-			"version": "8.5.4",
-			"resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.4.tgz",
-			"integrity": "sha512-QSa9EBe+uwlGTFmHsPKokv3B/oEMQZxfqW0QqNCyhpa6mB1afzulwn8hihglqAb2pOw+BJgNlmXQ8la2VeHB7w==",
-			"dev": true,
-			"funding": [
-				{
-					"type": "opencollective",
-					"url": "https://opencollective.com/postcss/"
-				},
-				{
-					"type": "tidelift",
-					"url": "https://tidelift.com/funding/github/npm/postcss"
-				},
-				{
-					"type": "github",
-					"url": "https://github.com/sponsors/ai"
-				}
-			],
-			"license": "MIT",
-			"dependencies": {
-				"nanoid": "^3.3.11",
-				"picocolors": "^1.1.1",
-				"source-map-js": "^1.2.1"
-			},
-			"engines": {
-				"node": "^10 || ^12 || >=14"
-			}
-		},
 		"node_modules/vitefu": {
 			"version": "1.0.6",
 			"resolved": "https://registry.npmjs.org/vitefu/-/vitefu-1.0.6.tgz",
@@ -6103,91 +5700,6 @@
 				"node": ">=0.10.0"
 			}
 		},
-		"node_modules/wrap-ansi": {
-			"version": "8.1.0",
-			"resolved": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-8.1.0.tgz",
-			"integrity": "sha512-si7QWI6zUMq56bESFvagtmzMdGOtoxfR+Sez11Mobfc7tm+VkUckk9bW2UeffTGVUbOksxmSw0AA2gs8g71NCQ==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"ansi-styles": "^6.1.0",
-				"string-width": "^5.0.1",
-				"strip-ansi": "^7.0.1"
-			},
-			"engines": {
-				"node": ">=12"
-			},
-			"funding": {
-				"url": "https://github.com/chalk/wrap-ansi?sponsor=1"
-			}
-		},
-		"node_modules/wrap-ansi-cjs": {
-			"name": "wrap-ansi",
-			"version": "7.0.0",
-			"resolved": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz",
-			"integrity": "sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"ansi-styles": "^4.0.0",
-				"string-width": "^4.1.0",
-				"strip-ansi": "^6.0.0"
-			},
-			"engines": {
-				"node": ">=10"
-			},
-			"funding": {
-				"url": "https://github.com/chalk/wrap-ansi?sponsor=1"
-			}
-		},
-		"node_modules/wrap-ansi-cjs/node_modules/emoji-regex": {
-			"version": "8.0.0",
-			"resolved": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",
-			"integrity": "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==",
-			"dev": true,
-			"license": "MIT"
-		},
-		"node_modules/wrap-ansi-cjs/node_modules/string-width": {
-			"version": "4.2.3",
-			"resolved": "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz",
-			"integrity": "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"emoji-regex": "^8.0.0",
-				"is-fullwidth-code-point": "^3.0.0",
-				"strip-ansi": "^6.0.1"
-			},
-			"engines": {
-				"node": ">=8"
-			}
-		},
-		"node_modules/wrap-ansi-cjs/node_modules/strip-ansi": {
-			"version": "6.0.1",
-			"resolved": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz",
-			"integrity": "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==",
-			"dev": true,
-			"license": "MIT",
-			"dependencies": {
-				"ansi-regex": "^5.0.1"
-			},
-			"engines": {
-				"node": ">=8"
-			}
-		},
-		"node_modules/wrap-ansi/node_modules/ansi-styles": {
-			"version": "6.2.1",
-			"resolved": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.1.tgz",
-			"integrity": "sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==",
-			"dev": true,
-			"license": "MIT",
-			"engines": {
-				"node": ">=12"
-			},
-			"funding": {
-				"url": "https://github.com/chalk/ansi-styles?sponsor=1"
-			}
-		},
 		"node_modules/ws": {
 			"version": "8.18.2",
 			"resolved": "https://registry.npmjs.org/ws/-/ws-8.18.2.tgz",
@@ -6227,12 +5739,24 @@
 			"dev": true,
 			"license": "MIT"
 		},
+		"node_modules/yallist": {
+			"version": "5.0.0",
+			"resolved": "https://registry.npmjs.org/yallist/-/yallist-5.0.0.tgz",
+			"integrity": "sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==",
+			"dev": true,
+			"license": "BlueOak-1.0.0",
+			"engines": {
+				"node": ">=18"
+			}
+		},
 		"node_modules/yaml": {
 			"version": "2.8.0",
 			"resolved": "https://registry.npmjs.org/yaml/-/yaml-2.8.0.tgz",
 			"integrity": "sha512-4lLa/EcQCB0cJkyts+FpIRx5G/llPxfP6VQU5KByHEhLxY3IJCH0f0Hy1MHI8sClTvsIb8qwRJ6R/ZdlDJ/leQ==",
 			"dev": true,
 			"license": "ISC",
+			"optional": true,
+			"peer": true,
 			"bin": {
 				"yaml": "bin.mjs"
 			},
@@ -6262,3 +5786,1745 @@
 		}
 	}
 }
+===== SLUTT ./package-lock.json =====
+
+===== START ./package.json =====
+{
+	"name": "strategy-safari",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"test:unit": "vitest",
+		"test": "npm run test:unit -- --run"
+	},
+	"devDependencies": {
+		"@eslint/compat": "^1.2.5",
+		"@eslint/js": "^9.18.0",
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/kit": "^2.16.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"@tailwindcss/forms": "^0.5.10",
+		"@tailwindcss/postcss": "^4.1.8",
+		"@tailwindcss/typography": "^0.5.16",
+		"@tailwindcss/vite": "^4.0.0",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/svelte": "^5.2.4",
+		"autoprefixer": "^10.4.21",
+		"eslint": "^9.18.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-svelte": "^3.0.0",
+		"globals": "^16.0.0",
+		"jsdom": "^26.0.0",
+		"postcss": "^8.5.4",
+		"prettier": "^3.4.2",
+		"prettier-plugin-svelte": "^3.3.3",
+		"prettier-plugin-tailwindcss": "^0.6.11",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"tailwindcss": "^4.1.8",
+		"typescript": "^5.0.0",
+		"typescript-eslint": "^8.20.0",
+		"vite": "^6.2.6",
+		"vitest": "^3.0.0"
+	},
+	"dependencies": {
+		"chart.js": "^4.4.9"
+	}
+}
+===== SLUTT ./package.json =====
+
+===== START ./static/data/ps.json =====
+[
+    {
+      "id": "plan",
+      "label": "Plan",
+      "description": "Strategy as a conscious, structured plan to achieve goals. Deliberate and analytical in nature.",
+      "color": "#3366cc"
+    },
+    {
+      "id": "pattern",
+      "label": "Pattern",
+      "description": "Strategy as a pattern in a stream of actions — not necessarily intended, but visible in hindsight.",
+      "color": "#dc3912"
+    },
+    {
+      "id": "position",
+      "label": "Position",
+      "description": "Strategy as the place or niche the organization occupies in the external environment.",
+      "color": "#ff9900"
+    },
+    {
+      "id": "perspective",
+      "label": "Perspective",
+      "description": "Strategy as a deeply embedded worldview or shared mindset that shapes actions.",
+      "color": "#109618"
+    },
+    {
+      "id": "ploy",
+      "label": "Ploy",
+      "description": "Strategy as a specific maneuver or tactical action to outwit competitors.",
+      "color": "#990099"
+    }
+  ]
+  ===== SLUTT ./static/data/ps.json =====
+
+===== START ./static/data/radarData.json =====
+[
+  {
+    "school": "Design School",
+    "group": "Prescriptive",
+    "values": [5, 2, 3, 2, 1]
+  },
+  {
+    "school": "Planning School", 
+    "group": "Prescriptive",
+    "values": [5, 1, 3, 2, 2]
+  },
+  {
+    "school": "Positioning School",
+    "group": "Prescriptive", 
+    "values": [4, 2, 5, 2, 4]
+  },
+  {
+    "school": "Entrepreneurial School",
+    "group": "Descriptive",
+    "values": [3, 3, 3, 5, 4]
+  },
+  {
+    "school": "Cognitive School",
+    "group": "Descriptive",
+    "values": [2, 3, 2, 5, 1]
+  },
+  {
+    "school": "Learning School",
+    "group": "Descriptive", 
+    "values": [2, 5, 3, 4, 2]
+  },
+  {
+    "school": "Power School",
+    "group": "Descriptive",
+    "values": [3, 4, 4, 3, 5]
+  },
+  {
+    "school": "Cultural School",
+    "group": "Descriptive",
+    "values": [2, 5, 3, 5, 1]
+  },
+  {
+    "school": "Environmental School", 
+    "group": "Descriptive",
+    "values": [1, 4, 4, 2, 2]
+  },
+  {
+    "school": "Configuration School",
+    "group": "Descriptive",
+    "values": [4, 4, 4, 4, 3]
+  }
+]===== SLUTT ./static/data/radarData.json =====
+
+===== START ./static/data/schools.json =====
+[
+    {
+      "id": "design",
+      "name": "Design School",
+      "description": "Strategy as a process of conception — clear, deliberate design through internal fit.",
+      "group": "Prescriptive"
+    },
+    {
+      "id": "planning",
+      "name": "Planning School",
+      "description": "Strategy as a formal process — rigorous steps from analysis to implementation.",
+      "group": "Prescriptive"
+    },
+    {
+      "id": "positioning",
+      "name": "Positioning School",
+      "description": "Strategy as analytical positioning in the marketplace based on economic forces.",
+      "group": "Prescriptive"
+    },
+    {
+      "id": "entrepreneurial",
+      "name": "Entrepreneurial School",
+      "description": "Strategy as vision — the leader's intuitive sense shaping direction.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "cognitive",
+      "name": "Cognitive School",
+      "description": "Strategy as a mental process — shaped by how people perceive and process information.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "learning",
+      "name": "Learning School",
+      "description": "Strategy as emergent — evolving through learning and adaptation.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "power",
+      "name": "Power School",
+      "description": "Strategy as negotiation — the result of political and power-based games.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "cultural",
+      "name": "Cultural School",
+      "description": "Strategy as a collective process — rooted in shared values and culture.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "environmental",
+      "name": "Environmental School",
+      "description": "Strategy as a reactive process — shaped by external forces and the environment.",
+      "group": "Descriptive"
+    },
+    {
+      "id": "configuration",
+      "name": "Configuration School",
+      "description": "Strategy as transformation — matching structure and context through periodic change.",
+      "group": "Descriptive"
+    }
+  ]===== SLUTT ./static/data/schools.json =====
+
+===== START ./tsconfig.json =====
+{
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"moduleResolution": "bundler"
+	}
+	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
+	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
+	//
+	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
+	// from the referenced tsconfig.json - TypeScript does not merge them in
+}
+===== SLUTT ./tsconfig.json =====
+
+===== START ./.svelte-kit/generated/server/internal.js =====
+
+import root from '../root.js';
+import { set_building, set_prerendering } from '__sveltekit/environment';
+import { set_assets } from '__sveltekit/paths';
+import { set_manifest, set_read_implementation } from '__sveltekit/server';
+import { set_private_env, set_public_env, set_safe_public_env } from '../../../node_modules/@sveltejs/kit/src/runtime/shared-server.js';
+
+export const options = {
+	app_template_contains_nonce: false,
+	csp: {"mode":"auto","directives":{"upgrade-insecure-requests":false,"block-all-mixed-content":false},"reportOnly":{"upgrade-insecure-requests":false,"block-all-mixed-content":false}},
+	csrf_check_origin: true,
+	embedded: false,
+	env_public_prefix: 'PUBLIC_',
+	env_private_prefix: '',
+	hash_routing: false,
+	hooks: null, // added lazily, via `get_hooks`
+	preload_strategy: "modulepreload",
+	root,
+	service_worker: false,
+	templates: {
+		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<link rel=\"icon\" href=\"" + assets + "/favicon.png\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t\t" + head + "\n\t</head>\n\t<body data-sveltekit-preload-data=\"hover\">\n\t\t<div style=\"display: contents\">" + body + "</div>\n\t</body>\n</html>\n",
+		error: ({ status, message }) => "<!doctype html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<title>" + message + "</title>\n\n\t\t<style>\n\t\t\tbody {\n\t\t\t\t--bg: white;\n\t\t\t\t--fg: #222;\n\t\t\t\t--divider: #ccc;\n\t\t\t\tbackground: var(--bg);\n\t\t\t\tcolor: var(--fg);\n\t\t\t\tfont-family:\n\t\t\t\t\tsystem-ui,\n\t\t\t\t\t-apple-system,\n\t\t\t\t\tBlinkMacSystemFont,\n\t\t\t\t\t'Segoe UI',\n\t\t\t\t\tRoboto,\n\t\t\t\t\tOxygen,\n\t\t\t\t\tUbuntu,\n\t\t\t\t\tCantarell,\n\t\t\t\t\t'Open Sans',\n\t\t\t\t\t'Helvetica Neue',\n\t\t\t\t\tsans-serif;\n\t\t\t\tdisplay: flex;\n\t\t\t\talign-items: center;\n\t\t\t\tjustify-content: center;\n\t\t\t\theight: 100vh;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\n\t\t\t.error {\n\t\t\t\tdisplay: flex;\n\t\t\t\talign-items: center;\n\t\t\t\tmax-width: 32rem;\n\t\t\t\tmargin: 0 1rem;\n\t\t\t}\n\n\t\t\t.status {\n\t\t\t\tfont-weight: 200;\n\t\t\t\tfont-size: 3rem;\n\t\t\t\tline-height: 1;\n\t\t\t\tposition: relative;\n\t\t\t\ttop: -0.05rem;\n\t\t\t}\n\n\t\t\t.message {\n\t\t\t\tborder-left: 1px solid var(--divider);\n\t\t\t\tpadding: 0 0 0 1rem;\n\t\t\t\tmargin: 0 0 0 1rem;\n\t\t\t\tmin-height: 2.5rem;\n\t\t\t\tdisplay: flex;\n\t\t\t\talign-items: center;\n\t\t\t}\n\n\t\t\t.message h1 {\n\t\t\t\tfont-weight: 400;\n\t\t\t\tfont-size: 1em;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\n\t\t\t@media (prefers-color-scheme: dark) {\n\t\t\t\tbody {\n\t\t\t\t\t--bg: #222;\n\t\t\t\t\t--fg: #ddd;\n\t\t\t\t\t--divider: #666;\n\t\t\t\t}\n\t\t\t}\n\t\t</style>\n\t</head>\n\t<body>\n\t\t<div class=\"error\">\n\t\t\t<span class=\"status\">" + status + "</span>\n\t\t\t<div class=\"message\">\n\t\t\t\t<h1>" + message + "</h1>\n\t\t\t</div>\n\t\t</div>\n\t</body>\n</html>\n"
+	},
+	version_hash: "1tn3nat"
+};
+
+export async function get_hooks() {
+	let handle;
+	let handleFetch;
+	let handleError;
+	let init;
+	
+
+	let reroute;
+	let transport;
+	
+
+	return {
+		handle,
+		handleFetch,
+		handleError,
+		init,
+		reroute,
+		transport
+	};
+}
+
+export { set_assets, set_building, set_manifest, set_prerendering, set_private_env, set_public_env, set_read_implementation, set_safe_public_env };
+===== SLUTT ./.svelte-kit/generated/server/internal.js =====
+
+===== START ./.svelte-kit/generated/root.js =====
+import { asClassComponent } from 'svelte/legacy';
+import Root from './root.svelte';
+export default asClassComponent(Root);===== SLUTT ./.svelte-kit/generated/root.js =====
+
+===== START ./.svelte-kit/generated/root.svelte =====
+<!-- This file is generated by @sveltejs/kit — do not edit it! -->
+<svelte:options runes={true} />
+<script>
+	import { setContext, onMount, tick } from 'svelte';
+	import { browser } from '$app/environment';
+
+	// stores
+	let { stores, page, constructors, components = [], form, data_0 = null, data_1 = null } = $props();
+
+	if (!browser) {
+		setContext('__svelte__', stores);
+	}
+
+	if (browser) {
+		$effect.pre(() => stores.page.set(page));
+	} else {
+		stores.page.set(page);
+	}
+	$effect(() => {
+		stores;page;constructors;components;form;data_0;data_1;
+		stores.page.notify();
+	});
+
+	let mounted = $state(false);
+	let navigated = $state(false);
+	let title = $state(null);
+
+	onMount(() => {
+		const unsubscribe = stores.page.subscribe(() => {
+			if (mounted) {
+				navigated = true;
+				tick().then(() => {
+					title = document.title || 'untitled page';
+				});
+			}
+		});
+
+		mounted = true;
+		return unsubscribe;
+	});
+
+	const Pyramid_1=$derived(constructors[1])
+</script>
+
+{#if constructors[1]}
+	{@const Pyramid_0 = constructors[0]}
+							<!-- svelte-ignore binding_property_non_reactive -->
+							<Pyramid_0 bind:this={components[0]} data={data_0} {form}>
+								<!-- svelte-ignore binding_property_non_reactive -->
+										<Pyramid_1 bind:this={components[1]} data={data_1} {form} />
+							</Pyramid_0>
+	
+{:else}
+	{@const Pyramid_0 = constructors[0]}
+	<!-- svelte-ignore binding_property_non_reactive -->
+	<Pyramid_0 bind:this={components[0]} data={data_0} {form} />
+	
+{/if}
+
+{#if mounted}
+	<div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0; top: 0; clip: rect(0 0 0 0); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px">
+		{#if navigated}
+			{title}
+		{/if}
+	</div>
+{/if}===== SLUTT ./.svelte-kit/generated/root.svelte =====
+
+===== START ./.svelte-kit/generated/client/nodes/2.js =====
+export { default as component } from "../../../../src/routes/+page.svelte";===== SLUTT ./.svelte-kit/generated/client/nodes/2.js =====
+
+===== START ./.svelte-kit/generated/client/nodes/6.js =====
+export { default as component } from "../../../../src/routes/schools/+page.svelte";===== SLUTT ./.svelte-kit/generated/client/nodes/6.js =====
+
+===== START ./.svelte-kit/generated/client/nodes/3.js =====
+export { default as component } from "../../../../src/routes/about/+page.svelte";===== SLUTT ./.svelte-kit/generated/client/nodes/3.js =====
+
+===== START ./.svelte-kit/generated/client/nodes/4.js =====
+export { default as component } from "../../../../src/routes/ps/+page.svelte";===== SLUTT ./.svelte-kit/generated/client/nodes/4.js =====
+
+===== START ./.svelte-kit/generated/client/nodes/0.js =====
+export { default as component } from "../../../../src/routes/+layout.svelte";===== SLUTT ./.svelte-kit/generated/client/nodes/0.js =====
+
+===== START ./.svelte-kit/generated/client/nodes/1.js =====
+export { default as component } from "../../../../node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte";===== SLUTT ./.svelte-kit/generated/client/nodes/1.js =====
+
+===== START ./.svelte-kit/generated/client/nodes/5.js =====
+import * as universal from "../../../../src/routes/radar/+page.ts";
+export { universal };
+export { default as component } from "../../../../src/routes/radar/+page.svelte";===== SLUTT ./.svelte-kit/generated/client/nodes/5.js =====
+
+===== START ./.svelte-kit/generated/client/matchers.js =====
+export const matchers = {};===== SLUTT ./.svelte-kit/generated/client/matchers.js =====
+
+===== START ./.svelte-kit/generated/client/app.js =====
+export { matchers } from './matchers.js';
+
+export const nodes = [
+	() => import('./nodes/0'),
+	() => import('./nodes/1'),
+	() => import('./nodes/2'),
+	() => import('./nodes/3'),
+	() => import('./nodes/4'),
+	() => import('./nodes/5'),
+	() => import('./nodes/6')
+];
+
+export const server_loads = [];
+
+export const dictionary = {
+		"/": [2],
+		"/about": [3],
+		"/ps": [4],
+		"/radar": [5],
+		"/schools": [6]
+	};
+
+export const hooks = {
+	handleError: (({ error }) => { console.error(error) }),
+	
+	reroute: (() => {}),
+	transport: {}
+};
+
+export const decoders = Object.fromEntries(Object.entries(hooks.transport).map(([k, v]) => [k, v.decode]));
+
+export const hash = false;
+
+export const decode = (type, value) => decoders[type](value);
+
+export { default as root } from '../root.js';===== SLUTT ./.svelte-kit/generated/client/app.js =====
+
+===== START ./.svelte-kit/non-ambient.d.ts =====
+
+// this file is generated — do not edit it
+
+
+declare module "svelte/elements" {
+	export interface HTMLAttributes<T> {
+		'data-sveltekit-keepfocus'?: true | '' | 'off' | undefined | null;
+		'data-sveltekit-noscroll'?: true | '' | 'off' | undefined | null;
+		'data-sveltekit-preload-code'?:
+			| true
+			| ''
+			| 'eager'
+			| 'viewport'
+			| 'hover'
+			| 'tap'
+			| 'off'
+			| undefined
+			| null;
+		'data-sveltekit-preload-data'?: true | '' | 'hover' | 'tap' | 'off' | undefined | null;
+		'data-sveltekit-reload'?: true | '' | 'off' | undefined | null;
+		'data-sveltekit-replacestate'?: true | '' | 'off' | undefined | null;
+	}
+}
+
+export {};
+===== SLUTT ./.svelte-kit/non-ambient.d.ts =====
+
+===== START ./.svelte-kit/types/route_meta_data.json =====
+{
+	"/": [],
+	"/about": [],
+	"/ps": [],
+	"/radar": [
+		"src/routes/radar/+page.ts"
+	],
+	"/schools": []
+}===== SLUTT ./.svelte-kit/types/route_meta_data.json =====
+
+===== START ./.svelte-kit/types/src/routes/about/$types.d.ts =====
+import type * as Kit from '@sveltejs/kit';
+
+type Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
+// @ts-ignore
+type MatcherParam<M> = M extends (param : string) => param is infer U ? U extends string ? U : string : string;
+type RouteParams = {  };
+type RouteId = '/about';
+type MaybeWithVoid<T> = {} extends T ? T | void : T;
+export type RequiredKeys<T> = { [K in keyof T]-?: {} extends { [P in K]: T[K] } ? never : K; }[keyof T];
+type OutputDataShape<T> = MaybeWithVoid<Omit<App.PageData, RequiredKeys<T>> & Partial<Pick<App.PageData, keyof T & keyof App.PageData>> & Record<string, any>>
+type EnsureDefined<T> = T extends null | undefined ? {} : T;
+type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends U ? keyof U : never> = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
+export type Snapshot<T = any> = Kit.Snapshot<T>;
+type PageParentData = EnsureDefined<import('../$types.js').LayoutData>;
+
+export type PageServerData = null;
+export type PageData = Expand<PageParentData>;
+export type PageProps = { data: PageData }===== SLUTT ./.svelte-kit/types/src/routes/about/$types.d.ts =====
+
+===== START ./.svelte-kit/types/src/routes/ps/$types.d.ts =====
+import type * as Kit from '@sveltejs/kit';
+
+type Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
+// @ts-ignore
+type MatcherParam<M> = M extends (param : string) => param is infer U ? U extends string ? U : string : string;
+type RouteParams = {  };
+type RouteId = '/ps';
+type MaybeWithVoid<T> = {} extends T ? T | void : T;
+export type RequiredKeys<T> = { [K in keyof T]-?: {} extends { [P in K]: T[K] } ? never : K; }[keyof T];
+type OutputDataShape<T> = MaybeWithVoid<Omit<App.PageData, RequiredKeys<T>> & Partial<Pick<App.PageData, keyof T & keyof App.PageData>> & Record<string, any>>
+type EnsureDefined<T> = T extends null | undefined ? {} : T;
+type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends U ? keyof U : never> = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
+export type Snapshot<T = any> = Kit.Snapshot<T>;
+type PageParentData = EnsureDefined<import('../$types.js').LayoutData>;
+
+export type PageServerData = null;
+export type PageData = Expand<PageParentData>;
+export type PageProps = { data: PageData }===== SLUTT ./.svelte-kit/types/src/routes/ps/$types.d.ts =====
+
+===== START ./.svelte-kit/types/src/routes/radar/proxy+page.ts =====
+// @ts-nocheck
+// File: src/routes/radar/+page.ts
+import type { PageLoad } from './$types';
+
+export const load = async ({ fetch }: Parameters<PageLoad>[0]) => {
+	const res = await fetch('/data/radarData.json');
+
+	if (!res.ok) {
+		throw new Error('Kunne ikke hente radarData.json');
+	}
+
+	const radarData = await res.json();
+	return { radarData };
+};
+===== SLUTT ./.svelte-kit/types/src/routes/radar/proxy+page.ts =====
+
+===== START ./.svelte-kit/types/src/routes/radar/$types.d.ts =====
+import type * as Kit from '@sveltejs/kit';
+
+type Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
+// @ts-ignore
+type MatcherParam<M> = M extends (param : string) => param is infer U ? U extends string ? U : string : string;
+type RouteParams = {  };
+type RouteId = '/radar';
+type MaybeWithVoid<T> = {} extends T ? T | void : T;
+export type RequiredKeys<T> = { [K in keyof T]-?: {} extends { [P in K]: T[K] } ? never : K; }[keyof T];
+type OutputDataShape<T> = MaybeWithVoid<Omit<App.PageData, RequiredKeys<T>> & Partial<Pick<App.PageData, keyof T & keyof App.PageData>> & Record<string, any>>
+type EnsureDefined<T> = T extends null | undefined ? {} : T;
+type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends U ? keyof U : never> = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
+export type Snapshot<T = any> = Kit.Snapshot<T>;
+type PageParentData = EnsureDefined<import('../$types.js').LayoutData>;
+
+export type PageServerData = null;
+export type PageLoad<OutputData extends OutputDataShape<PageParentData> = OutputDataShape<PageParentData>> = Kit.Load<RouteParams, PageServerData, PageParentData, OutputData, RouteId>;
+export type PageLoadEvent = Parameters<PageLoad>[0];
+export type PageData = Expand<Omit<PageParentData, keyof Kit.LoadProperties<Awaited<ReturnType<typeof import('./proxy+page.js').load>>>> & OptionalUnion<EnsureDefined<Kit.LoadProperties<Awaited<ReturnType<typeof import('./proxy+page.js').load>>>>>>;
+export type PageProps = { data: PageData }===== SLUTT ./.svelte-kit/types/src/routes/radar/$types.d.ts =====
+
+===== START ./.svelte-kit/types/src/routes/schools/$types.d.ts =====
+import type * as Kit from '@sveltejs/kit';
+
+type Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
+// @ts-ignore
+type MatcherParam<M> = M extends (param : string) => param is infer U ? U extends string ? U : string : string;
+type RouteParams = {  };
+type RouteId = '/schools';
+type MaybeWithVoid<T> = {} extends T ? T | void : T;
+export type RequiredKeys<T> = { [K in keyof T]-?: {} extends { [P in K]: T[K] } ? never : K; }[keyof T];
+type OutputDataShape<T> = MaybeWithVoid<Omit<App.PageData, RequiredKeys<T>> & Partial<Pick<App.PageData, keyof T & keyof App.PageData>> & Record<string, any>>
+type EnsureDefined<T> = T extends null | undefined ? {} : T;
+type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends U ? keyof U : never> = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
+export type Snapshot<T = any> = Kit.Snapshot<T>;
+type PageParentData = EnsureDefined<import('../$types.js').LayoutData>;
+
+export type PageServerData = null;
+export type PageData = Expand<PageParentData>;
+export type PageProps = { data: PageData }===== SLUTT ./.svelte-kit/types/src/routes/schools/$types.d.ts =====
+
+===== START ./.svelte-kit/types/src/routes/$types.d.ts =====
+import type * as Kit from '@sveltejs/kit';
+
+type Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
+// @ts-ignore
+type MatcherParam<M> = M extends (param : string) => param is infer U ? U extends string ? U : string : string;
+type RouteParams = {  };
+type RouteId = '/';
+type MaybeWithVoid<T> = {} extends T ? T | void : T;
+export type RequiredKeys<T> = { [K in keyof T]-?: {} extends { [P in K]: T[K] } ? never : K; }[keyof T];
+type OutputDataShape<T> = MaybeWithVoid<Omit<App.PageData, RequiredKeys<T>> & Partial<Pick<App.PageData, keyof T & keyof App.PageData>> & Record<string, any>>
+type EnsureDefined<T> = T extends null | undefined ? {} : T;
+type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends U ? keyof U : never> = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
+export type Snapshot<T = any> = Kit.Snapshot<T>;
+type PageParentData = EnsureDefined<LayoutData>;
+type LayoutRouteId = RouteId | "/" | "/about" | "/ps" | "/radar" | "/schools" | null
+type LayoutParams = RouteParams & {  }
+type LayoutParentData = EnsureDefined<{}>;
+
+export type PageServerData = null;
+export type PageData = Expand<PageParentData>;
+export type PageProps = { data: PageData }
+export type LayoutServerData = null;
+export type LayoutData = Expand<LayoutParentData>;
+export type LayoutProps = { data: LayoutData; children: import("svelte").Snippet }===== SLUTT ./.svelte-kit/types/src/routes/$types.d.ts =====
+
+===== START ./.svelte-kit/ambient.d.ts =====
+
+// this file is generated — do not edit it
+
+
+/// <reference types="@sveltejs/kit" />
+
+/**
+ * Environment variables [loaded by Vite](https://vitejs.dev/guide/env-and-mode.html#env-files) from `.env` files and `process.env`. Like [`$env/dynamic/private`](https://svelte.dev/docs/kit/$env-dynamic-private), this module cannot be imported into client-side code. This module only includes variables that _do not_ begin with [`config.kit.env.publicPrefix`](https://svelte.dev/docs/kit/configuration#env) _and do_ start with [`config.kit.env.privatePrefix`](https://svelte.dev/docs/kit/configuration#env) (if configured).
+ * 
+ * _Unlike_ [`$env/dynamic/private`](https://svelte.dev/docs/kit/$env-dynamic-private), the values exported from this module are statically injected into your bundle at build time, enabling optimisations like dead code elimination.
+ * 
+ * ```ts
+ * import { API_KEY } from '$env/static/private';
+ * ```
+ * 
+ * Note that all environment variables referenced in your code should be declared (for example in an `.env` file), even if they don't have a value until the app is deployed:
+ * 
+ * ```
+ * MY_FEATURE_FLAG=""
+ * ```
+ * 
+ * You can override `.env` values from the command line like so:
+ * 
+ * ```bash
+ * MY_FEATURE_FLAG="enabled" npm run dev
+ * ```
+ */
+declare module '$env/static/private' {
+	export const TERM_PROGRAM: string;
+	export const NODE: string;
+	export const INIT_CWD: string;
+	export const SHELL: string;
+	export const TERM: string;
+	export const HOMEBREW_REPOSITORY: string;
+	export const TMPDIR: string;
+	export const npm_config_global_prefix: string;
+	export const TERM_PROGRAM_VERSION: string;
+	export const COLOR: string;
+	export const TERM_SESSION_ID: string;
+	export const npm_config_noproxy: string;
+	export const npm_config_local_prefix: string;
+	export const USER: string;
+	export const npm_config_globalconfig: string;
+	export const SSH_AUTH_SOCK: string;
+	export const __CF_USER_TEXT_ENCODING: string;
+	export const npm_execpath: string;
+	export const PATH: string;
+	export const npm_package_json: string;
+	export const npm_config_engine_strict: string;
+	export const _: string;
+	export const npm_config_userconfig: string;
+	export const npm_config_init_module: string;
+	export const __CFBundleIdentifier: string;
+	export const npm_command: string;
+	export const PWD: string;
+	export const npm_lifecycle_event: string;
+	export const EDITOR: string;
+	export const npm_package_name: string;
+	export const npm_config_npm_version: string;
+	export const XPC_FLAGS: string;
+	export const npm_config_node_gyp: string;
+	export const npm_package_version: string;
+	export const XPC_SERVICE_NAME: string;
+	export const SHLVL: string;
+	export const HOME: string;
+	export const HOMEBREW_PREFIX: string;
+	export const npm_config_cache: string;
+	export const LOGNAME: string;
+	export const npm_lifecycle_script: string;
+	export const LC_CTYPE: string;
+	export const npm_config_user_agent: string;
+	export const INFOPATH: string;
+	export const HOMEBREW_CELLAR: string;
+	export const npm_node_execpath: string;
+	export const npm_config_prefix: string;
+	export const NODE_ENV: string;
+}
+
+/**
+ * Similar to [`$env/static/private`](https://svelte.dev/docs/kit/$env-static-private), except that it only includes environment variables that begin with [`config.kit.env.publicPrefix`](https://svelte.dev/docs/kit/configuration#env) (which defaults to `PUBLIC_`), and can therefore safely be exposed to client-side code.
+ * 
+ * Values are replaced statically at build time.
+ * 
+ * ```ts
+ * import { PUBLIC_BASE_URL } from '$env/static/public';
+ * ```
+ */
+declare module '$env/static/public' {
+	
+}
+
+/**
+ * This module provides access to runtime environment variables, as defined by the platform you're running on. For example if you're using [`adapter-node`](https://github.com/sveltejs/kit/tree/main/packages/adapter-node) (or running [`vite preview`](https://svelte.dev/docs/kit/cli)), this is equivalent to `process.env`. This module only includes variables that _do not_ begin with [`config.kit.env.publicPrefix`](https://svelte.dev/docs/kit/configuration#env) _and do_ start with [`config.kit.env.privatePrefix`](https://svelte.dev/docs/kit/configuration#env) (if configured).
+ * 
+ * This module cannot be imported into client-side code.
+ * 
+ * Dynamic environment variables cannot be used during prerendering.
+ * 
+ * ```ts
+ * import { env } from '$env/dynamic/private';
+ * console.log(env.DEPLOYMENT_SPECIFIC_VARIABLE);
+ * ```
+ * 
+ * > In `dev`, `$env/dynamic` always includes environment variables from `.env`. In `prod`, this behavior will depend on your adapter.
+ */
+declare module '$env/dynamic/private' {
+	export const env: {
+		TERM_PROGRAM: string;
+		NODE: string;
+		INIT_CWD: string;
+		SHELL: string;
+		TERM: string;
+		HOMEBREW_REPOSITORY: string;
+		TMPDIR: string;
+		npm_config_global_prefix: string;
+		TERM_PROGRAM_VERSION: string;
+		COLOR: string;
+		TERM_SESSION_ID: string;
+		npm_config_noproxy: string;
+		npm_config_local_prefix: string;
+		USER: string;
+		npm_config_globalconfig: string;
+		SSH_AUTH_SOCK: string;
+		__CF_USER_TEXT_ENCODING: string;
+		npm_execpath: string;
+		PATH: string;
+		npm_package_json: string;
+		npm_config_engine_strict: string;
+		_: string;
+		npm_config_userconfig: string;
+		npm_config_init_module: string;
+		__CFBundleIdentifier: string;
+		npm_command: string;
+		PWD: string;
+		npm_lifecycle_event: string;
+		EDITOR: string;
+		npm_package_name: string;
+		npm_config_npm_version: string;
+		XPC_FLAGS: string;
+		npm_config_node_gyp: string;
+		npm_package_version: string;
+		XPC_SERVICE_NAME: string;
+		SHLVL: string;
+		HOME: string;
+		HOMEBREW_PREFIX: string;
+		npm_config_cache: string;
+		LOGNAME: string;
+		npm_lifecycle_script: string;
+		LC_CTYPE: string;
+		npm_config_user_agent: string;
+		INFOPATH: string;
+		HOMEBREW_CELLAR: string;
+		npm_node_execpath: string;
+		npm_config_prefix: string;
+		NODE_ENV: string;
+		[key: `PUBLIC_${string}`]: undefined;
+		[key: `${string}`]: string | undefined;
+	}
+}
+
+/**
+ * Similar to [`$env/dynamic/private`](https://svelte.dev/docs/kit/$env-dynamic-private), but only includes variables that begin with [`config.kit.env.publicPrefix`](https://svelte.dev/docs/kit/configuration#env) (which defaults to `PUBLIC_`), and can therefore safely be exposed to client-side code.
+ * 
+ * Note that public dynamic environment variables must all be sent from the server to the client, causing larger network requests — when possible, use `$env/static/public` instead.
+ * 
+ * Dynamic environment variables cannot be used during prerendering.
+ * 
+ * ```ts
+ * import { env } from '$env/dynamic/public';
+ * console.log(env.PUBLIC_DEPLOYMENT_SPECIFIC_VARIABLE);
+ * ```
+ */
+declare module '$env/dynamic/public' {
+	export const env: {
+		[key: `PUBLIC_${string}`]: string | undefined;
+	}
+}
+===== SLUTT ./.svelte-kit/ambient.d.ts =====
+
+===== START ./.svelte-kit/tsconfig.json =====
+{
+	"compilerOptions": {
+		"paths": {
+			"$lib": [
+				"../src/lib"
+			],
+			"$lib/*": [
+				"../src/lib/*"
+			]
+		},
+		"rootDirs": [
+			"..",
+			"./types"
+		],
+		"verbatimModuleSyntax": true,
+		"isolatedModules": true,
+		"lib": [
+			"esnext",
+			"DOM",
+			"DOM.Iterable"
+		],
+		"moduleResolution": "bundler",
+		"module": "esnext",
+		"noEmit": true,
+		"target": "esnext"
+	},
+	"include": [
+		"ambient.d.ts",
+		"non-ambient.d.ts",
+		"./types/**/$types.d.ts",
+		"../vite.config.js",
+		"../vite.config.ts",
+		"../src/**/*.js",
+		"../src/**/*.ts",
+		"../src/**/*.svelte",
+		"../tests/**/*.js",
+		"../tests/**/*.ts",
+		"../tests/**/*.svelte"
+	],
+	"exclude": [
+		"../node_modules/**",
+		"../src/service-worker.js",
+		"../src/service-worker/**/*.js",
+		"../src/service-worker.ts",
+		"../src/service-worker/**/*.ts",
+		"../src/service-worker.d.ts",
+		"../src/service-worker/**/*.d.ts"
+	]
+}===== SLUTT ./.svelte-kit/tsconfig.json =====
+
+===== START ./eslint.config.js =====
+import prettier from 'eslint-config-prettier';
+import js from '@eslint/js';
+import { includeIgnoreFile } from '@eslint/compat';
+import svelte from 'eslint-plugin-svelte';
+import globals from 'globals';
+import { fileURLToPath } from 'node:url';
+import ts from 'typescript-eslint';
+import svelteConfig from './svelte.config.js';
+
+const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
+
+export default ts.config(
+	includeIgnoreFile(gitignorePath),
+	js.configs.recommended,
+	...ts.configs.recommended,
+	...svelte.configs.recommended,
+	prettier,
+	...svelte.configs.prettier,
+	{
+		languageOptions: {
+			globals: { ...globals.browser, ...globals.node }
+		},
+		rules: { 'no-undef': 'off' }
+	},
+	{
+		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
+		languageOptions: {
+			parserOptions: {
+				projectService: true,
+				extraFileExtensions: ['.svelte'],
+				parser: ts.parser,
+				svelteConfig
+			}
+		}
+	}
+);
+===== SLUTT ./eslint.config.js =====
+
+===== START ./vite.config.ts =====
+import tailwindcss from '@tailwindcss/vite';
+import { svelteTesting } from '@testing-library/svelte/vite';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+	plugins: [tailwindcss(), sveltekit()],
+	test: {
+		workspace: [
+			{
+				extends: './vite.config.ts',
+				plugins: [svelteTesting()],
+				test: {
+					name: 'client',
+					environment: 'jsdom',
+					clearMocks: true,
+					include: ['src/**/*.svelte.{test,spec}.{js,ts}'],
+					exclude: ['src/lib/server/**'],
+					setupFiles: ['./vitest-setup-client.ts']
+				}
+			},
+			{
+				extends: './vite.config.ts',
+				test: {
+					name: 'server',
+					environment: 'node',
+					include: ['src/**/*.{test,spec}.{js,ts}'],
+					exclude: ['src/**/*.svelte.{test,spec}.{js,ts}']
+				}
+			}
+		]
+	}
+});
+===== SLUTT ./vite.config.ts =====
+
+===== START ./postcss.config.js =====
+import tailwind from '@tailwindcss/postcss';
+import autoprefixer from 'autoprefixer';
+
+export default {
+  plugins: [tailwind(), autoprefixer()],
+};
+===== SLUTT ./postcss.config.js =====
+
+===== START ./src/demo.spec.ts =====
+import { describe, it, expect } from 'vitest';
+
+describe('sum test', () => {
+	it('adds 1 + 2 to equal 3', () => {
+		expect(1 + 2).toBe(3);
+	});
+});
+===== SLUTT ./src/demo.spec.ts =====
+
+===== START ./src/app.d.ts =====
+// See https://svelte.dev/docs/kit/types#app.d.ts
+// for information about these interfaces
+declare global {
+	namespace App {
+		// interface Error {}
+		// interface Locals {}
+		// interface PageData {}
+		// interface PageState {}
+		// interface Platform {}
+	}
+}
+
+export {};
+===== SLUTT ./src/app.d.ts =====
+
+===== START ./src/app.css =====
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Design tokens via CSS variables (HSL-format) ===== */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+
+  --card: 0 0% 100%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --border: 214.3 31.8% 91.4%;
+
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 4.9%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --border: 217.2 32.6% 17.5%;
+
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+}
+
+/* Root layout styles */
+body {
+  @apply bg-background text-foreground antialiased font-sans;
+}
+===== SLUTT ./src/app.css =====
+
+===== START ./src/lib/types.ts =====
+// src/lib/types.ts
+export interface StrategySchool {
+	name: string;
+	group: 'Prescriptive' | 'Descriptive';
+	values: number[]; // [plan, pattern, position, perspective, ploy]
+  }
+  
+  export interface RadarSchoolData {
+	school: string;
+	group: 'Prescriptive' | 'Descriptive';
+	values: number[];
+  }
+  
+  export interface PSItem {
+	id: string;
+	label: string;
+	description: string;
+	color: string;
+  }
+  
+  export interface SchoolInfo {
+	id: string;
+	name: string;
+	description: string;
+	group: 'Prescriptive' | 'Descriptive';
+  }===== SLUTT ./src/lib/types.ts =====
+
+===== START ./src/lib/components/SchoolCard.svelte =====
+<script lang="ts">
+    export let title: string;
+    export let description: string;
+  </script>
+  
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-4">
+    <h2 class="text-lg font-semibold">{title}</h2>
+    <p class="text-sm text-muted-foreground mt-1">{description}</p>
+  </div>
+  ===== SLUTT ./src/lib/components/SchoolCard.svelte =====
+
+===== START ./src/lib/components/Header.svelte =====
+<script lang="ts">
+  import { page } from '$app/stores';
+  import { derived } from 'svelte/store';
+  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+
+  const currentPath = derived(page, ($page) => $page.url.pathname);
+</script>
+
+<header class="bg-muted border-b border-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center gap-4">
+    <h1 class="text-lg font-semibold text-primary">Strategy Safari</h1>
+
+    <div class="flex items-center gap-4">
+      <nav class="flex space-x-4 text-sm font-medium">
+        <a
+          href="/radar"
+          class="px-3 py-2 rounded-md"
+          class:bg-primary={$currentPath === '/radar'}
+          class:text-primary-foreground={$currentPath === '/radar'}
+          class:text-muted-foreground={$currentPath !== '/radar'}
+        >
+          Radar
+        </a>
+        <a
+          href="/schools"
+          class="px-3 py-2 rounded-md"
+          class:bg-primary={$currentPath === '/schools'}
+          class:text-primary-foreground={$currentPath === '/schools'}
+          class:text-muted-foreground={$currentPath !== '/schools'}
+        >
+          Schools
+        </a>
+      </nav>
+
+      <ThemeToggle />
+    </div>
+  </div>
+</header>
+===== SLUTT ./src/lib/components/Header.svelte =====
+
+===== START ./src/lib/components/RadarPlot.svelte =====
+<script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
+	import Chart from 'chart.js/auto';
+	import type { RadarSchoolData } from '$lib/types';
+  
+	export let filteredData: RadarSchoolData[] = [];
+  
+	let canvas: HTMLCanvasElement;
+	let chart: Chart;
+  
+	const colors = [
+	  'rgba(255, 99, 132, 0.6)',
+	  'rgba(54, 162, 235, 0.6)', 
+	  'rgba(255, 206, 86, 0.6)',
+	  'rgba(75, 192, 192, 0.6)',
+	  'rgba(153, 102, 255, 0.6)',
+	  'rgba(255, 159, 64, 0.6)',
+	  'rgba(199, 199, 199, 0.6)',
+	  'rgba(255, 99, 255, 0.6)',
+	  'rgba(100, 200, 100, 0.6)',
+	  'rgba(0, 128, 255, 0.6)'
+	];
+  
+	const createChart = () => {
+	  const labels = ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'];
+  
+	  const datasets = filteredData.map((school, index) => ({
+		label: school.school,
+		data: school.values,
+		fill: true,
+		backgroundColor: colors[index % colors.length],
+		borderColor: colors[index % colors.length].replace('0.6', '1'),
+		borderWidth: 2,
+		pointBackgroundColor: colors[index % colors.length].replace('0.6', '1'),
+		pointBorderColor: '#fff',
+		pointHoverBackgroundColor: '#fff',
+		pointHoverBorderColor: colors[index % colors.length].replace('0.6', '1')
+	  }));
+  
+	  chart = new Chart(canvas, {
+		type: 'radar',
+		data: {
+		  labels,
+		  datasets,
+		},
+		options: {
+		  responsive: true,
+		  maintainAspectRatio: false,
+		  plugins: {
+			legend: {
+			  position: 'top',
+			},
+			title: {
+			  display: false,
+			}
+		  },
+		  scales: {
+			r: {
+			  min: 0,
+			  max: 5,
+			  ticks: {
+				stepSize: 1,
+				backdropColor: 'transparent'
+			  },
+			  grid: {
+				color: 'rgba(0, 0, 0, 0.1)'
+			  },
+			  angleLines: {
+				color: 'rgba(0, 0, 0, 0.1)'
+			  }
+			}
+		  }
+		}
+	  });
+	};
+  
+	onMount(() => {
+	  createChart();
+	});
+  
+	$: if (chart && filteredData) {
+	  chart.data.datasets = filteredData.map((school, index) => ({
+		label: school.school,
+		data: school.values,
+		fill: true,
+		backgroundColor: colors[index % colors.length],
+		borderColor: colors[index % colors.length].replace('0.6', '1'),
+		borderWidth: 2,
+		pointBackgroundColor: colors[index % colors.length].replace('0.6', '1'),
+		pointBorderColor: '#fff',
+		pointHoverBackgroundColor: '#fff',
+		pointHoverBorderColor: colors[index % colors.length].replace('0.6', '1')
+	  }));
+	  chart.update();
+	}
+  
+	onDestroy(() => {
+	  chart?.destroy();
+	});
+  </script>
+  
+  <div class="bg-card border border-border rounded-lg p-6 shadow-sm">
+	<div class="h-96">
+	  <canvas bind:this={canvas}></canvas>
+	</div>
+  </div>===== SLUTT ./src/lib/components/RadarPlot.svelte =====
+
+===== START ./src/lib/components/ThemeToggle.svelte =====
+<script lang="ts">
+  import { onMount } from 'svelte';
+
+  let theme = 'light';
+
+  const toggleTheme = () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('theme', theme);
+  };
+
+  onMount(() => {
+    const stored = localStorage.getItem('theme');
+    theme = stored ?? 'light';
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  });
+</script>
+
+<button
+  on:click={toggleTheme}
+  class="px-3 py-1 rounded-md bg-secondary text-secondary-foreground text-sm hover:opacity-80 transition"
+>
+  {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+</button>
+===== SLUTT ./src/lib/components/ThemeToggle.svelte =====
+
+===== START ./src/lib/components/POverview.svelte =====
+<script lang="ts">
+  export let schoolName: string;
+  export let values: Record<string, number>;
+</script>
+
+<div class="rounded-lg border bg-card text-card-foreground shadow-sm p-4">
+  <h2 class="text-lg font-semibold">{schoolName}</h2>
+  <ul class="mt-2 space-y-1 text-sm text-muted-foreground">
+    {#each Object.entries(values) as [key, val]}
+      <li class="flex justify-between">
+        <span class="capitalize">{key}</span>
+        <span>{val}</span>
+      </li>
+    {/each}
+  </ul>
+</div>
+===== SLUTT ./src/lib/components/POverview.svelte =====
+
+===== START ./src/lib/components/SchoolOverview.svelte =====
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import type { StrategySchool } from '$lib/types';
+
+  let schools: StrategySchool[] = [];
+  let loading = true;
+  let error: string | null = null;
+
+  onMount(async () => {
+    try {
+      const res = await fetch('/data/radarData.json');
+      if (!res.ok) throw new Error('Failed to fetch school data');
+      schools = await res.json();
+    } catch (err) {
+      error = err instanceof Error ? err.message : 'Unknown error';
+    } finally {
+      loading = false;
+    }
+  });
+</script>
+
+{#if loading}
+  <p class="text-muted-foreground">Loading...</p>
+{:else if error}
+  <p class="text-red-500">Error: {error}</p>
+{:else}
+  <div class="grid md:grid-cols-2 gap-4">
+    {#each schools as school (school.name)}
+      <div class="border rounded-lg p-4 bg-card shadow-sm">
+        <h2 class="text-xl font-semibold mb-1">{school.name}</h2>
+        <p class="text-sm text-muted-foreground">{school.description}</p>
+      </div>
+    {/each}
+  </div>
+{/if}
+===== SLUTT ./src/lib/components/SchoolOverview.svelte =====
+
+===== START ./src/lib/index.ts =====
+// place files you want to import through the `$lib` alias in this folder.
+===== SLUTT ./src/lib/index.ts =====
+
+===== START ./src/lib/data/radar-config.ts =====
+// File: src/lib/data/radar-config.ts
+import type { ChartData, ChartOptions } from 'chart.js';
+
+export const radarData: ChartData<'radar'> = {
+  labels: ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'],
+  datasets: [
+    {
+      label: 'Design School',
+      data: [5, 2, 3, 2, 1],
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Planning School',
+      data: [5, 1, 3, 2, 2],
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Positioning School',
+      data: [4, 2, 5, 2, 4],
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Entrepreneurial School',
+      data: [3, 3, 3, 5, 4],
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Cognitive School',
+      data: [2, 3, 2, 5, 1],
+      backgroundColor: 'rgba(153, 102, 255, 0.2)',
+      borderColor: 'rgba(153, 102, 255, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Learning School',
+      data: [2, 5, 3, 4, 2],
+      backgroundColor: 'rgba(255, 159, 64, 0.2)',
+      borderColor: 'rgba(255, 159, 64, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Power School',
+      data: [3, 4, 4, 3, 5],
+      backgroundColor: 'rgba(199, 199, 199, 0.2)',
+      borderColor: 'rgba(199, 199, 199, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Cultural School',
+      data: [2, 5, 3, 5, 1],
+      backgroundColor: 'rgba(255, 99, 255, 0.2)',
+      borderColor: 'rgba(255, 99, 255, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Environmental School',
+      data: [1, 4, 4, 2, 2],
+      backgroundColor: 'rgba(100, 200, 100, 0.2)',
+      borderColor: 'rgba(100, 200, 100, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Configuration School',
+      data: [4, 4, 4, 4, 3],
+      backgroundColor: 'rgba(0, 128, 255, 0.2)',
+      borderColor: 'rgba(0, 128, 255, 1)',
+      borderWidth: 1
+    }
+  ]
+};
+
+export const radarOptions: ChartOptions<'radar'> = {
+  responsive: true,
+  scales: {
+    r: {
+      beginAtZero: true,
+      min: 0,
+      max: 5,
+      ticks: {
+        stepSize: 1,
+        backdropColor: 'transparent'
+      }
+    }
+  },
+  plugins: {
+    legend: {
+      position: 'top'
+    },
+    title: {
+      display: false
+    }
+  }
+};
+===== SLUTT ./src/lib/data/radar-config.ts =====
+
+===== START ./src/app.html =====
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
+===== SLUTT ./src/app.html =====
+
+===== START ./src/routes/+page.svelte =====
+<section class="max-w-4xl mx-auto p-6 text-center">
+  <h1 class="text-4xl font-bold mb-4 text-foreground">🧭 Strategy Safari Visualizer</h1>
+  <p class="text-lg text-muted-foreground mb-8">
+    An interactive visualization tool for exploring Mintzberg's Strategy Safari and the five P's of strategy.
+  </p>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <a href="/radar" class="block bg-card border border-border shadow-sm rounded-xl p-6 hover:shadow-md transition-shadow">
+      <div class="text-4xl mb-3">📊</div>
+      <h2 class="text-xl font-semibold mb-2 text-card-foreground">Interactive Radar</h2>
+      <p class="text-muted-foreground">Visualize strategy schools using the 5 P's framework in an interactive radar chart.</p>
+    </a>
+    
+    <a href="/schools" class="block bg-card border border-border shadow-sm rounded-xl p-6 hover:shadow-md transition-shadow">
+      <div class="text-4xl mb-3">🏫</div>
+      <h2 class="text-xl font-semibold mb-2 text-card-foreground">Strategy Schools</h2>
+      <p class="text-muted-foreground">Explore the ten schools of strategy formation from Design to Configuration.</p>
+    </a>
+    
+    <a href="/ps" class="block bg-card border border-border shadow-sm rounded-xl p-6 hover:shadow-md transition-shadow">
+      <div class="text-4xl mb-3">📝</div>
+      <h2 class="text-xl font-semibold mb-2 text-card-foreground">The 5 P's</h2>
+      <p class="text-muted-foreground">Learn about Plan, Pattern, Position, Perspective, and Ploy as strategic concepts.</p>
+    </a>
+    
+    <a href="/about" class="block bg-card border border-border shadow-sm rounded-xl p-6 hover:shadow-md transition-shadow">
+      <div class="text-4xl mb-3">ℹ️</div>
+      <h2 class="text-xl font-semibold mb-2 text-card-foreground">About</h2>
+      <p class="text-muted-foreground">Learn about this project's inspiration and methodology.</p>
+    </a>
+  </div>
+</section>===== SLUTT ./src/routes/+page.svelte =====
+
+===== START ./src/routes/page.svelte.test.ts =====
+import { describe, test, expect } from 'vitest';
+import '@testing-library/jest-dom/vitest';
+import { render, screen } from '@testing-library/svelte';
+import Page from './+page.svelte';
+
+describe('/+page.svelte', () => {
+	test('should render h1', () => {
+		render(Page);
+		expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
+	});
+});
+===== SLUTT ./src/routes/page.svelte.test.ts =====
+
+===== START ./src/routes/about/+page.svelte =====
+<script>
+    // Innlegg om prosjektets hensikt og ånd
+  </script>
+  
+  <section class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-4">About This Guide</h1>
+    <p class="text-gray-700">
+      This guide is inspired by Henry Mintzberg’s Strategy Safari and aims to make strategic thinking more accessible,
+      flexible, and grounded in pluralism. It invites reflection and dialogue across disciplines.
+    </p>
+  </section>===== SLUTT ./src/routes/about/+page.svelte =====
+
+===== START ./src/routes/ps/+page.svelte =====
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import POverview from '$lib/components/POverview.svelte';
+	import type { StrategySchool } from '$lib/types';
+
+	let ps: StrategySchool[] = [];
+
+	onMount(async () => {
+		const res = await fetch('/data/ps.json');
+		ps = await res.json();
+	});
+</script>
+
+<div class="max-w-4xl mx-auto p-6">
+	<h1 class="text-2xl font-bold mb-4">Radar Plot: The 5 P’s of Strategy</h1>
+	<POverview {ps} />
+</div>
+===== SLUTT ./src/routes/ps/+page.svelte =====
+
+===== START ./src/routes/radar/+page.svelte =====
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import RadarPlot from '$lib/components/RadarPlot.svelte';
+	import type { RadarSchoolData } from '$lib/types';
+  
+	let radarData: RadarSchoolData[] = [];
+	let selectedGroup = 'All';
+	let selectedSchools: string[] = [];
+	
+	$: filteredData = selectedGroup === 'All' 
+	  ? radarData.filter(school => selectedSchools.length === 0 || selectedSchools.includes(school.school))
+	  : radarData.filter(school => 
+		  school.group === selectedGroup && 
+		  (selectedSchools.length === 0 || selectedSchools.includes(school.school))
+		);
+  
+	onMount(async () => {
+	  try {
+		const res = await fetch('/data/radarData.json');
+		if (!res.ok) throw new Error('Failed to load radar data');
+		radarData = await res.json();
+		
+		// Initialize with Design and Learning schools selected
+		selectedSchools = ['Design School', 'Learning School'];
+	  } catch (error) {
+		console.error('Error loading radar data:', error);
+	  }
+	});
+  
+	function toggleSchool(schoolName: string) {
+	  if (selectedSchools.includes(schoolName)) {
+		selectedSchools = selectedSchools.filter(s => s !== schoolName);
+	  } else {
+		selectedSchools = [...selectedSchools, schoolName];
+	  }
+	}
+  
+	function selectAll() {
+	  const availableSchools = selectedGroup === 'All' 
+		? radarData.map(s => s.school)
+		: radarData.filter(s => s.group === selectedGroup).map(s => s.school);
+	  selectedSchools = availableSchools;
+	}
+  
+	function clearAll() {
+	  selectedSchools = [];
+	}
+  </script>
+  
+  <section class="max-w-6xl mx-auto px-4 py-8">
+	<h1 class="text-3xl font-bold mb-6 text-foreground">Strategy Schools Radar</h1>
+	
+	<div class="grid lg:grid-cols-4 gap-6">
+	  <!-- Controls -->
+	  <div class="lg:col-span-1 space-y-4">
+		<div class="bg-card border border-border rounded-lg p-4">
+		  <h3 class="font-semibold mb-3 text-card-foreground">Filter by Group</h3>
+		  <select
+			bind:value={selectedGroup}
+			class="w-full bg-background text-foreground border border-border rounded px-3 py-2"
+		  >
+			<option value="All">All Schools</option>
+			<option value="Prescriptive">Prescriptive</option>
+			<option value="Descriptive">Descriptive</option>
+		  </select>
+		</div>
+  
+		<div class="bg-card border border-border rounded-lg p-4">
+		  <div class="flex justify-between items-center mb-3">
+			<h3 class="font-semibold text-card-foreground">Select Schools</h3>
+			<div class="space-x-1">
+			  <button
+				on:click={selectAll}
+				class="text-xs px-2 py-1 bg-primary text-primary-foreground rounded hover:opacity-80"
+			  >
+				All
+			  </button>
+			  <button
+				on:click={clearAll}
+				class="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded hover:opacity-80"
+			  >
+				Clear
+			  </button>
+			</div>
+		  </div>
+		  
+		  <div class="space-y-2 max-h-64 overflow-y-auto">
+			{#each radarData.filter(school => selectedGroup === 'All' || school.group === selectedGroup) as school}
+			  <label class="flex items-center space-x-2 text-sm cursor-pointer">
+				<input
+				  type="checkbox"
+				  checked={selectedSchools.includes(school.school)}
+				  on:change={() => toggleSchool(school.school)}
+				  class="rounded border-border"
+				/>
+				<span class="text-card-foreground">{school.school}</span>
+				<span class="text-xs text-muted-foreground">({school.group})</span>
+			  </label>
+			{/each}
+		  </div>
+		</div>
+	  </div>
+  
+	  <!-- Radar Chart -->
+	  <div class="lg:col-span-3">
+		{#if filteredData.length > 0}
+		  <RadarPlot {filteredData} />
+		{:else}
+		  <div class="bg-card border border-border rounded-lg p-8 text-center">
+			<p class="text-muted-foreground">No schools selected. Choose some schools to visualize.</p>
+		  </div>
+		{/if}
+	  </div>
+	</div>
+  
+	<!-- Legend -->
+	<div class="mt-6 bg-card border border-border rounded-lg p-4">
+	  <h3 class="font-semibold mb-2 text-card-foreground">The Five P's of Strategy</h3>
+	  <div class="grid md:grid-cols-5 gap-4 text-sm">
+		<div>
+		  <strong class="text-card-foreground">Plan:</strong>
+		  <span class="text-muted-foreground">Deliberate strategy</span>
+		</div>
+		<div>
+		  <strong class="text-card-foreground">Pattern:</strong>
+		  <span class="text-muted-foreground">Emergent strategy</span>
+		</div>
+		<div>
+		  <strong class="text-card-foreground">Position:</strong>
+		  <span class="text-muted-foreground">Market positioning</span>
+		</div>
+		<div>
+		  <strong class="text-card-foreground">Perspective:</strong>
+		  <span class="text-muted-foreground">Shared mindset</span>
+		</div>
+		<div>
+		  <strong class="text-card-foreground">Ploy:</strong>
+		  <span class="text-muted-foreground">Tactical maneuver</span>
+		</div>
+	  </div>
+	</div>
+  </section>===== SLUTT ./src/routes/radar/+page.svelte =====
+
+===== START ./src/routes/radar/+page.ts =====
+// File: src/routes/radar/+page.ts
+import type { PageLoad } from './$types';
+
+export const load: PageLoad = async ({ fetch }) => {
+	const res = await fetch('/data/radarData.json');
+
+	if (!res.ok) {
+		throw new Error('Kunne ikke hente radarData.json');
+	}
+
+	const radarData = await res.json();
+	return { radarData };
+};
+===== SLUTT ./src/routes/radar/+page.ts =====
+
+===== START ./src/routes/schools/+page.svelte =====
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import type { RadarSchoolData, SchoolInfo } from '$lib/types';
+
+  let radarData: RadarSchoolData[] = [];
+  let schoolsInfo: SchoolInfo[] = [];
+  let selectedGroup: 'All' | 'Prescriptive' | 'Descriptive' = 'All';
+
+  $: filteredSchools = selectedGroup === 'All' 
+    ? radarData 
+    : radarData.filter(school => school.group === selectedGroup);
+
+  onMount(async () => {
+    try {
+      // Load radar data
+      const radarRes = await fetch('/data/radarData.json');
+      if (!radarRes.ok) throw new Error('Failed to load radar data');
+      radarData = await radarRes.json();
+
+      // Load schools info  
+      const schoolsRes = await fetch('/data/schools.json');
+      if (!schoolsRes.ok) throw new Error('Failed to load schools data');
+      schoolsInfo = await schoolsRes.json();
+    } catch (error) {
+      console.error('Error loading data:', error);
+    }
+  });
+
+  function getSchoolInfo(schoolName: string): SchoolInfo | undefined {
+    return schoolsInfo.find(info => 
+      info.name.toLowerCase().includes(schoolName.toLowerCase().split(' ')[0])
+    );
+  }
+
+  function getPLabel(index: number): string {
+    const labels = ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'];
+    return labels[index] || '';
+  }
+</script>
+
+<section class="max-w-6xl mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-6 text-foreground">Strategy Schools Overview</h1>
+
+  <!-- Filter buttons -->
+  <div class="mb-6 flex gap-2 flex-wrap">
+    <button 
+      on:click={() => selectedGroup = 'All'}
+      class="px-4 py-2 rounded-lg font-medium transition-colors"
+      class:bg-primary={selectedGroup === 'All'}
+      class:text-primary-foreground={selectedGroup === 'All'}
+      class:bg-secondary={selectedGroup !== 'All'}
+      class:text-secondary-foreground={selectedGroup !== 'All'}
+    >
+      All Schools ({radarData.length})
+    </button>
+    <button 
+      on:click={() => selectedGroup = 'Prescriptive'}
+      class="px-4 py-2 rounded-lg font-medium transition-colors"
+      class:bg-primary={selectedGroup === 'Prescriptive'}
+      class:text-primary-foreground={selectedGroup === 'Prescriptive'}
+      class:bg-secondary={selectedGroup !== 'Prescriptive'}
+      class:text-secondary-foreground={selectedGroup !== 'Prescriptive'}
+    >
+      Prescriptive ({radarData.filter(s => s.group === 'Prescriptive').length})
+    </button>
+    <button 
+      on:click={() => selectedGroup = 'Descriptive'}
+      class="px-4 py-2 rounded-lg font-medium transition-colors"
+      class:bg-primary={selectedGroup === 'Descriptive'}
+      class:text-primary-foreground={selectedGroup === 'Descriptive'}
+      class:bg-secondary={selectedGroup !== 'Descriptive'}
+      class:text-secondary-foreground={selectedGroup !== 'Descriptive'}
+    >
+      Descriptive ({radarData.filter(s => s.group === 'Descriptive').length})
+    </button>
+  </div>
+
+  <!-- Schools grid -->
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {#each filteredSchools as school}
+      {@const schoolInfo = getSchoolInfo(school.school)}
+      <div class="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+        <div class="mb-4">
+          <h2 class="text-xl font-semibold text-card-foreground mb-2">{school.school}</h2>
+          <span class="inline-block px-2 py-1 text-xs font-medium rounded-full"
+                class:bg-blue-100={school.group === 'Prescriptive'}
+                class:text-blue-800={school.group === 'Prescriptive'}
+                class:bg-green-100={school.group === 'Descriptive'}
+                class:text-green-800={school.group === 'Descriptive'}>
+            {school.group}
+          </span>
+        </div>
+
+        {#if schoolInfo}
+          <p class="text-sm text-muted-foreground mb-4">{schoolInfo.description}</p>
+        {/if}
+
+        <!-- Five P's values -->
+        <div class="space-y-2">
+          <h3 class="font-medium text-card-foreground mb-2">Five P's Emphasis:</h3>
+          {#each school.values as value, index}
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-medium w-20 text-card-foreground">{getPLabel(index)}:</span>
+              <div class="flex-1 bg-muted rounded-full h-2">
+                <div 
+                  class="bg-primary h-2 rounded-full transition-all duration-300"
+                  style="width: {(value / 5) * 100}%"
+                ></div>
+              </div>
+              <span class="text-sm text-muted-foreground w-8">{value}/5</span>
+            </div>
+          {/each}
+        </div>
+      </div>
+    {/each}
+  </div>
+
+  {#if filteredSchools.length === 0}
+    <div class="text-center py-12">
+      <p class="text-muted-foreground">No schools found for the selected group.</p>
+    </div>
+  {/if}
+</section>===== SLUTT ./src/routes/schools/+page.svelte =====
+
+===== START ./src/routes/+layout.svelte =====
+<script lang="ts">
+  import "../app.css";
+  import Header from "$lib/components/Header.svelte";
+</script>
+
+<div class="min-h-screen bg-background text-foreground font-sans antialiased">
+  <Header />
+  <main>
+    <slot />
+  </main>
+</div>===== SLUTT ./src/routes/+layout.svelte =====

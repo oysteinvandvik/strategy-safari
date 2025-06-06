@@ -1,0 +1,52 @@
+[
+  {
+    "school": "Design School",
+    "group": "Prescriptive",
+    "values": [5, 2, 3, 2, 1]
+  },
+  {
+    "school": "Planning School", 
+    "group": "Prescriptive",
+    "values": [5, 1, 3, 2, 2]
+  },
+  {
+    "school": "Positioning School",
+    "group": "Prescriptive", 
+    "values": [4, 2, 5, 2, 4]
+  },
+  {
+    "school": "Entrepreneurial School",
+    "group": "Descriptive",
+    "values": [3, 3, 3, 5, 4]
+  },
+  {
+    "school": "Cognitive School",
+    "group": "Descriptive",
+    "values": [2, 3, 2, 5, 1]
+  },
+  {
+    "school": "Learning School",
+    "group": "Descriptive", 
+    "values": [2, 5, 3, 4, 2]
+  },
+  {
+    "school": "Power School",
+    "group": "Descriptive",
+    "values": [3, 4, 4, 3, 5]
+  },
+  {
+    "school": "Cultural School",
+    "group": "Descriptive",
+    "values": [2, 5, 3, 5, 1]
+  },
+  {
+    "school": "Environmental School", 
+    "group": "Descriptive",
+    "values": [1, 4, 4, 2, 2]
+  },
+  {
+    "school": "Configuration School",
+    "group": "Descriptive",
+    "values": [4, 4, 4, 4, 3]
+  }
+]
