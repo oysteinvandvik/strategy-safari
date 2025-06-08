@@ -1,123 +1,219 @@
+<!-- src/routes/schools/+page.svelte -->
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { RadarSchoolData, SchoolInfo } from '$lib/types';
+  import { goto } from '$app/navigation';
+  import { fly, scale } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
 
-  let radarData: RadarSchoolData[] = [];
-  let schoolsInfo: SchoolInfo[] = [];
+  interface School {
+    id: string;
+    name: string;
+    shortName: string;
+    group: 'Prescriptive' | 'Descriptive';
+    description: string;
+    longDescription: string;
+    keyFigures: string[];
+    originPeriod: string;
+    coreBeliefs: string[];
+    strengths: string[];
+    weaknesses: string[];
+    values: number[];
+  }
+
+  let schoolsData: { schools: School[] } | null = null;
   let selectedGroup: 'All' | 'Prescriptive' | 'Descriptive' = 'All';
-
-  $: filteredSchools = selectedGroup === 'All' 
-    ? radarData 
-    : radarData.filter(school => school.group === selectedGroup);
+  let loading = true;
+  let error: string | null = null;
+  let pageVisible = false;
 
   onMount(async () => {
     try {
-      // Load radar data
-      const radarRes = await fetch('/data/radarData.json');
-      if (!radarRes.ok) throw new Error('Failed to load radar data');
-      radarData = await radarRes.json();
-
-      // Load schools info  
-      const schoolsRes = await fetch('/data/schools.json');
-      if (!schoolsRes.ok) throw new Error('Failed to load schools data');
-      schoolsInfo = await schoolsRes.json();
-    } catch (error) {
-      console.error('Error loading data:', error);
+      const res = await fetch('/data/schools.json');
+      if (!res.ok) throw new Error('Failed to load schools data');
+      schoolsData = await res.json();
+      
+      setTimeout(() => pageVisible = true, 100);
+    } catch (err) {
+      error = err instanceof Error ? err.message : 'Unknown error';
+    } finally {
+      loading = false;
     }
   });
 
-  function getSchoolInfo(schoolName: string): SchoolInfo | undefined {
-    return schoolsInfo.find(info => 
-      info.name.toLowerCase().includes(schoolName.toLowerCase().split(' ')[0])
-    );
+  // Computed filtered schools
+  $: filteredSchools = schoolsData?.schools.filter(school => {
+    return selectedGroup === 'All' || school.group === selectedGroup;
+  }) || [];
+
+  $: prescriptiveCount = schoolsData?.schools.filter(s => s.group === 'Prescriptive').length || 0;
+  $: descriptiveCount = schoolsData?.schools.filter(s => s.group === 'Descriptive').length || 0;
+  $: totalCount = schoolsData?.schools.length || 0;
+
+  function getGroupColor(group: string) {
+    return group === 'Prescriptive' 
+      ? 'bg-blue-100 text-blue-800 border-blue-200'
+      : 'bg-green-100 text-green-800 border-green-200';
   }
 
-  function getPLabel(index: number): string {
-    const labels = ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'];
-    return labels[index] || '';
+  function getPLabels(): string[] {
+    return ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'];
+  }
+
+  function getPColors(): string[] {
+    return [
+      'bg-blue-500',    // Plan - Blue
+      'bg-red-500',     // Pattern - Red  
+      'bg-green-500',   // Position - Green
+      'bg-amber-500',   // Perspective - Amber
+      'bg-purple-500'   // Ploy - Purple
+    ];
   }
 </script>
 
-<section class="max-w-6xl mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold mb-6 text-foreground">Strategy Schools Overview</h1>
+<svelte:head>
+  <title>Strategy Schools Overview - Strategy Safari</title>
+  <meta name="description" content="Comprehensive overview of the ten schools of strategy formation from Mintzberg's Strategy Safari with detailed P's analysis." />
+</svelte:head>
 
-  <!-- Filter buttons -->
-  <div class="mb-6 flex gap-2 flex-wrap">
-    <button 
-      on:click={() => selectedGroup = 'All'}
-      class="px-4 py-2 rounded-lg font-medium transition-colors"
-      class:bg-primary={selectedGroup === 'All'}
-      class:text-primary-foreground={selectedGroup === 'All'}
-      class:bg-secondary={selectedGroup !== 'All'}
-      class:text-secondary-foreground={selectedGroup !== 'All'}
-    >
-      All Schools ({radarData.length})
-    </button>
-    <button 
-      on:click={() => selectedGroup = 'Prescriptive'}
-      class="px-4 py-2 rounded-lg font-medium transition-colors"
-      class:bg-primary={selectedGroup === 'Prescriptive'}
-      class:text-primary-foreground={selectedGroup === 'Prescriptive'}
-      class:bg-secondary={selectedGroup !== 'Prescriptive'}
-      class:text-secondary-foreground={selectedGroup !== 'Prescriptive'}
-    >
-      Prescriptive ({radarData.filter(s => s.group === 'Prescriptive').length})
-    </button>
-    <button 
-      on:click={() => selectedGroup = 'Descriptive'}
-      class="px-4 py-2 rounded-lg font-medium transition-colors"
-      class:bg-primary={selectedGroup === 'Descriptive'}
-      class:text-primary-foreground={selectedGroup === 'Descriptive'}
-      class:bg-secondary={selectedGroup !== 'Descriptive'}
-      class:text-secondary-foreground={selectedGroup !== 'Descriptive'}
-    >
-      Descriptive ({radarData.filter(s => s.group === 'Descriptive').length})
-    </button>
+{#if loading}
+  <div class="max-w-7xl mx-auto px-4 py-16 text-center">
+    <div class="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
+    <p class="mt-4 text-muted-foreground">Loading strategy schools...</p>
   </div>
 
-  <!-- Schools grid -->
-  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-    {#each filteredSchools as school}
-      {@const schoolInfo = getSchoolInfo(school.school)}
-      <div class="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-        <div class="mb-4">
-          <h2 class="text-xl font-semibold text-card-foreground mb-2">{school.school}</h2>
-          <span class="inline-block px-2 py-1 text-xs font-medium rounded-full"
-                class:bg-blue-100={school.group === 'Prescriptive'}
-                class:text-blue-800={school.group === 'Prescriptive'}
-                class:bg-green-100={school.group === 'Descriptive'}
-                class:text-green-800={school.group === 'Descriptive'}>
-            {school.group}
-          </span>
-        </div>
+{:else if error}
+  <div class="max-w-7xl mx-auto px-4 py-16">
+    <div class="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+      <h2 class="text-xl font-semibold text-red-800 mb-2">Error Loading Schools</h2>
+      <p class="text-red-600 mb-4">{error}</p>
+      <p class="text-sm text-red-500">Please check that the <code>static/data/schools.json</code> file exists and is properly formatted.</p>
+    </div>
+  </div>
 
-        {#if schoolInfo}
-          <p class="text-sm text-muted-foreground mb-4">{schoolInfo.description}</p>
-        {/if}
+{:else if schoolsData && pageVisible}
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    
+    <!-- Header -->
+    <div class="mb-8" in:fly={{ y: -30, duration: 800, easing: quintOut }}>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Strategy Schools Overview
+      </h1>
+    </div>
 
-        <!-- Five P's values -->
-        <div class="space-y-2">
-          <h3 class="font-medium text-card-foreground mb-2">Five P's Emphasis:</h3>
-          {#each school.values as value, index}
-            <div class="flex items-center gap-2">
-              <span class="text-sm font-medium w-20 text-card-foreground">{getPLabel(index)}:</span>
-              <div class="flex-1 bg-muted rounded-full h-2">
-                <div 
-                  class="bg-primary h-2 rounded-full transition-all duration-300"
-                  style="width: {(value / 5) * 100}%"
-                ></div>
-              </div>
-              <span class="text-sm text-muted-foreground w-8">{value}/5</span>
+    <!-- Filter Tabs -->
+    <div class="mb-8" in:fly={{ y: 30, duration: 800, delay: 100, easing: quintOut }}>
+      <div class="flex gap-2">
+        <button
+          class="px-4 py-2 rounded-lg font-medium transition-all {selectedGroup === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}"
+          on:click={() => selectedGroup = 'All'}
+        >
+          All Schools ({totalCount})
+        </button>
+        <button
+          class="px-4 py-2 rounded-lg font-medium transition-all {selectedGroup === 'Prescriptive' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}"
+          on:click={() => selectedGroup = 'Prescriptive'}
+        >
+          Prescriptive ({prescriptiveCount})
+        </button>
+        <button
+          class="px-4 py-2 rounded-lg font-medium transition-all {selectedGroup === 'Descriptive' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}"
+          on:click={() => selectedGroup = 'Descriptive'}
+        >
+          Descriptive ({descriptiveCount})
+        </button>
+      </div>
+    </div>
+
+    <!-- Schools Grid -->
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
+      {#each filteredSchools as school, index (school.id)}
+        <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
+             in:scale={{ duration: 600, delay: index * 100, easing: quintOut }}
+             on:click={() => goto(`/schools/${school.id}`)}
+             role="button"
+             tabindex="0"
+             on:keydown={(e) => e.key === 'Enter' && goto(`/schools/${school.id}`)}>
+          
+          <!-- School Header -->
+          <div class="mb-4">
+            <h2 class="text-xl font-bold mb-2">{school.name}</h2>
+            <span class="inline-block px-2 py-1 rounded-full text-xs font-medium border {getGroupColor(school.group)}">
+              {school.group}
+            </span>
+          </div>
+
+          <!-- Five P's Emphasis -->
+          <div class="mb-4">
+            <h3 class="font-semibold mb-3 text-sm">Five P's Emphasis:</h3>
+            <div class="space-y-3">
+              {#each school.values as value, i}
+                <div class="flex items-center">
+                  <!-- P Label -->
+                  <div class="w-20 text-sm font-medium text-gray-700">
+                    {getPLabels()[i]}:
+                  </div>
+                  
+                  <!-- Progress Bar -->
+                  <div class="flex-1 mx-3">
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                      <div 
+                        class="h-full {getPColors()[i]} transition-all duration-1000 ease-out"
+                        style="width: {value * 20}%"
+                      ></div>
+                    </div>
+                  </div>
+                  
+                  <!-- Value -->
+                  <div class="w-8 text-right text-sm font-medium text-gray-600">
+                    {value}/5
+                  </div>
+                </div>
+              {/each}
             </div>
-          {/each}
+          </div>
+        </div>
+      {/each}
+    </div>
+
+    <!-- Bottom Call to Action -->
+    {#if filteredSchools.length > 0}
+      <div class="mt-12 text-center" in:scale={{ duration: 600, delay: 400 }}>
+        <div class="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-950/20 dark:to-green-950/20 rounded-xl p-8">
+          <h3 class="text-2xl font-bold mb-4">Explore Further</h3>
+          <p class="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Compare these strategy schools visually or learn more about the Five P's framework.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/radar" 
+               class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
+              <span>📊</span>
+              Interactive Radar Chart
+            </a>
+            <a href="/ps" 
+               class="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/80 transition-colors">
+              <span>📝</span>
+              Learn About the 5 P's
+            </a>
+          </div>
         </div>
       </div>
-    {/each}
-  </div>
+    {/if}
 
-  {#if filteredSchools.length === 0}
-    <div class="text-center py-12">
-      <p class="text-muted-foreground">No schools found for the selected group.</p>
-    </div>
-  {/if}
-</section>
+    <!-- Empty State -->
+    {#if filteredSchools.length === 0}
+      <div class="text-center py-12" in:scale={{ duration: 400, delay: 200 }}>
+        <div class="text-4xl mb-4">🔍</div>
+        <h3 class="text-xl font-semibold mb-2">No schools found</h3>
+        <p class="text-muted-foreground mb-4">
+          Try selecting a different category
+        </p>
+        <button
+          on:click={() => selectedGroup = 'All'}
+          class="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+        >
+          Show all schools
+        </button>
+      </div>
+    {/if}
+  </div>
+{/if}

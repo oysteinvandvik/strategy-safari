@@ -1,62 +1,392 @@
-[
+{
+  "schools": [
     {
       "id": "design",
       "name": "Design School",
+      "shortName": "Design",
+      "group": "Prescriptive",
       "description": "Strategy as a process of conception — clear, deliberate design through internal fit.",
-      "group": "Prescriptive"
+      "longDescription": "The Design School views strategy formation as a process of conception. It emphasizes the importance of fitting internal capabilities with external opportunities through deliberate, conscious design.",
+      "keyFigures": ["Kenneth Andrews", "Roland Christensen"],
+      "originPeriod": "1960s",
+      "coreBeliefs": [
+        "Strategy should be explicit and clear",
+        "There must be fit between internal capabilities and external environment",
+        "The CEO is the chief strategist"
+      ],
+      "strengths": [
+        "Promotes clear thinking about strategy",
+        "Ensures consideration of both internal and external factors",
+        "Places responsibility clearly"
+      ],
+      "weaknesses": [
+        "May oversimplify complex situations",
+        "Assumes prediction is possible",
+        "Limited learning during implementation"
+      ],
+      "values": [5, 2, 3, 2, 1],
+      "pApproaches": {
+        "plan": {
+          "emphasis": 5,
+          "description": "Strong emphasis on deliberate, formal planning processes with clear strategic frameworks",
+          "characteristics": ["Systematic analysis", "Clear objectives", "Structured approach", "SWOT analysis"],
+          "example": "Using comprehensive SWOT analysis to create explicit strategic plans"
+        },
+        "pattern": {
+          "emphasis": 2,
+          "description": "Limited focus on emergent patterns, preferring intended strategies",
+          "characteristics": ["Retrospective analysis", "Pattern recognition", "Post-hoc rationalization"],
+          "example": "Learning from past strategic decisions to inform future planning"
+        },
+        "position": {
+          "emphasis": 3,
+          "description": "Moderate focus on market positioning through strategic fit analysis",
+          "characteristics": ["External analysis", "Competitive positioning", "Market assessment"],
+          "example": "Analyzing industry structure to determine optimal strategic position"
+        },
+        "perspective": {
+          "emphasis": 2,
+          "description": "CEO-driven perspective with emphasis on leadership vision",
+          "characteristics": ["Leadership vision", "Top-down perspective", "Cultural fit"],
+          "example": "CEO's strategic vision guiding organizational direction"
+        },
+        "ploy": {
+          "emphasis": 1,
+          "description": "Minimal focus on tactical maneuvers, preferring straightforward approaches",
+          "characteristics": ["Straightforward approach", "Open strategy", "Direct competition"],
+          "example": "Direct competitive responses rather than deceptive tactics"
+        }
+      }
     },
     {
       "id": "planning",
       "name": "Planning School",
-      "description": "Strategy as a formal process — rigorous steps from analysis to implementation.",
-      "group": "Prescriptive"
+      "shortName": "Planning",
+      "group": "Prescriptive",
+      "description": "Strategy as a formal process of detailed planning with extensive analysis and implementation.",
+      "longDescription": "The Planning School emphasizes formal, systematic planning processes with detailed analysis, quantification, and elaborate procedures for strategy development.",
+      "keyFigures": ["Igor Ansoff", "George Steiner"],
+      "originPeriod": "1970s",
+      "coreBeliefs": [
+        "Strategy can be programmed",
+        "Formal planning leads to better outcomes",
+        "Detailed analysis is essential"
+      ],
+      "strengths": [
+        "Provides systematic approach",
+        "Ensures thorough analysis",
+        "Good for complex organizations"
+      ],
+      "weaknesses": [
+        "Can be overly bureaucratic",
+        "May stifle creativity and flexibility",
+        "Assumes predictable environment"
+      ],
+      "values": [5, 1, 3, 2, 2],
+      "pApproaches": {
+        "plan": {
+          "emphasis": 5,
+          "description": "Extreme emphasis on formal, detailed planning with elaborate procedures and quantitative analysis",
+          "characteristics": ["Elaborate procedures", "Quantitative analysis", "Formal systems", "Detailed forecasting"],
+          "example": "Comprehensive 5-year strategic plans with detailed budgets and performance metrics"
+        },
+        "pattern": {
+          "emphasis": 1,
+          "description": "Very limited focus on emergent patterns, preferring controlled implementation",
+          "characteristics": ["Planned outcomes", "Controlled implementation", "Variance analysis"],
+          "example": "Monitoring actual performance against detailed strategic plans"
+        },
+        "position": {
+          "emphasis": 3,
+          "description": "Structured analytical approach to market positioning and portfolio planning",
+          "characteristics": ["Market analysis", "Portfolio planning", "Strategic frameworks"],
+          "example": "Using BCG matrix and GE matrix for portfolio positioning decisions"
+        },
+        "perspective": {
+          "emphasis": 2,
+          "description": "Planning-oriented organizational perspective with emphasis on analytical control",
+          "characteristics": ["Analytical mindset", "Control orientation", "Systematic thinking"],
+          "example": "Corporate planning departments driving strategic thinking"
+        },
+        "ploy": {
+          "emphasis": 2,
+          "description": "Some tactical planning elements including contingency and scenario planning",
+          "characteristics": ["Contingency planning", "Scenario analysis", "Risk management"],
+          "example": "Developing multiple strategic scenarios for different market conditions"
+        }
+      }
     },
     {
       "id": "positioning",
       "name": "Positioning School",
-      "description": "Strategy as analytical positioning in the marketplace based on economic forces.",
-      "group": "Prescriptive"
+      "shortName": "Positioning",
+      "group": "Prescriptive",
+      "description": "Strategy as analytical process focused on industry analysis and competitive positioning.",
+      "longDescription": "The Positioning School focuses on the selection of strategic positions based on industry analysis, emphasizing competitive dynamics and market structure.",
+      "keyFigures": ["Michael Porter", "Ken Andrews"],
+      "originPeriod": "1980s",
+      "coreBeliefs": [
+        "Strategy is about competitive advantage",
+        "Industry structure determines profitability",
+        "Generic strategies provide frameworks"
+      ],
+      "strengths": [
+        "Provides analytical rigor",
+        "Focus on competitive advantage",
+        "Industry-specific insights"
+      ],
+      "weaknesses": [
+        "May overlook internal capabilities",
+        "Can be overly deterministic",
+        "Limited focus on implementation"
+      ],
+      "values": [4, 2, 5, 2, 4],
+      "pApproaches": {
+        "plan": {
+          "emphasis": 4,
+          "description": "Strong analytical planning approach based on industry and competitive analysis",
+          "characteristics": ["Industry analysis", "Competitive analysis", "Strategic frameworks", "Analytical rigor"],
+          "example": "Using Porter's Five Forces analysis to inform strategic planning"
+        },
+        "pattern": {
+          "emphasis": 2,
+          "description": "Limited focus on emergent patterns, preferring analytical approaches to strategy",
+          "characteristics": ["Historical analysis", "Trend identification", "Industry evolution"],
+          "example": "Analyzing industry evolution patterns to predict future competitive dynamics"
+        },
+        "position": {
+          "emphasis": 5,
+          "description": "Core focus on strategic positioning and competitive advantage in the marketplace",
+          "characteristics": ["Market positioning", "Competitive advantage", "Value chain analysis", "Generic strategies"],
+          "example": "Choosing between cost leadership, differentiation, or focus strategies"
+        },
+        "perspective": {
+          "emphasis": 2,
+          "description": "Analytical, economics-based perspective on strategy and competition",
+          "characteristics": ["Rational analysis", "Economic logic", "Market-driven thinking"],
+          "example": "Porter's analytical framework shaping strategic thinking"
+        },
+        "ploy": {
+          "emphasis": 4,
+          "description": "Strong focus on competitive moves, market signals, and strategic maneuvering",
+          "characteristics": ["Competitive tactics", "Market signals", "Strategic moves", "Game theory"],
+          "example": "Making preemptive strategic moves to discourage competitor entry"
+        }
+      }
     },
     {
       "id": "entrepreneurial",
       "name": "Entrepreneurial School",
-      "description": "Strategy as vision — the leader's intuitive sense shaping direction.",
-      "group": "Descriptive"
+      "shortName": "Entrepreneurial",
+      "group": "Descriptive",
+      "description": "Strategy as visionary process driven by entrepreneurial leadership and intuition.",
+      "longDescription": "The Entrepreneurial School focuses on strategy formation as a visionary process, emphasizing the central role of the leader's vision and judgment.",
+      "keyFigures": ["Joseph Schumpeter", "Arthur Cole"],
+      "originPeriod": "Various periods",
+      "coreBeliefs": [
+        "Strategy originates from leader's vision",
+        "Intuition and judgment are key",
+        "Organizations are extensions of leader"
+      ],
+      "strengths": [
+        "Promotes innovation and change",
+        "Enables rapid adaptation",
+        "Powerful in crisis situations"
+      ],
+      "weaknesses": [
+        "Over-reliance on single leader",
+        "May lack analytical rigor",
+        "Difficult to sustain"
+      ],
+      "values": [3, 3, 3, 5, 4],
+      "pApproaches": {
+        "plan": {
+          "emphasis": 3,
+          "description": "Moderate planning approach, often informal and vision-driven rather than systematic",
+          "characteristics": ["Vision-driven", "Flexible planning", "Opportunistic", "Intuitive"],
+          "example": "Strategic vision guiding flexible planning and opportunity recognition"
+        },
+        "pattern": {
+          "emphasis": 3,
+          "description": "Emergent patterns develop from entrepreneurial actions and market experiments",
+          "characteristics": ["Adaptive behavior", "Learning by doing", "Experimentation", "Market feedback"],
+          "example": "Strategy emerging from successful market experiments and innovations"
+        },
+        "position": {
+          "emphasis": 3,
+          "description": "Opportunistic positioning focused on market creation and innovation",
+          "characteristics": ["Market creation", "Niche finding", "Innovation", "First-mover advantage"],
+          "example": "Creating entirely new market categories through innovative offerings"
+        },
+        "perspective": {
+          "emphasis": 5,
+          "description": "Strong focus on entrepreneurial perspective, vision, and innovative mindset",
+          "characteristics": ["Visionary thinking", "Risk-taking", "Innovative mindset", "Change orientation"],
+          "example": "Steve Jobs' transformative vision reshaping entire industries"
+        },
+        "ploy": {
+          "emphasis": 4,
+          "description": "Strategic moves emphasizing timing, bold actions, and competitive surprises",
+          "characteristics": ["Market timing", "Strategic surprises", "Bold moves", "Disruptive tactics"],
+          "example": "Timing market entry to achieve first-mover advantages"
+        }
+      }
     },
     {
       "id": "cognitive",
       "name": "Cognitive School",
-      "description": "Strategy as a mental process — shaped by how people perceive and process information.",
-      "group": "Descriptive"
+      "shortName": "Cognitive",
+      "group": "Descriptive",
+      "description": "Strategy as mental process focusing on how strategists think and process information.",
+      "longDescription": "The Cognitive School examines strategy formation as a mental process, focusing on how people think about strategy and how cognitive biases influence decisions.",
+      "keyFigures": ["Herbert Simon", "James March"],
+      "originPeriod": "1980s-1990s",
+      "coreBeliefs": [
+        "Strategy formation is a cognitive process",
+        "Mental models shape strategy",
+        "Bounded rationality affects decisions"
+      ],
+      "strengths": [
+        "Recognizes human limitations",
+        "Explains strategic behavior",
+        "Highlights importance of mental models"
+      ],
+      "weaknesses": [
+        "Can be overly complex",
+        "Limited practical application",
+        "May lead to paralysis"
+      ],
+      "values": [2, 3, 2, 5, 1]
     },
     {
       "id": "learning",
       "name": "Learning School",
-      "description": "Strategy as emergent — evolving through learning and adaptation.",
-      "group": "Descriptive"
+      "shortName": "Learning",
+      "group": "Descriptive",
+      "description": "Strategy as emergent process of collective learning and adaptation over time.",
+      "longDescription": "The Learning School views strategy as an emergent process where strategies develop incrementally through organizational learning and adaptation.",
+      "keyFigures": ["James Brian Quinn", "Henry Mintzberg"],
+      "originPeriod": "1980s-1990s",
+      "coreBeliefs": [
+        "Strategy emerges through learning",
+        "Everyone can be a strategist",
+        "Experimentation is key"
+      ],
+      "strengths": [
+        "Promotes organizational learning",
+        "Flexible and adaptive",
+        "Encourages innovation"
+      ],
+      "weaknesses": [
+        "Can lack direction",
+        "May be too slow",
+        "Difficult to coordinate"
+      ],
+      "values": [2, 5, 3, 4, 2]
     },
     {
       "id": "power",
       "name": "Power School",
-      "description": "Strategy as negotiation — the result of political and power-based games.",
-      "group": "Descriptive"
+      "shortName": "Power",
+      "group": "Descriptive",
+      "description": "Strategy as process of negotiation and bargaining among competing interests and power groups.",
+      "longDescription": "The Power School views strategy formation as a process of influence, emphasizing the use of power and politics in developing strategy.",
+      "keyFigures": ["Graham Allison", "Jeffrey Pfeffer"],
+      "originPeriod": "1970s-1980s",
+      "coreBeliefs": [
+        "Strategy formation is about power and politics",
+        "Organizations are coalitions of interests",
+        "Negotiation and bargaining are central"
+      ],
+      "strengths": [
+        "Recognizes political realities",
+        "Explains many strategic behaviors",
+        "Acknowledges stakeholder interests"
+      ],
+      "weaknesses": [
+        "Can lead to fragmented strategies",
+        "May promote conflict",
+        "Can be overly cynical"
+      ],
+      "values": [3, 4, 4, 3, 5]
     },
     {
       "id": "cultural",
       "name": "Cultural School",
-      "description": "Strategy as a collective process — rooted in shared values and culture.",
-      "group": "Descriptive"
+      "shortName": "Cultural",
+      "group": "Descriptive",
+      "description": "Strategy as collective process rooted in organizational culture and social interaction.",
+      "longDescription": "The Cultural School views strategy formation as a collective process, rooted in the culture of the organization and emphasizing social interaction.",
+      "keyFigures": ["Edgar Schein", "Richard Pettigrew"],
+      "originPeriod": "1980s",
+      "coreBeliefs": [
+        "Strategy is rooted in organizational culture",
+        "Culture acts as a filter for change",
+        "Collective processes are important"
+      ],
+      "strengths": [
+        "Emphasizes important cultural dimension",
+        "Explains resistance to change",
+        "Encourages collective action"
+      ],
+      "weaknesses": [
+        "Can discourage necessary change",
+        "May be too inward looking",
+        "Difficult to manage culture"
+      ],
+      "values": [2, 5, 3, 5, 1]
     },
     {
       "id": "environmental",
       "name": "Environmental School",
-      "description": "Strategy as a reactive process — shaped by external forces and the environment.",
-      "group": "Descriptive"
+      "shortName": "Environmental",
+      "group": "Descriptive",
+      "description": "Strategy as reactive process to environmental forces and constraints beyond organizational control.",
+      "longDescription": "The Environmental School views the environment as the central actor in strategy formation, with organizations responding to environmental forces.",
+      "keyFigures": ["Michael Hannan", "John Freeman"],
+      "originPeriod": "1970s",
+      "coreBeliefs": [
+        "Environment shapes organizational strategy",
+        "Organizations must adapt or die",
+        "Strategic choice is limited"
+      ],
+      "strengths": [
+        "Acknowledges environmental constraints",
+        "Explains industry patterns",
+        "Emphasizes adaptation"
+      ],
+      "weaknesses": [
+        "May underestimate strategic choice",
+        "Can be overly deterministic",
+        "Limited managerial guidance"
+      ],
+      "values": [1, 4, 4, 2, 2]
     },
     {
       "id": "configuration",
       "name": "Configuration School",
-      "description": "Strategy as transformation — matching structure and context through periodic change.",
-      "group": "Descriptive"
+      "shortName": "Configuration",
+      "group": "Descriptive",
+      "description": "Strategy as process of transformation integrating different elements in organizational configurations.",
+      "longDescription": "The Configuration School seeks to integrate the messages of the other schools by describing strategy formation as a process of transformation.",
+      "keyFigures": ["Danny Miller", "Peter Friesen"],
+      "originPeriod": "1980s",
+      "coreBeliefs": [
+        "Organizations can be described as configurations",
+        "Strategy formation is episodic",
+        "Integration of different approaches is possible"
+      ],
+      "strengths": [
+        "Integrates other schools",
+        "Recognizes different organizational types",
+        "Explains strategic change"
+      ],
+      "weaknesses": [
+        "Can be overly complex",
+        "May oversimplify with typologies",
+        "Difficult to operationalize"
+      ],
+      "values": [4, 4, 4, 4, 3]
     }
   ]
+}

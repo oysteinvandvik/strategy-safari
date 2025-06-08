@@ -1,33 +1,217 @@
-[
+{
+  "framework": {
+    "title": "The Five P's of Strategy",
+    "subtitle": "Henry Mintzberg's Comprehensive Framework for Understanding Strategy",
+    "description": "Strategy is not just one thing but can be understood through five distinct but interconnected perspectives. Each P represents a different lens through which we can view strategic thinking and formation within organizations.",
+    "author": "Henry Mintzberg",
+    "source": "Strategy Safari: A Guided Tour Through the Wilds of Strategic Management",
+    "year": "1998"
+  },
+  "ps": [
     {
       "id": "plan",
       "label": "Plan",
-      "description": "Strategy as a conscious, structured plan to achieve goals. Deliberate and analytical in nature.",
-      "color": "#3366cc"
+      "icon": "📋",
+      "color": "#3366cc",
+      "order": 1,
+      "shortDescription": "Strategy as a conscious, structured plan to achieve goals. Deliberate and analytical in nature.",
+      "fullDescription": "Strategy as Plan refers to the deliberate, conscious, and intended courses of action developed in advance of the situations to which they apply. This perspective views strategy as a roadmap – a guide or course of action into the future, a path to get from here to there.",
+      "characteristics": [
+        "Conscious and deliberate",
+        "Developed in advance",
+        "Provides direction",
+        "Guides decision-making",
+        "Often documented and formal",
+        "Future-oriented"
+      ],
+      "examples": [
+        {
+          "company": "Southwest Airlines",
+          "description": "Low-cost carrier strategy with point-to-point flights",
+          "details": "Southwest's deliberate plan to focus on short-haul, point-to-point flights with a single aircraft type (Boeing 737) to minimize costs and complexity."
+        },
+        {
+          "company": "Tesla",
+          "description": "Master Plan for sustainable transport",
+          "details": "Elon Musk's public master plan outlining the path from luxury electric vehicles to mass market adoption and sustainable energy ecosystem."
+        }
+      ],
+      "questions": [
+        "What is our strategic vision for the next 5 years?",
+        "How do we allocate resources to achieve our goals?",
+        "What are our key performance indicators?",
+        "What specific actions will we take to reach our objectives?"
+      ]
     },
     {
       "id": "pattern",
       "label": "Pattern",
-      "description": "Strategy as a pattern in a stream of actions — not necessarily intended, but visible in hindsight.",
-      "color": "#dc3912"
+      "icon": "🔄",
+      "color": "#dc3545",
+      "order": 2,
+      "shortDescription": "Strategy as consistency in behavior over time. Emergent patterns that develop through actions.",
+      "fullDescription": "Strategy as Pattern refers to consistency in behavior over time. This perspective recognizes that strategy can emerge from a stream of actions, whether or not they were originally intended. It's about looking back and seeing the pattern that has actually emerged.",
+      "characteristics": [
+        "Emerges from actions",
+        "Consistency over time",
+        "Can be unintended",
+        "Discovered retrospectively",
+        "Based on behavior patterns",
+        "Often unconscious"
+      ],
+      "examples": [
+        {
+          "company": "Honda",
+          "description": "Motorcycle entry into US market",
+          "details": "Honda's strategy in the US motorcycle market emerged as a pattern of focusing on small bikes after their original large bike strategy failed."
+        },
+        {
+          "company": "3M",
+          "description": "Innovation through serendipity",
+          "details": "3M's strategy of innovation emerged from a pattern of encouraging experimentation and learning from failures, leading to products like Post-it Notes."
+        }
+      ],
+      "questions": [
+        "What patterns can we observe in our past decisions?",
+        "How have our strategies evolved over time?",
+        "What behaviors consistently drive our success?",
+        "What unintended strategies have emerged?"
+      ]
     },
     {
       "id": "position",
       "label": "Position",
-      "description": "Strategy as the place or niche the organization occupies in the external environment.",
-      "color": "#ff9900"
+      "icon": "🎯",
+      "color": "#28a745",
+      "order": 3,
+      "shortDescription": "Strategy as finding a unique, defendable position in the marketplace relative to competitors.",
+      "fullDescription": "Strategy as Position refers to the location of the organization in its environment – the mediating force between the organization and its context. This perspective focuses on finding a unique and defendable position in the marketplace.",
+      "characteristics": [
+        "Market-focused",
+        "Competitive advantage",
+        "External orientation",
+        "Niche identification",
+        "Differentiation",
+        "Defendable position"
+      ],
+      "examples": [
+        {
+          "company": "Volvo",
+          "description": "Safety-focused positioning",
+          "details": "Volvo positioned itself as the safest car brand, building all marketing and product development around this unique market position."
+        },
+        {
+          "company": "Starbucks",
+          "description": "Third place experience",
+          "details": "Starbucks positioned itself as the 'third place' between home and work, creating a unique coffee experience rather than just selling coffee."
+        }
+      ],
+      "questions": [
+        "What unique position do we occupy in our market?",
+        "How do we differentiate from competitors?",
+        "What market segments should we target?",
+        "How do we create a defendable competitive advantage?"
+      ]
     },
     {
       "id": "perspective",
       "label": "Perspective",
-      "description": "Strategy as a deeply embedded worldview or shared mindset that shapes actions.",
-      "color": "#109618"
+      "icon": "👁️",
+      "color": "#ffc107",
+      "order": 4,
+      "shortDescription": "Strategy as the organization's fundamental way of perceiving and interpreting the world.",
+      "fullDescription": "Strategy as Perspective refers to the organization's fundamental way of doing things – its ingrained way of perceiving the world. This perspective is about the collective mind of the organization and its shared worldview.",
+      "characteristics": [
+        "Organizational mindset",
+        "Shared worldview",
+        "Cultural foundation",
+        "Ingrained beliefs",
+        "Collective identity",
+        "Deep-rooted values"
+      ],
+      "examples": [
+        {
+          "company": "Apple",
+          "description": "Design-first thinking",
+          "details": "Apple's perspective that great design and user experience should drive all product decisions, creating a design-centric organizational culture."
+        },
+        {
+          "company": "Patagonia",
+          "description": "Environmental activism",
+          "details": "Patagonia's perspective that business should be a force for environmental good, influencing every aspect from product design to marketing."
+        }
+      ],
+      "questions": [
+        "What is our organization's fundamental worldview?",
+        "How do we perceive our role in the world?",
+        "What values guide our decision-making?",
+        "What beliefs are deeply embedded in our culture?"
+      ]
     },
     {
       "id": "ploy",
       "label": "Ploy",
-      "description": "Strategy as a specific maneuver or tactical action to outwit competitors.",
-      "color": "#990099"
+      "icon": "🎭",
+      "color": "#6f42c1",
+      "order": 5,
+      "shortDescription": "Strategy as a tactical maneuver to outwit competitors through deception or misdirection.",
+      "fullDescription": "Strategy as Ploy refers to a specific maneuver intended to outwit an opponent or competitor. This perspective sees strategy as a tactical move designed to threaten, bluff, or otherwise outmaneuver competition.",
+      "characteristics": [
+        "Tactical maneuvers",
+        "Competitive deception",
+        "Short-term focused",
+        "Reactive moves",
+        "Game theory applications",
+        "Strategic misdirection"
+      ],
+      "examples": [
+        {
+          "company": "Microsoft",
+          "description": "FUD strategy against competitors",
+          "details": "Microsoft's use of Fear, Uncertainty, and Doubt (FUD) tactics to discourage customers from adopting competitor products during the OS wars."
+        },
+        {
+          "company": "Amazon",
+          "description": "Predatory pricing",
+          "details": "Amazon's strategic use of below-cost pricing in new markets to discourage competition and establish market dominance."
+        }
+      ],
+      "questions": [
+        "What tactical moves can we make against competitors?",
+        "How can we create uncertainty for our rivals?",
+        "What strategic signals should we send to the market?",
+        "How can we time our moves for maximum impact?"
+      ]
     }
-  ]
-  
+  ],
+  "interactions": {
+    "description": "The five P's don't exist in isolation – they interact and influence each other in complex ways.",
+    "matrix": [
+      {
+        "from": "plan",
+        "to": "pattern",
+        "relationship": "Plans may create patterns, but patterns often deviate from original plans"
+      },
+      {
+        "from": "plan",
+        "to": "position",
+        "relationship": "Plans should consider desired market position and competitive landscape"
+      },
+      {
+        "from": "perspective",
+        "to": "plan",
+        "relationship": "Organizational perspective shapes how plans are conceived and formulated"
+      },
+      {
+        "from": "perspective",
+        "to": "pattern",
+        "relationship": "Deep-rooted perspectives influence the patterns that emerge over time"
+      },
+      {
+        "from": "position",
+        "to": "ploy",
+        "relationship": "Market position influences the tactical moves available to the organization"
+      }
+    ]
+  }
+}

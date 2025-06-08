@@ -1,0 +1,1278 @@
+📁 FIL- OG MAPPESTRUKTUR:
+  .
+  ./node_modules
+  ./static
+  ./static/data
+  ./.svelte-kit
+  ./.git
+  ./src
+  ./src/lib
+  ./src/lib/components
+  ./src/lib/data
+  ./src/routes
+  ./src/routes/utils
+  ./src/routes/about
+  ./src/routes/ps
+  ./src/routes/ps/[slug]
+  ./src/routes/radar
+  ./src/routes/schools
+  ./src/routes/schools/[slug]
+
+📄 NØKKELFILER – FØRSTE 30 LINJER ELLER MINDRE:
+
+
+===== START ./svelte.config.js =====
+import adapter from '@sveltejs/adapter-auto';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	// Consult https://svelte.dev/docs/kit/integrations
+	// for more information about preprocessors
+	preprocess: vitePreprocess(),
+
+	kit: {
+		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
+		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
+		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
+		adapter: adapter()
+	}
+};
+
+export default config;
+===== SLUTT ./svelte.config.js =====
+
+===== START ./tailwind.config.js =====
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{html,js,svelte,ts}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        muted: 'hsl(var(--muted))',
+        'muted-foreground': 'hsl(var(--muted-foreground))',
+        border: 'hsl(var(--border))',
+        primary: 'hsl(var(--primary))',
+        'primary-foreground': 'hsl(var(--primary-foreground))',
+        secondary: 'hsl(var(--secondary))',
+        'secondary-foreground': 'hsl(var(--secondary-foreground))',
+        card: 'hsl(var(--card))',
+        'card-foreground': 'hsl(var(--card-foreground))',
+      },
+    },
+  },
+  plugins: [forms, typography],
+};===== SLUTT ./tailwind.config.js =====
+
+===== START ./vitest-setup-client.ts =====
+import '@testing-library/jest-dom/vitest';
+import { vi } from 'vitest';
+
+// required for svelte5 + jsdom as jsdom does not support matchMedia
+Object.defineProperty(window, 'matchMedia', {
+	writable: true,
+	enumerable: true,
+	value: vi.fn().mockImplementation((query) => ({
+		matches: false,
+		media: query,
+		onchange: null,
+		addEventListener: vi.fn(),
+		removeEventListener: vi.fn(),
+		dispatchEvent: vi.fn()
+	}))
+});
+
+// add more mocks here if you need them
+===== SLUTT ./vitest-setup-client.ts =====
+
+===== START ./README.md =====
+# 📊 Strategy Safari Visualizer
+
+An interactive visualization tool built with **SvelteKit** and **Chart.js**, designed to illustrate how different strategy schools from Mintzberg's *Strategy Safari* emphasize the five P's of strategy: **Plan, Pattern, Position, Perspective, and Ploy**.
+
+## ✨ Features
+
+- 🕸️ Interactive radar chart
+- 📚 Grouping of schools by type: *Prescriptive* and *Descriptive*
+- ✅ Checkbox toggles to show/hide individual schools
+- 📱 Responsive and mobile-friendly layout
+- 🚀 Default display of “Design” and “Learning” schools on load
+
+## 🧱 Project Structure
+
+- `+page.svelte`: Main component containing logic and layout
+- `static/schoolData.json`: JSON data file with school values and group labels
+
+### Example `schoolData.json`
+
+```json
+{
+  "Design": { "group": "Prescriptive", "values": [5, 2, 3, 2, 1] },
+  "Planning": { "group": "Prescriptive", "values": [5, 1, 3, 2, 2] },
+  "Positioning": { "group": "Prescriptive", "values": [4, 2, 5, 2, 4] },
+  "Learning": { "group": "Descriptive", "values": [2, 5, 3, 4, 2] }
+}
+===== SLUTT ./README.md =====
+
+===== START ./package-lock.json =====
+{
+	"name": "strategy-safari",
+	"version": "0.0.1",
+	"lockfileVersion": 3,
+	"requires": true,
+	"packages": {
+		"": {
+			"name": "strategy-safari",
+			"version": "0.0.1",
+			"dependencies": {
+				"chart.js": "^4.4.9"
+			},
+			"devDependencies": {
+				"@eslint/compat": "^1.2.5",
+				"@eslint/js": "^9.18.0",
+				"@sveltejs/adapter-auto": "^6.0.0",
+				"@sveltejs/kit": "^2.16.0",
+				"@sveltejs/vite-plugin-svelte": "^5.0.0",
+				"@tailwindcss/forms": "^0.5.7",
+				"@tailwindcss/typography": "^0.5.10",
+				"@testing-library/jest-dom": "^6.6.3",
+				"@testing-library/svelte": "^5.2.4",
+				"autoprefixer": "^10.4.17",
+				"eslint": "^9.18.0",
+				"eslint-config-prettier": "^10.0.1",
+				"eslint-plugin-svelte": "^3.0.0",
+				"globals": "^16.0.0",
+				"jsdom": "^26.0.0",
+				"postcss": "^8.4.33",
+				"prettier": "^3.4.2",
+===== SLUTT ./package-lock.json =====
+
+===== START ./package.json =====
+{
+	"name": "strategy-safari",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"test:unit": "vitest",
+		"test": "npm run test:unit -- --run"
+	},
+	"devDependencies": {
+		"@eslint/compat": "^1.2.5",
+		"@eslint/js": "^9.18.0",
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/kit": "^2.16.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"@tailwindcss/forms": "^0.5.7",
+		"@tailwindcss/typography": "^0.5.10",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/svelte": "^5.2.4",
+		"autoprefixer": "^10.4.17",
+		"eslint": "^9.18.0",
+		"eslint-config-prettier": "^10.0.1",
+===== SLUTT ./package.json =====
+
+===== START ./static/data/ps.json =====
+{
+  "framework": {
+    "title": "The Five P's of Strategy",
+    "subtitle": "Henry Mintzberg's Comprehensive Framework for Understanding Strategy",
+    "description": "Strategy is not just one thing but can be understood through five distinct but interconnected perspectives. Each P represents a different lens through which we can view strategic thinking and formation within organizations.",
+    "author": "Henry Mintzberg",
+    "source": "Strategy Safari: A Guided Tour Through the Wilds of Strategic Management",
+    "year": "1998"
+  },
+  "ps": [
+    {
+      "id": "plan",
+      "label": "Plan",
+      "icon": "📋",
+      "color": "#3366cc",
+      "order": 1,
+      "shortDescription": "Strategy as a conscious, structured plan to achieve goals. Deliberate and analytical in nature.",
+      "fullDescription": "Strategy as Plan refers to the deliberate, conscious, and intended courses of action developed in advance of the situations to which they apply. This perspective views strategy as a roadmap – a guide or course of action into the future, a path to get from here to there.",
+      "characteristics": [
+        "Conscious and deliberate",
+        "Developed in advance",
+        "Provides direction",
+        "Guides decision-making",
+        "Often documented and formal",
+        "Future-oriented"
+      ],
+      "examples": [
+        {
+          "company": "Southwest Airlines",
+          "description": "Low-cost carrier strategy with point-to-point flights",
+===== SLUTT ./static/data/ps.json =====
+
+===== START ./static/data/radarData.json =====
+[
+  {
+    "school": "Design School",
+    "group": "Prescriptive",
+    "values": [5, 2, 3, 2, 1]
+  },
+  {
+    "school": "Planning School", 
+    "group": "Prescriptive",
+    "values": [5, 1, 3, 2, 2]
+  },
+  {
+    "school": "Positioning School",
+    "group": "Prescriptive", 
+    "values": [4, 2, 5, 2, 4]
+  },
+  {
+    "school": "Entrepreneurial School",
+    "group": "Descriptive",
+    "values": [3, 3, 3, 5, 4]
+  },
+  {
+    "school": "Cognitive School",
+    "group": "Descriptive",
+    "values": [2, 3, 2, 5, 1]
+  },
+  {
+    "school": "Learning School",
+    "group": "Descriptive", 
+    "values": [2, 5, 3, 4, 2]
+===== SLUTT ./static/data/radarData.json =====
+
+===== START ./static/data/schools.json =====
+{
+  "schools": [
+    {
+      "id": "design",
+      "name": "Design School",
+      "shortName": "Design",
+      "group": "Prescriptive",
+      "description": "Strategy as a process of conception — clear, deliberate design through internal fit.",
+      "longDescription": "The Design School views strategy formation as a process of conception. It emphasizes the importance of fitting internal capabilities with external opportunities through deliberate, conscious design.",
+      "keyFigures": ["Kenneth Andrews", "Roland Christensen"],
+      "originPeriod": "1960s",
+      "coreBeliefs": [
+        "Strategy should be explicit and clear",
+        "There must be fit between internal capabilities and external environment",
+        "The CEO is the chief strategist"
+      ],
+      "strengths": [
+        "Promotes clear thinking about strategy",
+        "Ensures consideration of both internal and external factors",
+        "Places responsibility clearly"
+      ],
+      "weaknesses": [
+        "May oversimplify complex situations",
+        "Assumes prediction is possible",
+        "Limited learning during implementation"
+      ],
+      "values": [5, 2, 3, 2, 1],
+      "pApproaches": {
+        "plan": {
+          "emphasis": 5,
+===== SLUTT ./static/data/schools.json =====
+
+===== START ./tsconfig.json =====
+{
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"moduleResolution": "bundler"
+	}
+	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
+	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
+	//
+	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
+	// from the referenced tsconfig.json - TypeScript does not merge them in
+}
+===== SLUTT ./tsconfig.json =====
+
+===== START ./eslint.config.js =====
+import prettier from 'eslint-config-prettier';
+import js from '@eslint/js';
+import { includeIgnoreFile } from '@eslint/compat';
+import svelte from 'eslint-plugin-svelte';
+import globals from 'globals';
+import { fileURLToPath } from 'node:url';
+import ts from 'typescript-eslint';
+import svelteConfig from './svelte.config.js';
+
+const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
+
+export default ts.config(
+	includeIgnoreFile(gitignorePath),
+	js.configs.recommended,
+	...ts.configs.recommended,
+	...svelte.configs.recommended,
+	prettier,
+	...svelte.configs.prettier,
+	{
+		languageOptions: {
+			globals: { ...globals.browser, ...globals.node }
+		},
+		rules: { 'no-undef': 'off' }
+	},
+	{
+		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
+		languageOptions: {
+			parserOptions: {
+				projectService: true,
+				extraFileExtensions: ['.svelte'],
+===== SLUTT ./eslint.config.js =====
+
+===== START ./vite.config.ts =====
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+	plugins: [sveltekit()],
+	css: {
+		postcss: './postcss.config.js',
+	},
+	test: {
+		workspace: [
+			{
+				extends: './vite.config.ts',
+				test: {
+					name: 'client',
+					environment: 'jsdom',
+					clearMocks: true,
+					include: ['src/**/*.svelte.{test,spec}.{js,ts}'],
+					exclude: ['src/lib/server/**'],
+					setupFiles: ['./vitest-setup-client.ts']
+				}
+			}
+		]
+	}
+});===== SLUTT ./vite.config.ts =====
+
+===== START ./postcss.config.js =====
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};===== SLUTT ./postcss.config.js =====
+
+===== START ./src/demo.spec.ts =====
+import { describe, it, expect } from 'vitest';
+
+describe('sum test', () => {
+	it('adds 1 + 2 to equal 3', () => {
+		expect(1 + 2).toBe(3);
+	});
+});
+===== SLUTT ./src/demo.spec.ts =====
+
+===== START ./src/app.d.ts =====
+// See https://svelte.dev/docs/kit/types#app.d.ts
+// for information about these interfaces
+declare global {
+	namespace App {
+		// interface Error {}
+		// interface Locals {}
+		// interface PageData {}
+		// interface PageState {}
+		// interface Platform {}
+	}
+}
+
+export {};
+===== SLUTT ./src/app.d.ts =====
+
+===== START ./src/app.css =====
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens via CSS variables (HSL-format) */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --border: 214.3 31.8% 91.4%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --border: 217.2 32.6% 17.5%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+===== SLUTT ./src/app.css =====
+
+===== START ./src/lib/types.ts =====
+// src/lib/types.ts - Oppdaterte typer for utvidede data
+
+// Enhanced School Data Structure
+export interface SchoolPEmphasis {
+	emphasis: number; // 1-5 scale
+	description: string;
+	characteristics: string[];
+	example?: string;
+  }
+  
+  export interface SchoolPApproaches {
+	plan: SchoolPEmphasis;
+	pattern: SchoolPEmphasis;
+	position: SchoolPEmphasis;
+	perspective: SchoolPEmphasis;
+	ploy: SchoolPEmphasis;
+  }
+  
+  export interface EnhancedSchoolData {
+	id: string;
+	name: string;
+	shortName: string;
+	group: 'Prescriptive' | 'Descriptive';
+	description: string;
+	longDescription: string;
+	keyFigures: string[];
+	originPeriod: string;
+	coreBeliefs: string[];
+	strengths: string[];
+	weaknesses: string[];
+===== SLUTT ./src/lib/types.ts =====
+
+===== START ./src/lib/components/SchoolCard.svelte =====
+<!-- src/lib/components/EnhancedSchoolCard.svelte -->
+<script lang="ts">
+  import { createEventDispatcher } from 'svelte';
+  import { slide } from 'svelte/transition';
+  import type { EnhancedSchoolData, StrategyP } from '$lib/types';
+
+  export let school: EnhancedSchoolData;
+  export let expanded = false;
+  export let showComparison = false;
+
+  const dispatch = createEventDispatcher();
+
+  function toggleExpanded() {
+    expanded = !expanded;
+    dispatch('toggle', { school, expanded });
+  }
+
+  function getPLabel(index: number): string {
+    const labels: StrategyP[] = ['plan', 'pattern', 'position', 'perspective', 'ploy'];
+    return labels[index] || 'unknown';
+  }
+
+  function getGroupColor(group: string) {
+    return group === 'Prescriptive' 
+      ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
+      : 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
+  }
+
+  function getStrengthColor(value: number): string {
+    if (value >= 4) return 'text-green-600';
+===== SLUTT ./src/lib/components/SchoolCard.svelte =====
+
+===== START ./src/lib/components/SchoolDetailView.svelte =====
+<!-- src/lib/components/SchoolDetailView.svelte -->
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import { scale, fly } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+    import type { EnhancedSchoolData, StrategyP } from '$lib/types';
+  
+    export let schoolId: string;
+    export let compact: boolean = false;
+  
+    let school: EnhancedSchoolData | null = null;
+    let loading = true;
+    let error: string | null = null;
+    let activeTab: 'overview' | 'ps-analysis' | 'examples' = 'overview';
+    let sectionsVisible = false;
+  
+    const pLabels: Record<StrategyP, string> = {
+      plan: 'Plan',
+      pattern: 'Pattern', 
+      position: 'Position',
+      perspective: 'Perspective',
+      ploy: 'Ploy'
+    };
+  
+    onMount(async () => {
+      try {
+        const res = await fetch('/data/enhanced-schools.json');
+        if (!res.ok) throw new Error('Failed to load schools data');
+        
+        const data = await res.json();
+===== SLUTT ./src/lib/components/SchoolDetailView.svelte =====
+
+===== START ./src/lib/components/Header.svelte =====
+<!-- src/lib/components/Header.svelte -->
+<script lang="ts">
+  import { page } from '$app/stores';
+  import { derived } from 'svelte/store';
+  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+
+  const currentPath = derived(page, ($page) => $page.url.pathname);
+  
+  let mobileMenuOpen = false;
+
+  const toggleMobileMenu = () => {
+    mobileMenuOpen = !mobileMenuOpen;
+  };
+
+  const closeMobileMenu = () => {
+    mobileMenuOpen = false;
+  };
+
+  // Close mobile menu when route changes
+  $: if ($currentPath) {
+    mobileMenuOpen = false;
+  }
+
+  const navigationItems = [
+    { href: '/schools', label: 'Schools', icon: '🏫' },
+    { href: '/ps', label: 'Voices (5P)', icon: '🗣️' },
+    { href: '/radar', label: 'Radar', icon: '📊' },
+    { href: '/about', label: 'About', icon: 'ℹ️' }
+  ];
+</script>
+===== SLUTT ./src/lib/components/Header.svelte =====
+
+===== START ./src/lib/components/PageTransitions.svelte =====
+<!-- src/lib/components/PageTransition.svelte -->
+<script lang="ts">
+    import { page } from '$app/stores';
+    import { onMount } from 'svelte';
+    import { fly, fade } from 'svelte/transition';
+    import { cubicOut } from 'svelte/easing';
+  
+    let isLoading = false;
+    let currentPath = '';
+  
+    // Watch for route changes
+    $: if ($page.url.pathname !== currentPath) {
+      currentPath = $page.url.pathname;
+      handleRouteChange();
+    }
+  
+    function handleRouteChange() {
+      isLoading = true;
+      setTimeout(() => {
+        isLoading = false;
+      }, 300);
+    }
+  
+    onMount(() => {
+      currentPath = $page.url.pathname;
+    });
+  </script>
+  
+  <!-- Loading overlay for route transitions -->
+  {#if isLoading}
+===== SLUTT ./src/lib/components/PageTransitions.svelte =====
+
+===== START ./src/lib/components/RadarPlot.svelte =====
+<script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
+	import Chart from 'chart.js/auto';
+	import type { RadarSchoolData } from '$lib/types';
+  
+	export let filteredData: RadarSchoolData[] = [];
+  
+	let canvas: HTMLCanvasElement;
+	let chart: Chart;
+  
+	const colors = [
+	  'rgba(255, 99, 132, 0.6)',
+	  'rgba(54, 162, 235, 0.6)', 
+	  'rgba(255, 206, 86, 0.6)',
+	  'rgba(75, 192, 192, 0.6)',
+	  'rgba(153, 102, 255, 0.6)',
+	  'rgba(255, 159, 64, 0.6)',
+	  'rgba(199, 199, 199, 0.6)',
+	  'rgba(255, 99, 255, 0.6)',
+	  'rgba(100, 200, 100, 0.6)',
+	  'rgba(0, 128, 255, 0.6)'
+	];
+  
+	const createChart = () => {
+	  const labels = ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'];
+  
+	  const datasets = filteredData.map((school, index) => ({
+		label: school.school,
+		data: school.values,
+		fill: true,
+===== SLUTT ./src/lib/components/RadarPlot.svelte =====
+
+===== START ./src/lib/components/PSOverview.svelte =====
+<!-- src/lib/components/PSOverview.svelte -->
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { fly, scale } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
+  import { goto } from '$app/navigation';
+
+  let psData: any = null;
+  let loading = true;
+  let error: string | null = null;
+  let cardsVisible = false;
+
+  onMount(async () => {
+    try {
+      const res = await fetch('/data/ps.json');
+      if (!res.ok) throw new Error('Failed to load P data');
+      psData = await res.json();
+      
+      // Trigger staggered animations
+      setTimeout(() => cardsVisible = true, 100);
+    } catch (err) {
+      error = err instanceof Error ? err.message : 'Unknown error';
+    } finally {
+      loading = false;
+    }
+  });
+
+  function navigateToP(pId: string) {
+    goto(`/ps/${pId}`);
+  }
+===== SLUTT ./src/lib/components/PSOverview.svelte =====
+
+===== START ./src/lib/components/ThemeToggle.svelte =====
+<script lang="ts">
+  import { onMount } from 'svelte';
+
+  let theme = 'light';
+
+  const toggleTheme = () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('theme', theme);
+  };
+
+  onMount(() => {
+    const stored = localStorage.getItem('theme');
+    theme = stored ?? 'light';
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  });
+</script>
+
+<button
+  on:click={toggleTheme}
+  class="px-3 py-1 rounded-md bg-secondary text-secondary-foreground text-sm hover:opacity-80 transition"
+>
+  {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+</button>
+===== SLUTT ./src/lib/components/ThemeToggle.svelte =====
+
+===== START ./src/lib/components/AnimatedCard.svelte =====
+<!-- src/lib/components/AnimatedCard.svelte -->
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import { spring } from 'svelte/motion';
+    import { scale, fly } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+  
+    export let title: string;
+    export let description: string;
+    export let icon: string = '📊';
+    export let href: string | null = null;
+    export let delay: number = 0;
+    export let gradient: boolean = false;
+  
+    let cardElement: HTMLElement;
+    let isHovered = false;
+    let isVisible = false;
+    let mounted = false;
+  
+    // Spring animation for hover effects
+    const coords = spring({ x: 0, y: 0 }, {
+      stiffness: 0.2,
+      damping: 0.4
+    });
+  
+    const tilt = spring({ x: 0, y: 0 }, {
+      stiffness: 0.3,
+      damping: 0.6
+    });
+  
+===== SLUTT ./src/lib/components/AnimatedCard.svelte =====
+
+===== START ./src/lib/components/EnhancedSchoolCard.svelte =====
+<!-- src/lib/components/EnhancedSchoolCard.svelte -->
+<script lang="ts">
+    import { createEventDispatcher } from 'svelte';
+    import { slide } from 'svelte/transition';
+    import type { EnhancedSchoolData, StrategyP } from '$lib/types';
+  
+    export let school: EnhancedSchoolData;
+    export let expanded = false;
+    export let showComparison = false;
+  
+    const dispatch = createEventDispatcher();
+  
+    function toggleExpanded() {
+      expanded = !expanded;
+      dispatch('toggle', { school, expanded });
+    }
+  
+    function getPLabel(index: number): string {
+      const labels: StrategyP[] = ['plan', 'pattern', 'position', 'perspective', 'ploy'];
+      return labels[index] || 'unknown';
+    }
+  
+    function getGroupColor(group: string) {
+      return group === 'Prescriptive' 
+        ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
+        : 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
+    }
+  
+    function getStrengthColor(value: number): string {
+      if (value >= 4) return 'text-green-600';
+===== SLUTT ./src/lib/components/EnhancedSchoolCard.svelte =====
+
+===== START ./src/lib/components/POverview.svelte =====
+<script lang="ts">
+  export let schoolName: string;
+  export let values: Record<string, number>;
+</script>
+
+<div class="rounded-lg border bg-card text-card-foreground shadow-sm p-4">
+  <h2 class="text-lg font-semibold">{schoolName}</h2>
+  <ul class="mt-2 space-y-1 text-sm text-muted-foreground">
+    {#each Object.entries(values) as [key, val]}
+      <li class="flex justify-between">
+        <span class="capitalize">{key}</span>
+        <span>{val}</span>
+      </li>
+    {/each}
+  </ul>
+</div>
+===== SLUTT ./src/lib/components/POverview.svelte =====
+
+===== START ./src/lib/components/SchoolOverview.svelte =====
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import type { StrategySchool } from '$lib/types';
+
+  let schools: StrategySchool[] = [];
+  let loading = true;
+  let error: string | null = null;
+
+  onMount(async () => {
+    try {
+      const res = await fetch('/data/radarData.json');
+      if (!res.ok) throw new Error('Failed to fetch school data');
+      schools = await res.json();
+    } catch (err) {
+      error = err instanceof Error ? err.message : 'Unknown error';
+    } finally {
+      loading = false;
+    }
+  });
+</script>
+
+{#if loading}
+  <p class="text-muted-foreground">Loading...</p>
+{:else if error}
+  <p class="text-red-500">Error: {error}</p>
+{:else}
+  <div class="grid md:grid-cols-2 gap-4">
+    {#each schools as school (school.name)}
+      <div class="border rounded-lg p-4 bg-card shadow-sm">
+        <h2 class="text-xl font-semibold mb-1">{school.name}</h2>
+===== SLUTT ./src/lib/components/SchoolOverview.svelte =====
+
+===== START ./src/lib/components/EnhancedRadarPlot.svelte =====
+<!-- src/lib/components/EnhancedRadarPlot.svelte -->
+<script lang="ts">
+    import { onMount, onDestroy } from 'svelte';
+    import Chart from 'chart.js/auto';
+    import type { RadarSchoolData } from '$lib/types';
+    
+    export let filteredData: RadarSchoolData[] = [];
+    export let animationDuration = 1500;
+    
+    let canvas: HTMLCanvasElement;
+    let chart: Chart;
+    let isAnimating = false;
+    
+    const colors = [
+      { bg: 'rgba(99, 102, 241, 0.2)', border: 'rgb(99, 102, 241)' }, // Indigo
+      { bg: 'rgba(236, 72, 153, 0.2)', border: 'rgb(236, 72, 153)' }, // Pink
+      { bg: 'rgba(34, 197, 94, 0.2)', border: 'rgb(34, 197, 94)' },   // Green
+      { bg: 'rgba(251, 146, 60, 0.2)', border: 'rgb(251, 146, 60)' }, // Orange
+      { bg: 'rgba(168, 85, 247, 0.2)', border: 'rgb(168, 85, 247)' }, // Purple
+      { bg: 'rgba(14, 165, 233, 0.2)', border: 'rgb(14, 165, 233)' }, // Sky
+      { bg: 'rgba(239, 68, 68, 0.2)', border: 'rgb(239, 68, 68)' },   // Red
+      { bg: 'rgba(16, 185, 129, 0.2)', border: 'rgb(16, 185, 129)' }, // Emerald
+      { bg: 'rgba(245, 158, 11, 0.2)', border: 'rgb(245, 158, 11)' }, // Amber
+      { bg: 'rgba(139, 92, 246, 0.2)', border: 'rgb(139, 92, 246)' }  // Violet
+    ];
+  
+    const createChart = () => {
+      const labels = ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'];
+  
+      const datasets = filteredData.map((school, index) => ({
+===== SLUTT ./src/lib/components/EnhancedRadarPlot.svelte =====
+
+===== START ./src/lib/index.ts =====
+// place files you want to import through the `$lib` alias in this folder.
+===== SLUTT ./src/lib/index.ts =====
+
+===== START ./src/lib/data/radar-config.ts =====
+// File: src/lib/data/radar-config.ts
+import type { ChartData, ChartOptions } from 'chart.js';
+
+export const radarData: ChartData<'radar'> = {
+  labels: ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'],
+  datasets: [
+    {
+      label: 'Design School',
+      data: [5, 2, 3, 2, 1],
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Planning School',
+      data: [5, 1, 3, 2, 2],
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Positioning School',
+      data: [4, 2, 5, 2, 4],
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      borderWidth: 1
+    },
+    {
+      label: 'Entrepreneurial School',
+      data: [3, 3, 3, 5, 4],
+===== SLUTT ./src/lib/data/radar-config.ts =====
+
+===== START ./src/app.html =====
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
+===== SLUTT ./src/app.html =====
+
+===== START ./src/routes/+page.svelte =====
+<!-- src/routes/+page.svelte -->
+<script lang="ts">
+  import { onMount } from 'svelte';
+  
+  let heroVisible = false;
+  let cardsVisible = false;
+
+  onMount(() => {
+    // Staggered animations
+    setTimeout(() => heroVisible = true, 100);
+    setTimeout(() => cardsVisible = true, 300);
+  });
+</script>
+
+<svelte:head>
+  <title>Strategy Safari - Interactive Strategy Visualization</title>
+  <meta name="description" content="Explore Mintzberg's Strategy Safari and the five P's of strategy through interactive visualizations." />
+</svelte:head>
+
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100" height="100" fill="url(#grid)" />
+===== SLUTT ./src/routes/+page.svelte =====
+
+===== START ./src/routes/page.svelte.test.ts =====
+import { describe, test, expect } from 'vitest';
+import '@testing-library/jest-dom/vitest';
+import { render, screen } from '@testing-library/svelte';
+import Page from './+page.svelte';
+
+describe('/+page.svelte', () => {
+	test('should render h1', () => {
+		render(Page);
+		expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
+	});
+});
+===== SLUTT ./src/routes/page.svelte.test.ts =====
+
+===== START ./src/routes/utils/dataAdapeter.ts =====
+// src/lib/utils/dataAdapter.ts
+import type { EnhancedSchoolData, RadarSchoolData } from '$lib/types';
+
+/**
+ * Adapter for converting between enhanced school data and radar data formats
+ */
+export class SchoolDataAdapter {
+  
+  /**
+   * Convert enhanced school data to radar format for chart compatibility
+   */
+  static toRadarFormat(schools: EnhancedSchoolData[]): RadarSchoolData[] {
+    return schools.map(school => ({
+      school: school.name,
+      group: school.group,
+      values: school.values
+    }));
+  }
+
+  /**
+   * Convert radar data back to enhanced format (with limited data)
+   */
+  static fromRadarFormat(radarData: RadarSchoolData[]): Partial<EnhancedSchoolData>[] {
+    return radarData.map(data => ({
+      id: data.school.toLowerCase().replace(/\s+/g, '-'),
+      name: data.school,
+      shortName: data.school.replace(' School', ''),
+      group: data.group,
+      description: `The ${data.school} approach to strategy formation`,
+      longDescription: '',
+===== SLUTT ./src/routes/utils/dataAdapeter.ts =====
+
+===== START ./src/routes/about/+page.svelte =====
+<!-- src/routes/about/+page.svelte -->
+<script lang="ts">
+  import { onMount } from 'svelte';
+  
+  let sectionsVisible = false;
+  let heroVisible = false;
+
+  onMount(() => {
+    setTimeout(() => heroVisible = true, 100);
+    setTimeout(() => sectionsVisible = true, 300);
+  });
+</script>
+
+<svelte:head>
+  <title>About Strategy Safari - Interactive Strategy Learning</title>
+  <meta name="description" content="Learn about the Strategy Safari project, Henry Mintzberg's strategic thinking, and our approach to making strategy education more accessible and engaging." />
+</svelte:head>
+
+<!-- Hero Section -->
+<section class="relative py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+  <div class="absolute inset-0 opacity-5">
+    <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="about-grid" width="8" height="8" patternUnits="userSpaceOnUse">
+          <circle cx="4" cy="4" r="0.5" fill="currentColor"/>
+        </pattern>
+      </defs>
+      <rect width="100" height="100" fill="url(#about-grid)" />
+    </svg>
+  </div>
+===== SLUTT ./src/routes/about/+page.svelte =====
+
+===== START ./src/routes/ps/+page.svelte =====
+<!-- src/routes/ps/+page.svelte -->
+<script lang="ts">
+  import PSOverview from '$lib/components/PSOverview.svelte';
+</script>
+
+<svelte:head>
+  <title>The 5 P's of Strategy - Strategy Safari</title>
+  <meta name="description" content="Explore Henry Mintzberg's Five P's of Strategy framework: Plan, Pattern, Position, Perspective, and Ploy through interactive examples and detailed explanations." />
+</svelte:head>
+
+<section class="max-w-7xl mx-auto px-4 py-8 md:py-16">
+  <PSOverview />
+</section>===== SLUTT ./src/routes/ps/+page.svelte =====
+
+===== START ./src/routes/ps/[slug]/+page.svelte =====
+<!-- src/routes/ps/[slug]/+page.svelte -->
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import { page } from '$app/stores';
+    import { goto } from '$app/navigation';
+    import { fly, scale } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+  
+    let pData: any = null;
+    let allPsData: any = null;
+    let loading = true;
+    let error: string | null = null;
+    let sectionsVisible = false;
+  
+    // Get the slug from the URL
+    $: slug = $page.params.slug;
+  
+    onMount(async () => {
+      try {
+        const res = await fetch('/data/ps.json');
+        if (!res.ok) throw new Error('Failed to load P data');
+        allPsData = await res.json();
+        
+        // Find the specific P based on the slug
+        pData = allPsData.ps.find((p: any) => p.id === slug);
+        
+        if (!pData) {
+          error = `Strategy P "${slug}" not found`;
+        } else {
+          // Trigger staggered animations
+===== SLUTT ./src/routes/ps/[slug]/+page.svelte =====
+
+===== START ./src/routes/ps/[slug]/+page.ts =====
+// src/routes/ps/[slug]/+page.ts
+import type { PageLoad } from './$types';
+import { error } from '@sveltejs/kit';
+
+export const load: PageLoad = async ({ params, fetch }) => {
+  const { slug } = params;
+  
+  try {
+    const res = await fetch('/data/ps.json');
+    if (!res.ok) {
+      throw error(404, 'Could not load strategy data');
+    }
+    
+    const psData = await res.json();
+    const pItem = psData.ps.find((p: any) => p.id === slug);
+    
+    if (!pItem) {
+      throw error(404, `Strategy perspective "${slug}" not found`);
+    }
+    
+    return {
+      pItem,
+      allPs: psData.ps,
+      framework: psData.framework
+    };
+  } catch (err) {
+    throw error(500, 'Failed to load strategy data');
+  }
+};===== SLUTT ./src/routes/ps/[slug]/+page.ts =====
+
+===== START ./src/routes/radar/+page.svelte =====
+<!-- src/routes/radar/+page.svelte (Enkel og funksjonell versjon) -->
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { fly, scale } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
+	import { spring } from 'svelte/motion';
+	
+	// Importer din foretrukne radar-komponent
+	import RadarPlot from '$lib/components/RadarPlot.svelte';
+	// import StableRadarPlot from '$lib/components/StableRadarPlot.svelte';
+	
+	import type { RadarSchoolData } from '$lib/types';
+  
+	let radarData: RadarSchoolData[] = [];
+	let selectedGroup = 'All';
+	let selectedSchools: string[] = [];
+	let showMobileFilters = false; // Kun for mobile
+	let loading = true;
+	let error: string | null = null;
+	
+	// Animation states
+	let pageVisible = false;
+  
+	// Spring animations for counters
+	const selectedCount = spring(0, { stiffness: 0.3, damping: 0.8 });
+  
+	$: filteredData = selectedGroup === 'All' 
+	  ? radarData.filter(school => selectedSchools.length === 0 || selectedSchools.includes(school.school))
+	  : radarData.filter(school => 
+		  school.group === selectedGroup && 
+===== SLUTT ./src/routes/radar/+page.svelte =====
+
+===== START ./src/routes/radar/+page.ts =====
+// File: src/routes/radar/+page.ts
+import type { PageLoad } from './$types';
+
+export const load: PageLoad = async ({ fetch }) => {
+	const res = await fetch('/data/radarData.json');
+
+	if (!res.ok) {
+		throw new Error('Kunne ikke hente radarData.json');
+	}
+
+	const radarData = await res.json();
+	return { radarData };
+};
+===== SLUTT ./src/routes/radar/+page.ts =====
+
+===== START ./src/routes/schools/+page.svelte =====
+<!-- src/routes/schools/+page.svelte -->
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
+  import { fly, scale } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
+
+  interface School {
+    id: string;
+    name: string;
+    shortName: string;
+    group: 'Prescriptive' | 'Descriptive';
+    description: string;
+    longDescription: string;
+    keyFigures: string[];
+    originPeriod: string;
+    coreBeliefs: string[];
+    strengths: string[];
+    weaknesses: string[];
+    values: number[];
+  }
+
+  let schoolsData: { schools: School[] } | null = null;
+  let selectedGroup: 'All' | 'Prescriptive' | 'Descriptive' = 'All';
+  let loading = true;
+  let error: string | null = null;
+  let pageVisible = false;
+
+  onMount(async () => {
+    try {
+===== SLUTT ./src/routes/schools/+page.svelte =====
+
+===== START ./src/routes/schools/+page.ts =====
+// src/routes/schools/+page.ts
+import type { PageLoad } from './$types';
+import { error } from '@sveltejs/kit';
+
+export const load: PageLoad = async ({ fetch, url }) => {
+  try {
+    const res = await fetch('/data/schools.json');
+    if (!res.ok) {
+      throw error(404, 'Could not load schools data');
+    }
+    
+    const schoolsData = await res.json();
+    
+    if (!schoolsData.schools || !Array.isArray(schoolsData.schools)) {
+      throw error(500, 'Invalid schools data format');
+    }
+    
+    // Extract URL parameters for initial state
+    const selectedGroup = url.searchParams.get('group') || 'All';
+    const searchQuery = url.searchParams.get('search') || '';
+    const compareParam = url.searchParams.get('compare');
+    const selectedForComparison = compareParam ? compareParam.split(',') : [];
+    
+    return {
+      schools: schoolsData.schools,
+      initialState: {
+        selectedGroup,
+        searchQuery,
+        selectedForComparison
+      }
+===== SLUTT ./src/routes/schools/+page.ts =====
+
+===== START ./src/routes/schools/[slug]/+page.svelte =====
+<!-- src/routes/schools/[slug]/+page.svelte -->
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import { page } from '$app/stores';
+    import { goto } from '$app/navigation';
+    import { fly, scale } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+  
+    let schoolData: any = null;
+    let allSchoolsData: any = null;
+    let loading = true;
+    let error: string | null = null;
+    let sectionsVisible = false;
+  
+    // Get the slug from the URL
+    $: slug = $page.params.slug;
+  
+    onMount(async () => {
+      try {
+        const res = await fetch('/data/schools.json');
+        if (!res.ok) throw new Error('Failed to load schools data');
+        allSchoolsData = await res.json();
+        
+        // Find the specific school based on the slug
+        schoolData = allSchoolsData.schools.find((school: any) => school.id === slug);
+        
+        if (!schoolData) {
+          error = `Strategy school "${slug}" not found`;
+        } else {
+          // Trigger staggered animations
+===== SLUTT ./src/routes/schools/[slug]/+page.svelte =====
+
+===== START ./src/routes/schools/[slug]/+page.ts =====
+// src/routes/schools/[slug]/+page.ts
+import type { PageLoad } from './$types';
+import { error } from '@sveltejs/kit';
+
+export const load: PageLoad = async ({ params, fetch }) => {
+  const { slug } = params;
+  
+  try {
+    const res = await fetch('/data/schools.json');
+    if (!res.ok) {
+      throw error(404, 'Could not load schools data');
+    }
+    
+    const schoolsData = await res.json();
+    const school = schoolsData.schools.find((s: any) => s.id === slug);
+    
+    if (!school) {
+      throw error(404, `Strategy school "${slug}" not found`);
+    }
+    
+    return {
+      school,
+      allSchools: schoolsData.schools
+    };
+  } catch (err) {
+    throw error(500, 'Failed to load schools data');
+  }
+};===== SLUTT ./src/routes/schools/[slug]/+page.ts =====
+
+===== START ./src/routes/+layout.svelte =====
+<script lang="ts">
+  import "../app.css";
+  import Header from "$lib/components/Header.svelte";
+</script>
+
+<div class="min-h-screen bg-background text-foreground font-sans antialiased">
+  <Header />
+  <main>
+    <slot />
+  </main>
+</div>===== SLUTT ./src/routes/+layout.svelte =====
