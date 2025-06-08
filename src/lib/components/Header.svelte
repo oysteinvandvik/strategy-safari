@@ -22,8 +22,10 @@
   }
 
   const navigationItems = [
-    { href: '/schools', label: 'Schools', icon: '🏫' },
+    { href: '/schools', label: 'Schools', icon: '🏛️' },
     { href: '/ps', label: 'Voices (5P)', icon: '🗣️' },
+    { href: '/landscapes', label: 'Landscapes', icon: '🗻' },
+    { href: '/library', label: 'Library', icon: '📚' },
     { href: '/radar', label: 'Radar', icon: '📊' },
     { href: '/about', label: 'About', icon: 'ℹ️' }
   ];
@@ -38,7 +40,7 @@
         <a href="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <span class="text-2xl">🧭</span>
           <span class="text-xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-            Strategy Safari
+            Strategy Explorer
           </span>
         </a>
       </div>
@@ -48,7 +50,7 @@
         {#each navigationItems as item}
           <a
             href={item.href}
-            class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary {$currentPath === item.href || ($currentPath.startsWith('/ps') && item.href === '/ps') ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}"
+            class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary {$currentPath === item.href || ($currentPath.startsWith('/ps') && item.href === '/ps') || ($currentPath.startsWith('/landscapes') && item.href === '/landscapes') || ($currentPath.startsWith('/library') && item.href === '/library') ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}"
           >
             <span class="text-base">{item.icon}</span>
             <span>{item.label}</span>
@@ -90,7 +92,7 @@
           {#each navigationItems as item}
             <a
               href={item.href}
-              class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors {$currentPath === item.href || ($currentPath.startsWith('/ps') && item.href === '/ps') ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'}"
+              class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors {$currentPath === item.href || ($currentPath.startsWith('/ps') && item.href === '/ps') || ($currentPath.startsWith('/landscapes') && item.href === '/landscapes') || ($currentPath.startsWith('/library') && item.href === '/library') ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'}"
               on:click={closeMobileMenu}
             >
               <span class="text-lg">{item.icon}</span>

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "thinking",
+    "group": "Process",
+    "name": "Thinking Paradox",
+    "left_label": "Logical",
+    "right_label": "Creative",
+    "description": "How should strategic thinking happen \u2014 through structured logic or creative insight?",
+    "reflection_question": "Where do you feel most comfortable \u2014 in analysis or in imagination?",
+    "shadow_hint": "Too much logic may kill innovation. Too much creativity may lack grounding.",
+    "example_books": {
+      "left": "Thinking Strategically \u2013 Dixit & Nalebuff",
+      "right": "Designing Strategy \u2013 Roger Martin"
+    }
+  },
+  {
+    "id": "formation",
+    "group": "Process",
+    "name": "Formation Paradox",
+    "left_label": "Planned",
+    "right_label": "Emergent",
+    "description": "Should strategy be carefully planned or allowed to emerge over time?",
+    "reflection_question": "What happens when plans meet reality in your context?",
+    "shadow_hint": "Relying only on planning can make you blind to learning; relying only on emergence may cause drift.",
+    "example_books": {
+      "left": "Good Strategy / Bad Strategy \u2013 Richard Rumelt",
+      "right": "Strategy as Practice \u2013 Richard Whittington"
+    }
+  },
+  {
+    "id": "change",
+    "group": "Process",
+    "name": "Change Paradox",
+    "left_label": "Revolutionary",
+    "right_label": "Evolutionary",
+    "description": "Should strategic change happen in bold leaps or gradual steps?",
+    "reflection_question": "When has your organization changed best \u2014 through disruption or iteration?",
+    "shadow_hint": "Constant evolution may prevent breakthrough; sudden shifts may create chaos.",
+    "example_books": {
+      "left": "Competing for the Future \u2013 Hamel & Prahalad",
+      "right": "The Learning Organization \u2013 Peter Senge"
+    }
+  },
+  {
+    "id": "locus",
+    "group": "Content",
+    "name": "Locus Paradox",
+    "left_label": "Individual",
+    "right_label": "Collective",
+    "description": "Is strategy driven by individual leaders or shaped collectively by the organization?",
+    "reflection_question": "Who really shapes strategy in your context \u2014 and who should?",
+    "shadow_hint": "Overemphasizing heroic leaders can overlook collective intelligence.",
+    "example_books": {
+      "left": "The Strategist \u2013 Cynthia Montgomery",
+      "right": "The Practice of Adaptive Leadership \u2013 Heifetz et al."
+    }
+  },
+  {
+    "id": "response",
+    "group": "Content",
+    "name": "Response Paradox",
+    "left_label": "Environmental Determinism",
+    "right_label": "Strategic Choice",
+    "description": "Are strategic options shaped by external forces or deliberate choices?",
+    "reflection_question": "How much freedom do you feel you have to shape your strategic future?",
+    "shadow_hint": "Assuming full control may lead to arrogance; assuming no control leads to passivity.",
+    "example_books": {
+      "left": "Blue Ocean Strategy \u2013 Kim & Mauborgne",
+      "right": "Playing to Win \u2013 Lafley & Martin"
+    }
+  },
+  {
+    "id": "network",
+    "group": "Content",
+    "name": "Network Paradox",
+    "left_label": "Competition",
+    "right_label": "Cooperation",
+    "description": "Is strategy about winning against others or collaborating to create value?",
+    "reflection_question": "How do you balance rivalry and partnership in your strategy?",
+    "shadow_hint": "Over-competition erodes trust; over-collaboration risks dilution.",
+    "example_books": {
+      "left": "Competitive Strategy \u2013 Michael Porter",
+      "right": "Co-opetition \u2013 Nalebuff & Brandenburger"
+    }
+  },
+  {
+    "id": "industrial",
+    "group": "Context",
+    "name": "Industrial Paradox",
+    "left_label": "Industry-level",
+    "right_label": "Firm-specific",
+    "description": "Is strategic analysis more about understanding industry forces or unique internal capabilities?",
+    "reflection_question": "Where do you spend most energy \u2014 scanning markets or developing internal advantage?",
+    "shadow_hint": "Over-focus on external may ignore what makes you special; internal focus can lose sight of market shifts.",
+    "example_books": {
+      "left": "Five Forces \u2013 Michael Porter",
+      "right": "Core Competence of the Corporation \u2013 Prahalad & Hamel"
+    }
+  },
+  {
+    "id": "organizational",
+    "group": "Context",
+    "name": "Organizational Paradox",
+    "left_label": "Uniformity",
+    "right_label": "Diversity",
+    "description": "Should the organization aim for consistency or foster variation and difference?",
+    "reflection_question": "What are the risks of being too uniform \u2013 or too fragmented?",
+    "shadow_hint": "Uniformity may reduce adaptability; diversity may erode coherence.",
+    "example_books": {
+      "left": "Built to Last \u2013 Collins & Porras",
+      "right": "The Culture Map \u2013 Erin Meyer"
+    }
+  },
+  {
+    "id": "geographical",
+    "group": "Context",
+    "name": "Geographical Paradox",
+    "left_label": "Global",
+    "right_label": "Local",
+    "description": "Should strategy be globally standardized or locally adapted?",
+    "reflection_question": "Where do you see tension between global scale and local nuance?",
+    "shadow_hint": "Standardization may alienate; localism may fragment the brand.",
+    "example_books": {
+      "left": "Global Strategy \u2013 George Yip",
+      "right": "Managing Across Cultures \u2013 Schneider & Barsoux"
+    }
+  }
+]

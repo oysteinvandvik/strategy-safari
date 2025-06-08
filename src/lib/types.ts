@@ -93,3 +93,33 @@ export interface SchoolPEmphasis {
 	averageScore: number;
 	profile: 'balanced' | 'focused' | 'specialized';
   }
+
+  // Tillegg til src/lib/types.ts for Landscapes modul
+
+export interface StrategicParadox {
+	id: string;
+	group: 'Process' | 'Content' | 'Context';
+	name: string;
+	left_label: string;
+	right_label: string;
+	description: string;
+	reflection_question: string;
+	shadow_hint: string;
+	example_books: {
+	  left: string;
+	  right: string;
+	};
+  }
+  
+  export interface ParadoxPosition {
+	paradoxId: string;
+	position: number; // 0-100, hvor 0 = left pole, 100 = right pole
+	timestamp?: Date;
+	reflection?: string;
+  }
+  
+  export interface LandscapeProfile {
+	userId?: string;
+	positions: ParadoxPosition[];
+	lastUpdated: Date;
+  }
