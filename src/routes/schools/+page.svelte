@@ -1,4 +1,7 @@
-<!-- src/routes/schools/+page.svelte -->
+<!-- 
+  FILE: src/routes/schools/+page.svelte
+  Enhanced Schools Overview with descriptions 
+-->
 <script lang="ts">
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
@@ -20,200 +23,329 @@
     values: number[];
   }
 
-  let schoolsData: { schools: School[] } | null = null;
+  // Mock data - replace with your actual data loading
+  let schoolsData: { schools: School[] } = {
+    schools: [
+      {
+        id: "design",
+        name: "Design School",
+        shortName: "Design",
+        group: "Prescriptive",
+        description: "Strategy as a process of conception — clear, deliberate design through internal fit.",
+        longDescription: "The Design School views strategy formation as a process of conception...",
+        keyFigures: ["Kenneth Andrews", "Roland Christensen"],
+        originPeriod: "1960s",
+        coreBeliefs: ["Strategy should be explicit and clear"],
+        strengths: ["Promotes clear thinking"],
+        weaknesses: ["May oversimplify"],
+        values: [5, 2, 3, 2, 1]
+      },
+      {
+        id: "planning",
+        name: "Planning School", 
+        shortName: "Planning",
+        group: "Prescriptive",
+        description: "Strategy as formal planning with detailed procedures, explicit steps and checklists.",
+        longDescription: "The Planning School emphasizes formal procedures...",
+        keyFigures: ["Igor Ansoff"],
+        originPeriod: "1970s", 
+        coreBeliefs: ["Formal planning processes"],
+        strengths: ["Systematic approach"],
+        weaknesses: ["Can be rigid"],
+        values: [5, 1, 3, 2, 2]
+      },
+      {
+        id: "positioning",
+        name: "Positioning School",
+        shortName: "Positioning", 
+        group: "Prescriptive",
+        description: "Strategy as analytical process focused on industry analysis and competitive positioning.",
+        longDescription: "The Positioning School focuses on industry structure...",
+        keyFigures: ["Michael Porter"],
+        originPeriod: "1980s",
+        coreBeliefs: ["Industry analysis is key"],
+        strengths: ["Rigorous analysis"],
+        weaknesses: ["Can ignore internal capabilities"],
+        values: [4, 2, 5, 2, 4]
+      },
+      {
+        id: "entrepreneurial",
+        name: "Entrepreneurial School",
+        shortName: "Entrepreneurial",
+        group: "Descriptive", 
+        description: "Strategy as visionary process driven by the leader's vision and intuition.",
+        longDescription: "The Entrepreneurial School emphasizes vision...",
+        keyFigures: ["Joseph Schumpeter"],
+        originPeriod: "Various",
+        coreBeliefs: ["Leadership vision drives strategy"],
+        strengths: ["Inspires and motivates"],
+        weaknesses: ["Depends on one person"],
+        values: [3, 3, 3, 5, 4]
+      },
+      {
+        id: "cognitive",
+        name: "Cognitive School",
+        shortName: "Cognitive",
+        group: "Descriptive",
+        description: "Strategy as mental process focusing on how strategists think and process information.",
+        longDescription: "The Cognitive School examines mental processes...",
+        keyFigures: ["Herbert Simon"],
+        originPeriod: "1980s",
+        coreBeliefs: ["Mind matters in strategy"],
+        strengths: ["Understands biases"],
+        weaknesses: ["Can be too theoretical"],
+        values: [2, 3, 2, 5, 1]
+      },
+      {
+        id: "learning",
+        name: "Learning School",
+        shortName: "Learning", 
+        group: "Descriptive",
+        description: "Strategy as emergent process where strategies develop through organizational learning.",
+        longDescription: "The Learning School sees strategy as emergent...",
+        keyFigures: ["James Quinn", "Ikujiro Nonaka"],
+        originPeriod: "1990s",
+        coreBeliefs: ["Strategy emerges through learning"],
+        strengths: ["Adapts to change"],
+        weaknesses: ["Can lack direction"],
+        values: [2, 5, 3, 4, 2]
+      },
+      {
+        id: "power",
+        name: "Power School",
+        shortName: "Power",
+        group: "Descriptive",
+        description: "Strategy as process of negotiation and bargaining between competing power holders.",
+        longDescription: "The Power School views strategy formation...",
+        keyFigures: ["Graham Allison", "Jeffrey Pfeffer"],
+        originPeriod: "1970s-80s",
+        coreBeliefs: ["Politics and power shape strategy"],
+        strengths: ["Realistic about organizations"],
+        weaknesses: ["Can be cynical"],
+        values: [3, 4, 4, 3, 5]
+      },
+      {
+        id: "cultural",
+        name: "Cultural School",
+        shortName: "Cultural",
+        group: "Descriptive", 
+        description: "Strategy as collective process rooted in organizational culture and social beliefs.",
+        longDescription: "The Cultural School emphasizes collective processes...",
+        keyFigures: ["Edgar Schein"],
+        originPeriod: "1980s",
+        coreBeliefs: ["Culture drives strategy"],
+        strengths: ["Emphasizes collective wisdom"],
+        weaknesses: ["Resistant to change"],
+        values: [2, 5, 3, 5, 1]
+      },
+      {
+        id: "environmental",
+        name: "Environmental School", 
+        shortName: "Environmental",
+        group: "Descriptive",
+        description: "Strategy as reactive process where the environment sets demands on the organization.",
+        longDescription: "The Environmental School sees the environment...",
+        keyFigures: ["Michael Hannan", "John Freeman"],
+        originPeriod: "1970s",
+        coreBeliefs: ["Environment shapes strategy"],
+        strengths: ["Acknowledges constraints"],
+        weaknesses: ["Downplays strategic choice"],
+        values: [1, 4, 4, 2, 2]
+      },
+      {
+        id: "configuration",
+        name: "Configuration School",
+        shortName: "Configuration",
+        group: "Descriptive",
+        description: "Strategy as transformation process between stable configurations and change periods.",
+        longDescription: "The Configuration School describes organizations...",
+        keyFigures: ["Henry Mintzberg", "Danny Miller"],
+        originPeriod: "1980s-90s", 
+        coreBeliefs: ["Organizations are configurations"],
+        strengths: ["Integrative approach"],
+        weaknesses: ["Complex to implement"],
+        values: [4, 4, 4, 4, 3]
+      }
+    ]
+  };
+
   let selectedGroup: 'All' | 'Prescriptive' | 'Descriptive' = 'All';
-  let loading = true;
-  let error: string | null = null;
+  let loading = false;
   let pageVisible = false;
 
-  onMount(async () => {
-    try {
-      const res = await fetch('/data/schools.json');
-      if (!res.ok) throw new Error('Failed to load schools data');
-      schoolsData = await res.json();
-      
-      setTimeout(() => pageVisible = true, 100);
-    } catch (err) {
-      error = err instanceof Error ? err.message : 'Unknown error';
-    } finally {
-      loading = false;
-    }
+  const pLabels = ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'];
+  const pColors = ['#3366cc', '#dc2626', '#16a34a', '#ea580c', '#9333ea'];
+
+  $: filteredSchools = selectedGroup === 'All' 
+    ? schoolsData.schools 
+    : schoolsData.schools.filter(school => school.group === selectedGroup);
+
+  $: totalCount = schoolsData.schools.length;
+  $: prescriptiveCount = schoolsData.schools.filter(s => s.group === 'Prescriptive').length;
+  $: descriptiveCount = schoolsData.schools.filter(s => s.group === 'Descriptive').length;
+
+  onMount(() => {
+    setTimeout(() => pageVisible = true, 100);
   });
 
-  // Computed filtered schools
-  $: filteredSchools = schoolsData?.schools.filter(school => {
-    return selectedGroup === 'All' || school.group === selectedGroup;
-  }) || [];
-
-  $: prescriptiveCount = schoolsData?.schools.filter(s => s.group === 'Prescriptive').length || 0;
-  $: descriptiveCount = schoolsData?.schools.filter(s => s.group === 'Descriptive').length || 0;
-  $: totalCount = schoolsData?.schools.length || 0;
+  function handleSchoolClick(schoolId: string) {
+    goto(`/schools/${schoolId}`);
+  }
 
   function getGroupColor(group: string) {
     return group === 'Prescriptive' 
-      ? 'bg-blue-100 text-blue-800 border-blue-200'
-      : 'bg-green-100 text-green-800 border-green-200';
-  }
-
-  function getPLabels(): string[] {
-    return ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'];
-  }
-
-  function getPColors(): string[] {
-    return [
-      'bg-blue-500',    // Plan - Blue
-      'bg-red-500',     // Pattern - Red  
-      'bg-green-500',   // Position - Green
-      'bg-amber-500',   // Perspective - Amber
-      'bg-purple-500'   // Ploy - Purple
-    ];
+      ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
+      : 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
   }
 </script>
 
 <svelte:head>
-  <title>Strategy Schools Overview - Strategy Safari</title>
-  <meta name="description" content="Comprehensive overview of the ten schools of strategy formation from Mintzberg's Strategy Safari with detailed P's analysis." />
+  <title>Strategy Schools Overview - Strategy Explorer</title>
+  <meta name="description" content="Explore the 10 strategic schools from Mintzberg's Strategy Safari. Compare their approaches to the Five P's of strategy." />
 </svelte:head>
 
-{#if loading}
-  <div class="max-w-7xl mx-auto px-4 py-16 text-center">
-    <div class="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
-    <p class="mt-4 text-muted-foreground">Loading strategy schools...</p>
+<!-- Page Header -->
+{#if pageVisible}
+  <div in:fly={{ y: 30, duration: 600, easing: quintOut }} class="mb-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+      Strategy Schools Overview
+    </h1>
+    <p class="text-xl text-muted-foreground max-w-3xl">
+      Discover the ten distinct schools of strategic thought from Henry Mintzberg's Strategy Safari. 
+      Each school offers a unique perspective on how strategy is formed and implemented.
+    </p>
   </div>
+{/if}
 
-{:else if error}
-  <div class="max-w-7xl mx-auto px-4 py-16">
-    <div class="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-      <h2 class="text-xl font-semibold text-red-800 mb-2">Error Loading Schools</h2>
-      <p class="text-red-600 mb-4">{error}</p>
-      <p class="text-sm text-red-500">Please check that the <code>static/data/schools.json</code> file exists and is properly formatted.</p>
+<!-- Filter Tabs -->
+{#if pageVisible}
+  <div in:fly={{ y: 20, duration: 500, delay: 200, easing: quintOut }} class="mb-8">
+    <div class="flex flex-wrap gap-2">
+      <button
+        on:click={() => selectedGroup = 'All'}
+        class="px-4 py-2 rounded-lg text-sm font-medium transition-colors {selectedGroup === 'All' 
+          ? 'bg-primary text-primary-foreground' 
+          : 'bg-muted text-muted-foreground hover:bg-muted/80'}"
+      >
+        All Schools ({totalCount})
+      </button>
+      <button
+        on:click={() => selectedGroup = 'Prescriptive'}
+        class="px-4 py-2 rounded-lg text-sm font-medium transition-colors {selectedGroup === 'Prescriptive' 
+          ? 'bg-primary text-primary-foreground' 
+          : 'bg-muted text-muted-foreground hover:bg-muted/80'}"
+      >
+        Prescriptive ({prescriptiveCount})
+      </button>
+      <button
+        on:click={() => selectedGroup = 'Descriptive'}
+        class="px-4 py-2 rounded-lg text-sm font-medium transition-colors {selectedGroup === 'Descriptive' 
+          ? 'bg-primary text-primary-foreground' 
+          : 'bg-muted text-muted-foreground hover:bg-muted/80'}"
+      >
+        Descriptive ({descriptiveCount})
+      </button>
     </div>
   </div>
+{/if}
 
-{:else if schoolsData && pageVisible}
-  <div class="max-w-7xl mx-auto px-4 py-8">
-    
-    <!-- Header -->
-    <div class="mb-8" in:fly={{ y: -30, duration: 800, easing: quintOut }}>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">
-        Strategy Schools Overview
-      </h1>
-    </div>
-
-    <!-- Filter Tabs -->
-    <div class="mb-8" in:fly={{ y: 30, duration: 800, delay: 100, easing: quintOut }}>
-      <div class="flex gap-2">
-        <button
-          class="px-4 py-2 rounded-lg font-medium transition-all {selectedGroup === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}"
-          on:click={() => selectedGroup = 'All'}
-        >
-          All Schools ({totalCount})
-        </button>
-        <button
-          class="px-4 py-2 rounded-lg font-medium transition-all {selectedGroup === 'Prescriptive' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}"
-          on:click={() => selectedGroup = 'Prescriptive'}
-        >
-          Prescriptive ({prescriptiveCount})
-        </button>
-        <button
-          class="px-4 py-2 rounded-lg font-medium transition-all {selectedGroup === 'Descriptive' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}"
-          on:click={() => selectedGroup = 'Descriptive'}
-        >
-          Descriptive ({descriptiveCount})
-        </button>
-      </div>
-    </div>
-
-    <!-- Schools Grid -->
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
-      {#each filteredSchools as school, index (school.id)}
-        <div class="bg-white border rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer"
-             in:scale={{ duration: 600, delay: index * 100, easing: quintOut }}
-             on:click={() => goto(`/schools/${school.id}`)}
-             role="button"
-             tabindex="0"
-             on:keydown={(e) => e.key === 'Enter' && goto(`/schools/${school.id}`)}>
-          
-          <!-- School Header -->
-          <div class="mb-4">
-            <h2 class="text-xl font-bold mb-2">{school.name}</h2>
-            <span class="inline-block px-2 py-1 rounded-full text-xs font-medium border {getGroupColor(school.group)}">
+<!-- Schools Grid -->
+{#if pageVisible}
+  <div 
+    in:fly={{ y: 20, duration: 500, delay: 400, easing: quintOut }}
+    class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-12"
+  >
+    {#each filteredSchools as school, index (school.id)}
+      <div
+        in:scale={{ duration: 300, delay: index * 50, easing: quintOut }}
+        class="group bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer hover:border-primary/50"
+        on:click={() => handleSchoolClick(school.id)}
+        role="button"
+        tabindex="0"
+        on:keydown={(e) => e.key === 'Enter' && handleSchoolClick(school.id)}
+      >
+        <!-- School Header -->
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+              {school.name}
+            </h3>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium mt-2 {getGroupColor(school.group)}">
               {school.group}
             </span>
           </div>
-
-          <!-- Five P's Emphasis -->
-          <div class="mb-4">
-            <h3 class="font-semibold mb-3 text-sm">Five P's Emphasis:</h3>
-            <div class="space-y-3">
-              {#each school.values as value, i}
-                <div class="flex items-center">
-                  <!-- P Label -->
-                  <div class="w-20 text-sm font-medium text-gray-700">
-                    {getPLabels()[i]}:
-                  </div>
-                  
-                  <!-- Progress Bar -->
-                  <div class="flex-1 mx-3">
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                      <div 
-                        class="h-full {getPColors()[i]} transition-all duration-1000 ease-out"
-                        style="width: {value * 20}%"
-                      ></div>
-                    </div>
-                  </div>
-                  
-                  <!-- Value -->
-                  <div class="w-8 text-right text-sm font-medium text-gray-600">
-                    {value}/5
-                  </div>
-                </div>
-              {/each}
-            </div>
+          <div class="text-2xl opacity-60 group-hover:opacity-100 transition-opacity">
+            {school.group === 'Prescriptive' ? '📋' : '🔍'}
           </div>
         </div>
-      {/each}
-    </div>
 
-    <!-- Bottom Call to Action -->
-    {#if filteredSchools.length > 0}
-      <div class="mt-12 text-center" in:scale={{ duration: 600, delay: 400 }}>
-        <div class="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-950/20 dark:to-green-950/20 rounded-xl p-8">
-          <h3 class="text-2xl font-bold mb-4">Explore Further</h3>
-          <p class="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Compare these strategy schools visually or learn more about the Five P's framework.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/radar" 
-               class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors">
-              <span>📊</span>
-              Interactive Radar Chart
-            </a>
-            <a href="/ps" 
-               class="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-secondary/80 transition-colors">
-              <span>📝</span>
-              Learn About the 5 P's
-            </a>
-          </div>
-        </div>
-      </div>
-    {/if}
-
-    <!-- Empty State -->
-    {#if filteredSchools.length === 0}
-      <div class="text-center py-12" in:scale={{ duration: 400, delay: 200 }}>
-        <div class="text-4xl mb-4">🔍</div>
-        <h3 class="text-xl font-semibold mb-2">No schools found</h3>
-        <p class="text-muted-foreground mb-4">
-          Try selecting a different category
+        <!-- School Description -->
+        <p class="text-muted-foreground text-sm mb-6 leading-relaxed">
+          {school.description}
         </p>
-        <button
-          on:click={() => selectedGroup = 'All'}
-          class="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-        >
-          Show all schools
-        </button>
+
+        <!-- Five P's Profile -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-medium text-foreground mb-3">Five P's Emphasis:</h4>
+          {#each school.values as value, idx}
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-muted-foreground min-w-0 flex-1">
+                {pLabels[idx]}:
+              </span>
+              <div class="flex items-center gap-2 flex-1 max-w-[120px]">
+                <div class="flex-1 bg-muted rounded-full h-2 overflow-hidden">
+                  <div 
+                    class="h-full rounded-full transition-all duration-500"
+                    style="width: {(value / 5) * 100}%; background-color: {pColors[idx]}"
+                  ></div>
+                </div>
+                <span class="text-xs text-muted-foreground min-w-[24px] text-right">
+                  {value}/5
+                </span>
+              </div>
+            </div>
+          {/each}
+        </div>
+
+        <!-- Hover Arrow -->
+        <div class="flex items-center justify-end mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <span class="text-sm text-primary font-medium">Learn more</span>
+          <svg class="w-4 h-4 ml-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
       </div>
-    {/if}
+    {/each}
+  </div>
+{/if}
+
+<!-- Call to Action Section -->
+{#if pageVisible}
+  <div 
+    in:fly={{ y: 30, duration: 600, delay: 600, easing: quintOut }}
+    class="text-center py-12 bg-muted/30 rounded-2xl"
+  >
+    <h2 class="text-2xl font-bold text-foreground mb-4">
+      Explore Further
+    </h2>
+    <p class="text-muted-foreground mb-8 max-w-2xl mx-auto">
+      Compare these strategy schools visually or learn more about the Five P's framework.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button 
+        on:click={() => goto('/radar')}
+        class="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+      >
+        <span class="mr-2">📊</span>
+        Interactive Radar Chart
+      </button>
+      <button 
+        on:click={() => goto('/ps')}
+        class="inline-flex items-center px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/80 transition-colors"
+      >
+        <span class="mr-2">🗣️</span>
+        Learn About the 5 P's
+      </button>
+    </div>
   </div>
 {/if}

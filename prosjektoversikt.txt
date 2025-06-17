@@ -10,6 +10,11 @@
   ./src/lib/components
   ./src/lib/data
   ./src/routes
+  ./src/routes/landscapes
+  ./src/routes/landscapes/profile
+  ./src/routes/landscapes/[slug]
+  ./src/routes/library
+  ./src/routes/library/[slug]
   ./src/routes/utils
   ./src/routes/about
   ./src/routes/ps
@@ -186,6 +191,39 @@ An interactive visualization tool built with **SvelteKit** and **Chart.js**, des
 		"eslint-config-prettier": "^10.0.1",
 ===== SLUTT ./package.json =====
 
+===== START ./static/data/landscapes.json =====
+[
+  {
+    "id": "thinking",
+    "group": "Process",
+    "name": "Thinking Paradox",
+    "left_label": "Logical",
+    "right_label": "Creative",
+    "description": "How should strategic thinking happen \u2014 through structured logic or creative insight?",
+    "reflection_question": "Where do you feel most comfortable \u2014 in analysis or in imagination?",
+    "shadow_hint": "Too much logic may kill innovation. Too much creativity may lack grounding.",
+    "example_books": {
+      "left": "Thinking Strategically \u2013 Dixit & Nalebuff",
+      "right": "Designing Strategy \u2013 Roger Martin"
+    }
+  },
+  {
+    "id": "formation",
+    "group": "Process",
+    "name": "Formation Paradox",
+    "left_label": "Planned",
+    "right_label": "Emergent",
+    "description": "Should strategy be carefully planned or allowed to emerge over time?",
+    "reflection_question": "What happens when plans meet reality in your context?",
+    "shadow_hint": "Relying only on planning can make you blind to learning; relying only on emergence may cause drift.",
+    "example_books": {
+      "left": "Good Strategy / Bad Strategy \u2013 Richard Rumelt",
+      "right": "Strategy as Practice \u2013 Richard Whittington"
+    }
+  },
+  {
+===== SLUTT ./static/data/landscapes.json =====
+
 ===== START ./static/data/ps.json =====
 {
   "framework": {
@@ -284,6 +322,39 @@ An interactive visualization tool built with **SvelteKit** and **Chart.js**, des
         "plan": {
           "emphasis": 5,
 ===== SLUTT ./static/data/schools.json =====
+
+===== START ./static/data/books.json =====
+{
+    "library": {
+      "title": "Strategy Explorer Library",
+      "description": "A curated collection of essential strategy books organized by the voices they emphasize and the paradoxes they explore.",
+      "last_updated": "2025-01-09",
+      "total_books": 20
+    },
+    "books": [
+      {
+        "id": "strategy-safari",
+        "title": "Strategy Safari: A Guided Tour Through The Wilds of Strategic Management",
+        "authors": ["Henry Mintzberg", "Bruce Ahlstrand", "Joseph Lampel"],
+        "isbn": "9780743270571",
+        "isbn_10": "0743270576",
+        "publication_year": 1998,
+        "publisher": "Free Press",
+        "description": "The definitive guide to ten schools of strategic thought. Maps the strategic landscape and facilitates intelligent, informed strategy formation.",
+        "category": "foundational",
+        "cover_url": "https://covers.openlibrary.org/b/isbn/9780743270571-L.jpg",
+        "cover_medium": "https://covers.openlibrary.org/b/isbn/9780743270571-M.jpg",
+        "cover_small": "https://covers.openlibrary.org/b/isbn/9780743270571-S.jpg",
+        "openlibrary_url": "https://openlibrary.org/isbn/9780743270571",
+        "voices_emphasis": {
+          "plan": 3,
+          "pattern": 4,
+          "position": 3,
+          "perspective": 5,
+          "ploy": 2
+        },
+        "paradoxes_explored": ["thinking", "formation", "locus"],
+===== SLUTT ./static/data/books.json =====
 
 ===== START ./tsconfig.json =====
 {
@@ -467,36 +538,36 @@ export interface SchoolPEmphasis {
 ===== SLUTT ./src/lib/types.ts =====
 
 ===== START ./src/lib/components/SchoolCard.svelte =====
-<!-- src/lib/components/EnhancedSchoolCard.svelte -->
+<!-- src/lib/components/SchoolCard.svelte -->
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { slide } from 'svelte/transition';
-  import type { EnhancedSchoolData, StrategyP } from '$lib/types';
+  import { scale } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
 
-  export let school: EnhancedSchoolData;
-  export let expanded = false;
-  export let showComparison = false;
-
-  const dispatch = createEventDispatcher();
-
-  function toggleExpanded() {
-    expanded = !expanded;
-    dispatch('toggle', { school, expanded });
+  interface School {
+    id: string;
+    name: string;
+    shortName: string;
+    group: string;
+    description: string;
+    longDescription?: string;
+    keyFigures?: string[];
+    originPeriod?: string;
+    coreBeliefs?: string[];
+    strengths?: string[];
+    weaknesses?: string[];
+    values?: number[];
+    emphasis?: {
+      plan: number;
+      pattern: number;
+      position: number;
+      perspective: number;
+      ploy: number;
+    };
+    pApproaches?: any;
   }
 
-  function getPLabel(index: number): string {
-    const labels: StrategyP[] = ['plan', 'pattern', 'position', 'perspective', 'ploy'];
-    return labels[index] || 'unknown';
-  }
-
-  function getGroupColor(group: string) {
-    return group === 'Prescriptive' 
-      ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
-      : 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
-  }
-
-  function getStrengthColor(value: number): string {
-    if (value >= 4) return 'text-green-600';
+  export let school: School;
 ===== SLUTT ./src/lib/components/SchoolCard.svelte =====
 
 ===== START ./src/lib/components/SchoolDetailView.svelte =====
@@ -532,6 +603,204 @@ export interface SchoolPEmphasis {
         const data = await res.json();
 ===== SLUTT ./src/lib/components/SchoolDetailView.svelte =====
 
+===== START ./src/lib/components/LandscapeOverview.svelte =====
+<!-- src/lib/components/LandscapeOverview.svelte -->
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import { goto } from '$app/navigation';
+    import { fly, scale } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+    import ParadoxCard from '$lib/components/ParadoxCard.svelte';
+    import type { StrategicParadox, ParadoxPosition } from '$lib/types';
+  
+    let paradoxes: StrategicParadox[] = [];
+    let userPositions: Record<string, number> = {};
+    let selectedGroup: 'All' | 'Process' | 'Content' | 'Context' = 'All';
+    let loading = true;
+    let error: string | null = null;
+    let sectionsVisible = false;
+  
+    onMount(async () => {
+      try {
+        const res = await fetch('/data/landscapes.json');
+        if (!res.ok) throw new Error('Failed to load paradoxes data');
+        paradoxes = await res.json();
+        
+        // Load user positions from localStorage if available
+        const savedPositions = localStorage.getItem('landscape-positions');
+        if (savedPositions) {
+          userPositions = JSON.parse(savedPositions);
+        }
+        
+        setTimeout(() => sectionsVisible = true, 100);
+      } catch (err) {
+===== SLUTT ./src/lib/components/LandscapeOverview.svelte =====
+
+===== START ./src/lib/components/ParadoxCard.svelte =====
+<!-- src/lib/components/ParadoxCard.svelte -->
+<script lang="ts">
+    import { createEventDispatcher } from 'svelte';
+    import { scale } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+    import type { StrategicParadox } from '$lib/types';
+  
+    export let paradox: StrategicParadox;
+    export let position: number | null = null; // 0-100 hvis bruker har en posisjon
+    export let delay = 0;
+  
+    const dispatch = createEventDispatcher();
+  
+    function handleClick() {
+      dispatch('select', paradox);
+    }
+  
+    function getGroupColor(group: string) {
+      switch (group) {
+        case 'Process': return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300';
+        case 'Content': return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
+        case 'Context': return 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300';
+        default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300';
+      }
+    }
+  
+    function getGroupIcon(group: string) {
+      switch (group) {
+        case 'Process': return '⚙️';
+        case 'Content': return '🎯';
+===== SLUTT ./src/lib/components/ParadoxCard.svelte =====
+
+===== START ./src/lib/components/BookDetail.svelte =====
+<!-- src/lib/components/BookDetail.svelte -->
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import { goto } from '$app/navigation';
+    import { fly, scale } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+  
+    interface Book {
+      id: string;
+      title: string;
+      authors: string[];
+      isbn: string;
+      isbn_10: string;
+      publication_year: number;
+      publisher: string;
+      description: string;
+      category: string;
+      cover_url: string;
+      cover_medium: string;
+      cover_small: string;
+      openlibrary_url: string;
+      voices_emphasis: {
+        plan: number;
+        pattern: number;
+        position: number;
+        perspective: number;
+        ploy: number;
+      };
+      paradoxes_explored: string[];
+      paradox_position?: string;
+===== SLUTT ./src/lib/components/BookDetail.svelte =====
+
+===== START ./src/lib/components/ParadoxDetail.svelte =====
+<!-- src/lib/components/ParadoxDetail.svelte -->
+<script lang="ts">
+    import { createEventDispatcher } from 'svelte';
+    import { fly, scale } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+    import { spring } from 'svelte/motion';
+    import type { StrategicParadox } from '$lib/types';
+  
+    export let paradox: StrategicParadox;
+    export let initialPosition: number | null = null;
+  
+    const dispatch = createEventDispatcher();
+  
+    let position = initialPosition || 50;
+    let hasInteracted = false;
+    let showReflection = false;
+    let userReflection = '';
+    let sectionsVisible = false;
+  
+    // Smooth animation for slider
+    const smoothPosition = spring(position, {
+      stiffness: 0.1,
+      damping: 0.4
+    });
+  
+    $: smoothPosition.set(position);
+  
+    // Load saved reflection if exists
+    $: {
+      const saved = localStorage.getItem(`reflection-${paradox.id}`);
+===== SLUTT ./src/lib/components/ParadoxDetail.svelte =====
+
+===== START ./src/lib/components/BookCard.svelte =====
+<!-- src/lib/components/BookCard.svelte -->
+<script lang="ts">
+    import { createEventDispatcher } from 'svelte';
+    import { scale } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+  
+    interface Book {
+      id: string;
+      title: string;
+      authors: string[];
+      isbn: string;
+      publication_year: number;
+      publisher: string;
+      description: string;
+      category: string;
+      cover_url: string;
+      cover_medium: string;
+      cover_small: string;
+      openlibrary_url: string;
+      voices_emphasis: {
+        plan: number;
+        pattern: number;
+        position: number;
+        perspective: number;
+        ploy: number;
+      };
+      paradoxes_explored: string[];
+      paradox_position?: string;
+      tags: string[];
+      reading_level: string;
+===== SLUTT ./src/lib/components/BookCard.svelte =====
+
+===== START ./src/lib/components/LibraryOverview.svelte =====
+<!-- src/lib/components/LibraryOverview.svelte -->
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import { goto } from '$app/navigation';
+    import { fly, scale } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+    import BookCard from '$lib/components/BookCard.svelte';
+    import BookFilters from '$lib/components/BookFilters.svelte';
+  
+    interface Book {
+      id: string;
+      title: string;
+      authors: string[];
+      isbn: string;
+      publication_year: number;
+      publisher: string;
+      description: string;
+      category: string;
+      cover_url: string;
+      cover_medium: string;
+      cover_small: string;
+      openlibrary_url: string;
+      voices_emphasis: {
+        plan: number;
+        pattern: number;
+        position: number;
+        perspective: number;
+        ploy: number;
+      };
+      paradoxes_explored: string[];
+===== SLUTT ./src/lib/components/LibraryOverview.svelte =====
+
 ===== START ./src/lib/components/Header.svelte =====
 <!-- src/lib/components/Header.svelte -->
 <script lang="ts">
@@ -557,12 +826,12 @@ export interface SchoolPEmphasis {
   }
 
   const navigationItems = [
-    { href: '/schools', label: 'Schools', icon: '🏫' },
+    { href: '/schools', label: 'Schools', icon: '🏛️' },
     { href: '/ps', label: 'Voices (5P)', icon: '🗣️' },
+    { href: '/landscapes', label: 'Landscapes', icon: '🗻' },
+    { href: '/library', label: 'Library', icon: '📚' },
     { href: '/radar', label: 'Radar', icon: '📊' },
     { href: '/about', label: 'About', icon: 'ℹ️' }
-  ];
-</script>
 ===== SLUTT ./src/lib/components/Header.svelte =====
 
 ===== START ./src/lib/components/PageTransitions.svelte =====
@@ -630,6 +899,39 @@ export interface SchoolPEmphasis {
 		data: school.values,
 		fill: true,
 ===== SLUTT ./src/lib/components/RadarPlot.svelte =====
+
+===== START ./src/lib/components/BookFilters.svelte =====
+<!-- src/lib/components/BookFilters.svelte -->
+<script lang="ts">
+    import { createEventDispatcher } from 'svelte';
+    import { fly, slide } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+  
+    export let categories: Record<string, any>;
+    export let categoryStats: Record<string, number>;
+    export let voiceStats: Record<string, number>;
+    export let totalBooks: number;
+    export let filteredCount: number;
+  
+    const dispatch = createEventDispatcher();
+  
+    let selectedCategory = 'all';
+    let selectedVoice = 'all';
+    let selectedParadox = 'all';
+    let selectedLevel = 'all';
+    let searchQuery = '';
+    let sortBy: 'title' | 'year' | 'relevance' = 'relevance';
+    let viewMode: 'grid' | 'list' = 'grid';
+    let showAdvanced = false;
+  
+    const voices = [
+      { id: 'plan', label: 'Plan', icon: '📋' },
+      { id: 'pattern', label: 'Pattern', icon: '🔄' },
+      { id: 'position', label: 'Position', icon: '🎯' },
+      { id: 'perspective', label: 'Perspective', icon: '👁️' },
+      { id: 'ploy', label: 'Ploy', icon: '🎭' }
+    ];
+===== SLUTT ./src/lib/components/BookFilters.svelte =====
 
 ===== START ./src/lib/components/PSOverview.svelte =====
 <!-- src/lib/components/PSOverview.svelte -->
@@ -777,36 +1079,36 @@ export interface SchoolPEmphasis {
 ===== SLUTT ./src/lib/components/POverview.svelte =====
 
 ===== START ./src/lib/components/SchoolOverview.svelte =====
+<!-- src/lib/components/SchoolsOverview.svelte -->
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { StrategySchool } from '$lib/types';
+  import { goto } from '$app/navigation';
+  import { fly, scale } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
+  import SchoolCard from '$lib/components/SchoolCard.svelte';
 
-  let schools: StrategySchool[] = [];
-  let loading = true;
-  let error: string | null = null;
-
-  onMount(async () => {
-    try {
-      const res = await fetch('/data/radarData.json');
-      if (!res.ok) throw new Error('Failed to fetch school data');
-      schools = await res.json();
-    } catch (err) {
-      error = err instanceof Error ? err.message : 'Unknown error';
-    } finally {
-      loading = false;
-    }
-  });
-</script>
-
-{#if loading}
-  <p class="text-muted-foreground">Loading...</p>
-{:else if error}
-  <p class="text-red-500">Error: {error}</p>
-{:else}
-  <div class="grid md:grid-cols-2 gap-4">
-    {#each schools as school (school.name)}
-      <div class="border rounded-lg p-4 bg-card shadow-sm">
-        <h2 class="text-xl font-semibold mb-1">{school.name}</h2>
+  interface School {
+    id: string;
+    name: string;
+    shortName: string;
+    group: 'Prescriptive' | 'Descriptive';
+    description: string;
+    longDescription: string;
+    keyFigures: string[];
+    originPeriod: string;
+    coreBeliefs: string[];
+    strengths: string[];
+    weaknesses: string[];
+    values: number[];
+    emphasis?: {
+      plan: number;
+      pattern: number;
+      position: number;
+      perspective: number;
+      ploy: number;
+    };
+    pApproaches?: any;
+  }
 ===== SLUTT ./src/lib/components/SchoolOverview.svelte =====
 
 ===== START ./src/lib/components/EnhancedRadarPlot.svelte =====
@@ -894,37 +1196,148 @@ export const radarData: ChartData<'radar'> = {
 </html>
 ===== SLUTT ./src/app.html =====
 
+===== START ./src/routes/landscapes/+page.svelte =====
+<!-- src/routes/landscapes/+page.svelte -->
+<script lang="ts">
+    import LandscapeOverview from '$lib/components/LandscapeOverview.svelte';
+  </script>
+  
+  <svelte:head>
+    <title>Strategic Landscapes - Strategy Safari</title>
+    <meta name="description" content="Explore the fundamental strategic paradoxes from De Wit & Meyer. Navigate tensions between different strategic approaches through interactive exploration." />
+  </svelte:head>
+  
+  <section class="max-w-7xl mx-auto px-4 py-8 md:py-16">
+    <LandscapeOverview />
+  </section>===== SLUTT ./src/routes/landscapes/+page.svelte =====
+
+===== START ./src/routes/landscapes/profile/+page.svelte =====
+<!-- src/routes/landscapes/profile/+page.svelte -->
+<script lang="ts">
+    import { onMount } from 'svelte';
+    import { fly, scale } from 'svelte/transition';
+    import { quintOut } from 'svelte/easing';
+    import { goto } from '$app/navigation';
+    import type { StrategicParadox } from '$lib/types';
+  
+    let paradoxes: StrategicParadox[] = [];
+    let userPositions: Record<string, number> = {};
+    let loading = true;
+    let error: string | null = null;
+    let sectionsVisible = false;
+  
+    onMount(async () => {
+      try {
+        const res = await fetch('/data/landscapes.json');
+        if (!res.ok) throw new Error('Failed to load paradoxes data');
+        paradoxes = await res.json();
+        
+        // Load user positions
+        const saved = localStorage.getItem('landscape-positions');
+        if (saved) {
+          userPositions = JSON.parse(saved);
+        }
+        
+        setTimeout(() => sectionsVisible = true, 100);
+      } catch (err) {
+        error = err instanceof Error ? err.message : 'Unknown error';
+      } finally {
+===== SLUTT ./src/routes/landscapes/profile/+page.svelte =====
+
+===== START ./src/routes/landscapes/[slug]/+page.svelte =====
+<!-- src/routes/landscapes/[slug]/+page.svelte -->
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
+  import { fly } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
+  import ParadoxDetail from '$lib/components/ParadoxDetail.svelte';
+  import type { StrategicParadox } from '$lib/types';
+
+  let paradox: StrategicParadox | null = null;
+  let allParadoxes: StrategicParadox[] = [];
+  let loading = true;
+  let error: string | null = null;
+  let userPosition: number | null = null;
+
+  // Get the slug from the URL
+  $: slug = $page.params.slug;
+
+  onMount(async () => {
+    try {
+      const res = await fetch('/data/landscapes.json');
+      if (!res.ok) throw new Error('Failed to load paradoxes data');
+      allParadoxes = await res.json();
+      
+      console.log('All paradoxes loaded:', allParadoxes.length);
+      console.log('Looking for slug:', slug);
+      
+      // Find the specific paradox based on the slug
+      paradox = allParadoxes.find(p => p.id === slug) || null;
+===== SLUTT ./src/routes/landscapes/[slug]/+page.svelte =====
+
+===== START ./src/routes/landscapes/[slug]/+page.ts =====
+// src/routes/landscapes/[slug]/+page.ts
+import type { PageLoad } from './$types';
+import { error } from '@sveltejs/kit';
+
+export const load: PageLoad = async ({ params, fetch }) => {
+  const { slug } = params;
+  
+  try {
+    const res = await fetch('/data/landscapes.json');
+    if (!res.ok) {
+      throw error(404, 'Could not load landscapes data');
+    }
+    
+    const paradoxes = await res.json();
+    const paradox = paradoxes.find((p: any) => p.id === slug);
+    
+    if (!paradox) {
+      throw error(404, `Strategic paradox "${slug}" not found`);
+    }
+    
+    return {
+      paradox,
+      allParadoxes: paradoxes
+    };
+  } catch (err) {
+    throw error(500, 'Failed to load landscapes data');
+  }
+};===== SLUTT ./src/routes/landscapes/[slug]/+page.ts =====
+
 ===== START ./src/routes/+page.svelte =====
 <!-- src/routes/+page.svelte -->
 <script lang="ts">
   import { onMount } from 'svelte';
-  
-  let heroVisible = false;
-  let cardsVisible = false;
+  import { goto } from '$app/navigation';
+  import { fly, scale, fade } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
 
-  onMount(() => {
-    // Staggered animations
-    setTimeout(() => heroVisible = true, 100);
-    setTimeout(() => cardsVisible = true, 300);
-  });
-</script>
+  let sectionsVisible = false;
 
-<svelte:head>
-  <title>Strategy Safari - Interactive Strategy Visualization</title>
-  <meta name="description" content="Explore Mintzberg's Strategy Safari and the five P's of strategy through interactive visualizations." />
-</svelte:head>
-
-<!-- Hero Section -->
-<section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-10">
-    <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
-        </pattern>
-      </defs>
-      <rect width="100" height="100" fill="url(#grid)" />
+  const modules = [
+    {
+      id: 'schools',
+      title: 'The Schools',
+      icon: '🏛️',
+      description: 'Dive into 10 classic strategy schools from Henry Mintzberg\'s Strategy Safari. Each school has its own history, logic, and blind spots.',
+      href: '/schools',
+      color: 'from-blue-500 to-indigo-600',
+      gradient: 'bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950/20 dark:to-indigo-900/20'
+    },
+    {
+      id: 'voices',
+      title: 'The Voices',
+      icon: '🗣️',
+      description: 'Strategy speaks with five voices: Plan, Ploy, Pattern, Position, and Perspective. Explore your own preferences and biases.',
+      href: '/ps',
+      color: 'from-emerald-500 to-teal-600',
+      gradient: 'bg-gradient-to-br from-emerald-50 to-teal-100 dark:from-emerald-950/20 dark:to-teal-900/20'
+    },
+    {
+      id: 'landscape',
 ===== SLUTT ./src/routes/+page.svelte =====
 
 ===== START ./src/routes/page.svelte.test.ts =====
@@ -940,6 +1353,70 @@ describe('/+page.svelte', () => {
 	});
 });
 ===== SLUTT ./src/routes/page.svelte.test.ts =====
+
+===== START ./src/routes/library/+page.svelte =====
+<!-- src/routes/library/+page.svelte -->
+<script lang="ts">
+    import LibraryOverview from '$lib/components/LibraryOverview.svelte';
+  </script>
+  
+  <svelte:head>
+    <title>Strategy Library - Strategy Explorer</title>
+    <meta name="description" content="Discover essential strategy books organized by the five voices of strategy and strategic paradoxes. Curated collection of 20+ foundational strategy texts." />
+  </svelte:head>
+  
+  <section class="max-w-7xl mx-auto px-4 py-8 md:py-16">
+    <LibraryOverview />
+  </section>===== SLUTT ./src/routes/library/+page.svelte =====
+
+===== START ./src/routes/library/[slug]/+page.svelte =====
+<!-- src/routes/library/[slug]/+page.svelte -->
+<script lang="ts">
+  import { page } from '$app/stores';
+  import BookDetail from '$lib/components/BookDetail.svelte';
+
+  $: bookId = $page.params.slug;
+</script>
+
+<svelte:head>
+  <title>Book Details - Strategy Library</title>
+  <meta name="description" content="Detailed view of strategy book with voice analysis, paradox exploration, and related recommendations." />
+</svelte:head>
+
+<div class="max-w-6xl mx-auto px-4 py-8">
+  <BookDetail {bookId} />
+</div>===== SLUTT ./src/routes/library/[slug]/+page.svelte =====
+
+===== START ./src/routes/library/[slug]/+page.ts =====
+// src/routes/library/[slug]/+page.ts
+import type { PageLoad } from './$types';
+import { error } from '@sveltejs/kit';
+
+export const load: PageLoad = async ({ params, fetch }) => {
+  const { slug } = params;
+  
+  try {
+    const res = await fetch('/data/books.json');
+    if (!res.ok) {
+      throw error(404, 'Could not load books data');
+    }
+    
+    const data = await res.json();
+    const book = data.books.find((b: any) => b.id === slug);
+    
+    if (!book) {
+      throw error(404, `Book "${slug}" not found`);
+    }
+    
+    return {
+      book,
+      allBooks: data.books,
+      categories: data.categories
+    };
+  } catch (err) {
+    throw error(500, 'Failed to load book data');
+  }
+};===== SLUTT ./src/routes/library/[slug]/+page.ts =====
 
 ===== START ./src/routes/utils/dataAdapeter.ts =====
 // src/lib/utils/dataAdapter.ts
@@ -978,6 +1455,8 @@ export class SchoolDataAdapter {
 <!-- src/routes/about/+page.svelte -->
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { fly, scale } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
   
   let sectionsVisible = false;
   let heroVisible = false;
@@ -989,22 +1468,20 @@ export class SchoolDataAdapter {
 </script>
 
 <svelte:head>
-  <title>About Strategy Safari - Interactive Strategy Learning</title>
-  <meta name="description" content="Learn about the Strategy Safari project, Henry Mintzberg's strategic thinking, and our approach to making strategy education more accessible and engaging." />
+  <title>About Strategy Explorer - Philosophy & Approach</title>
+  <meta name="description" content="Learn about Strategy Explorer's philosophy of strategic learning, our approach to making strategy education more accessible, and the thinking behind our interactive modules." />
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="relative py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-  <div class="absolute inset-0 opacity-5">
-    <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="about-grid" width="8" height="8" patternUnits="userSpaceOnUse">
-          <circle cx="4" cy="4" r="0.5" fill="currentColor"/>
-        </pattern>
-      </defs>
-      <rect width="100" height="100" fill="url(#about-grid)" />
-    </svg>
-  </div>
+{#if heroVisible}
+  <section 
+    in:fly={{ y: 30, duration: 600, easing: quintOut }}
+    class="relative py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5"
+  >
+    <div class="absolute inset-0 opacity-5">
+      <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="about-grid" width="8" height="8" patternUnits="userSpaceOnUse">
 ===== SLUTT ./src/routes/about/+page.svelte =====
 
 ===== START ./src/routes/ps/+page.svelte =====

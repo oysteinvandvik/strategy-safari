@@ -1,0 +1,1614 @@
+},
+{
+  "id": "cultural",
+  "name": "Cultural School",
+  "shortName": "Cultural",
+  "group": "Descriptive",
+  "description": "Strategy as collective process rooted in organizational culture and social interaction.",
+  "longDescription": "The Cultural School views strategy formation as a collective process, rooted in the culture of the organization and emphasizing social interaction. Like anthropologists studying societies, this school recognizes that strategy is influenced by the organization's shared beliefs, values, traditions, and collective assumptions about 'how we do things here.'",
+  "keyFigures": ["Edgar Schein", "Richard Pettigrew", "Gerry Johnson"],
+  "originPeriod": "1980s",
+  "values": [2, 5, 3, 5, 1],
+  "pApproaches": {
+    "plan": {
+      "emphasis": 2,
+      "title": "Culturally-Grounded Strategic Planning",
+      "corePhilosophy": "Strategic planning must be rooted in and consistent with organizational culture, values, and collective beliefs rather than imposed from external frameworks",
+      "keyBelief": "Sustainable strategic plans must align with deeply held cultural values and be developed through processes that honor organizational culture and collective wisdom",
+      "approach": "Culture-first planning approach that starts with cultural assessment, aligns planning with cultural values, and uses culturally appropriate planning processes",
+      "toolsAndMethods": [
+        "Cultural assessment and mapping",
+        "Values-based planning frameworks",
+        "Collective planning processes",
+        "Cultural alignment analysis",
+        "Tradition-honoring planning methods",
+        "Community-based strategy development",
+        "Cultural change readiness assessment"
+      ],
+      "processDescription": "Cultural School planning begins with deep assessment of organizational culture, values, and collective beliefs. Planning processes are designed to honor cultural traditions, involve collective participation, align with cultural values, and create strategies that feel authentic to organizational identity and shared beliefs.",
+      "keyQuestions": [
+        "How do our cultural values and beliefs shape appropriate strategic planning approaches?",
+        "What planning processes honor and leverage our organizational culture?",
+        "How do we ensure strategic plans align with deeply held cultural values?",
+        "What collective planning methods engage our cultural community effectively?",
+        "How do we plan for strategic change while respecting cultural identity?"
+      ],
+      "realWorldExample": "Patagonia's strategic planning exemplifies cultural approach - planning processes deeply rooted in environmental values, collective engagement of employee-owners who share outdoor culture, strategies that align with company's environmental mission and cultural identity rather than purely financial objectives.",
+      "strengths": [
+        "Creates authentic strategies aligned with organizational culture and values",
+        "Builds strong cultural commitment and engagement in strategic planning",
+        "Leverages collective wisdom and cultural knowledge in planning",
+        "Ensures strategic sustainability through cultural alignment",
+        "Honors organizational identity and traditions in planning processes"
+      ],
+      "limitations": [
+        "May resist necessary strategic changes that challenge cultural assumptions",
+        "Can be slow and consensus-oriented planning process",
+        "Risk of cultural insularity limiting strategic options",
+        "Difficult to plan for radical strategic transformation",
+        "May prioritize cultural comfort over strategic effectiveness"
+      ],
+      "modernRelevance": "Culture-based planning becomes important as organizations recognize culture as competitive advantage and need authentic strategies that align with organizational purpose and values."
+    },
+    "pattern": {
+      "emphasis": 5,
+      "title": "Cultural Patterns and Organizational Traditions",
+      "corePhilosophy": "Strategic patterns emerge from and are sustained by deep cultural traditions, shared beliefs, and collective organizational memory",
+      "keyBelief": "The most sustainable strategic patterns are those that align with and reinforce organizational culture, traditions, and collective identity",
+      "approach": "Recognition and cultivation of strategic patterns that emerge from cultural traditions, collective behavior, and shared organizational identity",
+      "toolsAndMethods": [
+        "Cultural pattern identification",
+        "Organizational tradition analysis",
+        "Collective memory mapping",
+        "Cultural narrative development",
+        "Tradition-based pattern reinforcement",
+        "Cultural story and ritual analysis",
+        "Shared identity pattern recognition"
+      ],
+      "processDescription": "Cultural School identifies strategic patterns embedded in organizational culture, traditions, and collective behavior. This involves analyzing cultural narratives and stories, recognizing patterns in cultural rituals and traditions, understanding how shared identity creates strategic patterns, and cultivating patterns that strengthen cultural cohesion.",
+      "keyQuestions": [
+        "What strategic patterns are embedded in our cultural traditions and practices?",
+        "How do our shared stories and narratives create strategic patterns?",
+        "What collective behaviors generate successful strategic patterns?",
+        "How do cultural rituals and traditions reinforce strategic patterns?",
+        "What patterns strengthen our cultural identity and shared purpose?"
+      ],
+      "realWorldExample": "Toyota Production System exemplifies cultural patterns - lean manufacturing patterns deeply embedded in Japanese cultural values of continuous improvement (kaizen), respect for people, long-term thinking, collective responsibility, cultural patterns sustained through organizational rituals and traditions.",
+      "strengths": [
+        "Creates deeply sustainable strategic patterns rooted in culture",
+        "Leverages collective organizational wisdom and experience",
+        "Builds strategic patterns that reinforce cultural identity",
+        "Develops patterns with strong organizational commitment and support",
+        "Creates competitive advantage through unique cultural patterns"
+      ],
+      "limitations": [
+        "May perpetuate outdated patterns that resist necessary change",
+        "Can become insular and resistant to external learning",
+        "Risk of cultural patterns becoming rigid and inflexible",
+        "Difficult to change cultural patterns when strategic transformation needed",
+        "May limit strategic options to culturally acceptable patterns"
+      ],
+      "modernRelevance": "Cultural pattern recognition becomes crucial as organizations seek to leverage cultural strengths while adapting to changing environments and maintaining authentic organizational identity."
+    },
+    "position": {
+      "emphasis": 3,
+      "title": "Culture-Based Market Positioning and Identity",
+      "corePhilosophy": "Strategic positioning should reflect and express organizational culture and collective identity rather than purely competitive or market analysis",
+      "keyBelief": "Authentic and sustainable market positions emerge from organizational culture and collective identity rather than external positioning frameworks",
+      "approach": "Inside-out positioning based on cultural values, collective identity, and organizational purpose rather than external competitive analysis",
+      "toolsAndMethods": [
+        "Culture-based positioning frameworks",
+        "Identity-driven market positioning",
+        "Values-based differentiation",
+        "Cultural authenticity assessment",
+        "Purpose-driven positioning",
+        "Community-based market approach",
+        "Cultural brand development"
+      ],
+      "processDescription": "Cultural School develops market positioning that authentically expresses organizational culture and collective identity. This involves identifying unique cultural values and beliefs, translating cultural identity into market positioning, creating differentiation based on authentic cultural attributes, and building market presence that reflects organizational culture.",
+      "keyQuestions": [
+        "How does our organizational culture translate into authentic market positioning?",
+        "What unique cultural values create sustainable market differentiation?",
+        "How do we position ourselves based on collective identity and shared purpose?",
+        "What market positioning authentically expresses our cultural character?",
+        "How do we maintain cultural authenticity while meeting market demands?"
+      ],
+      "realWorldExample": "Ben & Jerry's positioning exemplified culture-based approach - market position directly reflected founders' countercultural values, social activism, fun-loving culture, positioning as socially conscious ice cream company emerged from authentic cultural identity rather than market analysis.",
+      "strengths": [
+        "Creates authentic positioning that resonates with cultural values",
+        "Builds sustainable differentiation based on unique cultural attributes",
+        "Ensures positioning consistency with organizational identity",
+        "Attracts customers and employees who share cultural values",
+        "Creates positioning that is difficult for competitors to replicate"
+      ],
+      "limitations": [
+        "May limit market opportunities to those aligned with culture",
+        "Can be inflexible positioning that resists market adaptation",
+        "Risk of cultural positioning becoming irrelevant to market needs",
+        "Difficult to expand positioning beyond cultural boundaries",
+        "May alienate market segments that don't share cultural values"
+      ],
+      "modernRelevance": "Culture-based positioning becomes important as consumers and employees increasingly seek authentic brands and organizations with clear cultural identity and purpose."
+    },
+    "perspective": {
+      "emphasis": 5,
+      "title": "Collective Cultural Worldview and Shared Meaning",
+      "corePhilosophy": "Organizational perspective emerges from collective cultural processes of meaning-making, shared interpretation, and community sense-making",
+      "keyBelief": "Strategic perspective is fundamentally a cultural phenomenon reflecting shared beliefs, collective wisdom, and community interpretation of organizational purpose",
+      "approach": "Collective perspective development through cultural dialogue, shared meaning-making, community interpretation, and cultural storytelling processes",
+      "toolsAndMethods": [
+        "Cultural dialogue facilitation",
+        "Shared meaning-making processes",
+        "Community storytelling methods",
+        "Collective interpretation frameworks",
+        "Cultural narrative development",
+        "Shared wisdom cultivation",
+        "Cultural perspective integration"
+      ],
+      "processDescription": "Cultural School develops organizational perspective through collective cultural processes of meaning-making and shared interpretation. This involves facilitating cultural dialogue about organizational purpose, creating opportunities for shared meaning-making, cultivating collective wisdom, and allowing organizational perspective to emerge from community interpretation and cultural storytelling.",
+      "keyQuestions": [
+        "How do collective cultural processes create our organizational perspective?",
+        "What shared meaning-making develops our community interpretation of purpose?",
+        "How do cultural stories and narratives shape our organizational worldview?",
+        "What collective wisdom informs our strategic perspective?",
+        "How do we cultivate shared cultural understanding of our organizational mission?"
+      ],
+      "realWorldExample": "Whole Foods' perspective development exemplified cultural approach - organizational perspective emerged from collective cultural commitment to natural foods, healthy living, environmental consciousness, perspective developed through cultural dialogue among employees who shared these values.",
+      "strengths": [
+        "Creates authentic perspective rooted in collective cultural wisdom",
+        "Builds strong organizational commitment to shared perspective",
+        "Develops perspective that reflects genuine cultural values and beliefs",
+        "Leverages collective cultural intelligence and shared meaning",
+        "Creates perspective sustainability through cultural embedding"
+      ],
+      "limitations": [
+        "May be slow and consensus-oriented perspective development process",
+        "Can become insular and resistant to external perspectives",
+        "Risk of cultural perspective becoming rigid and unchanging",
+        "Difficult to adapt perspective when cultural change needed",
+        "May limit perspective to culturally acceptable interpretations"
+      ],
+      "modernRelevance": "Cultural perspective development becomes crucial as organizations seek authentic purpose and meaning while navigating complex cultural and societal expectations."
+    },
+    "ploy": {
+      "emphasis": 1,
+      "title": "Limited Cultural Engagement in Strategic Maneuvering",
+      "corePhilosophy": "Cultural organizations typically avoid aggressive strategic maneuvering that conflicts with cultural values of cooperation and community",
+      "keyBelief": "Strategic tactics should align with cultural values of collaboration, community, and shared purpose rather than competitive maneuvering or aggressive tactics",
+      "approach": "Culture-consistent tactical approaches that emphasize collaboration, community building, and value-based competition rather than aggressive maneuvering",
+      "toolsAndMethods": [
+        "Values-based competitive approaches",
+        "Collaborative tactical development",
+        "Community-building strategies",
+        "Ethical competitive practices",
+        "Culture-consistent market moves",
+        "Relationship-based tactics"
+      ],
+      "processDescription": "Cultural School approaches competitive tactics through lens of cultural values and community relationships. This involves developing tactical approaches that align with cultural values, emphasizing collaboration over competition, building community relationships, and avoiding aggressive tactics that conflict with cultural identity.",
+      "keyQuestions": [
+        "What tactical approaches align with our cultural values and identity?",
+        "How do we compete in ways that honor our cultural commitments?",
+        "What collaborative tactics build community while achieving strategic objectives?",
+        "How do we maintain cultural integrity while engaging in competitive tactics?",
+        "What strategic moves reinforce rather than undermine our cultural values?"
+      ],
+      "realWorldExample": "Costco's competitive approach reflects cultural values - tactics focus on member value rather than competitor attacks, collaborative relationships with suppliers, employee-centric policies that reflect cultural values, competitive moves that strengthen rather than compromise cultural identity.",
+      "strengths": [
+        "Maintains cultural integrity and authenticity in competitive actions",
+        "Builds sustainable competitive approaches aligned with values",
+        "Creates competitive advantage through unique cultural approaches",
+        "Attracts stakeholders who share cultural values and approaches",
+        "Avoids competitive tactics that could damage cultural reputation"
+      ],
+      "limitations": [
+        "May limit competitive options to culturally acceptable tactics",
+        "Can be slower to respond to aggressive competitive threats",
+        "Risk of being outmaneuvered by more tactically aggressive competitors",
+        "May miss competitive opportunities that require cultural compromise",
+        "Difficult to compete in environments requiring aggressive tactics"
+      ],
+      "modernRelevance": "Culture-consistent competitive approaches become important as stakeholders increasingly expect organizational behavior to align with stated values and cultural commitments."
+    }
+  }
+},
+{
+  "id": "environmental",
+  "name": "Environmental School",
+  "shortName": "Environmental",
+  "group": "Descriptive",
+  "description": "Strategy as environmental response: organizational adaptation to external forces and constraints largely beyond management control.",
+  "longDescription": "The Environmental School views strategy formation as primarily reactive, with organizations responding to environmental pressures and constraints largely beyond their control. Like biologists studying evolution, this school sees organizations as subject to natural selection pressures from their environment - technological change, regulatory shifts, economic cycles, and competitive forces.",
+  "keyFigures": ["Michael Hannan", "John Freeman", "Glenn Carroll"],
+  "originPeriod": "1970s",
+  "values": [1, 4, 4, 2, 2],
+  "pApproaches": {
+    "plan": {
+      "emphasis": 1,
+      "title": "Reactive Environmental Adaptation Planning",
+      "corePhilosophy": "Strategic planning must focus on environmental scanning and adaptive response rather than proactive strategic design due to environmental dominance",
+      "keyBelief": "Environmental forces largely determine organizational options; effective planning focuses on environmental adaptation rather than autonomous strategic choice",
+      "approach": "Environmental scanning and adaptive planning that emphasizes responsiveness to external forces rather than proactive strategic initiative",
+      "toolsAndMethods": [
+        "Environmental scanning systems",
+        "Scenario planning and adaptation",
+        "Regulatory compliance planning",
+        "Environmental constraint analysis",
+        "Adaptive capacity development",
+        "Environmental monitoring systems",
+        "Reactive planning frameworks"
+      ],
+      "processDescription": "Environmental School planning emphasizes systematic environmental scanning to identify forces and constraints, scenario planning for different environmental conditions, adaptive planning that maintains flexibility for environmental response, and compliance planning that ensures organizational survival within environmental constraints.",
+      "keyQuestions": [
+        "What environmental forces and constraints shape our strategic options?",
+        "How do we scan and monitor environmental changes that affect our organization?",
+        "What adaptive planning maintains flexibility for environmental response?",
+        "How do we plan for survival and compliance within environmental constraints?",
+        "What environmental scenarios require different adaptive responses?"
+      ],
+      "realWorldExample": "Pharmaceutical industry planning exemplifies environmental approach - heavily constrained by regulatory environment, planning focused on FDA compliance, adaptive responses to regulatory changes, environmental scanning for policy shifts, limited autonomous strategic choice due to environmental constraints.",
+      "strengths": [
+        "Realistic recognition of environmental constraints on strategic choice",
+        "Builds adaptive capabilities for environmental change",
+        "Focuses attention on critical environmental factors",
+        "Develops environmental scanning and monitoring capabilities",
+        "Ensures organizational survival within environmental constraints"
+      ],
+      "limitations": [
+        "May underestimate degree of strategic choice available to organizations",
+        "Can become overly reactive and fatalistic about strategic options",
+        "Limited guidance for proactive strategic initiative and innovation",
+        "Risk of strategic passivity and lack of entrepreneurial action",
+        "May miss opportunities for environmental influence and change"
+      ],
+      "modernRelevance": "Environmental planning becomes increasingly important as organizations face rapid environmental changes from technology, regulation, climate, and global interconnectedness requiring adaptive capabilities."
+    },
+    "pattern": {
+      "emphasis": 4,
+      "title": "Environmental Selection and Adaptation Patterns",
+      "corePhilosophy": "Strategic patterns emerge from environmental selection pressures that favor certain organizational forms and eliminate others",
+      "keyBelief": "Organizational strategic patterns reflect environmental selection rather than conscious choice; successful patterns are those that fit environmental requirements",
+      "approach": "Analysis of environmental selection pressures and organizational adaptation patterns to understand how environmental forces shape strategic development",
+      "toolsAndMethods": [
+        "Environmental selection analysis",
+        "Organizational ecology assessment",
+        "Adaptation pattern identification",
+        "Environmental fit analysis",
+        "Population ecology methods",
+        "Selection pressure mapping",
+        "Evolutionary pattern tracking"
+      ],
+      "processDescription": "Environmental School analyzes how environmental selection pressures create strategic patterns by favoring certain organizational forms and eliminating others. This involves studying organizational populations, identifying environmental selection criteria, analyzing adaptation patterns, and understanding how environmental fit determines strategic success.",
+      "keyQuestions": [
+        "What environmental selection pressures shape strategic patterns in our industry?",
+        "How do environmental changes favor certain organizational forms over others?",
+        "What adaptation patterns emerge from environmental selection pressures?",
+        "How does environmental fit determine which strategic patterns survive?",
+        "What environmental trends will shape future strategic pattern development?"
+      ],
+      "realWorldExample": "Retail industry evolution demonstrates environmental selection - e-commerce environment selected for digital capabilities, physical retail adapted through omnichannel patterns, environmental pressures eliminated pure-play physical retailers, successful patterns combined digital and physical capabilities.",
+      "strengths": [
+        "Provides realistic understanding of environmental constraints on strategy",
+        "Explains industry-wide strategic patterns and evolution",
+        "Identifies environmental trends shaping strategic development",
+        "Helps predict which strategic patterns will succeed or fail",
+        "Offers insights into environmental adaptation requirements"
+      ],
+      "limitations": [
+        "May underestimate organizational agency in pattern development",
+        "Can be overly deterministic about environmental influence",
+        "Limited guidance for creating new strategic patterns",
+        "Risk of fatalistic acceptance of environmental constraints",
+        "May discourage innovative strategic pattern development"
+      ],
+      "modernRelevance": "Understanding environmental selection becomes crucial as rapid environmental changes create new selection pressures requiring organizational adaptation and new strategic patterns."
+    },
+    "position": {
+      "emphasis": 4,
+      "title": "Environmental Niche and Adaptation Positioning",
+      "corePhilosophy": "Strategic positioning must find viable environmental niches and adapt to environmental constraints rather than attempting to shape competitive dynamics",
+      "keyBelief": "Sustainable strategic positions are determined by environmental niches and constraints rather than competitive analysis or organizational choice",
+      "approach": "Environmental niche identification and adaptive positioning that works within environmental constraints rather than attempting to overcome them",
+      "toolsAndMethods": [
+        "Environmental niche analysis",
+        "Ecological positioning assessment",
+        "Environmental constraint mapping",
+        "Adaptive positioning frameworks",
+        "Niche specialization strategies",
+        "Environmental compliance positioning",
+        "Resource-environment fit analysis"
+      ],
+      "processDescription": "Environmental School positioning focuses on finding viable environmental niches where organization can survive and thrive within environmental constraints. This involves analyzing environmental requirements, identifying available niches, adapting positioning to environmental constraints, and specializing in environmental niches where organization has best fit.",
+      "keyQuestions": [
+        "What environmental niches provide viable positioning opportunities?",
+        "How do environmental constraints shape available positioning options?",
+        "What adaptive positioning strategies work within environmental limits?",
+        "How do we specialize our positioning for specific environmental niches?",
+        "What environmental changes will affect our positioning viability?"
+      ],
+      "realWorldExample": "Renewable energy companies demonstrate environmental positioning - positioning determined by regulatory environment, carbon pricing, grid infrastructure constraints, environmental niche specialization (solar, wind, storage), positioning adapted to environmental policy changes.",
+      "strengths": [
+        "Creates realistic positioning based on environmental constraints",
+        "Identifies viable environmental niches for specialization",
+        "Builds positioning that adapts to environmental changes",
+        "Ensures positioning compliance with environmental requirements",
+        "Develops sustainable positioning within environmental limits"
+      ],
+      "limitations": [
+        "May limit positioning options to narrow environmental niches",
+        "Can be overly constrained by environmental factors",
+        "Risk of positioning becoming hostage to environmental changes",
+        "Limited ability to create new positioning categories",
+        "May miss opportunities for environmental influence and change"
+      ],
+      "modernRelevance": "Environmental positioning becomes important as organizations face increasing environmental constraints from regulation, sustainability requirements, and stakeholder expectations requiring adaptive positioning approaches."
+    },
+    "perspective": {
+      "emphasis": 2,
+      "title": "Environmental Determinism and Adaptive Mindset",
+      "corePhilosophy": "Organizational perspective should emphasize environmental adaptation, humble recognition of environmental constraints, and realistic assessment of organizational agency",
+      "keyBelief": "Effective organizational perspective recognizes environmental dominance and focuses on adaptation rather than autonomous strategic control",
+      "approach": "Development of adaptive mindset that emphasizes environmental responsiveness, constraint recognition, and humble assessment of organizational influence",
+      "toolsAndMethods": [
+        "Environmental awareness development",
+        "Adaptive mindset cultivation",
+        "Constraint recognition training",
+        "Environmental responsiveness building",
+        "Humility and realism development",
+        "Adaptation capability building",
+        "Environmental learning systems"
+      ],
+      "processDescription": "Environmental School develops organizational perspective that emphasizes environmental adaptation and realistic assessment of organizational agency. This involves cultivating environmental awareness, building adaptive mindset, recognizing environmental constraints, developing environmental responsiveness, and maintaining humility about organizational influence.",
+      "keyQuestions": [
+        "How do we develop organizational perspective that recognizes environmental dominance?",
+        "What adaptive mindset enables effective environmental responsiveness?",
+        "How do we cultivate humble recognition of environmental constraints?",
+        "What perspective emphasizes adaptation over autonomous control?",
+        "How do we build organizational capability for environmental learning and adaptation?"
+      ],
+      "realWorldExample": "Utilities industry perspective reflects environmental approach - organizational mindset shaped by regulatory constraints, environmental compliance requirements, infrastructure limitations, perspective emphasizes adaptation to regulatory changes rather than autonomous strategic control.",
+      "strengths": [
+        "Creates realistic perspective on organizational capabilities and constraints",
+        "Builds adaptive capabilities for environmental change",
+        "Develops environmental awareness and responsiveness",
+        "Ensures perspective alignment with environmental realities",
+        "Cultivates organizational learning about environmental adaptation"
+      ],
+      "limitations": [
+        "May create overly passive and fatalistic organizational mindset",
+        "Can discourage entrepreneurial initiative and innovation",
+        "Risk of underestimating organizational agency and influence",
+        "May limit organizational ambition and strategic vision",
+        "Could lead to learned helplessness about strategic possibilities"
+      ],
+      "modernRelevance": "Environmental perspective becomes important as organizations face increasing environmental uncertainty and constraint requiring adaptive capabilities and realistic assessment of environmental influence."
+    },
+    "ploy": {
+      "emphasis": 2,
+      "title": "Environmental Compliance and Defensive Tactics",
+      "corePhilosophy": "Strategic tactics should focus on environmental compliance and defensive moves rather than aggressive competitive maneuvering",
+      "keyBelief": "Effective tactical moves work within environmental constraints and focus on compliance and defense rather than environmental manipulation or aggressive competition",
+      "approach": "Defensive and compliance-oriented tactical approach that emphasizes working within environmental constraints rather than attempting to manipulate or overcome them",
+      "toolsAndMethods": [
+        "Regulatory compliance tactics",
+        "Defensive strategic moves",
+        "Environmental risk management",
+        "Stakeholder relationship management",
+        "Crisis response planning",
+        "Adaptation tactics",
+        "Compliance advantage development"
+      ],
+      "processDescription": "Environmental School employs tactical moves that emphasize compliance with environmental constraints and defensive responses to environmental pressures. This involves developing regulatory compliance capabilities, building defensive positions against environmental threats, managing stakeholder relationships, and creating tactical advantages through superior environmental adaptation.",
+      "keyQuestions": [
+        "What tactical moves ensure compliance with environmental constraints?",
+        "How do we develop defensive capabilities against environmental threats?",
+        "What tactics build advantage through superior environmental adaptation?",
+        "How do we manage stakeholder relationships within environmental constraints?",
+        "What tactical responses protect against environmental risks and uncertainties?"
+      ],
+      "realWorldExample": "Financial services industry tactics demonstrate environmental approach - regulatory compliance tactics, defensive moves against regulatory changes, stakeholder relationship management with regulators, tactics focused on adaptation rather than environmental manipulation.",
+      "strengths": [
+        "Ensures tactical compliance with environmental requirements",
+        "Builds defensive capabilities against environmental threats",
+        "Creates advantage through superior environmental adaptation",
+        "Maintains positive stakeholder relationships within environmental constraints",
+        "Develops tactical expertise in environmental navigation"
+      ],
+      "limitations": [
+        "May limit tactical options to defensive and compliance moves",
+        "Can be slow to respond to competitive threats",
+        "Risk of being outmaneuvered by more tactically aggressive organizations",
+        "Limited ability to create tactical innovation or surprise",
+        "May miss opportunities for environmental influence or change"
+      ],
+      "modernRelevance": "Environmental tactical approaches become important as organizations face increasing regulatory complexity and stakeholder expectations requiring sophisticated compliance and defensive capabilities."
+    }
+  }
+},
+{
+  "id": "configuration",
+  "name": "Configuration School",
+  "shortName": "Configuration",
+  "group": "Descriptive",
+  "description": "Strategy as transformation: integrating multiple perspectives through organizational configurations and episodic change between stable periods.",
+  "longDescription": "The Configuration School attempts to integrate the insights of all other schools by recognizing that different approaches may be appropriate at different times and in different contexts. Like systems theorists studying complex adaptive systems, this school sees organizations as configurations - coherent clusters of characteristics and behaviors.",
+  "keyFigures": ["Danny Miller", "Peter Friesen", "Henry Mintzberg"],
+  "originPeriod": "1980s-1990s",
+  "values": [4, 4, 4, 4, 3],
+  "pApproaches": {
+    "plan": {
+      "emphasis": 4,
+      "title": "Configuration-Contingent Strategic Planning",
+      "corePhilosophy": "Strategic planning approaches should be contingent on organizational configuration and life cycle stage, integrating multiple planning perspectives as appropriate",
+      "keyBelief": "Effective planning requires understanding organizational configuration and choosing planning approaches that fit the configuration and transformation needs",
+      "approach": "Integrative planning approach that adapts planning methods to organizational configuration, life cycle stage, and transformation requirements",
+      "toolsAndMethods": [
+        "Configuration assessment and mapping",
+        "Life cycle stage analysis",
+        "Contingent planning frameworks",
+        "Multi-school planning integration",
+        "Transformation planning methods",
+        "Configuration-specific planning tools",
+        "Planning approach portfolio"
+      ],
+      "processDescription": "Configuration School planning begins with assessment of organizational configuration and life cycle stage, followed by selection of appropriate planning approaches from multiple schools, integration of planning methods suited to current configuration, and adaptation of planning as organization transforms through different configurations.",
+      "keyQuestions": [
+        "What organizational configuration and life cycle stage shapes our planning needs?",
+        "Which planning approaches from different schools best fit our current configuration?",
+        "How do we integrate multiple planning perspectives for our specific situation?",
+        "What planning methods support our organizational transformation needs?",
+        "How should our planning approach evolve as our configuration changes?"
+      ],
+      "realWorldExample": "IBM's strategic planning evolution demonstrates configuration approach - different planning methods during mainframe dominance (planning school), PC era (positioning school), services transformation (learning school), cloud transition (entrepreneurial school), each suited to configuration and transformation needs.",
+      "strengths": [
+        "Provides sophisticated, situationally appropriate planning approaches",
+        "Integrates insights from multiple planning schools and perspectives",
+        "Adapts planning methods to organizational configuration and needs",
+        "Enables planning evolution through organizational transformation",
+        "Combines different planning strengths for comprehensive approach"
+      ],
+      "limitations": [
+        "Can be complex and difficult to implement multiple planning approaches",
+        "Requires sophisticated understanding of different planning schools",
+        "Risk of planning confusion from multiple approaches",
+        "May be resource-intensive with multiple planning methods",
+        "Difficult to maintain planning coherence across different approaches"
+      ],
+      "modernRelevance": "Configuration-contingent planning becomes important as organizations recognize need for adaptive planning approaches suited to their specific situation and transformation requirements."
+    },
+    "pattern": {
+      "emphasis": 4,
+      "title": "Transformation Patterns and Configuration Evolution",
+      "corePhilosophy": "Strategic patterns reflect organizational configurations and transformation cycles between periods of stability and revolutionary change",
+      "keyBelief": "Organizations alternate between periods of stable configuration with consistent patterns and periods of transformation with pattern revolution",
+      "approach": "Analysis of configuration evolution patterns, transformation cycles, and the integration of stability patterns with revolutionary change patterns",
+      "toolsAndMethods": [
+        "Configuration lifecycle mapping",
+        "Transformation pattern analysis",
+        "Stability-revolution cycle identification",
+        "Configuration transition tracking",
+        "Pattern evolution frameworks",
+        "Transformation timing analysis",
+        "Configuration pattern integration"
+      ],
+      "processDescription": "Configuration School analyzes how strategic patterns evolve through organizational configurations and transformation cycles. This involves mapping configuration lifecycles, identifying patterns within stable periods, analyzing transformation patterns between configurations, and understanding how organizations integrate stability with revolutionary change.",
+      "keyQuestions": [
+        "What patterns characterize our current organizational configuration?",
+        "How do strategic patterns evolve through configuration transformations?",
+        "What transformation patterns guide movement between organizational configurations?",
+        "How do we balance stability patterns with revolutionary change patterns?",
+        "What configuration evolution patterns apply to our organizational development?"
+      ],
+      "realWorldExample": "Microsoft's pattern evolution demonstrates configuration approach - stable patterns during PC dominance, transformation patterns during internet transition, new stable patterns during cloud configuration, each configuration period with distinct strategic patterns and transformation cycles.",
+      "strengths": [
+        "Provides sophisticated understanding of pattern evolution through configurations",
+        "Integrates stability patterns with transformation patterns",
+        "Explains timing and cycles of strategic pattern change",
+        "Helps predict pattern evolution through configuration changes",
+        "Enables management of both stability and transformation patterns"
+      ],
+      "limitations": [
+        "Can be complex to identify and manage multiple pattern types",
+        "May be difficult to predict configuration transformation timing",
+        "Risk of pattern analysis becoming overly complicated",
+        "Limited guidance on triggering or managing pattern transformations",
+        "Difficulty distinguishing configuration patterns from random changes"
+      ],
+      "modernRelevance": "Understanding configuration patterns becomes crucial as organizations face multiple transformation cycles requiring management of both stability and revolutionary change patterns."
+    },
+    "position": {
+      "emphasis": 4,
+      "title": "Configuration-Based Strategic Positioning",
+      "corePhilosophy": "Strategic positioning should be integrated across multiple perspectives and adapted to organizational configuration and transformation requirements",
+      "keyBelief": "Effective positioning integrates insights from multiple positioning schools and adapts to organizational configuration and competitive context",
+      "approach": "Multi-perspective positioning approach that integrates different positioning schools and adapts positioning to organizational configuration and transformation needs",
+      "toolsAndMethods": [
+        "Multi-school positioning integration",
+        "Configuration-contingent positioning",
+        "Positioning portfolio development",
+        "Transformation positioning planning",
+        "Positioning school synthesis",
+        "Context-adaptive positioning",
+        "Positioning evolution frameworks"
+      ],
+      "processDescription": "Configuration School develops positioning strategies that integrate insights from multiple positioning approaches (design fit, planning analysis, positioning competition, entrepreneurial innovation, learning adaptation) and adapts positioning to organizational configuration and transformation requirements.",
+      "keyQuestions": [
+        "How do we integrate positioning insights from multiple strategic schools?",
+        "What positioning approaches best fit our organizational configuration?",
+        "How should our positioning strategy evolve through configuration transformations?",
+        "What positioning methods combine for our specific competitive context?",
+        "How do we manage positioning complexity across different strategic perspectives?"
+      ],
+      "realWorldExample": "Amazon's positioning evolution demonstrates configuration approach - different positioning strategies during different configuration periods (online bookstore/focus, everything store/cost leadership, platform/innovation, cloud services/differentiation), each integrating multiple positioning perspectives.",
+      "strengths": [
+        "Provides sophisticated, multi-perspective positioning approaches",
+        "Adapts positioning to organizational configuration and context",
+        "Integrates positioning insights from multiple strategic schools",
+        "Enables positioning evolution through organizational transformation",
+        "Creates comprehensive positioning strategies combining different strengths"
+      ],
+      "limitations": [
+        "Can be complex to implement multiple positioning approaches simultaneously",
+        "Risk of positioning confusion from multiple perspectives",
+        "May be resource-intensive with multiple positioning methods",
+        "Difficult to communicate complex integrated positioning",
+        "Requires sophisticated understanding of different positioning schools"
+      ],
+      "modernRelevance": "Configuration-based positioning becomes important as organizations need sophisticated positioning approaches that integrate multiple perspectives and adapt to transformation requirements."
+    },
+    "perspective": {
+      "emphasis": 4,
+      "title": "Integrative Organizational Perspective and Systems Thinking",
+      "corePhilosophy": "Organizational perspective should integrate insights from multiple strategic schools and adapt to organizational configuration and transformation needs",
+      "keyBelief": "Effective organizational perspective combines insights from different strategic perspectives and evolves through organizational configuration changes",
+      "approach": "Systems-based perspective development that integrates multiple strategic schools and adapts perspective to organizational configuration and transformation requirements",
+      "toolsAndMethods": [
+        "Multi-school perspective integration",
+        "Systems thinking development",
+        "Configuration-contingent perspective",
+        "Perspective synthesis frameworks",
+        "Transformation perspective planning",
+        "Strategic school integration",
+        "Perspective evolution design"
+      ],
+      "keyQuestions": [
+        "How do we integrate strategic perspectives from multiple schools of thought?",
+        "What organizational perspective best fits our current configuration and context?",
+        "How should our strategic perspective evolve through configuration transformations?",
+        "What systems thinking approaches help us synthesize different strategic perspectives?",
+        "How do we manage perspective complexity while maintaining organizational coherence?"
+      ],
+      "realWorldExample": "General Electric's perspective evolution under different CEOs demonstrates configuration approach - integrated multiple strategic perspectives (Welch: planning/positioning, Immelt: innovation/learning, Flannery: transformation/entrepreneurial), perspective adapted to configuration and transformation needs.",
+      "strengths": [
+        "Creates sophisticated, multi-dimensional organizational perspective",
+        "Integrates insights from multiple strategic schools and approaches",
+        "Adapts perspective to organizational configuration and transformation needs",
+        "Builds systems thinking capabilities for complex strategic situations",
+        "Enables perspective evolution through organizational development"
+      ],
+      "limitations": [
+        "Can be complex and difficult to communicate integrated perspective",
+        "Risk of perspective confusion from multiple strategic approaches",
+        "May be challenging to maintain perspective coherence across different schools",
+        "Requires sophisticated understanding of multiple strategic perspectives",
+        "Difficult to implement integrated perspective across large organizations"
+      ],
+      "modernRelevance": "Integrative perspective development becomes crucial as organizations face complex strategic challenges requiring synthesis of multiple strategic approaches and adaptive perspective evolution."
+    },
+    "ploy": {
+      "emphasis": 3,
+      "title": "Configuration-Contingent Strategic Tactics",
+      "corePhilosophy": "Strategic tactics should be selected and integrated from multiple schools based on organizational configuration, competitive context, and transformation requirements",
+      "keyBelief": "Effective tactical approaches combine insights from different strategic schools and adapt tactics to organizational configuration and situational needs",
+      "approach": "Contingent tactical approach that selects and integrates tactical methods from multiple strategic schools based on configuration analysis and situational assessment",
+      "toolsAndMethods": [
+        "Multi-school tactical integration",
+        "Configuration-contingent tactics",
+        "Situational tactical selection",
+        "Tactical portfolio development",
+        "Transformation tactics planning",
+        "Tactical approach synthesis",
+        "Context-adaptive maneuvering"
+      ],
+      "processDescription": "Configuration School employs tactical approaches that integrate insights from multiple strategic schools (design clarity, planning analysis, positioning competition, entrepreneurial boldness, learning adaptation) and selects tactics based on organizational configuration, competitive context, and transformation requirements.",
+      "keyQuestions": [
+        "What tactical approaches from different schools best fit our current situation?",
+        "How do we integrate tactical insights from multiple strategic perspectives?",
+        "What configuration and context factors should guide our tactical selection?",
+        "How do we adapt our tactical approach through organizational transformations?",
+        "What tactical combinations provide optimal strategic maneuvering capabilities?"
+      ],
+      "realWorldExample": "Apple's tactical evolution demonstrates configuration approach - different tactical emphases during different periods (early: entrepreneurial boldness, 1990s: positioning focus, iPod era: design elegance, iPhone: platform integration), tactics adapted to configuration and competitive context.",
+      "strengths": [
+        "Provides sophisticated, situationally appropriate tactical approaches",
+        "Integrates tactical insights from multiple strategic schools",
+        "Adapts tactics to organizational configuration and competitive context",
+        "Enables tactical evolution through organizational transformation",
+        "Creates comprehensive tactical capabilities combining different approaches"
+      ],
+      "limitations": [
+        "Can be complex to implement multiple tactical approaches simultaneously",
+        "Risk of tactical confusion from multiple perspectives and methods",
+        "May be resource-intensive with multiple tactical approaches",
+        "Difficult to coordinate integrated tactical approach across organization",
+        "Requires sophisticated understanding of different tactical schools"
+      ],
+      "modernRelevance": "Configuration-contingent tactics become important as organizations need sophisticated tactical approaches that adapt to their specific configuration and competitive context while integrating multiple strategic perspectives."
+    }
+  }
+}
+]
+}/*
+FILE: static/data/enhanced-schools.json
+Complete deep P-analysis data structure for all 10 strategy schools
+This replaces and extends the existing schools.json with comprehensive P-approaches
+*/
+
+{
+"metadata": {
+"title": "Enhanced Strategy Schools with Deep P-Analysis",
+"description": "Comprehensive analysis of how each of Mintzberg's 10 strategy schools approaches the 5 P's of strategy",
+"version": "2.0",
+"lastUpdated": "2025-01-09",
+"totalSchools": 10,
+"analysisDepth": "Deep P-Approach Analysis"
+},
+"schools": [
+{
+  "id": "design",
+  "name": "Design School",
+  "shortName": "Design",
+  "group": "Prescriptive",
+  "description": "Strategy as deliberate design: achieving perfect 'fit' between internal strengths and external opportunities through systematic analysis and conscious choice.",
+  "longDescription": "The Design School, pioneered at Harvard Business School in the 1960s, views strategy formation as a thoughtful process of conception. Like an architect designing a building, strategists must create a blueprint that perfectly matches the organization's internal capabilities with external market opportunities. This school emphasizes the SWOT analysis as the cornerstone tool for achieving strategic fit. The CEO acts as the chief architect, responsible for crafting a clear, explicit strategy that can be communicated throughout the organization.",
+  "keyFigures": ["Kenneth Andrews", "Roland Christensen", "Edmund Learned"],
+  "originPeriod": "1960s",
+  "values": [5, 2, 3, 2, 1],
+  "pApproaches": {
+    "plan": {
+      "emphasis": 5,
+      "title": "Strategic Design as Deliberate Blueprint",
+      "corePhilosophy": "Strategy must be consciously designed through systematic analysis to achieve optimal fit between internal capabilities and external opportunities",
+      "keyBelief": "The best strategy emerges from rational, deliberate design that creates perfect alignment between what we can do and what the environment demands",
+      "approach": "Top-down, CEO-led strategic design process using structured analytical frameworks, emphasizing clarity and explicitness",
+      "toolsAndMethods": [
+        "SWOT Analysis (primary framework)",
+        "Strategic fit assessment matrices",
+        "Capability-opportunity matching",
+        "Stakeholder analysis",
+        "Strategic alternatives evaluation",
+        "Implementation planning"
+      ],
+      "processDescription": "Design School planning resembles architectural blueprinting. The CEO acts as chief architect, systematically analyzing organizational strengths and weaknesses against environmental opportunities and threats. The process follows a linear sequence: assess internal capabilities, analyze external environment, generate strategic alternatives, evaluate fit, select optimal strategy, and create implementation plan. The goal is one clear, optimal strategic design.",
+      "keyQuestions": [
+        "What are our distinctive competencies and core weaknesses?",
+        "What opportunities and threats does our environment present?",
+        "How can we achieve the best possible strategic fit?",
+        "What is our one optimal strategy given our situation?",
+        "How do we ensure our strategy is simple, clear, and communicable?",
+        "What implementation steps will realize our strategic design?"
+      ],
+      "realWorldExample": "Apple under Steve Jobs exemplified Design School planning - Jobs systematically matched Apple's design and innovation capabilities with emerging opportunities in consumer electronics, resulting in clear strategic focus on elegant, user-friendly products that created perfect fit between Apple's strengths and market needs.",
+      "strengths": [
+        "Creates clear, understandable strategic direction",
+        "Ensures systematic consideration of internal and external factors",
+        "Promotes rational, analytical strategic thinking",
+        "Produces simple, communicable strategies",
+        "Places clear responsibility for strategy with leadership"
+      ],
+      "limitations": [
+        "Assumes optimal strategy can be predetermined",
+        "May oversimplify complex, dynamic strategic realities",
+        "Limited organizational learning during implementation",
+        "Risk of rigid adherence to original design",
+        "Difficulty adapting when assumptions prove wrong"
+      ],
+      "modernRelevance": "Remains valuable for startups needing clear direction, turnaround situations requiring focused strategy, and stable environments where systematic analysis can identify optimal positioning."
+    },
+    "pattern": {
+      "emphasis": 2,
+      "title": "Learning from History to Inform Design",
+      "corePhilosophy": "Historical patterns provide valuable input for strategic design, but should not substitute for conscious strategic choice",
+      "keyBelief": "While past patterns offer important lessons, strategy should be deliberately designed based on current fit analysis rather than allowed to emerge from history",
+      "approach": "Retrospective pattern analysis to inform future strategic design, emphasizing learning from success and failure to improve design quality",
+      "toolsAndMethods": [
+        "Historical performance analysis",
+        "Success factor identification",
+        "Failure mode analysis",
+        "Best practice benchmarking",
+        "Pattern recognition in SWOT analysis",
+        "Post-implementation strategic reviews"
+      ],
+      "processDescription": "Design School treats patterns as input to better strategic design. Analysts examine historical performance to identify what worked and why, extracting lessons that inform current strategic fit analysis. However, patterns are not allowed to drive strategy - they inform the design process but conscious choice based on current analysis determines strategic direction.",
+      "keyQuestions": [
+        "What patterns from our history can inform current strategic design?",
+        "Which past successes should we build upon in our new strategy?",
+        "What failures teach us about poor strategic fit?",
+        "How do historical patterns validate our current fit analysis?",
+        "What implementation lessons can improve our design process?"
+      ],
+      "realWorldExample": "McKinsey & Company systematically analyzes patterns from successful client engagements to refine their strategic frameworks and methodologies, but each new client strategy is consciously designed based on specific fit analysis rather than following emergent patterns.",
+      "strengths": [
+        "Provides empirical foundation for strategic design",
+        "Validates strategic assumptions with historical evidence",
+        "Identifies proven success factors and capabilities",
+        "Improves strategic design process over time"
+      ],
+      "limitations": [
+        "Limited emphasis on emergent or adaptive strategy",
+        "May dismiss valuable unplanned strategic developments",
+        "Past patterns may not predict future success",
+        "Risk of over-reliance on historical precedent"
+      ],
+      "modernRelevance": "Valuable for organizations with rich histories wanting to build on proven successes while maintaining strategic focus and avoiding past mistakes."
+    },
+    "position": {
+      "emphasis": 3,
+      "title": "Strategic Fit Determines Market Position",
+      "corePhilosophy": "Market position emerges from optimal fit between internal capabilities and external opportunities, not from competitive analysis alone",
+      "keyBelief": "The right market position is determined by where our unique capabilities best match environmental opportunities, creating sustainable competitive advantage",
+      "approach": "Inside-out positioning based on capability-opportunity fit analysis, emphasizing distinctive competence as basis for market position",
+      "toolsAndMethods": [
+        "Capability-based positioning",
+        "Distinctive competence analysis",
+        "Market opportunity assessment",
+        "Competitive gap analysis",
+        "Value chain analysis",
+        "Strategic group mapping"
+      ],
+      "processDescription": "Design School positioning starts with internal capability analysis to identify distinctive competences, then examines external environment to find opportunities where these capabilities create unique value. Position is chosen based on best fit rather than pure competitive analysis. The focus is on leveraging what makes the organization unique.",
+      "keyQuestions": [
+        "What are our distinctive competences that competitors cannot easily match?",
+        "Where do market opportunities align with our unique capabilities?",
+        "What position allows us to leverage our strengths most effectively?",
+        "How can we create defensible competitive advantage through strategic fit?",
+        "What market position is sustainable given our capabilities?"
+      ],
+      "realWorldExample": "Southwest Airlines positioned itself in the low-cost carrier segment not just to compete on price, but because this position perfectly matched their operational capabilities (point-to-point routing, single aircraft type, fast turnaround) with market opportunities for affordable air travel.",
+      "strengths": [
+        "Ensures positioning builds on organizational strengths",
+        "Creates sustainable advantage through capability leverage",
+        "Avoids positions that stretch organization beyond capabilities",
+        "Provides clear rationale for market position choice"
+      ],
+      "limitations": [
+        "May miss attractive positions that require capability development",
+        "Limited consideration of dynamic competitive responses",
+        "Risk of being too internally focused",
+        "May not anticipate market evolution"
+      ],
+      "modernRelevance": "Important for organizations needing to identify sustainable competitive positions based on genuine capabilities rather than wishful thinking about market opportunities."
+    },
+    "perspective": {
+      "emphasis": 2,
+      "title": "CEO Vision Shapes Strategic Perspective",
+      "corePhilosophy": "Strategic perspective emerges from leadership vision translated into organizational mindset through clear strategic design",
+      "keyBelief": "The CEO's strategic perspective, informed by rigorous analysis, becomes the organizational worldview that guides all strategic choices",
+      "approach": "Top-down perspective development where CEO's strategic vision becomes shared organizational mindset through clear communication and design",
+      "toolsAndMethods": [
+        "Leadership vision articulation",
+        "Strategic mission development",
+        "Cultural alignment analysis",
+        "Stakeholder perspective mapping",
+        "Values-strategy alignment",
+        "Vision communication systems"
+      ],
+      "processDescription": "Design School perspective starts with CEO's strategic vision informed by rigorous SWOT analysis. This vision is translated into organizational perspective through clear strategic design that aligns culture, values, and mindset with strategic direction. The goal is shared organizational perspective that supports strategic implementation.",
+      "keyQuestions": [
+        "What strategic perspective does our analysis suggest we should adopt?",
+        "How does the CEO's vision align with our strategic fit analysis?",
+        "What organizational mindset will support our chosen strategy?",
+        "How do we align culture and values with strategic direction?",
+        "What perspective will motivate and guide organizational behavior?"
+      ],
+      "realWorldExample": "Howard Schultz at Starbucks developed a strategic perspective of 'third place between work and home' based on analysis of American lifestyle trends, then designed organizational culture and operations to support this perspective throughout the company.",
+      "strengths": [
+        "Creates aligned organizational mindset",
+        "Ensures perspective supports strategic implementation",
+        "Provides clear cultural direction",
+        "Links values with strategic choices"
+      ],
+      "limitations": [
+        "Heavy dependence on CEO's perspective",
+        "Limited bottom-up perspective development",
+        "Risk of perspective becoming rigid doctrine",
+        "May not evolve with changing circumstances"
+      ],
+      "modernRelevance": "Valuable for organizations needing strong cultural alignment with strategy, particularly during transformations or when building new organizational identity."
+    },
+    "ploy": {
+      "emphasis": 1,
+      "title": "Straightforward Implementation Over Tactical Maneuvering",
+      "corePhilosophy": "Focus on excellent strategic design and implementation rather than tactical ploys or competitive deception",
+      "keyBelief": "Good strategy executed well beats tactical maneuvering; emphasis should be on strategic excellence rather than competitive tricks",
+      "approach": "Minimal tactical focus, preferring direct competitive approach based on superior strategic fit and execution excellence",
+      "toolsAndMethods": [
+        "Direct competitive response",
+        "Implementation excellence",
+        "Capability-based competition",
+        "Strategic communication",
+        "Stakeholder engagement",
+        "Performance monitoring"
+      ],
+      "processDescription": "Design School approaches competition through superior strategic design and execution rather than tactical ploys. When competitive moves are needed, they are straightforward and based on leveraging strategic advantages rather than deception or misdirection. The focus is on doing strategy better, not playing competitive games.",
+      "keyQuestions": [
+        "How do we compete through superior strategic design?",
+        "What direct competitive responses leverage our strategic advantages?",
+        "How do we out-execute competitors rather than out-maneuver them?",
+        "What straightforward moves reinforce our strategic position?",
+        "How do we compete on strategic merit rather than tactical cleverness?"
+      ],
+      "realWorldExample": "Toyota's response to competitive pressure focuses on continuous improvement of their production system and product quality rather than tactical moves - they compete through superior strategic design and execution.",
+      "strengths": [
+        "Emphasizes sustainable competitive advantages",
+        "Avoids risky or potentially damaging tactical games",
+        "Focuses resources on strategic excellence",
+        "Builds reputation for straightforward competition"
+      ],
+      "limitations": [
+        "May miss opportunities for tactical advantage",
+        "Limited responsiveness to competitor ploys",
+        "Risk of being outmaneuvered by more tactically agile competitors",
+        "May appear predictable to competitors"
+      ],
+      "modernRelevance": "Appropriate for organizations in stable competitive environments where strategic excellence matters more than tactical agility, and where reputation for straightforward dealing is valuable."
+    }
+  }
+},
+{
+  "id": "planning",
+  "name": "Planning School",
+  "shortName": "Planning",
+  "group": "Prescriptive",
+  "description": "Strategy as formal, systematic planning: elaborate procedures, detailed analysis, and quantified implementation plans executed by specialized staff.",
+  "longDescription": "Emerging in the 1970s, the Planning School treats strategy formation as a highly formal, systematic process. Like engineers building a complex machine, strategic planners create elaborate procedures, detailed forecasts, and comprehensive implementation plans. This school believes strategy can be programmed through rigorous analysis, careful decomposition of goals, and meticulous attention to scheduling and budgeting.",
+  "keyFigures": ["Igor Ansoff", "George Steiner", "Peter Lorange"],
+  "originPeriod": "1970s",
+  "values": [5, 1, 3, 2, 2],
+  "pApproaches": {
+    "plan": {
+      "emphasis": 5,
+      "title": "Strategy as Formal Programming System",
+      "corePhilosophy": "Strategy can and should be programmed through elaborate formal planning procedures with detailed analysis, quantification, and systematic implementation",
+      "keyBelief": "Formal planning processes with rigorous procedures, extensive analysis, and detailed implementation plans lead to superior strategic outcomes than informal approaches",
+      "approach": "Highly systematized planning process with specialized staff, formal procedures, detailed forecasting, and comprehensive implementation programming",
+      "toolsAndMethods": [
+        "Strategic planning cycles (annual/multi-year)",
+        "Portfolio planning matrices (BCG, GE/McKinsey)",
+        "Scenario planning and forecasting",
+        "Budget-strategy integration",
+        "Strategic programming systems",
+        "Performance measurement frameworks",
+        "Strategic control systems",
+        "Planning department organization"
+      ],
+      "processDescription": "Planning School treats strategy as engineering project requiring systematic programming. Specialized planning staff lead elaborate annual cycles involving environmental scanning, competitive analysis, portfolio review, scenario development, goal setting, strategy formulation, resource allocation, budgeting, implementation planning, and control systems. The process is highly formalized with detailed procedures, extensive documentation, and quantified targets.",
+      "keyQuestions": [
+        "What formal procedures will ensure comprehensive strategic analysis?",
+        "How do we systematically analyze all strategic variables and scenarios?",
+        "What planning systems integrate strategy with budgets and operations?",
+        "How do we decompose strategic goals into detailed implementation steps?",
+        "What control systems monitor strategic performance against plans?",
+        "How do we coordinate planning across business units and functions?"
+      ],
+      "realWorldExample": "General Electric under Jack Welch exemplified Planning School approach with elaborate strategic planning systems including the GE Matrix for portfolio planning, detailed business unit strategic reviews, annual planning cycles integrating strategy with budgets, and comprehensive performance measurement systems.",
+      "strengths": [
+        "Provides systematic, disciplined approach to strategy development",
+        "Ensures comprehensive analysis of strategic variables",
+        "Creates detailed roadmaps for implementation and control",
+        "Excellent for coordinating complex, multi-business organizations",
+        "Integrates strategy with operational planning and budgets",
+        "Establishes clear accountability and performance metrics"
+      ],
+      "limitations": [
+        "Can become overly bureaucratic and slow to respond to change",
+        "May stifle creativity, innovation, and entrepreneurial thinking",
+        "Assumes predictable environment that rarely exists",
+        "Often creates rigid plans unsuitable for dynamic markets",
+        "Can consume enormous resources without proportional benefits",
+        "Risk of planning becoming end in itself rather than means"
+      ],
+      "modernRelevance": "Elements remain important for large organizations needing coordination and resource allocation, though pure planning approaches have fallen from favor due to environmental unpredictability."
+    },
+    "pattern": {
+      "emphasis": 1,
+      "title": "Variance Analysis and Plan Adherence",
+      "corePhilosophy": "Patterns should emerge from planned strategies; deviations from plan require analysis and correction rather than acceptance as emergent strategy",
+      "keyBelief": "Strategic success comes from disciplined execution of planned strategies; patterns that deviate from plan indicate implementation problems requiring correction",
+      "approach": "Systematic monitoring of actual performance against planned strategies with variance analysis and corrective action to maintain plan adherence",
+      "toolsAndMethods": [
+        "Strategic variance analysis",
+        "Plan vs. actual performance tracking",
+        "Implementation monitoring systems",
+        "Corrective action procedures",
+        "Strategic control dashboards",
+        "Exception reporting systems",
+        "Plan revision procedures"
+      ],
+      "processDescription": "Planning School views patterns primarily as measure of plan adherence. Sophisticated control systems track actual strategic performance against planned targets, identifying variances for analysis and correction. When patterns emerge that differ from planned strategy, this indicates implementation problems rather than valuable emergent learning. The goal is ensuring actual patterns match planned patterns.",
+      "keyQuestions": [
+        "How closely do our actual patterns match our planned strategies?",
+        "What variances from plan require analysis and corrective action?",
+        "How do we maintain disciplined execution of strategic plans?",
+        "What control systems ensure pattern adherence to strategy?",
+        "When should we revise plans vs. correcting implementation?"
+      ],
+      "realWorldExample": "Traditional manufacturing companies like Ford historically used detailed strategic control systems to monitor actual performance patterns against planned strategies, with variance analysis triggering corrective actions to bring performance back in line with plans.",
+      "strengths": [
+        "Maintains disciplined focus on strategic objectives",
+        "Provides early warning of implementation problems",
+        "Ensures systematic monitoring of strategic progress",
+        "Creates accountability for plan execution"
+      ],
+      "limitations": [
+        "Limited appreciation for valuable emergent strategies",
+        "May force adherence to plans that should be changed",
+        "Discourages adaptive learning and flexibility",
+        "Risk of missing innovative opportunities that deviate from plan"
+      ],
+      "modernRelevance": "Control and monitoring elements remain valuable, though modern approaches balance plan adherence with adaptive learning from emergent patterns."
+    },
+    "position": {
+      "emphasis": 3,
+      "title": "Analytical Portfolio Positioning",
+      "corePhilosophy": "Market position should be determined through systematic portfolio analysis using strategic frameworks and quantitative assessment",
+      "keyBelief": "Optimal positioning emerges from rigorous analytical assessment of business portfolios, market attractiveness, and competitive position using proven frameworks",
+      "approach": "Structured analytical approach to positioning using portfolio planning matrices, market analysis frameworks, and quantitative assessment tools",
+      "toolsAndMethods": [
+        "BCG Growth-Share Matrix",
+        "GE/McKinsey Matrix",
+        "Portfolio planning frameworks",
+        "Market attractiveness analysis",
+        "Competitive position assessment",
+        "Resource allocation models",
+        "Business unit positioning"
+      ],
+      "processDescription": "Planning School positioning relies heavily on portfolio planning matrices that systematically evaluate business units based on market attractiveness and competitive position. These frameworks guide resource allocation decisions and positioning choices through quantitative analysis rather than intuition. The approach treats positioning as analytical problem solvable through systematic assessment.",
+      "keyQuestions": [
+        "How do our business units position in portfolio planning matrices?",
+        "What analytical frameworks best assess market attractiveness?",
+        "How do we systematically evaluate competitive position strength?",
+        "What positioning strategies do portfolio analyses suggest?",
+        "How should we allocate resources across different market positions?"
+      ],
+      "realWorldExample": "General Electric's famous use of the GE Matrix systematically positioned business units based on market attractiveness and business strength, guiding strategic resource allocation and positioning decisions across GE's diverse portfolio.",
+      "strengths": [
+        "Provides systematic framework for positioning decisions",
+        "Enables objective comparison across business units",
+        "Guides resource allocation based on analytical assessment",
+        "Creates common language for positioning discussions"
+      ],
+      "limitations": [
+        "May oversimplify complex positioning realities",
+        "Limited consideration of dynamic competitive responses",
+        "Risk of mechanical application of frameworks",
+        "May miss innovative positioning opportunities"
+      ],
+      "modernRelevance": "Portfolio thinking remains valuable for diversified companies, though modern approaches recognize limitations of matrix-based positioning."
+    },
+    "perspective": {
+      "emphasis": 2,
+      "title": "Planning-Oriented Organizational Mindset",
+      "corePhilosophy": "Organizational perspective should emphasize analytical rigor, systematic thinking, and disciplined planning processes",
+      "keyBelief": "Success requires organizational mindset that values formal analysis, systematic planning, and disciplined execution over intuition or improvisation",
+      "approach": "Development of planning-oriented culture with emphasis on analytical thinking, systematic processes, and formal strategic management",
+      "toolsAndMethods": [
+        "Planning culture development",
+        "Analytical training programs",
+        "Strategic planning education",
+        "Process orientation development",
+        "Planning department establishment",
+        "Strategic planning skills building"
+      ],
+      "processDescription": "Planning School develops organizational perspective that values systematic analysis, formal planning processes, and disciplined implementation. This involves creating planning-oriented culture where analytical rigor is respected, systematic thinking is rewarded, and formal strategic management processes are embedded in organizational DNA.",
+      "keyQuestions": [
+        "How do we develop organizational appreciation for systematic planning?",
+        "What perspective supports disciplined strategic analysis?",
+        "How do we embed planning orientation in organizational culture?",
+        "What mindset values formal strategic management processes?",
+        "How do we balance analytical rigor with strategic flexibility?"
+      ],
+      "realWorldExample": "Companies like Procter & Gamble developed strong planning cultures where analytical rigor, systematic market research, and formal strategic planning processes became deeply embedded organizational perspectives.",
+      "strengths": [
+        "Creates systematic approach to strategic thinking",
+        "Develops organizational analytical capabilities",
+        "Provides disciplined framework for decision-making",
+        "Builds strategic planning competencies"
+      ],
+      "limitations": [
+        "May stifle entrepreneurial thinking and innovation",
+        "Risk of over-emphasizing analysis at expense of action",
+        "Can create bureaucratic, slow-moving culture",
+        "May resist adaptive changes to planning approaches"
+      ],
+      "modernRelevance": "Analytical capabilities remain valuable, though modern organizations balance systematic thinking with agility and innovation."
+    },
+    "ploy": {
+      "emphasis": 2,
+      "title": "Systematic Competitive Analysis and Contingency Planning",
+      "corePhilosophy": "Competitive moves should be planned systematically through scenario analysis, contingency planning, and formal competitive assessment",
+      "keyBelief": "Effective competitive strategy requires systematic analysis of competitor capabilities and formal planning of competitive responses and initiatives",
+      "approach": "Structured competitive planning using scenario analysis, game theory applications, and formal contingency planning for competitive situations",
+      "toolsAndMethods": [
+        "Competitive scenario planning",
+        "Game theory applications",
+        "Contingency planning systems",
+        "Competitive intelligence systems",
+        "Simulation and modeling",
+        "Strategic options analysis",
+        "Risk assessment frameworks"
+      ],
+      "processDescription": "Planning School approaches competitive ploys through systematic analysis and formal planning. This involves detailed competitive scenario planning, formal assessment of competitive responses, and systematic development of contingency plans for different competitive situations. The emphasis is on planned competitive moves rather than spontaneous tactical responses.",
+      "keyQuestions": [
+        "What systematic analysis informs our competitive planning?",
+        "How do we formally assess competitive scenarios and responses?",
+        "What contingency plans address different competitive situations?",
+        "How do we systematically evaluate competitive strategic options?",
+        "What formal processes guide competitive decision-making?"
+      ],
+      "realWorldExample": "Military-style strategic planning in aerospace and defense industries involves extensive scenario planning for competitive situations, formal assessment of competitor capabilities, and systematic development of competitive responses.",
+      "strengths": [
+        "Provides systematic approach to competitive strategy",
+        "Enables thorough assessment of competitive situations",
+        "Creates prepared responses to competitive threats",
+        "Reduces risk through systematic analysis"
+      ],
+      "limitations": [
+        "May be too slow for rapidly changing competitive situations",
+        "Risk of over-analysis leading to missed opportunities",
+        "Formal planning may not capture competitive subtleties",
+        "Can become predictable to competitors"
+      ],
+      "modernRelevance": "Systematic competitive analysis remains valuable, though modern approaches emphasize speed and adaptability alongside thorough planning."
+    }
+  }
+},
+{
+  "id": "positioning",
+  "name": "Positioning School",
+  "shortName": "Positioning",
+  "group": "Prescriptive",
+  "description": "Strategy as analytical positioning: selecting optimal market positions based on rigorous industry analysis and competitive dynamics.",
+  "longDescription": "Dominated by Michael Porter's influential work in the 1980s, the Positioning School revolutionized strategic thinking by focusing on industry structure and competitive dynamics. Like chess masters analyzing the board, strategists must understand the 'rules of the game' in their industry - the five competitive forces that determine profitability.",
+  "keyFigures": ["Michael Porter", "Richard Rumelt", "Ken Hatten"],
+  "originPeriod": "1980s",
+  "values": [4, 2, 5, 2, 4],
+  "pApproaches": {
+    "plan": {
+      "emphasis": 4,
+      "title": "Analytical Strategic Planning Based on Industry Structure",
+      "corePhilosophy": "Strategic planning must be grounded in rigorous analysis of industry structure, competitive forces, and value chain dynamics to identify sustainable competitive advantages",
+      "keyBelief": "Successful strategies emerge from systematic analysis of industry economics and competitive positioning rather than internal capabilities alone",
+      "approach": "Outside-in analytical planning process emphasizing industry analysis, competitive assessment, and strategic positioning choices",
+      "toolsAndMethods": [
+        "Porter's Five Forces Analysis",
+        "Value Chain Analysis", 
+        "Generic Strategies Framework",
+        "Competitive Strategy Analysis",
+        "Industry Evolution Analysis",
+        "Strategic Group Mapping",
+        "Activity-Based Costing",
+        "Profit Pool Analysis"
+      ],
+      "processDescription": "Positioning School planning begins with rigorous industry analysis using Porter's Five Forces to understand profit potential and competitive dynamics. This is followed by value chain analysis to identify sources of competitive advantage, assessment of strategic groups and competitive positioning, evaluation of generic strategy options (cost leadership, differentiation, focus), and selection of defensible strategic positions.",
+      "keyQuestions": [
+        "What is the profit potential of our industry based on Five Forces analysis?",
+        "Where in our value chain can we create sustainable competitive advantage?",
+        "Which generic strategy (cost leadership, differentiation, focus) best fits our situation?",
+        "How do we position ourselves relative to strategic groups in our industry?",
+        "What strategic moves will strengthen our competitive position?",
+        "How do we defend our chosen position against competitive attack?"
+      ],
+      "realWorldExample": "Amazon's strategic planning exemplifies Positioning School thinking - systematic analysis of retail industry structure identified opportunities to leverage technology for cost leadership, followed by deliberate positioning choices and value chain optimization to defend their position.",
+      "strengths": [
+        "Provides rigorous analytical foundation for strategic decisions",
+        "Focus on sustainable competitive advantage drives long-term thinking",
+        "Industry-specific insights lead to more relevant strategies",
+        "Strong empirical research foundation validates frameworks",
+        "Helps avoid 'stuck in the middle' strategic positions"
+      ],
+      "limitations": [
+        "May underestimate importance of internal capabilities and resources",
+        "Can be overly deterministic about industry constraints",
+        "Limited guidance on strategy implementation and organizational change",
+        "Assumes relatively stable industry structures",
+        "May discourage innovation that transforms industry rules"
+      ],
+      "modernRelevance": "Porter's frameworks remain highly influential and widely used, though modern strategists recognize need to balance external positioning with internal capabilities and dynamic adaptation."
+    },
+    "pattern": {
+      "emphasis": 2,
+      "title": "Industry Evolution Patterns and Competitive Dynamics",
+      "corePhilosophy": "Understanding patterns of industry evolution and competitive behavior provides insights for strategic positioning and competitive response",
+      "keyBelief": "Industries evolve in predictable patterns that create opportunities for repositioning; successful strategies leverage these evolutionary dynamics",
+      "approach": "Analysis of industry evolution patterns, competitive behavioral patterns, and strategic group dynamics to inform positioning choices",
+      "toolsAndMethods": [
+        "Industry Life Cycle Analysis",
+        "Strategic Group Evolution",
+        "Competitive Response Patterns",
+        "Market Signals Analysis",
+        "Industry Transformation Drivers",
+        "Competitive Dynamics Mapping"
+      ],
+      "processDescription": "Positioning School examines patterns in industry evolution, competitive behavior, and strategic group movement to identify positioning opportunities. This involves analyzing how industries mature, how strategic groups form and evolve, how competitors typically respond to strategic moves, and what patterns of competitive behavior create strategic opportunities.",
+      "keyQuestions": [
+        "What patterns of industry evolution create positioning opportunities?",
+        "How do competitive response patterns influence our strategic choices?",
+        "What strategic group movement patterns should inform our positioning?",
+        "How do market signals reveal competitor intentions and capabilities?",
+        "What competitive behavioral patterns can we exploit strategically?"
+      ],
+      "realWorldExample": "Netflix leveraged understanding of media industry evolution patterns - recognizing shift from physical to digital distribution, anticipating competitive responses from traditional players, and positioning to capture value from industry transformation.",
+      "strengths": [
+        "Provides insights into industry dynamics and evolution",
+        "Helps anticipate competitive responses and market changes",
+        "Identifies opportunities created by industry transitions",
+        "Enables proactive positioning for industry evolution"
+      ],
+      "limitations": [
+        "Past patterns may not predict future industry evolution",
+        "Limited focus on creating new patterns through innovation",
+        "May encourage reactive rather than proactive strategy",
+        "Risk of being trapped by historical industry patterns"
+      ],
+      "modernRelevance": "Understanding competitive patterns remains valuable, though digital disruption has accelerated industry evolution and reduced predictability of traditional patterns."
+    },
+    "position": {
+      "emphasis": 5,
+      "title": "Strategic Positioning for Sustainable Competitive Advantage",
+      "corePhilosophy": "Strategic success depends on choosing and defending unique, valuable positions in the competitive landscape that create sustainable competitive advantage",
+      "keyBelief": "The essence of strategy is choosing a unique and defensible position that creates superior value for customers while generating sustainable profits",
+      "approach": "Systematic analysis of positioning options followed by deliberate choice and defense of strategic positions that create competitive advantage",
+      "toolsAndMethods": [
+        "Generic Strategies Framework (Cost Leadership, Differentiation, Focus)",
+        "Strategic Positioning Maps",
+        "Competitive Advantage Analysis",
+        "Value Proposition Design",
+        "Defensive Strategy Planning",
+        "Strategic Trade-offs Analysis",
+        "Competitive Moats Assessment"
+      ],
+      "processDescription": "Positioning School's core process involves systematic evaluation of potential strategic positions using generic strategy frameworks, analysis of value creation opportunities, assessment of competitive advantage sustainability, deliberate choice of strategic position, and development of activities and capabilities to defend chosen position against competitive attack.",
+      "keyQuestions": [
+        "What unique strategic position can we occupy in our competitive landscape?",
+        "Which generic strategy provides the best foundation for competitive advantage?",
+        "How do we create value that competitors cannot easily replicate?",
+        "What activities and capabilities defend our chosen position?",
+        "How do we make strategic trade-offs that reinforce our positioning?",
+        "What competitive moats protect our strategic position?"
+      ],
+      "realWorldExample": "Southwest Airlines exemplifies Positioning School strategy - chose specific position as low-cost, point-to-point carrier, made systematic trade-offs to support this position (no frills, single aircraft type, secondary airports), and built activities that defend position against competitive attack.",
+      "strengths": [
+        "Provides clear framework for strategic positioning choices",
+        "Emphasizes sustainable competitive advantage over short-term gains",
+        "Forces explicit consideration of strategic trade-offs",
+        "Helps avoid competitive imitation through distinctive positioning",
+        "Creates focus and clarity around strategic choices"
+      ],
+      "limitations": [
+        "May limit strategic flexibility and adaptation to change",
+        "Generic strategies may not capture industry-specific opportunities",
+        "Limited guidance on how to change or evolve strategic positions",
+        "Risk of position becoming obsolete due to industry transformation",
+        "May discourage innovative positioning that doesn't fit frameworks"
+      ],
+      "modernRelevance": "Strategic positioning remains central to competitive strategy, though modern approaches emphasize dynamic capabilities and platform strategies alongside traditional positioning."
+    },
+    "perspective": {
+      "emphasis": 2,
+      "title": "Analytical, Economics-Based Strategic Mindset",
+      "corePhilosophy": "Strategic perspective should be grounded in economic logic, analytical rigor, and systematic thinking about competitive advantage",
+      "keyBelief": "Success requires organizational mindset that prioritizes analytical thinking, competitive logic, and economic reasoning over intuition or operational focus",
+      "approach": "Development of analytically-oriented strategic perspective emphasizing competitive thinking, economic logic, and systematic strategic analysis",
+      "toolsAndMethods": [
+        "Strategic Thinking Training",
+        "Competitive Analysis Capabilities",
+        "Economic Logic Development",
+        "Strategic Frameworks Education",
+        "Analytical Culture Building",
+        "Strategic Planning Process Design"
+      ],
+      "processDescription": "Positioning School develops organizational perspective that values rigorous strategic analysis, competitive thinking, and economic logic. This involves building analytical capabilities, training managers in strategic frameworks, creating culture that appreciates competitive dynamics, and embedding systematic strategic thinking in organizational processes.",
+      "keyQuestions": [
+        "How do we develop organizational appreciation for competitive analysis?",
+        "What perspective emphasizes economic logic in strategic decisions?",
+        "How do we build analytical strategic thinking capabilities?",
+        "What mindset prioritizes sustainable competitive advantage?",
+        "How do we embed strategic frameworks in organizational culture?"
+      ],
+      "realWorldExample": "Management consulting firms like McKinsey & Company and Boston Consulting Group embody Positioning School perspective - analytical orientation, emphasis on competitive logic, systematic strategic thinking, and economic reasoning permeate organizational culture.",
+      "strengths": [
+        "Creates disciplined approach to strategic thinking",
+        "Develops organizational competitive intelligence capabilities",
+        "Builds systematic strategic analysis competencies",
+        "Emphasizes economic logic and sustainable advantage"
+      ],
+      "limitations": [
+        "May undervalue operational excellence and innovation",
+        "Risk of over-analysis leading to paralysis",
+        "Limited appreciation for entrepreneurial or creative thinking",
+        "May create internally competitive rather than collaborative culture"
+      ],
+      "modernRelevance": "Analytical strategic thinking remains valuable, though modern organizations balance competitive analysis with innovation, collaboration, and adaptive capabilities."
+    },
+    "ploy": {
+      "emphasis": 4,
+      "title": "Strategic Maneuvering and Competitive Signaling",
+      "corePhilosophy": "Competitive strategy requires sophisticated maneuvering, signaling, and tactical moves to influence competitor behavior and strengthen strategic position",
+      "keyBelief": "Strategic success often depends on outmaneuvering competitors through clever positioning moves, market signals, and competitive responses",
+      "approach": "Systematic planning of competitive moves, market signals, and strategic responses based on game theory principles and competitive intelligence",
+      "toolsAndMethods": [
+        "Game Theory Applications",
+        "Competitive Signaling Strategy",
+        "Market Entry Deterrence",
+        "Strategic Commitment Analysis",
+        "Competitive Response Planning",
+        "First-Mover Advantage Analysis",
+        "Strategic Surprise Planning"
+      ],
+      "processDescription": "Positioning School employs sophisticated competitive maneuvering based on game theory and competitive analysis. This includes strategic signaling to influence competitor behavior, timing of strategic moves for maximum impact, creation of strategic commitments that deter competition, and development of competitive responses that strengthen strategic position.",
+      "keyQuestions": [
+        "What strategic moves will strengthen our competitive position?",
+        "How do we signal our intentions to influence competitor behavior?",
+        "What commitments will deter competitors from attacking our position?",
+        "How do we time strategic moves for maximum competitive advantage?",
+        "What competitive responses will most effectively defend our strategy?",
+        "How do we create strategic surprises that wrong-foot competitors?"
+      ],
+      "realWorldExample": "Intel's strategic maneuvering in semiconductor industry - signaling future technology directions to influence industry standards, making strategic commitments to R&D that deter competitors, timing product launches to maximize competitive advantage.",
+      "strengths": [
+        "Provides sophisticated approach to competitive strategy",
+        "Enables proactive shaping of competitive environment",
+        "Creates opportunities for competitive advantage through superior maneuvering",
+        "Helps anticipate and counter competitive threats"
+      ],
+      "limitations": [
+        "Risk of competitive games becoming end in themselves",
+        "May provoke unnecessary competitive retaliation",
+        "Complex competitive maneuvering can distract from strategy execution",
+        "Requires sophisticated competitive intelligence and analysis"
+      ],
+      "modernRelevance": "Strategic maneuvering remains important in competitive industries, though modern approaches emphasize ecosystem collaboration alongside competitive positioning."
+    }
+  }
+},
+{
+  "id": "entrepreneurial",
+  "name": "Entrepreneurial School",
+  "shortName": "Entrepreneurial",
+  "group": "Descriptive",
+  "description": "Strategy as visionary leadership: intuitive, bold decision-making driven by entrepreneurial vision and personal judgment rather than formal analysis.",
+  "longDescription": "The Entrepreneurial School recognizes that strategy often emerges from the vision and intuition of a single leader rather than systematic analysis. Like artists guided by creative vision, entrepreneurial leaders see opportunities others miss and have the courage to act on incomplete information.",
+  "keyFigures": ["Joseph Schumpeter", "Arthur Cole", "William Guth"],
+  "originPeriod": "Various periods, with renewed interest in entrepreneurship eras",
+  "values": [3, 3, 3, 5, 4],
+  "pApproaches": {
+    "plan": {
+      "emphasis": 3,
+      "title": "Vision-Driven Flexible Planning",
+      "corePhilosophy": "Planning should be guided by entrepreneurial vision and remain flexible to capture emerging opportunities rather than following rigid systematic procedures",
+      "keyBelief": "Entrepreneurial vision provides superior guidance for strategic direction than formal planning processes; plans should serve vision, not constrain it",
+      "approach": "Informal, flexible planning process guided by leadership vision with emphasis on opportunity recognition and rapid adaptation",
+      "toolsAndMethods": [
+        "Vision articulation and communication",
+        "Opportunity scanning and recognition",
+        "Flexible strategic frameworks",
+        "Rapid prototyping and testing",
+        "Scenario-based planning",
+        "Adaptive goal setting",
+        "Intuitive decision-making"
+      ],
+      "processDescription": "Entrepreneurial planning starts with leadership vision that identifies broad strategic direction and opportunities. Planning remains informal and flexible, emphasizing rapid adaptation to opportunities rather than rigid adherence to detailed plans. The process is iterative, with plans evolving as vision encounters reality and new opportunities emerge.",
+      "keyQuestions": [
+        "What vision guides our strategic direction and opportunity recognition?",
+        "How do we maintain strategic flexibility to capture emerging opportunities?",
+        "What planning approaches support rather than constrain entrepreneurial vision?",
+        "How do we balance strategic direction with adaptive responsiveness?",
+        "What decision-making processes enable rapid response to opportunities?"
+      ],
+      "realWorldExample": "Elon Musk's approach at Tesla exemplifies entrepreneurial planning - bold vision of sustainable transport guides flexible planning that adapts to opportunities (energy storage, autonomous driving, space technology) while maintaining strategic direction.",
+      "strengths": [
+        "Enables rapid response to emerging opportunities",
+        "Maintains strategic flexibility in uncertain environments",
+        "Leverages leadership vision and market intuition",
+        "Avoids bureaucratic planning constraints",
+        "Encourages innovative and bold strategic moves"
+      ],
+      "limitations": [
+        "Heavy dependence on leadership vision and judgment",
+        "Limited systematic analysis may miss important factors",
+        "Difficult to coordinate planning across large organizations",
+        "Risk of inconsistent or erratic strategic direction",
+        "May lack detailed implementation planning"
+      ],
+      "modernRelevance": "Vision-driven planning remains crucial for innovation and disruption, particularly in startups and rapidly changing industries requiring entrepreneurial responsiveness."
+    },
+    "pattern": {
+      "emphasis": 3,
+      "title": "Learning Through Entrepreneurial Experimentation",
+      "corePhilosophy": "Strategic patterns emerge through bold experimentation and market learning rather than analytical prediction; successful experiments become strategic patterns",
+      "keyBelief": "Markets are too complex and uncertain for prediction; successful strategies emerge through entrepreneurial experimentation and learning from market feedback",
+      "approach": "Continuous experimentation with new opportunities, rapid learning from market feedback, and scaling successful experiments into strategic patterns",
+      "toolsAndMethods": [
+        "Market experimentation and testing",
+        "Rapid iteration and learning cycles",
+        "Customer feedback integration",
+        "Pilot program development",
+        "Scaling successful innovations",
+        "Failure analysis and learning",
+        "Opportunity portfolio management"
+      ],
+      "processDescription": "Entrepreneurial School develops patterns through systematic experimentation with market opportunities. This involves launching multiple small experiments, gathering market feedback, analyzing what works and what doesn't, scaling successful experiments, and allowing strategic patterns to emerge from successful market learning rather than predetermined planning.",
+      "keyQuestions": [
+        "What experiments will test our strategic assumptions and opportunities?",
+        "How do we learn rapidly from market feedback and customer responses?",
+        "Which experiments should we scale into larger strategic initiatives?",
+        "What patterns of success guide our strategic development?",
+        "How do we manage portfolio of experiments to discover successful strategies?"
+      ],
+      "realWorldExample": "Amazon's pattern development through experimentation - started with books, experimented with various products and services, learned from market responses, scaled successful experiments (AWS, Prime, marketplace) into major strategic patterns.",
+      "strengths": [
+        "Enables discovery of successful strategies through market learning",
+        "Reduces risk through small-scale experimentation",
+        "Builds organizational learning and adaptation capabilities",
+        "Creates patterns validated by market success",
+        "Encourages innovation and creative strategic development"
+      ],
+      "limitations": [
+        "May lack strategic focus and direction",
+        "Resource-intensive approach requiring many experiments",
+        "Difficult to coordinate experimental learning across organization",
+        "Risk of spreading resources too thin across experiments",
+        "May be too slow for rapidly moving competitive situations"
+      ],
+      "modernRelevance": "Experimental pattern development is increasingly important in uncertain environments where traditional planning fails and rapid market learning provides competitive advantage."
+    },
+    "position": {
+      "emphasis": 3,
+      "title": "Opportunity-Based Market Creation",
+      "corePhilosophy": "Strategic positioning should focus on creating new market opportunities rather than competing in existing market positions",
+      "keyBelief": "Entrepreneurial success comes from creating entirely new market categories and value propositions rather than competing for existing market positions",
+      "approach": "Market creation through innovative value propositions, niche identification, and first-mover positioning in new market categories",
+      "toolsAndMethods": [
+        "Market creation strategies",
+        "Blue ocean opportunity identification",
+        "Niche market development",
+        "First-mover advantage planning",
+        "Disruptive innovation positioning",
+        "Value innovation frameworks",
+        "Market timing analysis"
+      ],
+      "processDescription": "Entrepreneurial positioning emphasizes creating new markets rather than competing in existing ones. This involves identifying unserved customer needs, developing innovative value propositions, creating new market categories, and positioning for first-mover advantages. The focus is on market creation rather than market share competition.",
+      "keyQuestions": [
+        "What new market opportunities can we create rather than compete for existing ones?",
+        "How do we identify and serve unmet customer needs?",
+        "What innovative value propositions create new market categories?",
+        "How do we achieve first-mover advantages in emerging markets?",
+        "What positioning strategies avoid direct competition with established players?"
+      ],
+      "realWorldExample": "Uber's positioning strategy exemplified market creation - instead of competing with existing taxi services, created entirely new market category of ride-sharing with different value proposition, customer experience, and business model.",
+      "strengths": [
+        "Avoids direct competition with established players",
+        "Creates new sources of value and competitive advantage",
+        "Enables rapid growth in uncontested market spaces",
+        "Builds strong market position through innovation",
+        "Attracts customers seeking new solutions"
+      ],
+      "limitations": [
+        "High risk of market creation failure",
+        "Requires significant investment with uncertain returns",
+        "May create markets that competitors can easily enter",
+        "Difficult to predict customer acceptance of new categories",
+        "Risk of being too early or too late with market timing"
+      ],
+      "modernRelevance": "Market creation remains crucial for disruption and innovation, particularly in technology-driven industries where new business models continuously emerge."
+    },
+    "perspective": {
+      "emphasis": 5,
+      "title": "Visionary Entrepreneurial Mindset",
+      "corePhilosophy": "Organizational perspective should embody entrepreneurial vision, risk-taking orientation, and innovative mindset that challenges conventional thinking",
+      "keyBelief": "Success requires organizational perspective that embraces change, innovation, and bold thinking rather than conventional business wisdom",
+      "approach": "Development of entrepreneurial culture emphasizing vision, innovation, risk-taking, and transformative thinking throughout organization",
+      "toolsAndMethods": [
+        "Visionary leadership development",
+        "Innovation culture building",
+        "Risk-taking encouragement",
+        "Creative thinking promotion",
+        "Change orientation development",
+        "Entrepreneurial mindset training",
+        "Innovation process design"
+      ],
+      "processDescription": "Entrepreneurial School develops organizational perspective that embodies visionary thinking, innovation orientation, and willingness to challenge conventional wisdom. This involves creating culture that celebrates bold thinking, tolerates failure, encourages experimentation, and maintains focus on transformative opportunities rather than incremental improvements.",
+      "keyQuestions": [
+        "How do we develop organizational appetite for visionary thinking and bold action?",
+        "What perspective encourages innovation and creative problem-solving?",
+        "How do we build tolerance for risk and uncertainty?",
+        "What mindset challenges conventional wisdom and embraces change?",
+        "How do we maintain entrepreneurial perspective as organization grows?"
+      ],
+      "realWorldExample": "Google's perspective under Larry Page and Sergey Brin exemplified entrepreneurial mindset - '10x thinking' that seeks breakthrough innovations, tolerance for ambitious failures, perspective that technology can solve big problems, culture encouraging bold experiments.",
+      "strengths": [
+        "Creates culture supportive of innovation and breakthrough thinking",
+        "Enables rapid adaptation to changing market conditions",
+        "Attracts entrepreneurial talent and creative thinkers",
+        "Encourages transformative rather than incremental innovation",
+        "Builds organizational resilience and adaptability"
+      ],
+      "limitations": [
+        "May create excessive risk-taking and resource waste",
+        "Difficult to maintain entrepreneurial perspective in large organizations",
+        "Risk of perspective becoming unrealistic or disconnected from operations",
+        "May undervalue execution and operational excellence",
+        "Can create instability and lack of direction"
+      ],
+      "modernRelevance": "Entrepreneurial perspective is increasingly important for organizations needing to innovate and adapt in rapidly changing environments, though must be balanced with execution capabilities."
+    },
+    "ploy": {
+      "emphasis": 4,
+      "title": "Bold Strategic Moves and Market Timing",
+      "corePhilosophy": "Strategic success requires bold, well-timed moves that surprise competitors and capture market opportunities before others recognize them",
+      "keyBelief": "Entrepreneurial advantage comes from acting boldly on opportunities with superior timing and willingness to take calculated risks",
+      "approach": "Strategic moves emphasizing timing, boldness, market surprise, and first-mover advantages in emerging opportunities",
+      "toolsAndMethods": [
+        "Market timing analysis",
+        "Strategic surprise planning",
+        "Bold move execution",
+        "First-mover advantage capture",
+        "Disruptive strategy implementation",
+        "Competitive pre-emption",
+        "Opportunity window analysis"
+      ],
+      "processDescription": "Entrepreneurial ploys focus on bold strategic moves with superior market timing. This involves identifying opportunity windows before competitors, making bold commitments to capture first-mover advantages, surprising markets with innovative approaches, and executing strategic moves that establish strong positions in emerging opportunities.",
+      "keyQuestions": [
+        "What bold strategic moves will capture emerging opportunities?",
+        "How do we time strategic initiatives for maximum market impact?",
+        "What moves will surprise competitors and establish first-mover advantages?",
+        "How do we execute bold strategies that others consider too risky?",
+        "What strategic commitments will pre-empt competitive responses?"
+      ],
+      "realWorldExample": "Netflix's bold move from DVD-by-mail to streaming exemplified entrepreneurial ploy - timed transition perfectly to capture streaming opportunity, surprised competitors with speed of transformation, made bold commitment that established market leadership.",
+      "strengths": [
+        "Enables capture of first-mover advantages in emerging markets",
+        "Creates competitive advantages through superior timing",
+        "Builds market position through bold strategic commitments",
+        "Surprises competitors and disrupts market dynamics",
+        "Captures value from rapid market changes"
+      ],
+      "limitations": [
+        "High risk of failure with bold strategic moves",
+        "Requires exceptional market timing and execution",
+        "May provoke strong competitive responses",
+        "Risk of overcommitting resources to uncertain opportunities",
+        "Difficult to sustain advantage after initial bold move"
+      ],
+      "modernRelevance": "Bold strategic moves remain crucial for capturing opportunities in rapidly changing markets, though must be balanced with systematic analysis and risk management."
+    }
+  }
+},
+{
+  "id": "cognitive",
+  "name": "Cognitive School",
+  "shortName": "Cognitive",
+  "group": "Descriptive",
+  "description": "Strategy as mental process: understanding how cognitive biases, mental models, and information processing shape strategic thinking and decision-making.",
+  "longDescription": "The Cognitive School delves into the 'black box' of the strategist's mind, asking how people actually think about strategy. Drawing from cognitive psychology, this school recognizes that strategists are not perfectly rational actors but humans subject to cognitive biases, limited information processing capacity, and mental models that filter reality.",
+  "keyFigures": ["Herbert Simon", "James March", "Richard Cyert"],
+  "originPeriod": "1980s-1990s",
+  "values": [2, 3, 2, 5, 1],
+  "pApproaches": {
+    "plan": {
+      "emphasis": 2,
+      "title": "Bounded Rationality in Strategic Planning",
+      "corePhilosophy": "Strategic planning is constrained by cognitive limitations, biases, and mental models that shape how strategists perceive and analyze strategic situations",
+      "keyBelief": "Strategic planning effectiveness is limited by human cognitive capacity, information processing constraints, and systematic biases in strategic thinking",
+      "approach": "Understanding and improving planning processes by recognizing cognitive limitations, biases, and mental model constraints in strategic analysis",
+      "toolsAndMethods": [
+        "Cognitive bias identification",
+        "Mental model mapping",
+        "Decision-making process analysis",
+        "Information processing improvement",
+        "Structured decision frameworks",
+        "Cognitive debiasing techniques",
+        "Perspective-taking exercises"
+      ],
+      "processDescription": "Cognitive School approaches planning by first understanding how cognitive limitations affect strategic analysis. This involves identifying biases that distort strategic perception, mapping mental models that filter information, analyzing decision-making processes for cognitive constraints, and implementing techniques to improve strategic thinking quality.",
+      "keyQuestions": [
+        "What cognitive biases affect our strategic planning and analysis?",
+        "How do our mental models shape what we see and ignore in strategic situations?",
+        "What information processing limitations constrain our strategic thinking?",
+        "How can we improve strategic decision-making given cognitive constraints?",
+        "What techniques help overcome systematic biases in strategic planning?"
+      ],
+      "realWorldExample": "Financial services firms increasingly use cognitive bias training and structured decision processes to improve strategic planning - recognizing how overconfidence, anchoring, and confirmation bias can distort strategic analysis and investment decisions.",
+      "strengths": [
+        "Recognizes realistic limitations of human strategic thinking",
+        "Provides insights into improving strategic decision-making quality",
+        "Explains why rational planning often fails in practice",
+        "Offers techniques for reducing cognitive errors in planning",
+        "Helps understand different perspectives in strategic situations"
+      ],
+      "limitations": [
+        "May lead to paralysis by analysis of cognitive processes",
+        "Limited immediate practical guidance for strategic planning",
+        "Risk of becoming too academic and removed from strategic action",
+        "Difficulty measuring and managing cognitive factors systematically",
+        "May overcomplicate strategic planning with psychological analysis"
+      ],
+      "modernRelevance": "Understanding cognitive limitations is increasingly important as organizations recognize behavioral factors in strategic decision-making and seek to 'de-bias' their strategic processes."
+    },
+    "pattern": {
+      "emphasis": 3,
+      "title": "Cognitive Pattern Recognition and Sense-Making",
+      "corePhilosophy": "Strategic patterns emerge through cognitive processes of sense-making, pattern recognition, and mental model development rather than objective analysis",
+      "keyBelief": "What we perceive as strategic patterns depends heavily on our cognitive frameworks and sense-making processes rather than objective strategic reality",
+      "approach": "Understanding how cognitive processes create perceived patterns and developing better sense-making capabilities for strategic pattern recognition",
+      "toolsAndMethods": [
+        "Sense-making process analysis",
+        "Pattern recognition training",
+        "Cognitive mapping techniques",
+        "Mental model development",
+        "Perspective diversification",
+        "Information interpretation improvement",
+        "Narrative analysis methods"
+      ],
+      "processDescription": "Cognitive School examines how strategic patterns are perceived and interpreted through cognitive sense-making processes. This involves understanding how mental models filter pattern recognition, how cognitive biases affect pattern interpretation, and how different cognitive frameworks lead to different pattern perceptions in the same strategic situation.",
+      "keyQuestions": [
+        "How do our cognitive frameworks shape what patterns we recognize?",
+        "What sense-making processes help us interpret strategic patterns accurately?",
+        "How do different mental models lead to different pattern perceptions?",
+        "What cognitive techniques improve pattern recognition capabilities?",
+        "How do we distinguish real patterns from cognitive illusions?"
+      ],
+      "realWorldExample": "Intelligence analysis organizations study how analysts' mental models and cognitive biases affect pattern recognition in complex situations - developing techniques to improve sense-making and avoid cognitive traps in pattern interpretation.",
+      "strengths": [
+        "Explains why different strategists see different patterns in same situation",
+        "Provides insights into improving strategic pattern recognition",
+        "Helps understand role of interpretation in strategic analysis",
+        "Offers techniques for better strategic sense-making",
+        "Recognizes subjective nature of strategic pattern perception"
+      ],
+      "limitations": [
+        "May lead to relativistic view that all pattern interpretations are equally valid",
+        "Limited guidance on distinguishing accurate from inaccurate patterns",
+        "Risk of overemphasizing perception at expense of strategic action",
+        "Difficulty applying cognitive insights practically in strategic contexts",
+        "May complicate rather than clarify strategic pattern analysis"
+      ],
+      "modernRelevance": "Understanding cognitive aspects of pattern recognition becomes more important in complex, information-rich environments where sense-making capabilities determine strategic effectiveness."
+    },
+    "position": {
+      "emphasis": 2,
+      "title": "Cognitive Frames and Competitive Perception",
+      "corePhilosophy": "Strategic positioning is shaped by cognitive frames and mental models that determine how strategists perceive competitive landscapes and positioning opportunities",
+      "keyBelief": "What strategists perceive as viable strategic positions depends heavily on their cognitive frameworks and mental models of competition",
+      "approach": "Understanding how cognitive frames shape positioning choices and developing richer mental models for competitive perception and positioning analysis",
+      "toolsAndMethods": [
+        "Cognitive frame analysis",
+        "Competitive perception mapping",
+        "Mental model development",
+        "Perspective-taking exercises",
+        "Cognitive flexibility training",
+        "Frame reframing techniques",
+        "Perceptual positioning analysis"
+      ],
+      "processDescription": "Cognitive School examines how mental models and cognitive frames shape strategic positioning choices. This involves analyzing how strategists perceive competitive landscapes, understanding how cognitive frameworks limit or expand positioning options, and developing techniques to enrich mental models for better positioning analysis.",
+      "keyQuestions": [
+        "How do our mental models shape how we perceive competitive positioning options?",
+        "What cognitive frames limit or expand our strategic positioning choices?",
+        "How do different strategists perceive the same competitive landscape differently?",
+        "What techniques help develop richer mental models of competitive positioning?",
+        "How do cognitive biases affect our positioning analysis and choices?"
+      ],
+      "realWorldExample": "Strategy consulting firms train consultants to recognize how client mental models shape positioning perceptions - using cognitive reframing techniques to help clients see new positioning opportunities they previously couldn't perceive.",
+      "strengths": [
+        "Explains why positioning choices vary among strategists in same situation",
+        "Provides insights into expanding strategic positioning options",
+        "Helps understand role of perception in competitive analysis",
+        "Offers techniques for enriching competitive mental models",
+        "Recognizes subjective nature of competitive positioning"
+      ],
+      "limitations": [
+        "Limited direct guidance on choosing optimal strategic positions",
+        "May overemphasize perception at expense of competitive reality",
+        "Risk of cognitive analysis becoming end in itself",
+        "Difficulty measuring cognitive factors in positioning analysis",
+        "May complicate

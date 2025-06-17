@@ -5,388 +5,350 @@
       "name": "Design School",
       "shortName": "Design",
       "group": "Prescriptive",
-      "description": "Strategy as a process of conception — clear, deliberate design through internal fit.",
-      "longDescription": "The Design School views strategy formation as a process of conception. It emphasizes the importance of fitting internal capabilities with external opportunities through deliberate, conscious design.",
-      "keyFigures": ["Kenneth Andrews", "Roland Christensen"],
+      "description": "Strategy as deliberate design: achieving perfect 'fit' between internal strengths and external opportunities through systematic analysis and conscious choice.",
+      "longDescription": "The Design School, pioneered at Harvard Business School in the 1960s, views strategy formation as a thoughtful process of conception. Like an architect designing a building, strategists must create a blueprint that perfectly matches the organization's internal capabilities with external market opportunities. This school emphasizes the SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) as the cornerstone tool for achieving strategic fit. The CEO acts as the chief architect, responsible for crafting a clear, explicit strategy that can be communicated throughout the organization.",
+      "keyFigures": ["Kenneth Andrews", "Roland Christensen", "Edmund Learned"],
       "originPeriod": "1960s",
+      "realWorldExample": "Apple's strategy under Steve Jobs exemplified Design School thinking - deliberately matching Apple's design capabilities with the emerging opportunity for user-friendly consumer electronics.",
+      "whenToUse": "Best suited for stable environments, smaller organizations, or situations requiring clear strategic direction from leadership.",
       "coreBeliefs": [
-        "Strategy should be explicit and clear",
-        "There must be fit between internal capabilities and external environment",
-        "The CEO is the chief strategist"
+        "Strategy should be explicit, simple, and clearly communicated",
+        "There must be a deliberate 'fit' between internal capabilities and external environment", 
+        "The CEO is the chief strategist and primary architect of strategy",
+        "Strategy formation precedes implementation in a linear sequence",
+        "One optimal strategy exists for each situation"
       ],
       "strengths": [
-        "Promotes clear thinking about strategy",
-        "Ensures consideration of both internal and external factors",
-        "Places responsibility clearly"
+        "Promotes clear, logical thinking about strategic choices",
+        "Ensures systematic consideration of both internal and external factors",
+        "Places strategic responsibility clearly with leadership",
+        "Provides simple, understandable framework (SWOT)",
+        "Works well in stable, predictable environments"
       ],
       "weaknesses": [
-        "May oversimplify complex situations",
-        "Assumes prediction is possible",
-        "Limited learning during implementation"
+        "Oversimplifies the complexity of real organizational life",
+        "Assumes the future can be predicted and controlled",
+        "Limited organizational learning during strategy implementation",
+        "May ignore emergent opportunities that don't fit the original design",
+        "Can become rigid and inflexible when conditions change"
       ],
       "values": [5, 2, 3, 2, 1],
-      "pApproaches": {
-        "plan": {
-          "emphasis": 5,
-          "description": "Strong emphasis on deliberate, formal planning processes with clear strategic frameworks",
-          "characteristics": ["Systematic analysis", "Clear objectives", "Structured approach", "SWOT analysis"],
-          "example": "Using comprehensive SWOT analysis to create explicit strategic plans"
-        },
-        "pattern": {
-          "emphasis": 2,
-          "description": "Limited focus on emergent patterns, preferring intended strategies",
-          "characteristics": ["Retrospective analysis", "Pattern recognition", "Post-hoc rationalization"],
-          "example": "Learning from past strategic decisions to inform future planning"
-        },
-        "position": {
-          "emphasis": 3,
-          "description": "Moderate focus on market positioning through strategic fit analysis",
-          "characteristics": ["External analysis", "Competitive positioning", "Market assessment"],
-          "example": "Analyzing industry structure to determine optimal strategic position"
-        },
-        "perspective": {
-          "emphasis": 2,
-          "description": "CEO-driven perspective with emphasis on leadership vision",
-          "characteristics": ["Leadership vision", "Top-down perspective", "Cultural fit"],
-          "example": "CEO's strategic vision guiding organizational direction"
-        },
-        "ploy": {
-          "emphasis": 1,
-          "description": "Minimal focus on tactical maneuvers, preferring straightforward approaches",
-          "characteristics": ["Straightforward approach", "Open strategy", "Direct competition"],
-          "example": "Direct competitive responses rather than deceptive tactics"
-        }
-      }
+      "modernRelevance": "While criticized for being too simplistic, Design School principles remain valuable for startups, turnarounds, and situations requiring clear strategic direction."
     },
     {
       "id": "planning",
-      "name": "Planning School",
+      "name": "Planning School", 
       "shortName": "Planning",
       "group": "Prescriptive",
-      "description": "Strategy as a formal process of detailed planning with extensive analysis and implementation.",
-      "longDescription": "The Planning School emphasizes formal, systematic planning processes with detailed analysis, quantification, and elaborate procedures for strategy development.",
-      "keyFigures": ["Igor Ansoff", "George Steiner"],
+      "description": "Strategy as formal, systematic planning: elaborate procedures, detailed analysis, and quantified implementation plans executed by specialized staff.",
+      "longDescription": "Emerging in the 1970s, the Planning School treats strategy formation as a highly formal, systematic process. Like engineers building a complex machine, strategic planners create elaborate procedures, detailed forecasts, and comprehensive implementation plans. This school believes that strategy can be programmed through rigorous analysis, careful decomposition of goals into sub-goals, and meticulous attention to scheduling and budgeting. Large corporations embraced this approach, creating entire strategic planning departments armed with sophisticated analytical tools and multi-year planning cycles.",
+      "keyFigures": ["Igor Ansoff", "George Steiner", "Peter Lorange"],
       "originPeriod": "1970s",
+      "realWorldExample": "General Electric under Jack Welch used extensive strategic planning processes, including the famous 'GE Matrix' for portfolio planning and detailed annual planning cycles.",
+      "whenToUse": "Most effective in large, complex organizations operating in relatively stable environments where detailed coordination is essential.",
       "coreBeliefs": [
-        "Strategy can be programmed",
-        "Formal planning leads to better outcomes",
-        "Detailed analysis is essential"
+        "Strategy can be programmed through systematic planning procedures",
+        "Formal planning processes lead to superior strategic outcomes",
+        "Detailed analysis and quantification improve decision-making",
+        "Strategic planning should be separated from operational management",
+        "The future can be forecasted with reasonable accuracy"
       ],
       "strengths": [
-        "Provides systematic approach",
-        "Ensures thorough analysis",
-        "Good for complex organizations"
+        "Provides systematic, disciplined approach to strategy development",
+        "Ensures thorough analysis and consideration of alternatives",
+        "Good for coordinating complex organizations and multiple business units",
+        "Creates detailed roadmaps for implementation",
+        "Establishes clear accountability and performance metrics"
       ],
       "weaknesses": [
-        "Can be overly bureaucratic",
-        "May stifle creativity and flexibility",
-        "Assumes predictable environment"
+        "Can become overly bureaucratic and slow to respond to change",
+        "May stifle creativity, innovation, and entrepreneurial thinking",
+        "Assumes a predictable environment that rarely exists",
+        "Often creates plans that are too rigid for dynamic markets",
+        "Can consume enormous resources without proportional benefits"
       ],
       "values": [5, 1, 3, 2, 2],
-      "pApproaches": {
-        "plan": {
-          "emphasis": 5,
-          "description": "Extreme emphasis on formal, detailed planning with elaborate procedures and quantitative analysis",
-          "characteristics": ["Elaborate procedures", "Quantitative analysis", "Formal systems", "Detailed forecasting"],
-          "example": "Comprehensive 5-year strategic plans with detailed budgets and performance metrics"
-        },
-        "pattern": {
-          "emphasis": 1,
-          "description": "Very limited focus on emergent patterns, preferring controlled implementation",
-          "characteristics": ["Planned outcomes", "Controlled implementation", "Variance analysis"],
-          "example": "Monitoring actual performance against detailed strategic plans"
-        },
-        "position": {
-          "emphasis": 3,
-          "description": "Structured analytical approach to market positioning and portfolio planning",
-          "characteristics": ["Market analysis", "Portfolio planning", "Strategic frameworks"],
-          "example": "Using BCG matrix and GE matrix for portfolio positioning decisions"
-        },
-        "perspective": {
-          "emphasis": 2,
-          "description": "Planning-oriented organizational perspective with emphasis on analytical control",
-          "characteristics": ["Analytical mindset", "Control orientation", "Systematic thinking"],
-          "example": "Corporate planning departments driving strategic thinking"
-        },
-        "ploy": {
-          "emphasis": 2,
-          "description": "Some tactical planning elements including contingency and scenario planning",
-          "characteristics": ["Contingency planning", "Scenario analysis", "Risk management"],
-          "example": "Developing multiple strategic scenarios for different market conditions"
-        }
-      }
+      "modernRelevance": "While formal strategic planning fell from favor in the 1980s, elements remain important for large organizations needing coordination and resource allocation."
     },
     {
       "id": "positioning",
       "name": "Positioning School",
-      "shortName": "Positioning",
+      "shortName": "Positioning", 
       "group": "Prescriptive",
-      "description": "Strategy as analytical process focused on industry analysis and competitive positioning.",
-      "longDescription": "The Positioning School focuses on the selection of strategic positions based on industry analysis, emphasizing competitive dynamics and market structure.",
-      "keyFigures": ["Michael Porter", "Ken Andrews"],
+      "description": "Strategy as analytical positioning: selecting optimal market positions based on rigorous industry analysis and competitive dynamics.",
+      "longDescription": "Dominated by Michael Porter's influential work in the 1980s, the Positioning School revolutionized strategic thinking by focusing on industry structure and competitive dynamics. Like chess masters analyzing the board, strategists must understand the 'rules of the game' in their industry - the five competitive forces that determine profitability. This school provides analytical frameworks for choosing among generic strategies (cost leadership, differentiation, focus) and emphasizes that strategic positions must be defensible against competitive attack. Success comes from finding and defending a unique position in the competitive landscape.",
+      "keyFigures": ["Michael Porter", "Richard Rumelt", "Ken Hatten"],
       "originPeriod": "1980s",
+      "realWorldExample": "Southwest Airlines exemplifies positioning strategy - choosing the specific position of low-cost, point-to-point carrier and building all activities around defending that position.",
+      "whenToUse": "Particularly powerful in mature, competitive industries where understanding competitive dynamics is crucial for survival and success.",
       "coreBeliefs": [
-        "Strategy is about competitive advantage",
-        "Industry structure determines profitability",
-        "Generic strategies provide frameworks"
+        "Strategy is fundamentally about achieving sustainable competitive advantage",
+        "Industry structure determines the potential for profitability",
+        "Generic strategies provide proven frameworks for competitive success",
+        "Strategic positions must be defensible against competitive attack",
+        "Rigorous analysis trumps intuition in strategic decision-making"
       ],
       "strengths": [
-        "Provides analytical rigor",
-        "Focus on competitive advantage",
-        "Industry-specific insights"
+        "Provides powerful analytical tools for understanding competition",
+        "Focus on sustainable competitive advantage drives long-term thinking",
+        "Industry-specific insights lead to more relevant strategies",
+        "Strong empirical foundation with extensive research support",
+        "Helps organizations avoid 'stuck in the middle' positions"
       ],
       "weaknesses": [
-        "May overlook internal capabilities",
-        "Can be overly deterministic",
-        "Limited focus on implementation"
+        "May overlook internal capabilities and resources",
+        "Can be overly deterministic about industry constraints",
+        "Limited guidance on strategy implementation and change",
+        "Assumes relatively stable industry structures",
+        "May discourage innovation that doesn't fit existing frameworks"
       ],
       "values": [4, 2, 5, 2, 4],
-      "pApproaches": {
-        "plan": {
-          "emphasis": 4,
-          "description": "Strong analytical planning approach based on industry and competitive analysis",
-          "characteristics": ["Industry analysis", "Competitive analysis", "Strategic frameworks", "Analytical rigor"],
-          "example": "Using Porter's Five Forces analysis to inform strategic planning"
-        },
-        "pattern": {
-          "emphasis": 2,
-          "description": "Limited focus on emergent patterns, preferring analytical approaches to strategy",
-          "characteristics": ["Historical analysis", "Trend identification", "Industry evolution"],
-          "example": "Analyzing industry evolution patterns to predict future competitive dynamics"
-        },
-        "position": {
-          "emphasis": 5,
-          "description": "Core focus on strategic positioning and competitive advantage in the marketplace",
-          "characteristics": ["Market positioning", "Competitive advantage", "Value chain analysis", "Generic strategies"],
-          "example": "Choosing between cost leadership, differentiation, or focus strategies"
-        },
-        "perspective": {
-          "emphasis": 2,
-          "description": "Analytical, economics-based perspective on strategy and competition",
-          "characteristics": ["Rational analysis", "Economic logic", "Market-driven thinking"],
-          "example": "Porter's analytical framework shaping strategic thinking"
-        },
-        "ploy": {
-          "emphasis": 4,
-          "description": "Strong focus on competitive moves, market signals, and strategic maneuvering",
-          "characteristics": ["Competitive tactics", "Market signals", "Strategic moves", "Game theory"],
-          "example": "Making preemptive strategic moves to discourage competitor entry"
-        }
-      }
+      "modernRelevance": "Porter's frameworks remain highly influential, though modern strategists recognize the need to balance external positioning with internal capabilities."
     },
     {
       "id": "entrepreneurial",
       "name": "Entrepreneurial School",
       "shortName": "Entrepreneurial",
       "group": "Descriptive",
-      "description": "Strategy as visionary process driven by entrepreneurial leadership and intuition.",
-      "longDescription": "The Entrepreneurial School focuses on strategy formation as a visionary process, emphasizing the central role of the leader's vision and judgment.",
-      "keyFigures": ["Joseph Schumpeter", "Arthur Cole"],
-      "originPeriod": "Various periods",
+      "description": "Strategy as visionary leadership: intuitive, bold decision-making driven by entrepreneurial vision and personal judgment rather than formal analysis.",
+      "longDescription": "The Entrepreneurial School recognizes that strategy often emerges from the vision and intuition of a single leader rather than systematic analysis. Like artists guided by creative vision, entrepreneurial leaders see opportunities others miss and have the courage to act on incomplete information. This school emphasizes the central role of leadership vision, the importance of intuitive judgment, and the organization's ability to adapt quickly to its leader's strategic insights. Strategy becomes a semi-conscious process, guided more by vision and judgment than by formal procedures.",
+      "keyFigures": ["Joseph Schumpeter", "Arthur Cole", "William Guth"],
+      "originPeriod": "Various periods, with renewed interest in entrepreneurship eras",
+      "realWorldExample": "Richard Branson's Virgin Group demonstrates entrepreneurial strategy - entering diverse industries based on his vision of challenging established players and creating better customer experiences.",
+      "whenToUse": "Most powerful in startup situations, crisis periods, or industries undergoing rapid change where quick, bold decisions are essential.",
       "coreBeliefs": [
-        "Strategy originates from leader's vision",
-        "Intuition and judgment are key",
-        "Organizations are extensions of leader"
+        "Strategy originates in the vision and intuition of a single leader",
+        "Entrepreneurial judgment is more valuable than systematic analysis",
+        "Organizations are extensions of their leader's personality and vision",
+        "Bold action trumps detailed planning in uncertain environments",
+        "Innovation and creative destruction drive competitive advantage"
       ],
       "strengths": [
-        "Promotes innovation and change",
-        "Enables rapid adaptation",
-        "Powerful in crisis situations"
+        "Promotes innovation, creativity, and breakthrough thinking",
+        "Enables rapid adaptation and response to opportunities",
+        "Particularly powerful in crisis situations requiring bold leadership",
+        "Encourages risk-taking and experimentation",
+        "Can create highly motivated, vision-driven organizations"
       ],
       "weaknesses": [
-        "Over-reliance on single leader",
-        "May lack analytical rigor",
-        "Difficult to sustain"
+        "Over-reliance on a single individual creates vulnerability",
+        "May lack analytical rigor and systematic thinking",
+        "Difficult to sustain as organizations grow larger",
+        "Can lead to inconsistent or erratic strategic direction",
+        "Success depends heavily on the leader's continued vision and energy"
       ],
       "values": [3, 3, 3, 5, 4],
-      "pApproaches": {
-        "plan": {
-          "emphasis": 3,
-          "description": "Moderate planning approach, often informal and vision-driven rather than systematic",
-          "characteristics": ["Vision-driven", "Flexible planning", "Opportunistic", "Intuitive"],
-          "example": "Strategic vision guiding flexible planning and opportunity recognition"
-        },
-        "pattern": {
-          "emphasis": 3,
-          "description": "Emergent patterns develop from entrepreneurial actions and market experiments",
-          "characteristics": ["Adaptive behavior", "Learning by doing", "Experimentation", "Market feedback"],
-          "example": "Strategy emerging from successful market experiments and innovations"
-        },
-        "position": {
-          "emphasis": 3,
-          "description": "Opportunistic positioning focused on market creation and innovation",
-          "characteristics": ["Market creation", "Niche finding", "Innovation", "First-mover advantage"],
-          "example": "Creating entirely new market categories through innovative offerings"
-        },
-        "perspective": {
-          "emphasis": 5,
-          "description": "Strong focus on entrepreneurial perspective, vision, and innovative mindset",
-          "characteristics": ["Visionary thinking", "Risk-taking", "Innovative mindset", "Change orientation"],
-          "example": "Steve Jobs' transformative vision reshaping entire industries"
-        },
-        "ploy": {
-          "emphasis": 4,
-          "description": "Strategic moves emphasizing timing, bold actions, and competitive surprises",
-          "characteristics": ["Market timing", "Strategic surprises", "Bold moves", "Disruptive tactics"],
-          "example": "Timing market entry to achieve first-mover advantages"
-        }
-      }
+      "modernRelevance": "Entrepreneurial thinking remains crucial for innovation and disruption, though most organizations need to balance vision with systematic capabilities."
     },
     {
       "id": "cognitive",
       "name": "Cognitive School",
       "shortName": "Cognitive",
-      "group": "Descriptive",
-      "description": "Strategy as mental process focusing on how strategists think and process information.",
-      "longDescription": "The Cognitive School examines strategy formation as a mental process, focusing on how people think about strategy and how cognitive biases influence decisions.",
-      "keyFigures": ["Herbert Simon", "James March"],
+      "group": "Descriptive", 
+      "description": "Strategy as mental process: understanding how cognitive biases, mental models, and information processing shape strategic thinking and decision-making.",
+      "longDescription": "The Cognitive School delves into the 'black box' of the strategist's mind, asking how people actually think about strategy. Drawing from cognitive psychology, this school recognizes that strategists are not perfectly rational actors but humans subject to cognitive biases, limited information processing capacity, and mental models that filter reality. Strategic thinking becomes a complex interplay between objective analysis and subjective interpretation. Understanding these cognitive processes helps explain why different strategists can look at the same situation and reach dramatically different conclusions.",
+      "keyFigures": ["Herbert Simon", "James March", "Richard Cyert"],
       "originPeriod": "1980s-1990s",
+      "realWorldExample": "The dot-com bubble demonstrated cognitive biases in strategic thinking - confirmation bias and overconfidence led many strategists to ignore warning signs that contradicted their mental models.",
+      "whenToUse": "Valuable for understanding strategic decision-making processes, improving strategic thinking, and avoiding cognitive traps in complex situations.",
       "coreBeliefs": [
-        "Strategy formation is a cognitive process",
-        "Mental models shape strategy",
-        "Bounded rationality affects decisions"
+        "Strategy formation is fundamentally a cognitive, mental process",
+        "Mental models and cognitive biases significantly influence strategic decisions",
+        "Bounded rationality limits strategic analysis and choice",
+        "Information is interpreted through individual and organizational filters",
+        "Understanding cognition can improve strategic thinking"
       ],
       "strengths": [
-        "Recognizes human limitations",
-        "Explains strategic behavior",
-        "Highlights importance of mental models"
+        "Recognizes the human limitations inherent in strategic thinking",
+        "Provides explanations for seemingly irrational strategic behavior", 
+        "Highlights the importance of mental models and organizational learning",
+        "Offers insights into improving decision-making processes",
+        "Bridges the gap between intended and realized strategies"
       ],
       "weaknesses": [
-        "Can be overly complex",
-        "Limited practical application",
-        "May lead to paralysis"
+        "Can be overly complex and difficult to apply practically",
+        "Limited immediate practical guidance for strategists",
+        "May lead to 'paralysis by analysis' of cognitive processes",
+        "Risk of becoming too academic and removed from strategic action",
+        "Difficulty in measuring and managing cognitive factors"
       ],
-      "values": [2, 3, 2, 5, 1]
+      "values": [2, 3, 2, 5, 1],
+      "modernRelevance": "Increasingly important as organizations recognize the role of behavioral factors in strategic decision-making and seek to 'de-bias' their processes."
     },
     {
       "id": "learning",
       "name": "Learning School",
       "shortName": "Learning",
       "group": "Descriptive",
-      "description": "Strategy as emergent process of collective learning and adaptation over time.",
-      "longDescription": "The Learning School views strategy as an emergent process where strategies develop incrementally through organizational learning and adaptation.",
-      "keyFigures": ["James Brian Quinn", "Henry Mintzberg"],
+      "description": "Strategy as emergent learning: collective experimentation, adaptation, and incremental discovery rather than grand planning or visionary leaps.",
+      "longDescription": "The Learning School recognizes that in complex, unpredictable environments, the most effective strategies often emerge through organizational learning rather than top-down planning. Like scientists conducting experiments, organizations develop strategy through small steps, continuous experimentation, and rapid learning from both successes and failures. This school emphasizes that everyone in the organization can contribute to strategy formation, not just senior managers. Strategic learning happens at the intersection of thought and action, where organizations discover what works through doing rather than extensive prior analysis.",
+      "keyFigures": ["James Brian Quinn", "Henry Mintzberg", "Ikujiro Nonaka"],
       "originPeriod": "1980s-1990s",
+      "realWorldExample": "3M's innovation strategy exemplifies the Learning School - allowing employees to spend 15% of their time on experimental projects, learning from failures, and scaling successful innovations.",
+      "whenToUse": "Most effective in complex, rapidly changing environments where prediction is difficult and learning from experience is crucial.",
       "coreBeliefs": [
-        "Strategy emerges through learning",
-        "Everyone can be a strategist",
-        "Experimentation is key"
+        "Strategy emerges through organizational learning and adaptation",
+        "Everyone in the organization can be a strategist",
+        "Experimentation and 'small steps' are more effective than grand plans",
+        "Learning happens at the intersection of thought and action",
+        "Strategic flexibility is more important than strategic planning"
       ],
       "strengths": [
-        "Promotes organizational learning",
-        "Flexible and adaptive",
-        "Encourages innovation"
+        "Promotes organizational learning and continuous improvement",
+        "Highly flexible and adaptive to changing circumstances",
+        "Encourages innovation and experimentation throughout the organization",
+        "Recognizes the limitations of predictive planning",
+        "Builds organizational capabilities for ongoing adaptation"
       ],
       "weaknesses": [
-        "Can lack direction",
-        "May be too slow",
-        "Difficult to coordinate"
+        "Can lack clear direction and strategic focus",
+        "May be too slow for rapidly moving competitive environments",
+        "Difficult to coordinate learning across large, complex organizations",
+        "Risk of 'learning myopia' - focusing on short-term adaptations",
+        "May not generate breakthrough innovations or major strategic shifts"
       ],
-      "values": [2, 5, 3, 4, 2]
+      "values": [2, 5, 3, 4, 2],
+      "modernRelevance": "Extremely relevant in today's fast-paced, uncertain business environment where agility and continuous learning are competitive advantages."
     },
     {
       "id": "power",
       "name": "Power School",
       "shortName": "Power",
       "group": "Descriptive",
-      "description": "Strategy as process of negotiation and bargaining among competing interests and power groups.",
-      "longDescription": "The Power School views strategy formation as a process of influence, emphasizing the use of power and politics in developing strategy.",
-      "keyFigures": ["Graham Allison", "Jeffrey Pfeffer"],
+      "description": "Strategy as political negotiation: bargaining, coalition-building, and power plays among competing interests both inside and outside the organization.",
+      "longDescription": "The Power School acknowledges the political reality of organizational life - strategy formation involves negotiation among competing interests, both within the organization (micro power) and between the organization and external stakeholders (macro power). Like political scientists studying governance, this school recognizes that organizations are coalitions of individuals and groups with different interests, and strategy emerges from the bargaining processes among these stakeholders. Power, influence, and political skill often matter more than analytical prowess in determining strategic outcomes.",
+      "keyFigures": ["Graham Allison", "Jeffrey Pfeffer", "Andrew Pettigrew"],
       "originPeriod": "1970s-1980s",
+      "realWorldExample": "The European Union's strategic decisions demonstrate macro power dynamics - complex negotiations among member states with different national interests shaping collective strategy.",
+      "whenToUse": "Essential for understanding strategy in politically complex environments, joint ventures, alliances, and situations with strong stakeholder interests.",
       "coreBeliefs": [
-        "Strategy formation is about power and politics",
-        "Organizations are coalitions of interests",
-        "Negotiation and bargaining are central"
+        "Strategy formation is fundamentally about power and political processes",
+        "Organizations are coalitions of individuals and groups with conflicting interests",
+        "Negotiation, bargaining, and coalition-building determine strategic outcomes",
+        "Both internal politics and external stakeholder power influence strategy",
+        "Formal authority is just one source of power among many"
       ],
       "strengths": [
-        "Recognizes political realities",
-        "Explains many strategic behaviors",
-        "Acknowledges stakeholder interests"
+        "Recognizes the political realities of organizational decision-making",
+        "Explains many strategic behaviors that seem irrational from other perspectives",
+        "Acknowledges the legitimate interests of different stakeholders",
+        "Provides insights into managing complex stakeholder relationships",
+        "Helps understand why 'good' strategies sometimes fail to be implemented"
       ],
       "weaknesses": [
-        "Can lead to fragmented strategies",
-        "May promote conflict",
-        "Can be overly cynical"
+        "Can lead to fragmented, compromised strategies that satisfy no one fully",
+        "May promote unproductive conflict and political gamesmanship",
+        "Can be overly cynical about organizational motivation and behavior",
+        "Risk of strategic paralysis due to political deadlock",
+        "May discourage bold, innovative strategic initiatives"
       ],
-      "values": [3, 4, 4, 3, 5]
+      "values": [3, 4, 4, 3, 5],
+      "modernRelevance": "Increasingly important as organizations operate in complex stakeholder environments and global partnerships requiring sophisticated political navigation."
     },
     {
       "id": "cultural",
       "name": "Cultural School",
       "shortName": "Cultural",
       "group": "Descriptive",
-      "description": "Strategy as collective process rooted in organizational culture and social interaction.",
-      "longDescription": "The Cultural School views strategy formation as a collective process, rooted in the culture of the organization and emphasizing social interaction.",
-      "keyFigures": ["Edgar Schein", "Richard Pettigrew"],
+      "description": "Strategy as cultural phenomenon: collective beliefs, shared values, and deeply embedded assumptions that guide organizational behavior and strategic choices.",
+      "longDescription": "The Cultural School views strategy formation as a deeply social process rooted in organizational culture. Like anthropologists studying societies, this school recognizes that strategy is influenced by the organization's shared beliefs, values, traditions, and collective assumptions about 'how we do things here.' Culture acts as both a resource (providing direction and motivation) and a constraint (filtering out options that don't 'fit'). Strategic change becomes a process of cultural evolution rather than rational redesign, requiring patience and sensitivity to deeply held organizational beliefs.",
+      "keyFigures": ["Edgar Schein", "Richard Pettigrew", "Gerry Johnson"],
       "originPeriod": "1980s",
+      "realWorldExample": "Toyota's Production System demonstrates cultural strategy - a management philosophy deeply embedded in organizational culture that shapes every strategic and operational decision.",
+      "whenToUse": "Critical for understanding strategy in organizations with strong cultures, during mergers and acquisitions, and when implementing major cultural changes.",
       "coreBeliefs": [
-        "Strategy is rooted in organizational culture",
-        "Culture acts as a filter for change",
-        "Collective processes are important"
+        "Strategy is fundamentally rooted in organizational culture and shared beliefs",
+        "Culture acts as a powerful filter for strategic choice and change",
+        "Collective processes and social interaction shape strategic direction",
+        "Organizational traditions and history influence current strategic options",
+        "Sustainable strategy must be culturally authentic and consistent"
       ],
       "strengths": [
-        "Emphasizes important cultural dimension",
-        "Explains resistance to change",
-        "Encourages collective action"
+        "Emphasizes the crucial cultural dimension often overlooked in strategy",
+        "Explains resistance to strategic change and implementation failures",
+        "Encourages sustainable strategies aligned with organizational values",
+        "Recognizes the importance of collective wisdom and shared learning",
+        "Provides insights into managing cultural integration in mergers"
       ],
       "weaknesses": [
-        "Can discourage necessary change",
-        "May be too inward looking",
-        "Difficult to manage culture"
+        "Strong cultures can discourage necessary strategic change and innovation",
+        "May be too inward-looking, ignoring external competitive pressures",
+        "Difficult to manage and change culture deliberately",
+        "Risk of strategic inertia and resistance to market demands",
+        "Can become insular and resistant to external feedback"
       ],
-      "values": [2, 5, 3, 5, 1]
+      "values": [2, 5, 3, 5, 1],
+      "modernRelevance": "Highly relevant as organizations recognize culture as a key source of competitive advantage and struggle with cultural transformation in digital age."
     },
     {
       "id": "environmental",
       "name": "Environmental School",
       "shortName": "Environmental",
       "group": "Descriptive",
-      "description": "Strategy as reactive process to environmental forces and constraints beyond organizational control.",
-      "longDescription": "The Environmental School views the environment as the central actor in strategy formation, with organizations responding to environmental forces.",
-      "keyFigures": ["Michael Hannan", "John Freeman"],
+      "description": "Strategy as environmental response: organizational adaptation to external forces and constraints largely beyond management control.",
+      "longDescription": "The Environmental School views strategy formation as primarily reactive, with organizations responding to environmental pressures and constraints largely beyond their control. Like biologists studying evolution, this school sees organizations as subject to natural selection pressures from their environment - technological change, regulatory shifts, economic cycles, and competitive forces. Strategic choice is limited; successful organizations are those that can sense environmental changes early and adapt quickly. The environment is the central actor, not organizational leadership or planning processes.",
+      "keyFigures": ["Michael Hannan", "John Freeman", "Glenn Carroll"],
       "originPeriod": "1970s",
+      "realWorldExample": "The music industry's response to digital disruption illustrates environmental strategy - record companies had to adapt to technological forces (internet, streaming) largely beyond their control.",
+      "whenToUse": "Most relevant in highly regulated industries, during major technological disruptions, or in environments with powerful external constraints.",
       "coreBeliefs": [
-        "Environment shapes organizational strategy",
-        "Organizations must adapt or die",
-        "Strategic choice is limited"
+        "The environment is the central determinant of organizational strategy",
+        "Organizations must adapt to environmental demands or face extinction",
+        "Strategic choice is severely limited by environmental constraints",
+        "Survival depends on fit between organization and environment",
+        "Environmental selection pressures determine strategic success"
       ],
       "strengths": [
-        "Acknowledges environmental constraints",
-        "Explains industry patterns",
-        "Emphasizes adaptation"
+        "Acknowledges the powerful influence of environmental constraints",
+        "Explains patterns of strategic behavior across industries",
+        "Emphasizes the importance of environmental scanning and adaptation",
+        "Realistic about the limits of organizational control",
+        "Provides insights into timing of strategic responses"
       ],
       "weaknesses": [
-        "May underestimate strategic choice",
-        "Can be overly deterministic",
-        "Limited managerial guidance"
+        "May underestimate the degree of strategic choice available to organizations",
+        "Can be overly deterministic about environmental influence",
+        "Provides limited guidance for proactive strategic management",
+        "Risk of strategic fatalism and reactive mindset",
+        "May discourage innovation and industry transformation efforts"
       ],
-      "values": [1, 4, 4, 2, 2]
+      "values": [1, 4, 4, 2, 2],
+      "modernRelevance": "Increasingly important as organizations face rapid environmental changes from technology, climate, regulation, and global interconnectedness."
     },
     {
       "id": "configuration",
       "name": "Configuration School",
       "shortName": "Configuration",
       "group": "Descriptive",
-      "description": "Strategy as process of transformation integrating different elements in organizational configurations.",
-      "longDescription": "The Configuration School seeks to integrate the messages of the other schools by describing strategy formation as a process of transformation.",
-      "keyFigures": ["Danny Miller", "Peter Friesen"],
-      "originPeriod": "1980s",
+      "description": "Strategy as transformation: integrating multiple perspectives through organizational configurations and episodic change between stable periods.",
+      "longDescription": "The Configuration School attempts to integrate the insights of all other schools by recognizing that different approaches may be appropriate at different times and in different contexts. Like systems theorists studying complex adaptive systems, this school sees organizations as configurations - coherent clusters of characteristics and behaviors. Strategy formation alternates between periods of stability (where organizations maintain their configuration) and periods of transformation (where they shift to new configurations). The key insight is that strategy, structure, culture, and leadership must all align in coherent configurations.",
+      "keyFigures": ["Danny Miller", "Peter Friesen", "Henry Mintzberg"],
+      "originPeriod": "1980s-1990s",
+      "realWorldExample": "IBM's transformation from hardware manufacturer to services company demonstrates configuration thinking - aligning strategy, structure, culture, and capabilities in a coherent new configuration.",
+      "whenToUse": "Valuable for understanding organizational transformation, managing strategic change, and integrating multiple strategic perspectives.",
       "coreBeliefs": [
-        "Organizations can be described as configurations",
-        "Strategy formation is episodic",
-        "Integration of different approaches is possible"
+        "Organizations can be understood as coherent configurations of characteristics",
+        "Strategy formation is episodic - periods of stability interrupted by transformation",
+        "Different strategic approaches are appropriate in different configurations",
+        "Effective organizations maintain consistency among strategy, structure, and culture",
+        "Integration of multiple perspectives provides richer understanding than any single school"
       ],
       "strengths": [
-        "Integrates other schools",
-        "Recognizes different organizational types",
-        "Explains strategic change"
+        "Integrates insights from multiple schools of strategic thought",
+        "Recognizes that different organizational types require different approaches",
+        "Provides frameworks for understanding and managing strategic change",
+        "Acknowledges the complexity and variety of organizational life",
+        "Offers practical guidance for organizational transformation"
       ],
       "weaknesses": [
-        "Can be overly complex",
-        "May oversimplify with typologies",
-        "Difficult to operationalize"
+        "Can be overly complex and difficult to apply in practice",
+        "Risk of oversimplifying organizational reality with typologies",
+        "Difficult to operationalize and measure configurations",
+        "May not provide clear guidance for day-to-day strategic decisions",
+        "Integration may mask important differences between schools"
       ],
-      "values": [4, 4, 4, 4, 3]
+      "values": [4, 4, 4, 4, 3],
+      "modernRelevance": "Highly relevant for understanding digital transformation and helping organizations navigate between different strategic configurations as business models evolve."
     }
   ]
 }
