@@ -761,7 +761,7 @@
         3,
         3,
         5,
-        4
+        2
       ],
       "modernRelevance": "Entrepreneurial thinking remains crucial for innovation and disruption, though most organizations need to balance vision with systematic capabilities.",
       "pApproaches": {
@@ -926,7 +926,7 @@
           "modernRelevance": "Entrepreneurial perspective is increasingly important for organizations needing to innovate and adapt in rapidly changing environments, though must be balanced with execution capabilities."
         },
         "ploy": {
-          "emphasis": 4,
+          "emphasis": 2,
           "title": "Bold Strategic Moves and Market Timing",
           "corePhilosophy": "Strategic success requires bold, well-timed moves that surprise competitors and capture market opportunities before others recognize them",
           "keyBelief": "Entrepreneurial advantage comes from acting boldly on opportunities with superior timing and willingness to take calculated risks",
@@ -1005,7 +1005,7 @@
       ],
       "values": [
         2,
-        3,
+        2,
         2,
         5,
         1
@@ -1051,7 +1051,7 @@
       "values": [
         2,
         5,
-        3,
+        2,
         4,
         2
       ],
@@ -1095,7 +1095,7 @@
       ],
       "values": [
         3,
-        4,
+        3,
         4,
         3,
         5
@@ -1386,7 +1386,7 @@
       ],
       "values": [
         1,
-        4,
+        3,
         4,
         2,
         2
@@ -1434,7 +1434,7 @@
           "modernRelevance": "Environmental planning becomes increasingly important as organizations face rapid environmental changes from technology, regulation, climate, and global interconnectedness requiring adaptive capabilities."
         },
         "pattern": {
-          "emphasis": 4,
+          "emphasis": 3,
           "title": "Environmental Selection and Adaptation Patterns",
           "corePhilosophy": "Strategic patterns emerge from environmental selection pressures that favor certain organizational forms and eliminate others",
           "keyBelief": "Organizational strategic patterns reflect environmental selection rather than conscious choice; successful patterns are those that fit environmental requirements",
@@ -1632,16 +1632,16 @@
         "Integration may mask important differences between schools"
       ],
       "values": [
+        3,
+        5,
+        3,
         4,
-        4,
-        4,
-        4,
-        3
+        2
       ],
       "modernRelevance": "Highly relevant for understanding digital transformation and helping organizations navigate between different strategic configurations as business models evolve.",
       "pApproaches": {
         "plan": {
-          "emphasis": 4,
+          "emphasis": 3,
           "title": "Configuration-Contingent Strategic Planning",
           "corePhilosophy": "Strategic planning approaches should be contingent on organizational configuration and life cycle stage, integrating multiple planning perspectives as appropriate",
           "keyBelief": "Effective planning requires understanding organizational configuration and choosing planning approaches that fit the configuration and transformation needs",
@@ -1681,7 +1681,7 @@
           "modernRelevance": "Configuration-contingent planning becomes important as organizations recognize need for adaptive planning approaches suited to their specific situation and transformation requirements."
         },
         "pattern": {
-          "emphasis": 4,
+          "emphasis": 5,
           "title": "Transformation Patterns and Configuration Evolution",
           "corePhilosophy": "Strategic patterns reflect organizational configurations and transformation cycles between periods of stability and revolutionary change",
           "keyBelief": "Organizations alternate between periods of stable configuration with consistent patterns and periods of transformation with pattern revolution",
@@ -1721,7 +1721,7 @@
           "modernRelevance": "Understanding configuration patterns becomes crucial as organizations face multiple transformation cycles requiring management of both stability and revolutionary change patterns."
         },
         "position": {
-          "emphasis": 4,
+          "emphasis": 3,
           "title": "Configuration-Based Strategic Positioning",
           "corePhilosophy": "Strategic positioning should be integrated across multiple perspectives and adapted to organizational configuration and transformation requirements",
           "keyBelief": "Effective positioning integrates insights from multiple positioning schools and adapts to organizational configuration and competitive context",
@@ -1800,7 +1800,7 @@
           "modernRelevance": "Integrative perspective development becomes crucial as organizations face complex strategic challenges requiring synthesis of multiple strategic approaches and adaptive perspective evolution."
         },
         "ploy": {
-          "emphasis": 3,
+          "emphasis": 2,
           "title": "Configuration-Contingent Strategic Tactics",
           "corePhilosophy": "Strategic tactics should be selected and integrated from multiple schools based on organizational configuration, competitive context, and transformation requirements",
           "keyBelief": "Effective tactical approaches combine insights from different strategic schools and adapt tactics to organizational configuration and situational needs",
