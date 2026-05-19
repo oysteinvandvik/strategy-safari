@@ -124,6 +124,7 @@
         {#if searchQuery}
           <button
             class="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
+            aria-label="Clear search"
             on:click={() => searchQuery = ''}
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -138,8 +139,9 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
       <!-- Category Filter -->
       <div>
-        <label class="block text-sm font-medium mb-2">Category</label>
-        <select 
+        <label for="filter-category" class="block text-sm font-medium mb-2">Category</label>
+        <select
+          id="filter-category"
           bind:value={selectedCategory}
           class="w-full px-3 py-2 border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         >
@@ -152,8 +154,9 @@
   
       <!-- Voice Filter -->
       <div>
-        <label class="block text-sm font-medium mb-2">Strategic Voice</label>
-        <select 
+        <label for="filter-voice" class="block text-sm font-medium mb-2">Strategic Voice</label>
+        <select
+          id="filter-voice"
           bind:value={selectedVoice}
           class="w-full px-3 py-2 border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         >
@@ -166,8 +169,9 @@
   
       <!-- Reading Level Filter -->
       <div>
-        <label class="block text-sm font-medium mb-2">Reading Level</label>
-        <select 
+        <label for="filter-level" class="block text-sm font-medium mb-2">Reading Level</label>
+        <select
+          id="filter-level"
           bind:value={selectedLevel}
           class="w-full px-3 py-2 border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         >
@@ -180,8 +184,9 @@
   
       <!-- Sort -->
       <div>
-        <label class="block text-sm font-medium mb-2">Sort by</label>
-        <select 
+        <label for="filter-sort" class="block text-sm font-medium mb-2">Sort by</label>
+        <select
+          id="filter-sort"
           bind:value={sortBy}
           class="w-full px-3 py-2 border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         >
