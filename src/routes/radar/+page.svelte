@@ -4,57 +4,39 @@
 	import { fly, scale } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import { spring } from 'svelte/motion';
-	
-	// Importer din foretrukne radar-komponent
+
 	import RadarPlot from '$lib/components/RadarPlot.svelte';
-	// import StableRadarPlot from '$lib/components/StableRadarPlot.svelte';
-	
+
 	import type { RadarSchoolData } from '$lib/types';
-  
-	let radarData: RadarSchoolData[] = [];
+
+	export let data: { radarData: RadarSchoolData[] };
+
+	let radarData: RadarSchoolData[] = data.radarData;
 	let selectedGroup = 'All';
-	let selectedSchools: string[] = [];
-	let showMobileFilters = false; // Kun for mobile
-	let loading = true;
-	let error: string | null = null;
-	
+	let selectedSchools: string[] = ['Design School', 'Learning School'];
+	let showMobileFilters = false;
+
 	// Animation states
 	let pageVisible = false;
-  
+
 	// Spring animations for counters
 	const selectedCount = spring(0, { stiffness: 0.3, damping: 0.8 });
-  
-	$: filteredData = selectedGroup === 'All' 
+
+	$: filteredData = selectedGroup === 'All'
 	  ? radarData.filter(school => selectedSchools.length === 0 || selectedSchools.includes(school.school))
-	  : radarData.filter(school => 
-		  school.group === selectedGroup && 
+	  : radarData.filter(school =>
+		  school.group === selectedGroup &&
 		  (selectedSchools.length === 0 || selectedSchools.includes(school.school))
 		);
-  
-	$: availableSchools = selectedGroup === 'All' 
-	  ? radarData 
+
+	$: availableSchools = selectedGroup === 'All'
+	  ? radarData
 	  : radarData.filter(s => s.group === selectedGroup);
-  
-	// Update spring values
+
 	$: selectedCount.set(selectedSchools.length);
-  
-	onMount(async () => {
-	  try {
-		const res = await fetch('/data/radarData.json');
-		if (!res.ok) throw new Error('Failed to load radar data');
-		radarData = await res.json();
-		
-		// Initialize with Design and Learning schools
-		selectedSchools = ['Design School', 'Learning School'];
-		
-		// Trigger animations
+
+	onMount(() => {
 		setTimeout(() => pageVisible = true, 100);
-		
-	  } catch (err) {
-		error = err instanceof Error ? err.message : 'Unknown error';
-	  } finally {
-		loading = false;
-	  }
 	});
   
 	function toggleSchool(schoolName: string) {
@@ -85,23 +67,7 @@
 	<meta name="description" content="Explore strategy schools through an interactive radar visualization showing how each school emphasizes the five P's of strategy." />
   </svelte:head>
   
-  {#if loading}
-	<div class="min-h-screen flex items-center justify-center">
-	  <div class="text-center">
-		<div class="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto mb-4"></div>
-		<p class="text-muted-foreground">Loading Strategy Radar...</p>
-	  </div>
-	</div>
-  {:else if error}
-	<div class="max-w-2xl mx-auto px-4 py-16">
-	  <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl p-8 text-center">
-		<div class="text-4xl mb-4">⚠️</div>
-		<h2 class="text-xl font-bold text-red-800 dark:text-red-200 mb-2">Error Loading Data</h2>
-		<p class="text-red-600 dark:text-red-400">{error}</p>
-	  </div>
-	</div>
-  {:else}
-	<section class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+  <section class="max-w-7xl mx-auto px-4 py-6 md:py-8">
 	  <!-- Header -->
 	  <div class="mb-6 md:mb-8 transition-all duration-700 transform"
 		   class:translate-y-0={pageVisible}
@@ -296,4 +262,3 @@
 		</p>
 	  </div>
 	</section>
-  {/if}

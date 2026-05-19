@@ -1,13 +1,16 @@
-// File: src/routes/radar/+page.ts
 import type { PageLoad } from './$types';
+import { error } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({ fetch }) => {
-	const res = await fetch('/data/radarData.json');
+	const res = await fetch('/data/schools.json');
+	if (!res.ok) throw error(500, 'Could not load schools data');
 
-	if (!res.ok) {
-		throw new Error('Kunne ikke hente radarData.json');
-	}
-
-	const radarData = await res.json();
-	return { radarData };
+	const { schools } = await res.json();
+	return {
+		radarData: schools.map((s: { name: string; group: string; values: number[] }) => ({
+			school: s.name,
+			group: s.group,
+			values: s.values
+		}))
+	};
 };
