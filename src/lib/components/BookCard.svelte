@@ -69,8 +69,7 @@
     }
   
     function handleImageError(event: Event) {
-      const img = event.target as HTMLImageElement;
-      img.src = `https://via.placeholder.com/300x400/f3f4f6/9ca3af?text=${encodeURIComponent(book.title.slice(0, 20))}`;
+      (event.target as HTMLImageElement).style.display = 'none';
     }
   </script>
   
