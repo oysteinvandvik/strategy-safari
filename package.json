@@ -16,8 +16,8 @@
 		"test": "npm run test:unit -- --run"
 	},
 	"devDependencies": {
-		"@eslint/compat": "^1.2.5",
-		"@eslint/js": "^9.18.0",
+		"@eslint/compat": "^2.1.0",
+		"@eslint/js": "^10.0.1",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
@@ -27,7 +27,7 @@
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/svelte": "^5.2.4",
 		"autoprefixer": "^10.4.17",
-		"eslint": "^9.18.0",
+		"eslint": "^10.4.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^3.0.0",
 		"globals": "^16.0.0",
