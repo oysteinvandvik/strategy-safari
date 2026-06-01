@@ -2,8 +2,11 @@ import tailwindcss from '@tailwindcss/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
 	plugins: [tailwindcss(), sveltekit()],
+	resolve: {
+		conditions: mode === 'test' ? ['browser'] : []
+	},
 	test: {
 		name: 'client',
 		environment: 'jsdom',
@@ -12,4 +15,4 @@ export default defineConfig({
 		exclude: ['src/lib/server/**'],
 		setupFiles: ['./vitest-setup-client.ts']
 	}
-});
+}));

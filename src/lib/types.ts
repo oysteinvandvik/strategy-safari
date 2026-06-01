@@ -1,22 +1,21 @@
-// src/lib/types.ts - Oppdaterte typer for utvidede data
+// School types
 
-// Enhanced School Data Structure
 export interface SchoolPEmphasis {
 	emphasis: number; // 1-5 scale
 	description: string;
 	characteristics: string[];
 	example?: string;
-  }
-  
-  export interface SchoolPApproaches {
+}
+
+export interface SchoolPApproaches {
 	plan: SchoolPEmphasis;
 	pattern: SchoolPEmphasis;
 	position: SchoolPEmphasis;
 	perspective: SchoolPEmphasis;
 	ploy: SchoolPEmphasis;
-  }
-  
-  export interface EnhancedSchoolData {
+}
+
+export interface EnhancedSchoolData {
 	id: string;
 	name: string;
 	shortName: string;
@@ -28,73 +27,19 @@ export interface SchoolPEmphasis {
 	coreBeliefs: string[];
 	strengths: string[];
 	weaknesses: string[];
-	values: number[]; // [plan, pattern, position, perspective, ploy] - for kompatibilitet
-	pApproaches: SchoolPApproaches;
-  }
-  
-  // Enhanced P's Data Structure
-  export interface PSCharacteristic {
-	emphasis: number;
-	description: string;
-	characteristics: string[];
-	example: string;
-  }
-  
-  export interface EnhancedPData {
-	id: string;
-	label: string;
-	description: string;
-	color: string;
-  }
-  
-  // Legacy types for backward compatibility
-  export interface StrategySchool {
-	name: string;
-	group: 'Prescriptive' | 'Descriptive';
 	values: number[]; // [plan, pattern, position, perspective, ploy]
-  }
-  
-  export interface RadarSchoolData {
+	pApproaches: SchoolPApproaches;
+}
+
+export interface RadarSchoolData {
 	school: string;
 	group: 'Prescriptive' | 'Descriptive';
 	values: number[];
-  }
-  
-  export interface SchoolInfo {
-	id: string;
-	name: string;
-	description: string;
-	group: 'Prescriptive' | 'Descriptive';
-  }
-  
-  // Simple P data for backward compatibility
-  export interface PSItem {
-	id: string;
-	label: string;
-	description: string;
-	color: string;
-  }
-  
-  // Utility types for working with the data
-  export type StrategyP = 'plan' | 'pattern' | 'position' | 'perspective' | 'ploy';
-  
-  export interface SchoolAnalysis {
-	school: EnhancedSchoolData;
-	strongestP: {
-	  p: StrategyP;
-	  score: number;
-	  description: string;
-	};
-	weakestP: {
-	  p: StrategyP;
-	  score: number;
-	  description: string;
-	};
-	averageScore: number;
-	profile: 'balanced' | 'focused' | 'specialized';
-  }
+}
 
-  // Tillegg til src/lib/types.ts for Landscapes modul
+export type StrategyP = 'plan' | 'pattern' | 'position' | 'perspective' | 'ploy';
+
+// Landscape / paradox types
 
 export interface StrategicParadox {
 	id: string;
@@ -106,20 +51,20 @@ export interface StrategicParadox {
 	reflection_question: string;
 	shadow_hint: string;
 	example_books: {
-	  left: string;
-	  right: string;
+		left: string;
+		right: string;
 	};
-  }
-  
-  export interface ParadoxPosition {
+}
+
+export interface ParadoxPosition {
 	paradoxId: string;
-	position: number; // 0-100, hvor 0 = left pole, 100 = right pole
+	position: number; // 0-100, where 0 = left pole, 100 = right pole
 	timestamp?: Date;
 	reflection?: string;
-  }
-  
-  export interface LandscapeProfile {
+}
+
+export interface LandscapeProfile {
 	userId?: string;
 	positions: ParadoxPosition[];
 	lastUpdated: Date;
-  }
+}

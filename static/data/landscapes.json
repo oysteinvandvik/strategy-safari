@@ -2,127 +2,302 @@
   {
     "id": "thinking",
     "group": "Process",
-    "name": "Thinking Paradox",
-    "left_label": "Logical",
-    "right_label": "Creative",
-    "description": "How should strategic thinking happen — through structured logic or creative insight?",
-    "reflection_question": "Where do you feel most comfortable — in analysis or in imagination?",
-    "shadow_hint": "Too much logic may kill innovation. Too much creativity may lack grounding.",
+    "name": "Paradox of Logic and Intuition",
+    "left_label": "Logic",
+    "right_label": "Intuition",
+    "description": "Should strategic thinking proceed through systematic, analytical reasoning — breaking problems into components, applying frameworks, following the evidence wherever it leads — or through intuitive, creative insight that generates new ways of framing problems? De Wit & Meyer frame this not as a conflict between being smart and being creative, but between two legitimate and fundamentally different modes of cognition. The *Logic* perspective (associated with Porter, Ansoff, and the analytical tradition) holds that rigorous analysis is the foundation of sound strategy. The *Intuition* perspective (associated with Mintzberg, Quinn, and design thinking) holds that analysis can only work within an existing frame — generating genuinely new strategic options requires imaginative, generative thinking that transcends existing categories.",
+    "reflection_question": "When you face a genuinely novel strategic situation — one where existing frameworks don't apply — do you reach first for analytical tools or for imaginative reframing? Which mode does your organizational culture reward, and which does it undervalue?",
+    "shadow_hint": "Pure logic without intuition produces sophisticated analyses of the wrong questions — the analysis is impeccable, but the frame is outdated. Pure intuition without logic generates compelling visions that cannot survive scrutiny — the insight is real, but it cannot be communicated, resourced, or implemented.",
     "example_books": {
       "left": "Thinking Strategically – Dixit & Nalebuff",
       "right": "The Design of Business – Roger Martin"
-    }
+    },
+    "schoolsAtPoles": {
+      "left": [
+        "planning",
+        "positioning"
+      ],
+      "right": [
+        "entrepreneurial",
+        "cognitive",
+        "learning"
+      ]
+    },
+    "dwChapter": 2,
+    "leftThinkers": [
+      "Michael Porter",
+      "Igor Ansoff"
+    ],
+    "rightThinkers": [
+      "Henry Mintzberg",
+      "Roger Martin",
+      "Karl Weick"
+    ]
   },
   {
     "id": "formation",
     "group": "Process",
-    "name": "Formation Paradox",
-    "left_label": "Planned",
-    "right_label": "Emergent",
-    "description": "Should strategy be carefully planned or allowed to emerge over time?",
-    "reflection_question": "What happens when plans meet reality in your context?",
-    "shadow_hint": "Relying only on planning can make you blind to learning; relying only on emergence may cause drift.",
+    "name": "Paradox of Deliberateness and Emergence",
+    "left_label": "Deliberateness",
+    "right_label": "Emergence",
+    "description": "Should strategies be deliberately formulated — consciously intended by leadership in advance of action, then communicated and implemented — or should they emerge organically from learning, experimentation, and adaptation over time? De Wit & Meyer call these the *Strategic Planning* perspective and the *Strategic Learning* perspective. The Planning perspective (Ansoff, Andrews, Porter) holds that deliberate formulation creates clarity, alignment, and accountability. The Learning perspective (Mintzberg, Quinn) holds that in genuinely uncertain environments, strategies cannot be fully planned in advance — they must be discovered through experience. Mintzberg showed empirically that realized strategy is always a blend of intended and emergent elements: some of what was planned is realized, some is not, and some of what is realized was never planned.",
+    "reflection_question": "In your context, how much of what you call your strategy was actually formulated in advance — and how much emerged from decisions made under pressure or opportunity that turned out to matter strategically? And does your answer suggest the right balance, or a correction?",
+    "shadow_hint": "Pure deliberateness makes strategy blind to what the organization actually learns during implementation — the plan becomes a constraint on intelligence. Pure emergence provides no direction and no coordination — activity without intent, energy without effect.",
     "example_books": {
-      "left": "Good Strategy / Bad Strategy – Richard Rumelt",
+      "left": "Good Strategy Bad Strategy – Richard Rumelt",
       "right": "Strategy as Practice – Richard Whittington"
-    }
+    },
+    "schoolsAtPoles": {
+      "left": [
+        "design",
+        "planning",
+        "positioning"
+      ],
+      "right": [
+        "learning",
+        "environmental"
+      ]
+    },
+    "dwChapter": 3,
+    "leftThinkers": [
+      "Igor Ansoff",
+      "Kenneth Andrews"
+    ],
+    "rightThinkers": [
+      "Henry Mintzberg",
+      "James Brian Quinn"
+    ]
   },
   {
     "id": "change",
     "group": "Process",
-    "name": "Change Paradox",
-    "left_label": "Revolutionary",
-    "right_label": "Evolutionary",
-    "description": "Should strategic change happen in bold leaps or gradual steps?",
-    "reflection_question": "When has your organization changed best — through disruption or iteration?",
-    "shadow_hint": "Constant evolution may prevent breakthrough; sudden shifts may create chaos.",
+    "name": "Paradox of Revolution and Evolution",
+    "left_label": "Revolution",
+    "right_label": "Evolution",
+    "description": "Should strategic renewal happen through radical, discontinuous transformation — deliberately breaking with the past in a decisive leap that repositions the organization for a new era — or through continuous, incremental adaptation that preserves organizational coherence while gradually reshaping strategy? De Wit & Meyer identify the *Strategic Revolution* perspective (Hamel & Prahalad, Schumpeter's creative destruction, Christensen's disruption theory) with the view that incremental change is insufficient when the environment shifts fundamentally — bold transformation is required. The *Strategic Evolution* perspective (Senge, Quinn, organizational learning traditions) holds that revolutionary change destroys the capabilities and trust that sustainable strategy requires — continuous learning and adaptation build durable competitive position.",
+    "reflection_question": "Is your current strategic situation one that calls for revolutionary transformation — or for disciplined evolutionary adaptation? What are the signals, and how confident are you in reading them correctly? And who in your organization has a stake in each answer?",
+    "shadow_hint": "Continuous evolution can prevent the breakthrough moves that fundamentally redefine competitive position — organizations adapt their way to irrelevance. Revolutionary change destroys accumulated capabilities, relationships, and organizational trust before replacements are established — organizations transform their way to instability.",
     "example_books": {
       "left": "Competing for the Future – Hamel & Prahalad",
-      "right": "The Learning Organization – Peter Senge"
-    }
+      "right": "The Fifth Discipline – Peter Senge"
+    },
+    "schoolsAtPoles": {
+      "left": [
+        "entrepreneurial"
+      ],
+      "right": [
+        "learning",
+        "cultural"
+      ]
+    },
+    "dwChapter": 4,
+    "leftThinkers": [
+      "Gary Hamel",
+      "C.K. Prahalad",
+      "Joseph Schumpeter"
+    ],
+    "rightThinkers": [
+      "Peter Senge",
+      "James Brian Quinn"
+    ]
   },
   {
     "id": "locus",
     "group": "Content",
-    "name": "Locus Paradox",
-    "left_label": "Individual",
-    "right_label": "Collective",
-    "description": "Is strategy driven by individual leaders or shaped collectively by the organization?",
-    "reflection_question": "Who really shapes strategy in your context — and who should?",
-    "shadow_hint": "Overemphasizing heroic leaders can overlook collective intelligence.",
+    "name": "Paradox of Responsiveness and Synergy",
+    "left_label": "Responsiveness",
+    "right_label": "Synergy",
+    "description": "Multi-business organizations face a fundamental and recurring tension: should individual business units be given high autonomy to respond to their specific competitive environments — each with its own strategy, culture, and operating model — or should the corporation integrate them tightly to capture synergies across units? De Wit & Meyer frame this as the core corporate strategy paradox. The *Responsiveness* perspective argues that businesses operate in different markets with different competitive dynamics, and a one-size-fits-all corporate approach impedes competitive performance. The *Synergy* perspective argues that the corporation exists to create value that exceeds the sum of its parts — through shared platforms, cross-selling, transferred capabilities, or pooled resources — and this requires integration. Prahalad & Doz's Integration-Responsiveness framework captures the trade-off: maximum responsiveness produces a holding company with no corporate advantage; maximum synergy produces a bureaucracy that cannot serve diverse markets.",
+    "reflection_question": "In a multi-unit organization you know, where does corporate value actually come from — from what the corporation enables across units (synergy), or from each unit's freedom to respond to its own competitive context (responsiveness)? And is the current balance deliberate or inherited?",
+    "shadow_hint": "Maximum responsiveness produces a portfolio of disconnected businesses — a holding company with no strategic rationale beyond financial diversification. Maximum synergy produces standardized business units unable to respond to their specific competitive realities — coherence purchased at the cost of competitive performance.",
     "example_books": {
-      "left": "The Strategist – Cynthia Montgomery",
-      "right": "The Practice of Adaptive Leadership – Heifetz et al."
-    }
+      "left": "The Discipline of Market Leaders – Treacy & Wiersema",
+      "right": "Competing for the Future – Hamel & Prahalad"
+    },
+    "schoolsAtPoles": {
+      "left": [
+        "power",
+        "entrepreneurial"
+      ],
+      "right": [
+        "planning",
+        "configuration"
+      ]
+    },
+    "dwChapter": 6,
+    "leftThinkers": [
+      "Michael Treacy",
+      "Fred Wiersema"
+    ],
+    "rightThinkers": [
+      "C.K. Prahalad",
+      "Gary Hamel"
+    ]
   },
   {
     "id": "response",
-    "group": "Content",
-    "name": "Response Paradox",
-    "left_label": "Environmental Determinism",
-    "right_label": "Strategic Choice",
-    "description": "Are strategic options shaped by external forces or deliberate choices?",
-    "reflection_question": "How much freedom do you feel you have to shape your strategic future?",
-    "shadow_hint": "Assuming full control may lead to arrogance; assuming no control leads to passivity.",
+    "group": "Context",
+    "name": "Paradox of Compliance and Choice",
+    "left_label": "Compliance",
+    "right_label": "Choice",
+    "description": "Are organizations primarily subject to environmental selection pressures that determine their fate — or do managers exercise genuine strategic choice in shaping their organization's direction, and even its environment? De Wit & Meyer frame this as a paradox between environmental determinism and strategic voluntarism. The *Compliance* perspective (Hannan & Freeman's population ecology, institutional theory) argues that structural inertia is powerful, that environments select organizations rather than organizations adapting strategically, and that strategic choice is more constrained than most management theory acknowledges. The *Choice* perspective (Child's strategic choice theory, upper echelons theory, the resource mobilization tradition) argues that managers have real degrees of freedom — they can choose different strategies, build different capabilities, and actively shape the competitive environments in which they operate. Both perspectives contain genuine insight: the question is not which is true, but in what contexts each dominates.",
+    "reflection_question": "How much of your organization's current strategic position reflects genuine choices you made — and how much was determined by forces and pressures beyond your control? And does your answer imply strategic agency you should be exercising, or humility about constraints you should be acknowledging?",
+    "shadow_hint": "Assuming full strategic choice leads to hubris — ignoring the real institutional, regulatory, and competitive constraints that shape what is possible. Assuming full compliance produces learned helplessness — a passive relationship to an environment that is, in fact, partially shapeable.",
     "example_books": {
-      "left": "Blue Ocean Strategy – Kim & Mauborgne",
+      "left": "Your Strategy Needs a Strategy – Reeves, Haanæs & Sinha",
       "right": "Playing to Win – Lafley & Martin"
-    }
+    },
+    "schoolsAtPoles": {
+      "left": [
+        "environmental"
+      ],
+      "right": [
+        "design",
+        "planning",
+        "positioning",
+        "entrepreneurial"
+      ]
+    },
+    "dwChapter": 8,
+    "leftThinkers": [
+      "Michael Hannan",
+      "John Freeman"
+    ],
+    "rightThinkers": [
+      "John Child",
+      "Donald Hambrick"
+    ]
   },
   {
     "id": "network",
     "group": "Content",
-    "name": "Network Paradox",
+    "name": "Paradox of Competition and Cooperation",
     "left_label": "Competition",
     "right_label": "Cooperation",
-    "description": "Is strategy about winning against others or collaborating to create value?",
-    "reflection_question": "How do you balance rivalry and partnership in your strategy?",
-    "shadow_hint": "Over-competition erodes trust; over-collaboration risks dilution.",
+    "description": "Should firms treat other players in their competitive environment primarily as rivals to be outcompeted — fighting for market share, talent, and investor capital — or as potential collaborators in value creation? De Wit & Meyer identify this as the core network-level strategic paradox. The *Competition* perspective (Porter's five forces, zero-sum competitive logic) frames the competitive landscape as a battle for advantage: every gain by a rival is a potential loss to you. The *Cooperation* perspective (Brandenburger & Nalebuff's coopetition, alliance theory, ecosystem thinking) recognizes that firms routinely create more value through collaboration than through competition alone — and that the most sophisticated strategists compete and cooperate with the same actors simultaneously. Platform ecosystems, industry standards, joint ventures, and research consortia all require cooperation to create value, even as the participants compete to capture it.",
+    "reflection_question": "Which firms in your industry do you both compete and cooperate with — and how consciously do you manage that dual relationship? Where are you leaving value on the table by treating a potential collaborator as purely a rival?",
+    "shadow_hint": "Pure competition erodes the collaborative infrastructure that entire industries depend on — standards, shared talent pools, regulatory relationships — while accelerating races to the bottom on price and quality. Pure cooperation reduces the rivalry that drives innovation, efficiency, and the pressure to create customer value.",
     "example_books": {
       "left": "Competitive Strategy – Michael Porter",
       "right": "Co-opetition – Nalebuff & Brandenburger"
-    }
+    },
+    "schoolsAtPoles": {
+      "left": [
+        "positioning"
+      ],
+      "right": [
+        "power",
+        "cultural"
+      ]
+    },
+    "dwChapter": 7,
+    "leftThinkers": [
+      "Michael Porter"
+    ],
+    "rightThinkers": [
+      "Adam Brandenburger",
+      "Barry Nalebuff"
+    ]
   },
   {
     "id": "industrial",
-    "group": "Context",
-    "name": "Industrial Paradox",
-    "left_label": "Industry-level",
-    "right_label": "Firm-specific",
-    "description": "Is strategic analysis more about understanding industry forces or unique internal capabilities?",
-    "reflection_question": "Where do you spend most energy — scanning markets or developing internal advantage?",
-    "shadow_hint": "Over-focus on external may ignore what makes you special; internal focus can lose sight of market shifts.",
+    "group": "Content",
+    "name": "Paradox of Markets and Resources",
+    "left_label": "Outside-in",
+    "right_label": "Inside-out",
+    "description": "Should strategy begin with the external environment — analyzing industry structure, competitive forces, and market positions to identify where value can be captured — or with the organization's internal resources, capabilities, and competencies to identify what opportunities can be created? De Wit & Meyer frame this as the fundamental debate in business strategy between the *Outside-in* and *Inside-out* perspectives. The outside-in view (Porter's Five Forces, competitive positioning, industry analysis) argues that industry structure is the primary determinant of profitability: pick the right industry and position, and performance follows. The inside-out view (the resource-based view — Barney, Wernerfelt; core competence — Prahalad & Hamel; dynamic capabilities — Teece) argues that durable competitive advantage comes from unique, inimitable internal resources and capabilities that competitors cannot easily replicate: build distinctive strengths, and let them guide where you compete. In practice, the most robust strategies connect both: distinctive capabilities directed toward attractive competitive positions.",
+    "reflection_question": "When you define your competitive advantage, do you start from what your market rewards — or from what your organization does exceptionally well? Do these lead to the same place, or do they pull in different directions? And which anchor are you more confident in?",
+    "shadow_hint": "Pure outside-in thinking produces strategies for positions the organization lacks the capabilities to occupy — analytically attractive, operationally impossible. Pure inside-out thinking produces sophisticated capabilities for which no sustainable market exists — excellent at things no one values enough.",
     "example_books": {
       "left": "Competitive Advantage – Michael Porter",
-      "right": "The Discipline of Market Leaders – Treacy & Wiersema"
-    }
+      "right": "Competing for the Future – Hamel & Prahalad"
+    },
+    "schoolsAtPoles": {
+      "left": [
+        "positioning",
+        "planning"
+      ],
+      "right": [
+        "learning",
+        "cultural",
+        "entrepreneurial"
+      ]
+    },
+    "dwChapter": 5,
+    "leftThinkers": [
+      "Michael Porter"
+    ],
+    "rightThinkers": [
+      "C.K. Prahalad",
+      "Gary Hamel",
+      "Jay Barney"
+    ]
   },
   {
     "id": "organizational",
     "group": "Context",
-    "name": "Organizational Paradox",
-    "left_label": "Uniformity",
-    "right_label": "Diversity",
-    "description": "Should the organization aim for consistency or foster variation and difference?",
-    "reflection_question": "What are the risks of being too uniform – or too fragmented?",
-    "shadow_hint": "Uniformity may reduce adaptability; diversity may erode coherence.",
+    "name": "Paradox of Control and Chaos",
+    "left_label": "Control",
+    "right_label": "Chaos",
+    "description": "Should organizations be designed primarily for control — with clear hierarchy, formal procedures, standardized processes, and tight coordination — or should they embrace organizational 'chaos': high autonomy, self-organization, distributed decision-making, and emergent innovation? De Wit & Meyer identify this as the core organizational context paradox. The *Control* perspective (scientific management, bureaucratic theory, formal coordination mechanisms) argues that organizations require structure and control to be efficient, accountable, and scalable — without it, energy dissipates and coordination fails. The *Chaos* perspective (complexity theory applied to organizations, self-organization, Weick's sensemaking, agile management) argues that excessive control suppresses the front-line learning and adaptive response that competitive environments require — and that the most innovative organizations maintain productive disorder at their edges. Neither pole is sustainable alone: pure control produces bureaucratic rigidity that cannot adapt; pure chaos produces energy without direction.",
+    "reflection_question": "Where does the balance between control and autonomy currently sit in your organization — and is that balance appropriate to the competitive environment you face? What would loosening control enable? What would tightening it prevent?",
+    "shadow_hint": "Pure control produces bureaucratic rigidity — the organization cannot learn or adapt because every action is pre-specified. Pure chaos produces organizational energy without direction — creative, but unable to scale, coordinate, or sustain performance.",
     "example_books": {
       "left": "Built to Last – Collins & Porras",
-      "right": "The Culture Map – Erin Meyer"
-    }
+      "right": "Sense and Respond – Gothelf & Seiden"
+    },
+    "schoolsAtPoles": {
+      "left": [
+        "design",
+        "planning",
+        "cultural"
+      ],
+      "right": [
+        "entrepreneurial",
+        "learning"
+      ]
+    },
+    "dwChapter": 9,
+    "leftThinkers": [
+      "Frederick Taylor",
+      "Max Weber"
+    ],
+    "rightThinkers": [
+      "Karl Weick",
+      "Ralph Stacey"
+    ]
   },
   {
     "id": "geographical",
     "group": "Context",
-    "name": "Geographical Paradox",
-    "left_label": "Global",
-    "right_label": "Local",
-    "description": "Should strategy be globally standardized or locally adapted?",
-    "reflection_question": "Where do you see tension between global scale and local nuance?",
-    "shadow_hint": "Standardization may alienate; localism may fragment the brand.",
+    "name": "Paradox of Globalization and Localization",
+    "left_label": "Globalization",
+    "right_label": "Localization",
+    "description": "Should strategy be globally standardized — one product, one brand, one operating model across all markets, capturing economies of scale and consistency — or locally adapted to the specific cultural, regulatory, and competitive conditions of each geography? De Wit & Meyer identify this as the defining international context paradox, made famous by Theodore Levitt's 1983 Harvard Business Review argument that global markets were converging and that firms offering standardized global products would outcompete locally adapted rivals. The *Globalization* perspective (Yip's globalization drivers, global brand strategies) argues that standardization creates scale advantages, brand coherence, and organizational simplicity that locally adapted competitors cannot match. The *Localization* perspective (Bartlett & Ghoshal's transnational model, cultural adaptation research) argues that local differences in customer needs, regulatory requirements, competitive dynamics, and cultural context are too significant to ignore — and that standardization is a choice that serves organizational convenience more than customer value. Most multinationals operate in the tension between the two, managing a matrix of global integration and local adaptation requirements.",
+    "reflection_question": "Where in your industry do the economics of globalization — scale, consistency, unified brand, simplified operations — conflict most sharply with the requirements of local adaptation? And who decides where the balance sits: headquarters or the local market?",
+    "shadow_hint": "Pure globalization alienates local markets, overlooks genuine competitive differences between geographies, and can produce organizational arrogance about the universality of the home-market model. Pure localization fragments the organization, eliminates scale benefits, prevents global learning, and can become an excuse for local managers to avoid global accountability.",
     "example_books": {
       "left": "Global Strategy – George Yip",
       "right": "Managing Across Cultures – Schneider & Barsoux"
-    }
+    },
+    "schoolsAtPoles": {
+      "left": [
+        "planning",
+        "positioning"
+      ],
+      "right": [
+        "cultural",
+        "environmental"
+      ]
+    },
+    "dwChapter": 10,
+    "leftThinkers": [
+      "Theodore Levitt",
+      "George Yip"
+    ],
+    "rightThinkers": [
+      "Christopher Bartlett",
+      "Sumantra Ghoshal"
+    ]
   }
 ]

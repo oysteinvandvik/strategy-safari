@@ -14,33 +14,33 @@
       "icon": "📋",
       "color": "#3366cc",
       "order": 1,
-      "shortDescription": "Strategy as a conscious, structured plan to achieve goals. Deliberate and analytical in nature.",
-      "fullDescription": "Strategy as Plan refers to the deliberate, conscious, and intended courses of action developed in advance of the situations to which they apply. This perspective views strategy as a roadmap – a guide or course of action into the future, a path to get from here to there.",
+      "shortDescription": "Strategy as a consciously intended course of action, formed in advance and developed purposefully — the dominant understanding of strategy in management education and practice.",
+      "fullDescription": "Strategy as Plan is Mintzberg's most familiar P — and deliberately so. It captures how most managers, textbooks, and business schools think about strategy: a consciously intended course of action, formulated before the actions to which it applies and developed with explicit purpose.\n\nTwo characteristics define a Plan: it is made in *advance*, and it is *conscious*. This means strategy as Plan is fundamentally about intent — what the organization sets out to do. Mintzberg calls this 'intended strategy.' The entire formal strategic planning tradition (Ansoff, Andrews, Porter's analytical frameworks) operates within this P: formulate first, implement second.\n\nThe critical limitation that Mintzberg exposes is the gap between intended and realized strategy. Some intended strategies are never realized (unrealized strategy). Some realized strategies were never intended (emergent strategy, captured by the Pattern P). Actual realized strategy is always a blend of both. This does not make Plan worthless — explicit plans create alignment, coordinate action across large organizations, enable accountability, and provide a baseline for learning when reality diverges from intention. But it means that planning and strategizing are not the same thing, and confusing them is one of the most common failures in strategic management.",
       "characteristics": [
-        "Conscious and deliberate",
-        "Developed in advance",
-        "Provides direction",
-        "Guides decision-making",
-        "Often documented and formal",
-        "Future-oriented"
+        "Conscious and deliberate — formed with explicit intent",
+        "Developed in advance of the actions it guides",
+        "Represents intended strategy (what we set out to do)",
+        "Enables coordination and alignment across the organization",
+        "Provides a basis for accountability and performance measurement",
+        "Risks confusing the plan with the strategy itself"
       ],
       "examples": [
         {
-          "company": "Southwest Airlines",
-          "description": "Low-cost carrier strategy with point-to-point flights",
-          "details": "Southwest's deliberate plan to focus on short-haul, point-to-point flights with a single aircraft type (Boeing 737) to minimize costs and complexity."
+          "company": "Ansoff's Growth Matrix",
+          "description": "Igor Ansoff's 2×2 matrix (market penetration, market development, product development, diversification) is the purest expression of Plan thinking — strategy as a consciously chosen direction derived from systematic analysis of growth options.",
+          "details": "Developed in Corporate Strategy (1965), it remains the most widely used planning tool"
         },
         {
           "company": "Tesla",
-          "description": "Master Plan for sustainable transport",
-          "details": "Elon Musk's public master plan outlining the path from luxury electric vehicles to mass market adoption and sustainable energy ecosystem."
+          "description": "Elon Musk's published 'Master Plan' (2006) and 'Master Plan, Part Deux' (2016) are explicit, deliberate strategies — announced in advance, specifying the intended sequence of moves from Roadster to mass market to energy storage.",
+          "details": "Rare example of a truly public, committed Plan that largely played out as intended"
         }
       ],
       "questions": [
-        "What is our strategic vision for the next 5 years?",
-        "How do we allocate resources to achieve our goals?",
-        "What are our key performance indicators?",
-        "What specific actions will we take to reach our objectives?"
+        "What is our intended strategy for the next three to five years — and how explicitly have we committed to it?",
+        "How much of our current position was deliberately planned versus emergent from decisions we didn't treat as strategic?",
+        "Where does our plan create clarity and alignment — and where does adherence to the plan prevent us from learning?",
+        "What is the gap between the strategy we announced and the strategy we are actually pursuing?"
       ]
     },
     {
@@ -49,33 +49,33 @@
       "icon": "🔄",
       "color": "#dc3545",
       "order": 2,
-      "shortDescription": "Strategy as consistency in behavior over time. Emergent patterns that develop through actions.",
-      "fullDescription": "Strategy as Pattern refers to consistency in behavior over time. This perspective recognizes that strategy can emerge from a stream of actions, whether or not they were originally intended. It's about looking back and seeing the pattern that has actually emerged.",
+      "shortDescription": "Strategy as consistency in behavior over time — the pattern in a stream of decisions, whether or not it was ever consciously intended.",
+      "fullDescription": "Strategy as Pattern is perhaps Mintzberg's most provocative and original insight: that strategy is not necessarily what you intend, but what you do *consistently*. A strategy is a pattern in a stream of decisions — whether or not those decisions were ever consciously strategic.\n\nThe canonical illustration is Honda's entry into the US motorcycle market in 1959. Honda's *intended* strategy was to compete with large, powerful motorcycles against Harley-Davidson. This strategy failed. What succeeded was the small, reliable Supercub that Honda staff were using to get around Los Angeles — a product they had not planned to sell in the US. The consistent pattern that emerged (affordable, accessible bikes for everyday Americans) became one of the most successful market entries in business history. It was never planned.\n\nMintzberg and Waters (1985) formalized this in a critical distinction:\n• *Intended strategy*: what the organization set out to do (Plan)\n• *Realized strategy*: the consistent pattern in actual decisions\n• *Deliberate strategy*: intended strategies that were realized\n• *Emergent strategy*: patterns that arose without or against original intent\n• *Unrealized strategy*: intended strategies never realized\n\nThe practical implication: the most important strategic question is not always 'what are we planning?' but 'what are we actually doing consistently — and does that pattern serve us?' An organization can have an admirable plan and a damaging pattern operating simultaneously.",
       "characteristics": [
-        "Emerges from actions",
-        "Consistency over time",
-        "Can be unintended",
-        "Discovered retrospectively",
-        "Based on behavior patterns",
-        "Often unconscious"
+        "Emerges from a stream of decisions over time",
+        "May be intended (deliberate) or unintended (emergent)",
+        "Discovered retrospectively — requires stepping back to see",
+        "Reveals what the organization is actually doing, not just saying",
+        "Can diverge significantly from the stated Plan",
+        "The source of both strategic learning and strategic inertia"
       ],
       "examples": [
         {
           "company": "Honda",
-          "description": "Motorcycle entry into US market",
-          "details": "Honda's strategy in the US motorcycle market emerged as a pattern of focusing on small bikes after their original large bike strategy failed."
+          "description": "Honda's US motorcycle entry (1959) is the definitive Pattern example. The emergent Supercub strategy — discovered through failure and observation, not analysis — became the template for Honda's global consumer strategy.",
+          "details": "Documented by Richard Pascale (1984) and analyzed by Mintzberg as the clearest case of emergent strategy"
         },
         {
           "company": "3M",
-          "description": "Innovation through serendipity",
-          "details": "3M's strategy of innovation emerged from a pattern of encouraging experimentation and learning from failures, leading to products like Post-it Notes."
+          "description": "3M's reputation as an innovation company emerged from a consistent pattern of allowing engineers time for experimentation — not from a plan to be innovative. Post-it Notes, the most famous output, resulted from a 'failed' adhesive experiment.",
+          "details": "The 15% time policy created conditions for emergent strategy, not a planned innovation outcome"
         }
       ],
       "questions": [
-        "What patterns can we observe in our past decisions?",
-        "How have our strategies evolved over time?",
-        "What behaviors consistently drive our success?",
-        "What unintended strategies have emerged?"
+        "What is the actual pattern in our decisions over the past three years — and how does it differ from our stated strategy?",
+        "Which of our most successful strategic positions today were planned, and which emerged from actions we took for other reasons?",
+        "What emergent patterns are forming right now that we haven't yet recognized as strategic?",
+        "Where is our organization's realized strategy most at odds with its intended strategy — and what does that gap tell us?"
       ]
     },
     {
@@ -84,33 +84,33 @@
       "icon": "🎯",
       "color": "#28a745",
       "order": 3,
-      "shortDescription": "Strategy as finding a unique, defendable position in the marketplace relative to competitors.",
-      "fullDescription": "Strategy as Position refers to the location of the organization in its environment – the mediating force between the organization and its context. This perspective focuses on finding a unique and defendable position in the marketplace.",
+      "shortDescription": "Strategy as occupying a unique, defensible place in the competitive landscape — the mediating force between the organization and its environment.",
+      "fullDescription": "Strategy as Position focuses on the organization's location in its competitive environment — specifically, on finding and occupying a place in the market where it can create and sustain value better than rivals.\n\nThis is the strategic perspective most fully developed by Michael Porter, whose Five Forces framework (1980) provided a systematic method for analyzing the external environment and identifying positions of competitive advantage. Porter's generic strategies — cost leadership, differentiation, and focus — are fundamentally positional choices: where will the organization compete, and how will it be distinctive in that space?\n\nPosition is inherently *outside-in* thinking. It begins with the external environment (industry structure, competitive forces, customer needs) and asks where the organization can occupy defensible ground. This contrasts with *inside-out* thinking (associated with the resource-based view and the Perspective P), which begins with internal capabilities and asks what opportunities they enable.\n\nA sustainable position typically involves a coherent activity system — reinforcing choices about production, distribution, marketing, and service that collectively make the position difficult to imitate. Southwest Airlines' low-cost position is not just a pricing decision; it is an interlocking system of point-to-point routes, single aircraft type, no seat assignments, and rapid turnaround that together make the position robust to attack.",
       "characteristics": [
-        "Market-focused",
-        "Competitive advantage",
-        "External orientation",
-        "Niche identification",
-        "Differentiation",
-        "Defendable position"
+        "Outside-in orientation — begins with the external environment",
+        "Seeks unique, defensible competitive ground",
+        "Concerned with industry structure and competitive forces",
+        "Positions are sustained through activity systems, not single moves",
+        "Generic strategies: cost leadership, differentiation, or focus",
+        "Distinguishes between competitive arenas — not all positions are equally profitable"
       ],
       "examples": [
         {
-          "company": "Volvo",
-          "description": "Safety-focused positioning",
-          "details": "Volvo positioned itself as the safest car brand, building all marketing and product development around this unique market position."
+          "company": "Southwest Airlines",
+          "description": "The definitive positioning example: a coherent system of activities (point-to-point routes, single aircraft type, no frills, rapid turnaround) that creates a low-cost position neither full-service nor budget carriers can easily replicate.",
+          "details": "Porter used Southwest as the central example in 'What is Strategy?' (HBR, 1996)"
         },
         {
-          "company": "Starbucks",
-          "description": "Third place experience",
-          "details": "Starbucks positioned itself as the 'third place' between home and work, creating a unique coffee experience rather than just selling coffee."
+          "company": "Volvo",
+          "description": "Volvo's decades-long occupation of the 'safety' position in the premium car market — not the fastest, not the most luxurious, but the safest — is a clear positional strategy that shaped every aspect of product development and marketing.",
+          "details": "Illustrates that positions can be built around a single valued attribute if it is genuinely distinctive"
         }
       ],
       "questions": [
-        "What unique position do we occupy in our market?",
-        "How do we differentiate from competitors?",
-        "What market segments should we target?",
-        "How do we create a defendable competitive advantage?"
+        "What position do we occupy in our market — and is it genuinely distinctive, or merely different?",
+        "Which of Porter's Five Forces most threaten our current position, and how are we responding?",
+        "Is our position sustained by an activity system (interlocking choices) or by a single advantage that could be copied?",
+        "Are we trying to be all things to all customers — stuck in the middle — or have we made clear positional choices?"
       ]
     },
     {
@@ -119,33 +119,33 @@
       "icon": "👁️",
       "color": "#ffc107",
       "order": 4,
-      "shortDescription": "Strategy as the organization's fundamental way of perceiving and interpreting the world.",
-      "fullDescription": "Strategy as Perspective refers to the organization's fundamental way of doing things – its ingrained way of perceiving the world. This perspective is about the collective mind of the organization and its shared worldview.",
+      "shortDescription": "Strategy as the organization's collective worldview — its ingrained way of perceiving the world, defining problems, and evaluating choices. The most powerful and most difficult of the five P's to change.",
+      "fullDescription": "Strategy as Perspective is Mintzberg's most abstract P — and arguably his most important. Where Position asks 'where are we in the competitive landscape?', Perspective asks 'who are we, and how do we see the world?'\n\nPerspective is not the CEO's personal vision, though leadership shapes it. It is the *collective* mental model through which the organization frames problems, evaluates options, and defines what counts as success. Peter Drucker called this the organization's 'theory of the business': its assumptions about customers, technology, competitive environment, and what creates value. It is deeply embedded, largely unarticulated, and extremely resistant to change — not because people are stubborn, but because perspective is the *lens* through which everything else is seen, not an object that can be easily examined or replaced.\n\nThis invisibility makes Perspective simultaneously the most powerful and most dangerous of the five P's. Apple's 'intersection of technology and liberal arts' perspective structured everything Jobs did — which products to build, what 'good' meant, which compromises were acceptable. It was not a positioning statement or a plan: it was a way of seeing. But Kodak's film-chemistry perspective — equally powerful — prevented the company from acting on its own invention of digital photography. The perspective could not accommodate the threat because it could not recognize the new reality as an opportunity.\n\nChanging organizational perspective is therefore the deepest form of strategic change — more fundamental than changing plans or positions, because it requires changing how people think, not just what they do.",
       "characteristics": [
-        "Organizational mindset",
-        "Shared worldview",
-        "Cultural foundation",
-        "Ingrained beliefs",
-        "Collective identity",
-        "Deep-rooted values"
+        "Collective, not individual — shared across the organization",
+        "Largely unarticulated and taken for granted",
+        "Shapes what problems are even perceived as problems",
+        "Deeply resistant to change — requires cognitive transformation",
+        "The source of distinctive organizational identity and culture",
+        "When misaligned with reality, produces strategic blindness"
       ],
       "examples": [
         {
           "company": "Apple",
-          "description": "Design-first thinking",
-          "details": "Apple's perspective that great design and user experience should drive all product decisions, creating a design-centric organizational culture."
+          "description": "Apple's perspective — 'the intersection of technology and liberal arts' — was not a positioning statement but a way of seeing that structured every product decision, design choice, and trade-off under Jobs. It was the strategy.",
+          "details": "The perspective made certain options unthinkable (ugly interfaces, poor materials) and others obvious (simplicity, integration)"
         },
         {
-          "company": "Patagonia",
-          "description": "Environmental activism",
-          "details": "Patagonia's perspective that business should be a force for environmental good, influencing every aspect from product design to marketing."
+          "company": "Kodak",
+          "description": "Kodak's perspective — that it was in the film chemistry business, not the imaging business — prevented it from acting on its own invention of digital photography (1975). Its theory of the business could not accommodate a world without physical film.",
+          "details": "The most instructive failure case: a powerful perspective became a strategic blindspot as the world changed"
         }
       ],
       "questions": [
-        "What is our organization's fundamental worldview?",
-        "How do we perceive our role in the world?",
-        "What values guide our decision-making?",
-        "What beliefs are deeply embedded in our culture?"
+        "What is our organization's theory of the business — its assumptions about what we are, who our customers are, and what creates value?",
+        "Which strategic options are currently invisible to us because our perspective cannot frame them as opportunities?",
+        "Where does our organizational perspective create strength — and where has it become a filter that excludes important signals?",
+        "What would need to change in how we think — not just what we do — to pursue a genuinely different strategy?"
       ]
     },
     {
@@ -154,33 +154,33 @@
       "icon": "🎭",
       "color": "#6f42c1",
       "order": 5,
-      "shortDescription": "Strategy as a tactical maneuver to outwit competitors through deception or misdirection.",
-      "fullDescription": "Strategy as Ploy refers to a specific maneuver intended to outwit an opponent or competitor. This perspective sees strategy as a tactical move designed to threaten, bluff, or otherwise outmaneuver competition.",
+      "shortDescription": "Strategy as deliberate deception — a specific maneuver intended to mislead or outmaneuver a competitor, not merely to compete.",
+      "fullDescription": "Strategy as Ploy is Mintzberg's narrowest and most specific P — a deliberate act of competitive deception or misdirection aimed at a particular opponent. This is fundamentally different from the other four P's: where Plan describes intended direction and Pattern describes realized consistency, Ploy is a targeted tactical move whose value lies precisely in its deceptive intent.\n\nA ploy is not simply any tactical action. It is a move designed to make a competitor believe something false — about your capabilities, intentions, or next moves — in order to gain advantage. Classic examples include: announcing a capacity expansion you may not build (to deter a competitor from entering your market), filing patents for technologies you do not intend to use (to block competitor development), or signalling an aggressive price cut you have no intention of making (to trigger premature competitor retreat).\n\nMintzberg introduced Ploy specifically to capture the game-theoretic dimension of competitive strategy — the strategic value of threats, bluffs, commitments, and misdirection. Thomas Schelling's work on commitment and deterrence provides the theoretical foundation: the strategic power of a move often lies not in its direct impact but in how it shapes what competitors believe and therefore what they do.",
       "characteristics": [
-        "Tactical maneuvers",
-        "Competitive deception",
-        "Short-term focused",
-        "Reactive moves",
-        "Game theory applications",
-        "Strategic misdirection"
+        "Intentional competitive deception",
+        "Targeted at a specific opponent",
+        "Signal manipulation (threats, bluffs, commitments)",
+        "Distinct from general tactical action",
+        "Grounded in game theory (Schelling, Nash)",
+        "Value depends on opponent's belief, not just your action"
       ],
       "examples": [
         {
-          "company": "Microsoft",
-          "description": "FUD strategy against competitors",
-          "details": "Microsoft's use of Fear, Uncertainty, and Doubt (FUD) tactics to discourage customers from adopting competitor products during the OS wars."
+          "company": "Microsoft (vaporware)",
+          "description": "Microsoft's practice in the 1980s–90s of announcing products that did not yet exist — or would never ship — to prevent customers from buying competitor products while they waited for the Microsoft alternative. A classic deceptive signal.",
+          "details": "FUD (Fear, Uncertainty, Doubt) as competitive strategy: the product announcement was the ploy, not the product"
         },
         {
-          "company": "Amazon",
-          "description": "Predatory pricing",
-          "details": "Amazon's strategic use of below-cost pricing in new markets to discourage competition and establish market dominance."
+          "company": "Intel (capacity signalling)",
+          "description": "Intel's announcements of large fabrication plant investments served partly as capacity signals to competitors — suggesting future cost advantages and scale that would make entry less attractive, regardless of the actual timing.",
+          "details": "Illustrates Schelling's commitment theory: the strategic value lies in what the signal causes competitors to believe and do"
         }
       ],
       "questions": [
-        "What tactical moves can we make against competitors?",
-        "How can we create uncertainty for our rivals?",
-        "What strategic signals should we send to the market?",
-        "How can we time our moves for maximum impact?"
+        "What do our competitors currently *believe* about our capabilities and intentions — and is that belief accurate or a signal we have managed?",
+        "Are there strategic commitments we could make (capacity, technology, partnerships) whose primary value is their effect on competitor behavior?",
+        "Which competitive threats against us are genuine moves — and which are signals designed to cause us to respond in ways that benefit the signaller?",
+        "Where could deliberate ambiguity about our intentions create strategic advantage?"
       ]
     }
   ],
@@ -190,27 +190,102 @@
       {
         "from": "plan",
         "to": "pattern",
-        "relationship": "Plans may create patterns, but patterns often deviate from original plans"
+        "relationship": "Plans create the initial conditions from which patterns emerge — but realized patterns almost always diverge from intended plans. The gap between them is where the most important strategic learning happens."
       },
       {
         "from": "plan",
         "to": "position",
-        "relationship": "Plans should consider desired market position and competitive landscape"
+        "relationship": "Plans should specify the intended competitive position, but a plan without a positional logic is directionless. Conversely, a position without a plan for how to achieve and defend it remains aspirational."
       },
       {
-        "from": "perspective",
+        "from": "plan",
+        "to": "perspective",
+        "relationship": "Plans are formulated within the frame of the organization's existing perspective — what is seen as a viable strategy is constrained by the collective worldview. Plans that contradict the organizational perspective rarely survive implementation."
+      },
+      {
+        "from": "plan",
+        "to": "ploy",
+        "relationship": "A ploy is a specialized form of plan — consciously intended in advance, but whose strategic value lies in its deceptive effect on competitors. The ploy is the narrowest, most tactical variant of the Plan P."
+      },
+      {
+        "from": "pattern",
         "to": "plan",
-        "relationship": "Organizational perspective shapes how plans are conceived and formulated"
+        "relationship": "Recognized patterns can be elevated into deliberate plans — when leaders notice an emerging strategic pattern that works, formalizing it into a plan amplifies and directs it. This is how emergent strategy becomes deliberate."
       },
       {
-        "from": "perspective",
+        "from": "pattern",
+        "to": "position",
+        "relationship": "Many of the most durable competitive positions were not analytically selected but emerged as recognized patterns. Honda's small-bike position, Amazon's infrastructure position — both were patterns before they were positions."
+      },
+      {
+        "from": "pattern",
+        "to": "perspective",
+        "relationship": "Persistent patterns both express and reinforce organizational perspective. A pattern of behavior over time becomes part of the organizational identity — the organization comes to see itself as 'the kind of company that does X'."
+      },
+      {
+        "from": "pattern",
+        "to": "ploy",
+        "relationship": "Repeated use of tactical ploys creates a strategic pattern that competitors learn to read — undermining the deception. The longer a ploy is used, the more it becomes a transparent pattern rather than an effective deception."
+      },
+      {
+        "from": "position",
+        "to": "plan",
+        "relationship": "A chosen or occupied position generates planning requirements — to defend, extend, or shift position, plans must be formulated. Position gives planning its competitive logic and focus."
+      },
+      {
+        "from": "position",
         "to": "pattern",
-        "relationship": "Deep-rooted perspectives influence the patterns that emerge over time"
+        "relationship": "Occupying a position creates consistent patterns of activity — Southwest's low-cost position produces consistent patterns of operational behavior. Position and pattern become mutually reinforcing over time."
+      },
+      {
+        "from": "position",
+        "to": "perspective",
+        "relationship": "The position an organization occupies shapes how it sees the world — a cost leader develops a cost-efficiency perspective; a premium differentiator develops a quality-first perspective. Position and perspective co-evolve."
       },
       {
         "from": "position",
         "to": "ploy",
-        "relationship": "Market position influences the tactical moves available to the organization"
+        "relationship": "Market position determines which ploys are available and credible. A capacity-based threat is only credible if you occupy a position that makes the capacity expansion believable. Position is the foundation from which ploys are deployed."
+      },
+      {
+        "from": "perspective",
+        "to": "plan",
+        "relationship": "Organizational perspective shapes how plans are conceived and what options are even perceived as viable. Plans that violate the organizational perspective are filtered out before they reach decision-makers — or if they do, they fail to gain commitment."
+      },
+      {
+        "from": "perspective",
+        "to": "pattern",
+        "relationship": "Deep-rooted perspectives generate consistent patterns of behavior even in the absence of explicit plans. The organization acts according to its worldview — producing patterns that are expressions of perspective rather than deliberate strategy."
+      },
+      {
+        "from": "perspective",
+        "to": "position",
+        "relationship": "Perspective limits the range of positions an organization can coherently occupy — certain positions are 'off-brand' relative to the organizational identity. Apple's perspective made competing on price structurally incompatible with who they were."
+      },
+      {
+        "from": "perspective",
+        "to": "ploy",
+        "relationship": "Many organizational perspectives make competitive deception culturally impossible — organizations with strong ethical or collaborative perspectives cannot deploy ploys without cultural contradiction. Perspective sets the moral boundary on tactical options."
+      },
+      {
+        "from": "ploy",
+        "to": "plan",
+        "relationship": "Successful ploys must be planned — they require deliberate design of the signal, timing, and anticipated competitor response. But the plan behind a ploy is concealed; the visible action is the deception."
+      },
+      {
+        "from": "ploy",
+        "to": "pattern",
+        "relationship": "Ploys are by definition non-repeatable — a repeated deception ceases to deceive. But failed or revealed ploys leave patterns in their wake: competitors learn what signals to discount, and the organization's credibility for future signalling is affected."
+      },
+      {
+        "from": "ploy",
+        "to": "position",
+        "relationship": "Ploys are often used to protect or improve competitive position — deterring entry, triggering competitor retreat, or securing regulatory advantage. The ploy is tactical; the positional benefit is strategic."
+      },
+      {
+        "from": "ploy",
+        "to": "perspective",
+        "relationship": "An organization that relies heavily on ploys develops a perspective shaped by competitive deception — it comes to see strategic interaction as a game of signalling and misdirection. This perspective can be valuable in some competitive environments and corrosive in others."
       }
     ]
   }

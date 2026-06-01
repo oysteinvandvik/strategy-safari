@@ -33,8 +33,7 @@
       },
       "paradoxes_explored": [
         "thinking",
-        "formation",
-        "locus"
+        "formation"
       ],
       "tags": [
         "strategic-thinking",
@@ -42,7 +41,19 @@
         "comprehensive-overview"
       ],
       "reading_level": "intermediate",
-      "page_count": 416
+      "page_count": 416,
+      "schools": [
+        "design",
+        "planning",
+        "positioning",
+        "entrepreneurial",
+        "cognitive",
+        "learning",
+        "power",
+        "cultural",
+        "environmental",
+        "configuration"
+      ]
     },
     {
       "id": "thinking-strategically",
@@ -78,7 +89,11 @@
         "competitive-analysis"
       ],
       "reading_level": "intermediate",
-      "page_count": 393
+      "page_count": 393,
+      "schools": [
+        "positioning",
+        "power"
+      ]
     },
     {
       "id": "design-of-business",
@@ -112,7 +127,11 @@
         "creative-strategy"
       ],
       "reading_level": "intermediate",
-      "page_count": 192
+      "page_count": 192,
+      "schools": [
+        "design",
+        "cognitive"
+      ]
     },
     {
       "id": "good-strategy-bad-strategy",
@@ -147,7 +166,11 @@
         "coherent-action"
       ],
       "reading_level": "beginner",
-      "page_count": 336
+      "page_count": 336,
+      "schools": [
+        "design",
+        "positioning"
+      ]
     },
     {
       "id": "strategy-as-practice",
@@ -185,7 +208,11 @@
         "organizational-learning"
       ],
       "reading_level": "advanced",
-      "page_count": 260
+      "page_count": 260,
+      "schools": [
+        "learning",
+        "cultural"
+      ]
     },
     {
       "id": "competing-for-the-future",
@@ -212,7 +239,9 @@
         "ploy": 3
       },
       "paradoxes_explored": [
-        "change"
+        "change",
+        "locus",
+        "industrial"
       ],
       "paradox_position": "revolutionary",
       "tags": [
@@ -221,7 +250,11 @@
         "competitive-advantage"
       ],
       "reading_level": "intermediate",
-      "page_count": 384
+      "page_count": 384,
+      "schools": [
+        "entrepreneurial",
+        "configuration"
+      ]
     },
     {
       "id": "the-fifth-discipline",
@@ -256,7 +289,10 @@
         "continuous-improvement"
       ],
       "reading_level": "intermediate",
-      "page_count": 424
+      "page_count": 424,
+      "schools": [
+        "learning"
+      ]
     },
     {
       "id": "the-strategist",
@@ -282,7 +318,7 @@
         "ploy": 3
       },
       "paradoxes_explored": [
-        "locus"
+        "formation"
       ],
       "paradox_position": "individual",
       "tags": [
@@ -291,7 +327,11 @@
         "ceo-perspective"
       ],
       "reading_level": "intermediate",
-      "page_count": 256
+      "page_count": 256,
+      "schools": [
+        "design",
+        "entrepreneurial"
+      ]
     },
     {
       "id": "adaptive-leadership",
@@ -319,7 +359,7 @@
         "ploy": 2
       },
       "paradoxes_explored": [
-        "locus"
+        "organizational"
       ],
       "paradox_position": "collective",
       "tags": [
@@ -328,7 +368,11 @@
         "collaborative-strategy"
       ],
       "reading_level": "advanced",
-      "page_count": 336
+      "page_count": 336,
+      "schools": [
+        "learning",
+        "power"
+      ]
     },
     {
       "id": "blue-ocean-strategy",
@@ -364,7 +408,11 @@
         "competitive-differentiation"
       ],
       "reading_level": "intermediate",
-      "page_count": 256
+      "page_count": 256,
+      "schools": [
+        "entrepreneurial",
+        "positioning"
+      ]
     },
     {
       "id": "playing-to-win",
@@ -391,7 +439,8 @@
         "ploy": 3
       },
       "paradoxes_explored": [
-        "response"
+        "response",
+        "locus"
       ],
       "paradox_position": "strategic_choice",
       "tags": [
@@ -400,7 +449,11 @@
         "systematic-approach"
       ],
       "reading_level": "beginner",
-      "page_count": 272
+      "page_count": 272,
+      "schools": [
+        "design",
+        "positioning"
+      ]
     },
     {
       "id": "competitive-strategy",
@@ -435,7 +488,10 @@
         "five-forces"
       ],
       "reading_level": "intermediate",
-      "page_count": 396
+      "page_count": 396,
+      "schools": [
+        "positioning"
+      ]
     },
     {
       "id": "co-opetition",
@@ -471,7 +527,11 @@
         "strategic-partnerships"
       ],
       "reading_level": "intermediate",
-      "page_count": 290
+      "page_count": 290,
+      "schools": [
+        "positioning",
+        "power"
+      ]
     },
     {
       "id": "competitive-advantage",
@@ -505,7 +565,10 @@
         "competitive-advantage"
       ],
       "reading_level": "intermediate",
-      "page_count": 557
+      "page_count": 557,
+      "schools": [
+        "positioning"
+      ]
     },
     {
       "id": "discipline-of-market-leaders",
@@ -541,7 +604,11 @@
         "operational-excellence"
       ],
       "reading_level": "beginner",
-      "page_count": 240
+      "page_count": 240,
+      "schools": [
+        "positioning",
+        "design"
+      ]
     },
     {
       "id": "built-to-last",
@@ -577,7 +644,11 @@
         "long-term-success"
       ],
       "reading_level": "beginner",
-      "page_count": 368
+      "page_count": 368,
+      "schools": [
+        "cultural",
+        "configuration"
+      ]
     },
     {
       "id": "culture-map",
@@ -612,7 +683,10 @@
         "cross-cultural-management"
       ],
       "reading_level": "intermediate",
-      "page_count": 288
+      "page_count": 288,
+      "schools": [
+        "cultural"
+      ]
     },
     {
       "id": "global-strategy",
@@ -647,7 +721,11 @@
         "worldwide-coordination"
       ],
       "reading_level": "advanced",
-      "page_count": 352
+      "page_count": 352,
+      "schools": [
+        "positioning",
+        "planning"
+      ]
     },
     {
       "id": "managing-across-cultures",
@@ -683,7 +761,10 @@
         "multicultural-management"
       ],
       "reading_level": "intermediate",
-      "page_count": 384
+      "page_count": 384,
+      "schools": [
+        "cultural"
+      ]
     },
     {
       "id": "a-new-way-to-think",
@@ -718,7 +799,11 @@
         "integrative-thinking"
       ],
       "reading_level": "intermediate",
-      "page_count": 256
+      "page_count": 256,
+      "schools": [
+        "design",
+        "cognitive"
+      ]
     },
     {
       "id": "the-innovators-dilemma",
@@ -754,7 +839,12 @@
         "market-leadership"
       ],
       "reading_level": "intermediate",
-      "page_count": 288
+      "page_count": 288,
+      "schools": [
+        "entrepreneurial",
+        "environmental",
+        "configuration"
+      ]
     },
     {
       "id": "platform-revolution",
@@ -791,7 +881,11 @@
         "two-sided-markets"
       ],
       "reading_level": "intermediate",
-      "page_count": 352
+      "page_count": 352,
+      "schools": [
+        "positioning",
+        "power"
+      ]
     },
     {
       "id": "sense-and-respond",
@@ -819,7 +913,7 @@
       },
       "paradoxes_explored": [
         "formation",
-        "locus"
+        "organizational"
       ],
       "paradox_position": "emergent",
       "tags": [
@@ -829,7 +923,10 @@
         "product-management"
       ],
       "reading_level": "beginner",
-      "page_count": 256
+      "page_count": 256,
+      "schools": [
+        "learning"
+      ]
     },
     {
       "id": "your-strategy-needs-a-strategy",
@@ -868,7 +965,10 @@
         "bcg"
       ],
       "reading_level": "intermediate",
-      "page_count": 272
+      "page_count": 272,
+      "schools": [
+        "configuration"
+      ]
     }
   ],
   "categories": {

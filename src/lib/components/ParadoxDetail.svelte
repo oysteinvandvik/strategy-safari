@@ -1,63 +1,46 @@
 <!-- src/lib/components/ParadoxDetail.svelte -->
 <script lang="ts">
-    import { createEventDispatcher } from 'svelte';
+    import { createEventDispatcher, onMount } from 'svelte';
     import { fly, scale } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
     import { spring } from 'svelte/motion';
     import type { StrategicParadox } from '$lib/types';
-  
+    import { landscapeStore, loadReflection, saveReflection as persistReflection } from '$lib/stores/landscape';
+
     export let paradox: StrategicParadox;
     export let initialPosition: number | null = null;
-  
+
     const dispatch = createEventDispatcher();
-  
+
     let position = initialPosition || 50;
     let hasInteracted = false;
     let showReflection = false;
     let userReflection = '';
     let sectionsVisible = false;
-  
-    // Smooth animation for slider
-    const smoothPosition = spring(position, {
-      stiffness: 0.1,
-      damping: 0.4
-    });
-  
+
+    const smoothPosition = spring(position, { stiffness: 0.1, damping: 0.4 });
     $: smoothPosition.set(position);
-  
-    // Load saved reflection if exists
-    $: {
-      const saved = localStorage.getItem(`reflection-${paradox.id}`);
-      if (saved) {
-        userReflection = saved;
-      }
-    }
-  
+
+    onMount(() => {
+      userReflection = loadReflection(paradox.id);
+      setTimeout(() => sectionsVisible = true, 100);
+    });
+
     function handleSliderChange(event: Event) {
       const target = event.target as HTMLInputElement;
       position = parseInt(target.value);
       hasInteracted = true;
       savePosition();
     }
-  
+
     function savePosition() {
-      const positions = JSON.parse(localStorage.getItem('landscape-positions') || '{}');
-      positions[paradox.id] = position;
-      localStorage.setItem('landscape-positions', JSON.stringify(positions));
-      
-      dispatch('positionChanged', {
-        paradoxId: paradox.id,
-        position,
-        timestamp: new Date()
-      });
+      landscapeStore.setPosition(paradox.id, position);
+      dispatch('positionChanged', { paradoxId: paradox.id, position, timestamp: new Date() });
     }
-  
+
     function saveReflection() {
-      localStorage.setItem(`reflection-${paradox.id}`, userReflection);
-      dispatch('reflectionSaved', {
-        paradoxId: paradox.id,
-        reflection: userReflection
-      });
+      persistReflection(paradox.id, userReflection);
+      dispatch('reflectionSaved', { paradoxId: paradox.id, reflection: userReflection });
     }
   
     function getGroupColor(group: string) {
@@ -77,12 +60,7 @@
       return 'Balanced Approach';
     }
   
-    function onMount() {
-      setTimeout(() => sectionsVisible = true, 100);
-    }
-  
-    onMount();
-  </script>
+</script>
   
   <!-- Hero Section -->
   {#if sectionsVisible}

@@ -1,188 +1,28 @@
-<!-- 
-  FILE: src/routes/schools/+page.svelte
-  Enhanced Schools Overview with descriptions 
--->
 <script lang="ts">
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import { fly, scale } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
+  import type { PageData } from './$types';
+  import type { EnhancedSchoolData } from '$lib/types';
 
-  interface School {
-    id: string;
-    name: string;
-    shortName: string;
-    group: 'Prescriptive' | 'Descriptive';
-    description: string;
-    longDescription: string;
-    keyFigures: string[];
-    originPeriod: string;
-    coreBeliefs: string[];
-    strengths: string[];
-    weaknesses: string[];
-    values: number[];
-  }
+  export let data: PageData;
 
-  // Mock data - replace with your actual data loading
-  let schoolsData: { schools: School[] } = {
-    schools: [
-      {
-        id: "design",
-        name: "Design School",
-        shortName: "Design",
-        group: "Prescriptive",
-        description: "Strategy as a process of conception — clear, deliberate design through internal fit.",
-        longDescription: "The Design School views strategy formation as a process of conception...",
-        keyFigures: ["Kenneth Andrews", "Roland Christensen"],
-        originPeriod: "1960s",
-        coreBeliefs: ["Strategy should be explicit and clear"],
-        strengths: ["Promotes clear thinking"],
-        weaknesses: ["May oversimplify"],
-        values: [5, 2, 3, 2, 1]
-      },
-      {
-        id: "planning",
-        name: "Planning School", 
-        shortName: "Planning",
-        group: "Prescriptive",
-        description: "Strategy as formal planning with detailed procedures, explicit steps and checklists.",
-        longDescription: "The Planning School emphasizes formal procedures...",
-        keyFigures: ["Igor Ansoff"],
-        originPeriod: "1970s", 
-        coreBeliefs: ["Formal planning processes"],
-        strengths: ["Systematic approach"],
-        weaknesses: ["Can be rigid"],
-        values: [5, 1, 3, 2, 2]
-      },
-      {
-        id: "positioning",
-        name: "Positioning School",
-        shortName: "Positioning", 
-        group: "Prescriptive",
-        description: "Strategy as analytical process focused on industry analysis and competitive positioning.",
-        longDescription: "The Positioning School focuses on industry structure...",
-        keyFigures: ["Michael Porter"],
-        originPeriod: "1980s",
-        coreBeliefs: ["Industry analysis is key"],
-        strengths: ["Rigorous analysis"],
-        weaknesses: ["Can ignore internal capabilities"],
-        values: [4, 2, 5, 2, 4]
-      },
-      {
-        id: "entrepreneurial",
-        name: "Entrepreneurial School",
-        shortName: "Entrepreneurial",
-        group: "Descriptive", 
-        description: "Strategy as visionary process driven by the leader's vision and intuition.",
-        longDescription: "The Entrepreneurial School emphasizes vision...",
-        keyFigures: ["Joseph Schumpeter"],
-        originPeriod: "Various",
-        coreBeliefs: ["Leadership vision drives strategy"],
-        strengths: ["Inspires and motivates"],
-        weaknesses: ["Depends on one person"],
-        values: [3, 3, 3, 5, 4]
-      },
-      {
-        id: "cognitive",
-        name: "Cognitive School",
-        shortName: "Cognitive",
-        group: "Descriptive",
-        description: "Strategy as mental process focusing on how strategists think and process information.",
-        longDescription: "The Cognitive School examines mental processes...",
-        keyFigures: ["Herbert Simon"],
-        originPeriod: "1980s",
-        coreBeliefs: ["Mind matters in strategy"],
-        strengths: ["Understands biases"],
-        weaknesses: ["Can be too theoretical"],
-        values: [2, 3, 2, 5, 1]
-      },
-      {
-        id: "learning",
-        name: "Learning School",
-        shortName: "Learning", 
-        group: "Descriptive",
-        description: "Strategy as emergent process where strategies develop through organizational learning.",
-        longDescription: "The Learning School sees strategy as emergent...",
-        keyFigures: ["James Quinn", "Ikujiro Nonaka"],
-        originPeriod: "1990s",
-        coreBeliefs: ["Strategy emerges through learning"],
-        strengths: ["Adapts to change"],
-        weaknesses: ["Can lack direction"],
-        values: [2, 5, 3, 4, 2]
-      },
-      {
-        id: "power",
-        name: "Power School",
-        shortName: "Power",
-        group: "Descriptive",
-        description: "Strategy as process of negotiation and bargaining between competing power holders.",
-        longDescription: "The Power School views strategy formation...",
-        keyFigures: ["Graham Allison", "Jeffrey Pfeffer"],
-        originPeriod: "1970s-80s",
-        coreBeliefs: ["Politics and power shape strategy"],
-        strengths: ["Realistic about organizations"],
-        weaknesses: ["Can be cynical"],
-        values: [3, 4, 4, 3, 5]
-      },
-      {
-        id: "cultural",
-        name: "Cultural School",
-        shortName: "Cultural",
-        group: "Descriptive", 
-        description: "Strategy as collective process rooted in organizational culture and social beliefs.",
-        longDescription: "The Cultural School emphasizes collective processes...",
-        keyFigures: ["Edgar Schein"],
-        originPeriod: "1980s",
-        coreBeliefs: ["Culture drives strategy"],
-        strengths: ["Emphasizes collective wisdom"],
-        weaknesses: ["Resistant to change"],
-        values: [2, 5, 3, 5, 1]
-      },
-      {
-        id: "environmental",
-        name: "Environmental School", 
-        shortName: "Environmental",
-        group: "Descriptive",
-        description: "Strategy as reactive process where the environment sets demands on the organization.",
-        longDescription: "The Environmental School sees the environment...",
-        keyFigures: ["Michael Hannan", "John Freeman"],
-        originPeriod: "1970s",
-        coreBeliefs: ["Environment shapes strategy"],
-        strengths: ["Acknowledges constraints"],
-        weaknesses: ["Downplays strategic choice"],
-        values: [1, 4, 4, 2, 2]
-      },
-      {
-        id: "configuration",
-        name: "Configuration School",
-        shortName: "Configuration",
-        group: "Descriptive",
-        description: "Strategy as transformation process between stable configurations and change periods.",
-        longDescription: "The Configuration School describes organizations...",
-        keyFigures: ["Henry Mintzberg", "Danny Miller"],
-        originPeriod: "1980s-90s", 
-        coreBeliefs: ["Organizations are configurations"],
-        strengths: ["Integrative approach"],
-        weaknesses: ["Complex to implement"],
-        values: [4, 4, 4, 4, 3]
-      }
-    ]
-  };
+  $: schools = data.schools as EnhancedSchoolData[];
 
-  let selectedGroup: 'All' | 'Prescriptive' | 'Descriptive' = 'All';
-  let loading = false;
+  let selectedGroup: 'All' | 'Prescriptive' | 'Descriptive' = (data.initialState?.selectedGroup as 'All' | 'Prescriptive' | 'Descriptive') ?? 'All';
   let pageVisible = false;
 
   const pLabels = ['Plan', 'Pattern', 'Position', 'Perspective', 'Ploy'];
   const pColors = ['#3366cc', '#dc2626', '#16a34a', '#ea580c', '#9333ea'];
 
-  $: filteredSchools = selectedGroup === 'All' 
-    ? schoolsData.schools 
-    : schoolsData.schools.filter(school => school.group === selectedGroup);
+  $: filteredSchools = selectedGroup === 'All'
+    ? schools
+    : schools.filter(school => school.group === selectedGroup);
 
-  $: totalCount = schoolsData.schools.length;
-  $: prescriptiveCount = schoolsData.schools.filter(s => s.group === 'Prescriptive').length;
-  $: descriptiveCount = schoolsData.schools.filter(s => s.group === 'Descriptive').length;
+  $: totalCount = schools.length;
+  $: prescriptiveCount = schools.filter(s => s.group === 'Prescriptive').length;
+  $: descriptiveCount = schools.filter(s => s.group === 'Descriptive').length;
 
   onMount(() => {
     setTimeout(() => pageVisible = true, 100);

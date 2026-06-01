@@ -5,7 +5,7 @@
 	import { quintOut } from 'svelte/easing';
 	import { spring } from 'svelte/motion';
 
-	import RadarPlot from '$lib/components/RadarPlot.svelte';
+	import RadarPlot from '$lib/components/EnhancedRadarPlot.svelte';
 
 	import type { RadarSchoolData } from '$lib/types';
 

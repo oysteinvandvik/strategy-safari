@@ -6,7 +6,7 @@
       "shortName": "Design",
       "group": "Prescriptive",
       "description": "Strategy as deliberate design: achieving perfect 'fit' between internal strengths and external opportunities through systematic analysis and conscious choice.",
-      "longDescription": "The Design School, pioneered at Harvard Business School in the 1960s, views strategy formation as a thoughtful process of conception. Like an architect designing a building, strategists must create a blueprint that perfectly matches the organization's internal capabilities with external market opportunities. This school emphasizes the SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) as the cornerstone tool for achieving strategic fit. The CEO acts as the chief architect, responsible for crafting a clear, explicit strategy that can be communicated throughout the organization.",
+      "longDescription": "The Design School, pioneered at Harvard Business School in the 1960s through the work of Kenneth Andrews and his colleagues, views strategy formation as a thoughtful process of conception. Strategy is the product of a conscious, deliberate design effort — the CEO acting as chief architect, matching the organization's *distinctive competencies* (what it does uniquely well) to the opportunities and threats presented by the external environment.\n\nThe school's primary analytical tool is SWOT — Strengths, Weaknesses, Opportunities, Threats — which remains the most widely taught strategic framework in business education. But the SWOT is a means to an end: achieving 'strategic fit' between the organization and its environment. Andrews insisted that strategy must be explicit, clear, and simple enough to be communicated and implemented. One optimal strategy exists for each situation, and the CEO's job is to find it.\n\nMintzberg's critique is sharp: the Design School separates thinking from doing in a way that rarely reflects organizational reality. Strategies formed at the top and implemented below cannot incorporate the learning that happens during implementation. And the assumption of 'one optimal strategy' understates the genuine complexity and uncertainty of strategic choice.",
       "keyFigures": [
         "Kenneth Andrews",
         "Roland Christensen",
@@ -16,11 +16,11 @@
       "realWorldExample": "Apple's strategy under Steve Jobs exemplified Design School thinking - deliberately matching Apple's design capabilities with the emerging opportunity for user-friendly consumer electronics.",
       "whenToUse": "Best suited for stable environments, smaller organizations, or situations requiring clear strategic direction from leadership.",
       "coreBeliefs": [
-        "Strategy should be explicit, simple, and clearly communicated",
-        "There must be a deliberate 'fit' between internal capabilities and external environment",
+        "Strategy should be explicit, simple, and clearly communicable",
+        "There must be deliberate 'fit' between internal distinctive competencies and external environment",
         "The CEO is the chief strategist and primary architect of strategy",
-        "Strategy formation precedes implementation in a linear sequence",
-        "One optimal strategy exists for each situation"
+        "Strategy formation must be completed before implementation begins",
+        "SWOT analysis is the appropriate tool for achieving strategic fit"
       ],
       "strengths": [
         "Promotes clear, logical thinking about strategic choices",
@@ -43,7 +43,7 @@
         2,
         1
       ],
-      "modernRelevance": "While criticized for being too simplistic, Design School principles remain valuable for startups, turnarounds, and situations requiring clear strategic direction.",
+      "modernRelevance": "Design School principles retain value in situations demanding clarity: startup positioning, turnaround leadership, and strategic planning in relatively stable environments. The concept of distinctive competence anticipates the resource-based view. Where the school struggles is in dynamic environments where the strategy must evolve as it is implemented.",
       "pApproaches": {
         "plan": {
           "emphasis": 5,
@@ -233,7 +233,45 @@
           ],
           "modernRelevance": "Appropriate for organizations in stable competitive environments where strategic excellence matters more than tactical agility, and where reputation for straightforward dealing is valuable."
         }
-      }
+      },
+      "keyText": "Andrews, Kenneth R. — The Concept of Corporate Strategy (1971)",
+      "historicalContext": "The Design School emerged at Harvard Business School in the early 1960s as the first serious academic framework for corporate strategy. It responded to a practical need: business schools and large corporations required a way to think systematically about long-term corporate direction. Andrews and his colleagues were developing what became the Business Policy course — later the model for strategy courses worldwide.",
+      "paradoxPositions": {
+        "thinking": {
+          "pole": "left",
+          "note": "Deliberate analytical reasoning through SWOT and systematic analysis"
+        },
+        "formation": {
+          "pole": "left",
+          "note": "Strategy is deliberately formulated before implementation"
+        },
+        "response": {
+          "pole": "right",
+          "note": "The CEO exercises strategic choice; environment is a constraint to be analyzed, not a determinant"
+        },
+        "industrial": {
+          "pole": "both",
+          "note": "Seeks fit between internal competencies (inside-out) and external opportunities (outside-in)"
+        },
+        "organizational": {
+          "pole": "left",
+          "note": "Clear top-down strategic direction implies organizational control"
+        }
+      },
+      "tensionsWith": [
+        {
+          "school": "learning",
+          "tension": "Design assumes strategy is fully formed before implementation; Learning argues it must emerge through implementation because the future cannot be fully known in advance."
+        },
+        {
+          "school": "power",
+          "tension": "Design treats the CEO as a unitary rational actor; Power argues that strategy is politically negotiated among competing interests with different agendas."
+        },
+        {
+          "school": "cognitive",
+          "tension": "Design assumes strategic analysis can be objective and comprehensive; Cognitive shows that analysis is always filtered through mental models and cognitive biases."
+        }
+      ]
     },
     {
       "id": "planning",
@@ -241,7 +279,7 @@
       "shortName": "Planning",
       "group": "Prescriptive",
       "description": "Strategy as formal, systematic planning: elaborate procedures, detailed analysis, and quantified implementation plans executed by specialized staff.",
-      "longDescription": "Emerging in the 1970s, the Planning School treats strategy formation as a highly formal, systematic process. Like engineers building a complex machine, strategic planners create elaborate procedures, detailed forecasts, and comprehensive implementation plans. This school believes that strategy can be programmed through rigorous analysis, careful decomposition of goals into sub-goals, and meticulous attention to scheduling and budgeting. Large corporations embraced this approach, creating entire strategic planning departments armed with sophisticated analytical tools and multi-year planning cycles.",
+      "longDescription": "Emerging in the 1970s, the Planning School formalized and systematized the Design School's insight: if strategy should be deliberate and rational, why not make it fully programmable? Igor Ansoff, George Steiner, and their colleagues developed elaborate planning systems — multi-year planning cycles, formal capital budgeting, portfolio matrices (BCG Growth-Share, GE McKinsey), and dedicated strategic planning departments that separated strategy formation from line management.\n\nThe school's deepest assumption is that the future can be forecast with sufficient accuracy to justify detailed planning. Strategy becomes a programmable exercise: decompose goals into sub-goals, assign responsibilities, allocate budgets, schedule milestones, monitor variance. Large corporations embraced this enthusiastically through the 1970s, creating entire planning bureaucracies.\n\nMintzberg's critique, delivered most fully in *The Rise and Fall of Strategic Planning* (1994), distinguishes between *strategic planning* (a formal, analytical process) and *strategic thinking* (a creative, synthetic activity). The Planning School, he argues, mistakes the former for the latter — producing 'paralysis by analysis' and plans that are internally coherent but organizationally irrelevant. Real strategists think; planners program.",
       "keyFigures": [
         "Igor Ansoff",
         "George Steiner",
@@ -278,7 +316,7 @@
         2,
         2
       ],
-      "modernRelevance": "While formal strategic planning fell from favor in the 1980s, elements remain important for large organizations needing coordination and resource allocation.",
+      "modernRelevance": "While standalone strategic planning fell from favor after the 1980s, planning tools persist — capital budgeting, scenario planning, OKRs, and rolling forecasts all carry Planning School DNA. The school's genuine contribution is coordination and resource allocation in complex organizations. Its limitation is that it cannot generate strategy, only formalize it.",
       "pApproaches": {
         "plan": {
           "emphasis": 5,
@@ -475,7 +513,49 @@
           ],
           "modernRelevance": "Systematic competitive analysis remains valuable, though modern approaches emphasize speed and adaptability alongside thorough planning."
         }
-      }
+      },
+      "keyText": "Ansoff, H. Igor — Corporate Strategy (1965)",
+      "historicalContext": "The Planning School emerged in the late 1960s and dominated through the 1970s as a formalization and scaling of Design School thinking. It responded to the growing complexity of large corporations: if strategy should be rational and deliberate, it should be made systematic. Corporate planning departments, annual planning cycles, and portfolio matrices proliferated. The school's decline began when its planning systems failed to anticipate the oil shocks and competitive upheavals of the late 1970s.",
+      "paradoxPositions": {
+        "thinking": {
+          "pole": "left",
+          "note": "Formal analytical procedures are the basis of strategic reasoning"
+        },
+        "formation": {
+          "pole": "left",
+          "note": "Strategy is fully programmed in advance through formal planning cycles"
+        },
+        "response": {
+          "pole": "right",
+          "note": "Formal planning assumes meaningful strategic choice is possible"
+        },
+        "industrial": {
+          "pole": "left",
+          "note": "Portfolio matrices (BCG, GE McKinsey) are outside-in analytical tools"
+        },
+        "locus": {
+          "pole": "right",
+          "note": "Corporate planning systems exist to generate synergies across business units"
+        },
+        "organizational": {
+          "pole": "left",
+          "note": "Planning bureaucracies represent the apex of organizational control"
+        }
+      },
+      "tensionsWith": [
+        {
+          "school": "learning",
+          "tension": "Planning assumes the future is forecastable enough to justify elaborate programming; Learning argues that plans are hypotheses that reality will revise — Mintzberg's critique in The Rise and Fall of Strategic Planning."
+        },
+        {
+          "school": "entrepreneurial",
+          "tension": "Planning assumes systematic procedures produce superior strategy; Entrepreneurial argues that formal procedures suppress the intuition and bold action that create competitive breakthroughs."
+        },
+        {
+          "school": "cognitive",
+          "tension": "Planning assumes analytical rigor corrects human irrationality; Cognitive shows that planning processes are themselves subject to cognitive bias and groupthink."
+        }
+      ]
     },
     {
       "id": "positioning",
@@ -483,7 +563,7 @@
       "shortName": "Positioning",
       "group": "Prescriptive",
       "description": "Strategy as analytical positioning: selecting optimal market positions based on rigorous industry analysis and competitive dynamics.",
-      "longDescription": "Dominated by Michael Porter's influential work in the 1980s, the Positioning School revolutionized strategic thinking by focusing on industry structure and competitive dynamics. Like chess masters analyzing the board, strategists must understand the 'rules of the game' in their industry - the five competitive forces that determine profitability. This school provides analytical frameworks for choosing among generic strategies (cost leadership, differentiation, focus) and emphasizes that strategic positions must be defensible against competitive attack. Success comes from finding and defending a unique position in the competitive landscape.",
+      "longDescription": "The Positioning School, dominated by Michael Porter's work in the 1980s, revolutionized strategic thinking by grounding it in industrial organization economics. Where the Design School asked 'what is our fit with the environment?' and the Planning School asked 'how do we systematize strategy?', the Positioning School asked 'what determines profitability in an industry, and how do we capture it?'\n\nPorter drew on the Harvard industrial organization tradition (Mason, Bain) to argue that industry structure — the configuration of five competitive forces (supplier power, buyer power, threat of substitutes, threat of new entrants, and rivalry) — is the primary determinant of long-run profitability. Strategy is then the selection of a *generic position* within that structure: cost leadership, differentiation, or focus. Positions must be defended against competitive attack through structural barriers.\n\nThe school provided strategy with an analytical rigour it had previously lacked — industry analysis, value chain analysis, and competitor analysis became standard management tools. Richard Rumelt's work on diversification provided empirical grounding. The school's limitation, as the resource-based view would later argue, is its underemphasis on internal capabilities: industry structure tells you where the value is, but not whether you can capture it.",
       "keyFigures": [
         "Michael Porter",
         "Richard Rumelt",
@@ -520,7 +600,7 @@
         2,
         4
       ],
-      "modernRelevance": "Porter's frameworks remain highly influential, though modern strategists recognize the need to balance external positioning with internal capabilities.",
+      "modernRelevance": "Porter's frameworks remain among the most widely taught and applied in management. Five Forces is standard for industry analysis; value chain analysis remains central to operations strategy. The school's limitation is its assumption of relatively stable industry structure — increasingly challenged in platform markets and digital industries where boundaries shift rapidly.",
       "pApproaches": {
         "plan": {
           "emphasis": 4,
@@ -718,7 +798,45 @@
           ],
           "modernRelevance": "Strategic maneuvering remains important in competitive industries, though modern approaches emphasize ecosystem collaboration alongside competitive positioning."
         }
-      }
+      },
+      "keyText": "Porter, Michael E. — Competitive Strategy: Techniques for Analyzing Industries and Competitors (1980)",
+      "historicalContext": "Porter's Positioning School emerged in the early 1980s as a rigorous critique of Planning School looseness — strategy had become too bureaucratic and too disconnected from competitive reality. Porter drew on industrial organization economics (the Harvard IO tradition of Bain and Mason) to give strategy the analytical foundation it lacked. The school dominated MBA education and consulting practice through the 1980s and remains highly influential.",
+      "paradoxPositions": {
+        "thinking": {
+          "pole": "left",
+          "note": "Five Forces, value chain analysis — rigorous analytical frameworks"
+        },
+        "formation": {
+          "pole": "left",
+          "note": "Strategy is deliberately selected from generic strategic options after analysis"
+        },
+        "network": {
+          "pole": "left",
+          "note": "Industry rivalry is the core analytical lens; competitors are rivals, not partners"
+        },
+        "response": {
+          "pole": "right",
+          "note": "Firms exercise strategic choice within industry constraints"
+        },
+        "industrial": {
+          "pole": "left",
+          "note": "Porter is the definitive outside-in theorist — industry structure determines profitability"
+        }
+      },
+      "tensionsWith": [
+        {
+          "school": "learning",
+          "tension": "Positioning assumes strategy is selected through prior analysis; Learning argues that viable positions are discovered through experimentation and are rarely analytically predictable."
+        },
+        {
+          "school": "cultural",
+          "tension": "Positioning is industry- and competitor-focused (outside-in); Cultural argues that durable advantage is rooted in internal culture and capabilities that cannot be replicated by imitating positions."
+        },
+        {
+          "school": "environmental",
+          "tension": "Positioning assumes firms can choose positions and build defenses; Environmental argues that industry selection pressures determine who survives, with managerial choice playing a much smaller role."
+        }
+      ]
     },
     {
       "id": "entrepreneurial",
@@ -726,21 +844,21 @@
       "shortName": "Entrepreneurial",
       "group": "Descriptive",
       "description": "Strategy as visionary leadership: intuitive, bold decision-making driven by entrepreneurial vision and personal judgment rather than formal analysis.",
-      "longDescription": "The Entrepreneurial School recognizes that strategy often emerges from the vision and intuition of a single leader rather than systematic analysis. Like artists guided by creative vision, entrepreneurial leaders see opportunities others miss and have the courage to act on incomplete information. This school emphasizes the central role of leadership vision, the importance of intuitive judgment, and the organization's ability to adapt quickly to its leader's strategic insights. Strategy becomes a semi-conscious process, guided more by vision and judgment than by formal procedures.",
+      "longDescription": "The Entrepreneurial School recognizes that strategy often emerges from the vision and intuition of a single leader rather than systematic analysis or formal process. Mintzberg traces the school's intellectual roots to Joseph Schumpeter's concept of *creative destruction* — the entrepreneur as the agent who disrupts existing market equilibria by introducing radical innovations — and to Israel Kirzner's complementary notion of *entrepreneurial alertness*: the ability to perceive opportunities that others, constrained by existing mental models, simply cannot see.\n\nWhere the Design and Planning Schools treat strategy as an analytical exercise, the Entrepreneurial School treats it as a visionary one. Strategy is semi-conscious, guided by the leader's intuitive sense of direction rather than explicit frameworks. The organization becomes an extension of the entrepreneur's vision — flexible, responsive, and capable of bold moves. This school's description fits the startup context well: clarity of vision compensates for the absence of resources, planning, and structure.\n\nThe school's central limitation is sustainability: entrepreneurial strategy is highly dependent on one person's continued vision and energy. Danny Miller's *Icarus Paradox* (1992) describes how the very strengths that make entrepreneurial firms successful can become fatal when taken too far — bold vision becomes stubbornness, speed becomes recklessness.",
       "keyFigures": [
         "Joseph Schumpeter",
-        "Arthur Cole",
-        "William Guth"
+        "Israel Kirzner",
+        "Danny Miller"
       ],
       "originPeriod": "Various periods, with renewed interest in entrepreneurship eras",
-      "realWorldExample": "Richard Branson's Virgin Group demonstrates entrepreneurial strategy - entering diverse industries based on his vision of challenging established players and creating better customer experiences.",
+      "realWorldExample": "Elon Musk's progression across Tesla, SpaceX, and Neuralink exemplifies entrepreneurial strategy — multiple industries entered through audacious vision, where the leader's intuition about technological possibility substitutes for conventional market analysis. The strategy is the vision; the vision is the strategy.",
       "whenToUse": "Most powerful in startup situations, crisis periods, or industries undergoing rapid change where quick, bold decisions are essential.",
       "coreBeliefs": [
         "Strategy originates in the vision and intuition of a single leader",
-        "Entrepreneurial judgment is more valuable than systematic analysis",
-        "Organizations are extensions of their leader's personality and vision",
-        "Bold action trumps detailed planning in uncertain environments",
-        "Innovation and creative destruction drive competitive advantage"
+        "Entrepreneurial alertness (Kirzner) allows leaders to perceive opportunities others cannot see",
+        "Bold action and speed of response matter more than analytical rigour in uncertain environments",
+        "Creative destruction (Schumpeter) — disrupting existing equilibria — is the source of competitive advantage",
+        "Organizations must remain flexible enough to act on the leader's evolving vision"
       ],
       "strengths": [
         "Promotes innovation, creativity, and breakthrough thinking",
@@ -750,11 +868,11 @@
         "Can create highly motivated, vision-driven organizations"
       ],
       "weaknesses": [
-        "Over-reliance on a single individual creates vulnerability",
-        "May lack analytical rigor and systematic thinking",
-        "Difficult to sustain as organizations grow larger",
-        "Can lead to inconsistent or erratic strategic direction",
-        "Success depends heavily on the leader's continued vision and energy"
+        "Over-reliance on one individual creates fragility — the Icarus Paradox",
+        "Vision-driven strategy can override important analytical signals",
+        "Difficult to sustain as the organization grows and requires more structure",
+        "Cannot easily transfer the vision to distributed leadership",
+        "Entrepreneurial boldness without discipline can produce spectacular failures"
       ],
       "values": [
         3,
@@ -965,7 +1083,49 @@
           ],
           "modernRelevance": "Bold strategic moves remain crucial for capturing opportunities in rapidly changing markets, though must be balanced with systematic analysis and risk management."
         }
-      }
+      },
+      "keyText": "Schumpeter, Joseph — Capitalism, Socialism and Democracy (1942)",
+      "historicalContext": "The Entrepreneurial School developed alongside the prescriptive schools as a recognition of what they systematically excluded: the role of individual leadership vision and intuition in strategy formation. It draws on a long intellectual tradition from Schumpeter's creative destruction (1942) through Kirzner's entrepreneurial alertness (1973). The school gained renewed prominence in the 1980s-90s as startup culture and venture capital reshaped the competitive landscape.",
+      "paradoxPositions": {
+        "thinking": {
+          "pole": "right",
+          "note": "Intuitive vision and entrepreneurial alertness (Kirzner) over systematic analysis"
+        },
+        "formation": {
+          "pole": "both",
+          "note": "Vision is deliberate, but how it unfolds is flexible and adaptive"
+        },
+        "change": {
+          "pole": "left",
+          "note": "Creative destruction (Schumpeter) — revolutionary disruption of existing equilibria"
+        },
+        "response": {
+          "pole": "right",
+          "note": "The entrepreneur exercises maximal strategic choice, even reshaping the environment"
+        },
+        "industrial": {
+          "pole": "right",
+          "note": "Capabilities and vision drive position; inside-out in orientation"
+        },
+        "organizational": {
+          "pole": "right",
+          "note": "Entrepreneurial organizations are flexible and vision-driven, not controlled by formal systems"
+        }
+      },
+      "tensionsWith": [
+        {
+          "school": "cultural",
+          "tension": "Entrepreneurial locates strategy in the individual leader's vision; Cultural locates it in collective shared beliefs — individual heroism vs collective wisdom."
+        },
+        {
+          "school": "environmental",
+          "tension": "Entrepreneurial assumes bold individual vision can overcome environmental constraints; Environmental argues that structural inertia and selection pressures severely limit what any individual can achieve."
+        },
+        {
+          "school": "planning",
+          "tension": "Entrepreneurial sees formal planning as an obstacle to responsive, vision-driven action; Planning sees entrepreneurial informality as a source of inconsistency and strategic drift."
+        }
+      ]
     },
     {
       "id": "cognitive",
@@ -973,7 +1133,7 @@
       "shortName": "Cognitive",
       "group": "Descriptive",
       "description": "Strategy as mental process: understanding how cognitive biases, mental models, and information processing shape strategic thinking and decision-making.",
-      "longDescription": "The Cognitive School delves into the 'black box' of the strategist's mind, asking how people actually think about strategy. Drawing from cognitive psychology, this school recognizes that strategists are not perfectly rational actors but humans subject to cognitive biases, limited information processing capacity, and mental models that filter reality. Strategic thinking becomes a complex interplay between objective analysis and subjective interpretation. Understanding these cognitive processes helps explain why different strategists can look at the same situation and reach dramatically different conclusions.",
+      "longDescription": "The Cognitive School examines the 'black box' of the strategist's mind — how cognitive processes, mental models, and bounded rationality shape strategic thinking and decision-making. Its intellectual foundation is Herbert Simon's concept of *bounded rationality*: human beings are not perfectly rational actors optimizing complete information, but cognitive processors working with limited attention, imperfect information, and heuristics that simplify complex problems.\n\nJames March and Richard Cyert's *A Behavioral Theory of the Firm* (1963) extended Simon's insights to organizational decision-making: firms use standard operating procedures, satisfice (accept good-enough solutions), and manage conflict through sequential attention rather than simultaneous optimization. Karl Weick's *sensemaking* framework added that organizations do not simply process a pre-existing reality — they actively *enact* their environments, constructing the strategic situations they then respond to.\n\nThe school has two distinct branches: one focuses on cognitive *biases* and limitations (overconfidence, confirmation bias, escalation of commitment) and how to mitigate them; the other, associated with Weick, focuses on cognition as *construction* — strategy as sensemaking rather than analysis. Both branches converge on the insight that strategic reality is never objectively given — it is always interpreted through cognitive frameworks.",
       "keyFigures": [
         "Herbert Simon",
         "James March",
@@ -1010,7 +1170,210 @@
         5,
         1
       ],
-      "modernRelevance": "Increasingly important as organizations recognize the role of behavioral factors in strategic decision-making and seek to 'de-bias' their processes."
+      "modernRelevance": "*Behavioural strategy* — applying insights from psychology and behavioural economics (Kahneman, Thaler) to strategic decision-making — is one of the fastest-growing research streams in strategy. The Cognitive School provided the foundation. De-biasing strategy processes, structured dissent, and pre-mortem analysis are practical applications.",
+      "pApproaches": {
+        "plan": {
+          "emphasis": 2,
+          "title": "Bounded Rationality Limits Planning",
+          "corePhilosophy": "Strategists cannot be fully rational planners — cognitive limits mean plans reflect mental models and biases as much as objective reality",
+          "keyBelief": "Planning processes are shaped by how strategists perceive and filter information; awareness of these cognitive limits is a prerequisite for better planning",
+          "approach": "Recognizes cognitive biases in planning processes; advocates surfacing and challenging the mental models underlying strategic choices",
+          "toolsAndMethods": [
+            "Cognitive mapping of assumptions",
+            "Assumption-surfacing and testing",
+            "Scenario planning to challenge dominant mental models",
+            "Pre-mortem analysis to counter optimism bias",
+            "Devil's advocate and red team exercises"
+          ],
+          "processDescription": "Cognitive School treats planning as a process that is inevitably filtered through human cognition. Rather than assuming planners can be objective, it examines how mental models, cognitive biases (confirmation bias, anchoring, escalation of commitment) and bounded rationality shape what gets into the plan and what gets left out. The goal is not to eliminate cognitive limits — that is impossible — but to surface and challenge them.",
+          "keyQuestions": [
+            "What assumptions underlie our strategic plan, and where do they come from?",
+            "Which cognitive biases are most likely distorting our analysis?",
+            "Whose mental model dominates our planning process, and what does it exclude?",
+            "What would we need to believe for an alternative strategy to make sense?",
+            "How can we design a planning process that actively surfaces disconfirming information?"
+          ],
+          "realWorldExample": "Robert McNamara's systematic planning during the Vietnam War failed partly because planners' mental models filtered out disconfirming information. Body counts were measured because they were quantifiable, not because they were strategically meaningful — a classic case of planning shaped by cognitive convenience.",
+          "strengths": [
+            "Makes visible the cognitive assumptions that other schools take for granted",
+            "Encourages epistemic humility among strategists",
+            "Provides tools for stress-testing strategic assumptions",
+            "Explains why rational planning often produces poor outcomes"
+          ],
+          "limitations": [
+            "Can become paralysing — awareness of bias does not automatically correct it",
+            "Difficult to translate cognitive insights into actionable planning guidance",
+            "Risk of over-psychologising strategy and underweighting structural factors"
+          ],
+          "modernRelevance": "Behavioural strategy — applying insights from psychology and behavioural economics to strategic decision-making — is one of the fastest-growing fields in strategy research. Cognitive School laid the foundations."
+        },
+        "pattern": {
+          "emphasis": 2,
+          "title": "Patterns Reflect Cognitive Schemas",
+          "corePhilosophy": "Strategic patterns emerge as much from the dominant cognitive schemas of key decision-makers as from deliberate strategic intent or environmental selection",
+          "keyBelief": "What looks like a strategic pattern may be the unconscious projection of a mental model onto organizational behavior — recognizing this is the first step to strategic renewal",
+          "approach": "Studies how cognitive maps create self-reinforcing patterns; examines when consistency reflects genuine strategic wisdom and when it reflects cognitive lock-in",
+          "toolsAndMethods": [
+            "Historical pattern analysis with cognitive lens",
+            "Identification of dominant logic (Prahalad & Bettis)",
+            "Cognitive map elicitation from senior leaders",
+            "Analysis of strategic blind spots and ignored signals",
+            "Organizational unlearning practices"
+          ],
+          "processDescription": "The Cognitive School observes that organizations develop a 'dominant logic' — a cognitive schema held by senior managers that filters incoming information and channels decisions into consistent patterns. This produces strategic coherence, but also strategic inertia. IBM's consistent focus on mainframes, Kodak's commitment to film chemistry — these patterns reflected cognitive schemas, not just rational choices.",
+          "keyQuestions": [
+            "What is our organization's dominant logic, and where did it come from?",
+            "Which strategic patterns reflect genuine wisdom versus cognitive habit?",
+            "What signals are we systematically ignoring because they don't fit our mental model?",
+            "How would an outsider describe the cognitive map that drives our strategic patterns?",
+            "What would it take to unlearn a deeply embedded strategic pattern?"
+          ],
+          "realWorldExample": "IBM's consistent mainframe focus throughout the 1970s and 80s was a cognitive pattern that nearly proved fatal when the PC paradigm shifted. Senior leaders' mental model — 'computing means large machines, enterprise customers, and IBM salesforces' — filtered out signals that personal computing represented a different logic entirely.",
+          "strengths": [
+            "Explains persistence of strategic patterns beyond their useful life",
+            "Identifies why organizations are slow to respond to paradigm shifts",
+            "Links individual cognition to organizational-level strategic behavior"
+          ],
+          "limitations": [
+            "Less prescriptive than other schools — identifies problems without clear solutions",
+            "Cognitive patterns are difficult to map objectively",
+            "Dominant logic concept can become unfalsifiable post-hoc explanation"
+          ],
+          "modernRelevance": "Digital transformation failures are often cognitive failures — incumbent firms see new technologies through old mental models. The Cognitive School provides the theoretical vocabulary for diagnosing this."
+        },
+        "position": {
+          "emphasis": 2,
+          "title": "Positioning is Perceptually Constructed",
+          "corePhilosophy": "Market positions are not objectively determined — they are constructed through the cognitive maps of strategists who perceive different opportunities and threats from the same environment",
+          "keyBelief": "Two strategists analysing the same market will perceive different strategic positions because their mental models filter and frame environmental signals differently",
+          "approach": "Examines how cognitive frames shape competitive perception; focuses on how broadening or reframing mental models can reveal positions invisible to competitors with narrower schemas",
+          "toolsAndMethods": [
+            "Competitive perception mapping",
+            "Assumption reversal (what if our industry logic is wrong?)",
+            "Analogical reasoning from other industries",
+            "Cognitive reframing techniques",
+            "Enactment analysis (Weick) — how do we create the environments we then perceive?"
+          ],
+          "processDescription": "For the Cognitive School, competitive positioning is partly a cognitive act. Organizations enact their environments — they do not simply discover pre-existing market positions but construct them through the lens of their mental models. This explains why breakthrough positioning often comes from outsiders or from cognitive reframing: someone perceived an opportunity that incumbents' dominant logic made invisible.",
+          "keyQuestions": [
+            "What competitive positions are invisible to us because of our mental model?",
+            "How does our cognitive frame constrain our view of available strategic positions?",
+            "What would we need to unlearn to see a radically different competitive position?",
+            "How are we enacting — rather than simply discovering — our market environment?",
+            "Which of our 'industry facts' are actually cognitive constructions?"
+          ],
+          "realWorldExample": "When Netflix entered the DVD market, Blockbuster executives' cognitive frame ('retail entertainment is our core, late fees are a feature') prevented them from perceiving the streaming threat as a strategic position Netflix could occupy. Netflix's founders had no such frame and saw the position clearly.",
+          "strengths": [
+            "Explains why smart incumbents miss obvious strategic positions",
+            "Highlights cognitive prerequisites for innovation and disruption",
+            "Connects perception, enactment, and strategic opportunity"
+          ],
+          "limitations": [
+            "Difficult to operationalise — how do you map cognitive positions systematically?",
+            "Can overemphasise cognition relative to structural market factors",
+            "Risk of using cognitive explanation as a catch-all for strategic failure"
+          ],
+          "modernRelevance": "Platform business models, ecosystem strategies, and blue ocean thinking all involve cognitive reframing of competitive space — seeing positions that conventional industry logic renders invisible."
+        },
+        "perspective": {
+          "emphasis": 5,
+          "title": "Strategy as Cognitive Map",
+          "corePhilosophy": "Strategy is fundamentally a perspective — the collective cognitive map through which an organization perceives its world, interprets signals, and makes decisions",
+          "keyBelief": "To change strategy is to change how people think; cognitive transformation must precede and accompany strategic transformation, not follow it",
+          "approach": "Maps the dominant cognitive schemas in the organization; identifies biases, blind spots, and limiting beliefs; works to expand, reframe or replace the dominant strategic perspective",
+          "toolsAndMethods": [
+            "Cognitive map elicitation and visualisation",
+            "Mental model workshops",
+            "Reframing and analogical reasoning",
+            "Sense-making frameworks (Weick)",
+            "Organisational storytelling analysis",
+            "Paradigm analysis (Johnson's cultural web)"
+          ],
+          "processDescription": "The Cognitive School places perspective at the centre of strategy. Strategy is not a plan that reflects a perspective — it IS the perspective. The cognitive maps of senior leaders become the organization's strategic worldview, shaping what information is attended to, what is dismissed, what options are even conceivable. Changing strategy therefore requires changing mental models, which is among the most difficult things organizations attempt.",
+          "keyQuestions": [
+            "What is the cognitive map that drives our strategic thinking?",
+            "Which aspects of our perspective are strengths — and which are limitations?",
+            "How did our current strategic perspective develop, and when might it have been formed?",
+            "What would a fundamentally different strategic perspective look like for our organization?",
+            "How do we surface and challenge the assumptions embedded in our perspective without creating paralysis?"
+          ],
+          "realWorldExample": "Steve Jobs' cognitive framework — 'the intersection of technology and liberal arts' — was not a positioning statement or a plan. It was a perspective that structured everything Apple did: what products to build, what to reject, how to evaluate trade-offs, what 'good' looked like. The perspective itself was the strategy.",
+          "strengths": [
+            "Explains the deep persistence of strategic direction even through leadership changes",
+            "Provides a framework for understanding why strategy is so difficult to change",
+            "Recognises that strategy is ultimately a human cognitive phenomenon",
+            "Bridges individual psychology and organizational behavior"
+          ],
+          "limitations": [
+            "Risk of cognitive determinism — overstating the power of mental models relative to structural constraints",
+            "Difficult to change deeply embedded cognitive perspectives intentionally",
+            "Limited prescriptive guidance beyond 'become more aware of your biases'"
+          ],
+          "modernRelevance": "The Cognitive School anticipates modern interest in organizational mindset, growth vs fixed mindsets, and the role of leadership cognition in digital transformation. It remains the most psychologically sophisticated of the ten schools."
+        },
+        "ploy": {
+          "emphasis": 1,
+          "title": "Deception Runs Counter to Cognitive Clarity",
+          "corePhilosophy": "The Cognitive School has little interest in competitive deception — its focus is on how minds construct strategic reality, including the self-deception embedded in cognitive bias",
+          "keyBelief": "The most consequential form of 'deception' in strategy is self-deception — the ways cognitive biases lead strategists to deceive themselves about the true nature of their situation",
+          "approach": "Redirects the ploy question inward: rather than asking how to deceive competitors, asks how to reduce the self-deception that cognitive biases produce",
+          "toolsAndMethods": [
+            "Bias identification and mitigation",
+            "Pre-mortem analysis",
+            "Devil's advocate processes",
+            "Structured dissent mechanisms",
+            "Blind spot mapping"
+          ],
+          "processDescription": "The Cognitive School does not ignore competitive dynamics, but it approaches competitive moves through a cognitive rather than a tactical lens. Where a Power School strategist asks 'how can we signal a false threat?', a Cognitive School strategist asks 'what cognitive biases might cause us to misread competitor signals?' The emphasis is on epistemic accuracy, not competitive misdirection.",
+          "keyQuestions": [
+            "Are we deceiving ourselves about the strength of our competitive position?",
+            "What cognitive biases might cause us to misinterpret competitor signals?",
+            "How might our own overconfidence be leading us into strategic vulnerability?",
+            "Are our competitive responses driven by evidence or by cognitive shortcuts?"
+          ],
+          "realWorldExample": "The failure of established automakers to take Tesla seriously in the 2010s was less about deliberate deception and more about cognitive self-deception — their mental models of 'what a car company is' made it impossible to perceive a software-first competitor as a genuine threat until it was very large.",
+          "strengths": [
+            "Redirects ploy thinking toward the more common problem of self-deception",
+            "Provides tools for improving strategic intelligence quality",
+            "Encourages epistemic humility in competitive analysis"
+          ],
+          "limitations": [
+            "Underweights the real competitive value of misdirection and signalling in some industries",
+            "Offers no guidance for industries where game-theoretic signalling is central to competitive dynamics"
+          ],
+          "modernRelevance": "In an era of information overload and algorithmic manipulation, understanding how cognitive biases shape strategic perception is at least as important as mastering competitive deception."
+        }
+      },
+      "keyText": "March, James G. & Cyert, Richard M. — A Behavioral Theory of the Firm (1963)",
+      "historicalContext": "The Cognitive School emerged in the 1980s-90s as strategy researchers began applying insights from cognitive psychology to strategic decision-making. It responded to the idealized rationality assumed by the prescriptive schools. Simon's bounded rationality (1947), March and Cyert's behavioral theory of the firm (1963), and later Kahneman and Tversky's work on cognitive biases provided the intellectual foundation. The school asks: if strategy is formed by human minds, how do human minds actually work?",
+      "paradoxPositions": {
+        "thinking": {
+          "pole": "both",
+          "note": "Studies both analytical and intuitive reasoning; reveals limits of both through cognitive bias research"
+        },
+        "formation": {
+          "pole": "right",
+          "note": "Cognitive limits mean fully deliberate strategy is impossible; bounded rationality produces emergent elements"
+        },
+        "response": {
+          "pole": "both",
+          "note": "Managers believe they have choice (voluntarism) but cognitive frames constrain what they perceive as possible"
+        },
+        "industrial": {
+          "pole": "right",
+          "note": "Strategic positions are cognitively constructed, not objectively determined — closer to inside-out"
+        }
+      },
+      "tensionsWith": [
+        {
+          "school": "planning",
+          "tension": "Planning assumes formal procedures can harness rational analysis; Cognitive shows that planners are subject to the same cognitive biases as anyone else — systematic procedure does not produce systematic thought."
+        },
+        {
+          "school": "positioning",
+          "tension": "Positioning assumes industry analysis produces objective strategic insight; Cognitive shows that market positions are cognitively constructed — strategists see different industries when they look at the same data."
+        }
+      ]
     },
     {
       "id": "learning",
@@ -1018,7 +1381,7 @@
       "shortName": "Learning",
       "group": "Descriptive",
       "description": "Strategy as emergent learning: collective experimentation, adaptation, and incremental discovery rather than grand planning or visionary leaps.",
-      "longDescription": "The Learning School recognizes that in complex, unpredictable environments, the most effective strategies often emerge through organizational learning rather than top-down planning. Like scientists conducting experiments, organizations develop strategy through small steps, continuous experimentation, and rapid learning from both successes and failures. This school emphasizes that everyone in the organization can contribute to strategy formation, not just senior managers. Strategic learning happens at the intersection of thought and action, where organizations discover what works through doing rather than extensive prior analysis.",
+      "longDescription": "The Learning School recognizes that in complex, unpredictable environments, the most effective strategies often emerge through organizational learning rather than top-down planning. Its intellectual foundation spans James Brian Quinn's *logical incrementalism* — the observation that effective senior managers in large organizations do not implement grand plans but manage strategy through a consciously managed series of incremental steps — and Mintzberg's distinction between *intended* and *emergent* strategy.\n\nIkujiro Nonaka's work on knowledge creation added a critical dimension: strategy as the conversion of tacit knowledge (held by individuals and communities through practice) into explicit organizational learning. Chris Argyris's *double-loop learning* distinguished between organizations that correct errors within existing assumptions (single-loop) and those that question the assumptions themselves (double-loop) — the latter producing genuine strategic learning.\n\nHonda's US motorcycle entry (1959) is the school's canonical example: the official strategy (large bikes) failed; the emergent strategy (the Supercub, which Honda staff were riding themselves) succeeded. The strategic insight came not from analysis but from learning. The school's challenge is direction: emergent strategy without leadership intention can produce strategic drift.",
       "keyFigures": [
         "James Brian Quinn",
         "Henry Mintzberg",
@@ -1028,11 +1391,11 @@
       "realWorldExample": "3M's innovation strategy exemplifies the Learning School - allowing employees to spend 15% of their time on experimental projects, learning from failures, and scaling successful innovations.",
       "whenToUse": "Most effective in complex, rapidly changing environments where prediction is difficult and learning from experience is crucial.",
       "coreBeliefs": [
-        "Strategy emerges through organizational learning and adaptation",
-        "Everyone in the organization can be a strategist",
-        "Experimentation and 'small steps' are more effective than grand plans",
-        "Learning happens at the intersection of thought and action",
-        "Strategic flexibility is more important than strategic planning"
+        "Strategy emerges through organizational learning rather than top-down formulation",
+        "Realized strategy is always a blend of intended and emergent elements (Mintzberg & Waters)",
+        "Logical incrementalism (Quinn): effective strategy unfolds through conscious management of small steps",
+        "Double-loop learning (Argyris): strategic learning requires questioning assumptions, not just correcting errors",
+        "Tacit knowledge (Nonaka) held by front-line members contains strategic intelligence that planning processes miss"
       ],
       "strengths": [
         "Promotes organizational learning and continuous improvement",
@@ -1055,7 +1418,220 @@
         4,
         2
       ],
-      "modernRelevance": "Extremely relevant in today's fast-paced, uncertain business environment where agility and continuous learning are competitive advantages."
+      "modernRelevance": "The Learning School's insights are foundational to agile strategy, lean startup methodology (validated learning, pivot), and OKR frameworks. In fast-moving environments where prediction is impossible, the ability to learn and adapt is itself the competitive advantage.",
+      "pApproaches": {
+        "plan": {
+          "emphasis": 2,
+          "title": "Plans as Provisional Hypotheses",
+          "corePhilosophy": "Plans are starting hypotheses to be tested and revised through experience, not blueprints to be executed — effective strategy unfolds through consciously managed learning, not grand design",
+          "keyBelief": "Quinn's logical incrementalism: the most effective strategists do not implement comprehensive plans but manage an incremental process of commitment and learning toward a broadly sensed strategic direction",
+          "approach": "Treats planning as hypothesis-generation; builds in mechanisms for rapid feedback, revision, and learning; resists locking in strategic commitments before enough has been learned",
+          "toolsAndMethods": [
+            "Logical incrementalism (Quinn)",
+            "Probe-and-learn strategies",
+            "Strategic experimentation with fast feedback loops",
+            "Parallel probes and option preservation",
+            "After-action reviews and structured learning"
+          ],
+          "processDescription": "The Learning School is deeply sceptical of comprehensive planning. Quinn's research showed that effective strategists in large organisations actually managed strategy through a process of incremental steps — building awareness, testing political feasibility, building coalitions, and committing resources in stages. What appeared from the outside as a grand plan was actually emergent incrementalism, refined through continuous learning.",
+          "keyQuestions": [
+            "What are we treating as fixed commitments that should remain open hypotheses?",
+            "How quickly can we learn whether our strategic direction is working?",
+            "What mechanisms do we have to capture and act on strategic learning?",
+            "Are we confusing a plan that sounds good with a strategy that works?",
+            "What small experiments could we run to test our strategic assumptions before full commitment?"
+          ],
+          "realWorldExample": "Honda's entry into the US motorcycle market (1959-65) is the Learning School's canonical example. The official strategy (large bikes) failed; the emergent strategy (small Supercubs, which Honda staff were riding themselves) succeeded. The strategic insight came from learning, not planning.",
+          "strengths": [
+            "Produces strategies that are grounded in real-world feedback rather than analytic assumptions",
+            "Preserves strategic flexibility in uncertain environments",
+            "Captures strategic intelligence that formal planning processes ignore",
+            "Explains how strategies actually form in complex organisations"
+          ],
+          "limitations": [
+            "Can produce strategic drift without sufficient direction",
+            "Difficult to communicate or coordinate incrementalist strategies across large organisations",
+            "May underinvest in bold moves that require upfront commitment"
+          ],
+          "modernRelevance": "Agile strategy, lean startup methodology, and OKR frameworks are all operationalisations of Learning School thinking applied to contemporary organisational contexts."
+        },
+        "pattern": {
+          "emphasis": 5,
+          "title": "Emergent Strategy as Realized Pattern",
+          "corePhilosophy": "Strategy is a pattern in a stream of decisions — it is recognized retrospectively in consistent behavior, not declared in advance; the most important strategic insight is learning to recognize and amplify emerging patterns early",
+          "keyBelief": "Mintzberg & Waters (1985): realized strategy is always a blend of intended and emergent elements — purely deliberate or purely emergent strategy is pathological; the art is managing the blend",
+          "approach": "Tracks actual decision patterns over time to identify emerging strategic logic; creates organizational conditions in which front-line learning can percolate upward and influence direction",
+          "toolsAndMethods": [
+            "Strategic pattern mapping (Mintzberg)",
+            "Emergent strategy identification",
+            "Strategic umbrella frameworks (broad intent, local adaptation)",
+            "Learning from strategic outliers and anomalies",
+            "Bottom-up strategy surfacing processes"
+          ],
+          "processDescription": "The Learning School's core contribution is the concept of emergent strategy. Rather than assuming strategy flows from intent to action, Mintzberg showed that many of the most successful strategies were never intended — they emerged from consistent patterns of decisions made at lower levels of the organisation and only later recognized and amplified by leadership. Strategy formation is a process of learning, not just planning. The strategist's job is to recognize patterns in the organizational stream of decisions and nurture the promising ones.",
+          "keyQuestions": [
+            "What strategic patterns are actually emerging in our organization's stream of decisions?",
+            "Which of these emerging patterns should we amplify and which should we redirect?",
+            "Are we harvesting the strategic learning that exists at the front lines of our organization?",
+            "What is the ratio of intended to emergent strategy in our current strategic position?",
+            "What mechanisms allow strategic learning to flow upward and influence direction?"
+          ],
+          "realWorldExample": "3M's famous 15% time policy was a structural mechanism to allow emergent strategic patterns to develop. Post-it Notes — 3M's most iconic product — emerged from an engineer's solution to a failed adhesive experiment. No plan produced it; the organizational conditions for emergent strategy did.",
+          "strengths": [
+            "Produces strategies adapted to actual conditions rather than assumed ones",
+            "Harvests strategic intelligence distributed throughout the organization",
+            "Explains how organizations successfully navigate genuine uncertainty",
+            "Produces adaptive strategies in dynamic environments"
+          ],
+          "limitations": [
+            "Without direction, emergent strategy can produce strategic drift or incoherence",
+            "Difficult to manage in organisations requiring rapid, coordinated strategic shifts",
+            "May be misused to justify lack of strategic leadership as 'emergent'"
+          ],
+          "modernRelevance": "The Learning School's insights are foundational to contemporary thinking about strategy in uncertain environments, from Taleb's antifragility to the agile movement's embrace of emergence over planning."
+        },
+        "position": {
+          "emphasis": 2,
+          "title": "Position Discovered Through Experimentation",
+          "corePhilosophy": "Market positions are not analytically determined but discovered through a process of strategic experimentation, feedback, and learning from what the market actually rewards",
+          "keyBelief": "Organizations find their most defensible positions through an evolutionary process — variation (trying different approaches), selection (market feedback), and retention (doubling down on what works)",
+          "approach": "Uses probe-and-learn strategies to discover viable positions before committing; reads market feedback as strategic signal rather than treating industry analysis as deterministic",
+          "toolsAndMethods": [
+            "Market experimentation and rapid prototyping",
+            "Customer learning (listening to lead users)",
+            "Competitive pattern monitoring",
+            "Real options thinking (preserve optionality)",
+            "Minimum viable positioning"
+          ],
+          "processDescription": "Where the Positioning School treats market position as the outcome of systematic analysis, the Learning School treats it as the outcome of an evolutionary search process. Organisations test approaches, observe what market conditions select for, and iteratively refine their position based on what they learn. The Honda story is again exemplary: the position in small motorcycles was discovered, not designed.",
+          "keyQuestions": [
+            "What positions have we discovered through market feedback versus assumed through analysis?",
+            "Which of our current probes into new positions are generating the strongest learning?",
+            "Are we clinging to an analytically attractive position that the market has not confirmed?",
+            "What would it take to exit a position that analysis says should work but experience says doesn't?",
+            "How quickly can we pivot our positioning based on new market learning?"
+          ],
+          "realWorldExample": "Amazon's progression from online bookstore to AWS cloud provider illustrates emergent positioning. Amazon did not plan to become the world's largest cloud provider — the position emerged from internal needs (reliable, scalable computing infrastructure) and the learning that these capabilities had external market value.",
+          "strengths": [
+            "Produces positions grounded in actual market feedback rather than analytic assumptions",
+            "Preserves strategic flexibility during the search for viable positioning",
+            "Captures positioning opportunities that analysis-first approaches miss"
+          ],
+          "limitations": [
+            "May be too slow for markets where early positioning commitment creates lock-in advantages",
+            "Without sufficient analytical discipline, experimentation can become unfocused drift",
+            "Difficult to resource multiple simultaneous positioning experiments in capital-intensive industries"
+          ],
+          "modernRelevance": "Lean startup methodology (validated learning, pivoting) is the Learning School's approach to positioning applied to new ventures and new product development."
+        },
+        "perspective": {
+          "emphasis": 4,
+          "title": "Perspective Evolves Through Collective Learning",
+          "corePhilosophy": "Organizational perspective is not fixed by leadership decree or cultural inheritance — it evolves as the organization accumulates learning from strategic experience and adjusts its worldview accordingly",
+          "keyBelief": "Nonaka's knowledge creation: organizational perspective deepens and transforms as tacit knowledge (learned through doing) becomes explicit and is shared across the organization, generating new strategic understanding",
+          "approach": "Creates conditions for organizational learning to accumulate into strategic perspective — knowledge creation processes, communities of practice, after-action reviews, and strategic learning forums",
+          "toolsAndMethods": [
+            "Nonaka's SECI model (Socialisation, Externalisation, Combination, Internalisation)",
+            "Communities of practice (Wenger)",
+            "After-action reviews and strategic post-mortems",
+            "Strategic learning forums",
+            "Tacit knowledge harvesting",
+            "Double-loop learning (Argyris)"
+          ],
+          "processDescription": "The Learning School sees organizational perspective as the accumulated product of organizational learning. The organization's worldview deepens and shifts as it learns from strategic experience — what Argyris called double-loop learning, where the organization not only corrects errors but questions the underlying assumptions that produced them. Nonaka's knowledge creation theory describes how tacit knowledge held by individuals and communities becomes explicit organizational perspective.",
+          "keyQuestions": [
+            "How does our organization convert strategic experience into improved perspective?",
+            "What mechanisms do we have for double-loop learning — questioning our assumptions, not just our actions?",
+            "Where is the most valuable tacit strategic knowledge in our organization, and how do we surface it?",
+            "How does our organizational perspective compare to what we have actually learned from experience?",
+            "What would genuinely new strategic perspective look like for our organization?"
+          ],
+          "realWorldExample": "Toyota's perspective on manufacturing — the Toyota Production System and its philosophy of kaizen (continuous improvement) — was not designed in advance. It accumulated over decades through systematic learning from production experience. The perspective is inseparable from the learning process that produced it.",
+          "strengths": [
+            "Produces perspectives grounded in organisational experience rather than leadership ideology",
+            "Creates durable strategic perspectives because they are earned through learning",
+            "Enables genuine organisational wisdom to accumulate over time"
+          ],
+          "limitations": [
+            "Perspective change through learning is slow — may be too slow for rapidly shifting environments",
+            "Learning-based perspective change is difficult to direct or accelerate",
+            "Risk that accumulated perspective becomes as rigid as any other form of strategic lock-in"
+          ],
+          "modernRelevance": "Learning organisations, knowledge management, and organisational resilience are all expressions of the Learning School's insight that durable strategic perspective must be earned through experience."
+        },
+        "ploy": {
+          "emphasis": 2,
+          "title": "Tactical Learning Over Competitive Deception",
+          "corePhilosophy": "Tactical moves are primarily opportunities to learn — experiments that generate strategic intelligence — rather than deceptions designed to outwit competitors",
+          "keyBelief": "A failed competitive move that generates genuine learning is more strategically valuable than a successful deception that teaches the organization nothing",
+          "approach": "Frames competitive tactics as learning experiments; designs moves to maximise strategic intelligence gathering as well as competitive impact; avoids deceptive tactics that corrupt the feedback signal",
+          "toolsAndMethods": [
+            "Tactical experimentation with learning objectives",
+            "Competitive intelligence through market probing",
+            "After-action reviews of competitive moves",
+            "Parallel tactical options to generate comparative learning",
+            "Rapid response cycles to competitive feedback"
+          ],
+          "processDescription": "The Learning School acknowledges tactical competitive moves but subordinates them to learning. The primary question about any competitive tactic is not 'will it deceive our competitors?' but 'what will we learn from it?' Deceptive tactics are especially problematic because they corrupt the feedback loop — when competitors react to a false signal, the reaction is not a reliable guide to the genuine competitive landscape.",
+          "keyQuestions": [
+            "What will we learn from this competitive move regardless of whether it succeeds?",
+            "Are we designing our competitive tactics to generate maximum strategic learning?",
+            "Is this tactical move generating genuine market intelligence or just competitive noise?",
+            "Are we confusing tactical cleverness with strategic learning?",
+            "What feedback mechanisms will tell us whether this tactical approach is working?"
+          ],
+          "realWorldExample": "Google's famous 'launch and iterate' approach to products — releasing imperfect versions to real users to generate learning — is a Learning School approach to market tactics. The objective is intelligence about what users actually want, not strategic deception of competitors.",
+          "strengths": [
+            "Produces competitive tactics that generate durable strategic intelligence",
+            "Avoids the feedback corruption that deceptive tactics produce",
+            "Creates a continuous improvement cycle in competitive approach"
+          ],
+          "limitations": [
+            "In industries with strong first-mover advantages, learning-oriented tactics may be too slow",
+            "May underweight the genuine value of preemption and competitive signalling",
+            "Probe-and-learn tactics can signal strategic uncertainty to competitors"
+          ],
+          "modernRelevance": "A/B testing, growth hacking, and competitive intelligence disciplines all operationalise the Learning School's approach to tactical learning over pure competitive deception."
+        }
+      },
+      "keyText": "Mintzberg, Henry & Waters, James — \"Of Strategies, Deliberate and Emergent\" (Strategic Management Journal, 1985)",
+      "historicalContext": "The Learning School emerged in the late 1970s and crystallized in the 1980s as a direct empirical challenge to the prescriptive schools. Quinn's research on logical incrementalism (1980) showed that effective senior managers did not implement grand plans — they managed strategy through small, conscious steps. Mintzberg's empirical work on managerial behavior showed that strategies rarely unfolded as planned. The Honda case — popularized by Pascale (1984) — became the paradigmatic example of emergent strategy outperforming deliberate strategy.",
+      "paradoxPositions": {
+        "thinking": {
+          "pole": "right",
+          "note": "Strategic insight comes from generative learning, not analytical deduction"
+        },
+        "formation": {
+          "pole": "right",
+          "note": "The definitive emergent strategy school — strategy emerges from learning, not deliberate formulation"
+        },
+        "change": {
+          "pole": "right",
+          "note": "Continuous learning and evolutionary adaptation over revolutionary transformation"
+        },
+        "industrial": {
+          "pole": "right",
+          "note": "Positions are discovered through experimentation, not analytically selected — inside-out"
+        },
+        "organizational": {
+          "pole": "right",
+          "note": "Learning organizations require autonomy and space for emergence — closer to the chaos pole"
+        }
+      },
+      "tensionsWith": [
+        {
+          "school": "design",
+          "tension": "Design insists strategy must be formed before action; Learning insists strategy worth having is discovered through action — the most important strategic insights come after the plan has met reality."
+        },
+        {
+          "school": "planning",
+          "tension": "Planning produces elaborate plans that experience will revise anyway; Learning argues that the investment in planning would be better spent building adaptive organizational capacity."
+        },
+        {
+          "school": "power",
+          "tension": "Learning treats strategy as an organizational learning process; Power treats it as a political process — what emerges is determined by politics as much as by what has been learned."
+        }
+      ]
     },
     {
       "id": "power",
@@ -1063,7 +1639,7 @@
       "shortName": "Power",
       "group": "Descriptive",
       "description": "Strategy as political negotiation: bargaining, coalition-building, and power plays among competing interests both inside and outside the organization.",
-      "longDescription": "The Power School acknowledges the political reality of organizational life - strategy formation involves negotiation among competing interests, both within the organization (micro power) and between the organization and external stakeholders (macro power). Like political scientists studying governance, this school recognizes that organizations are coalitions of individuals and groups with different interests, and strategy emerges from the bargaining processes among these stakeholders. Power, influence, and political skill often matter more than analytical prowess in determining strategic outcomes.",
+      "longDescription": "The Power School acknowledges the political reality of organizational and competitive life: strategy formation involves negotiation among competing interests with different goals, different information, and different bases of power. Graham Allison's analysis of the Cuban Missile Crisis showed that US government decisions could not be explained by a unitary rational actor model — they reflected bureaucratic routines and political bargaining among powerful actors with conflicting interests. The same applies to corporate strategy.\n\nThe school distinguishes *micro power* (internal organizational politics — the processes by which strategy is negotiated among departments, functions, and management levels) from *macro power* (the organization's relationships with external stakeholders — suppliers, customers, regulators, competitors, and governments). Jeffrey Pfeffer and Gerald Salancik's *resource dependence theory* provides the micro-level foundation: organizational actors gain power by controlling resources on which others depend, and strategy is partly about managing these dependencies.\n\nAndrew Pettigrew's longitudinal research demonstrated that strategic change is as much a political process as an analytical one: new strategies require new political coalitions, and the conditions for those coalitions must be created before the strategy can be implemented.",
       "keyFigures": [
         "Graham Allison",
         "Jeffrey Pfeffer",
@@ -1095,12 +1671,220 @@
       ],
       "values": [
         3,
-        3,
         4,
+        2,
         3,
         5
       ],
-      "modernRelevance": "Increasingly important as organizations operate in complex stakeholder environments and global partnerships requiring sophisticated political navigation."
+      "modernRelevance": "Stakeholder capitalism, ESG governance, and geopolitical risk have made Power School capabilities central to corporate strategy. Non-market strategy — managing the political, regulatory, and social environments that constrain competitive action — is now a recognized strategic discipline.",
+      "pApproaches": {
+        "plan": {
+          "emphasis": 3,
+          "title": "Plans as Negotiated Political Documents",
+          "corePhilosophy": "Strategic plans are the outcome of political negotiation among competing interests — they reflect the balance of power at the planning table as much as analytical optimality",
+          "keyBelief": "What gets into a strategic plan depends substantially on who had power at the table; the plan is a political settlement as much as a strategic blueprint",
+          "approach": "Analyses the political process that produces plans; maps stakeholder interests and coalitions; seeks plans that are politically robust — buildable coalitions — rather than analytically optimal but politically fragile",
+          "toolsAndMethods": [
+            "Stakeholder power mapping",
+            "Coalition building analysis",
+            "Political feasibility assessment",
+            "Negotiation and bargaining strategy",
+            "Allison's governmental politics model",
+            "Pfeffer & Salancik's resource dependence analysis"
+          ],
+          "processDescription": "Power School planning begins with the recognition that organisations are political systems, not rational unitary actors. Allison's analysis of the Cuban Missile Crisis showed that US government decisions could not be explained by rational planning alone — they reflected bureaucratic routines and political bargaining among powerful actors with different interests and agendas. The same applies to corporate strategy: plans emerge from coalition politics as much as from analysis.",
+          "keyQuestions": [
+            "Which stakeholders have the power to block or undermine this strategic plan?",
+            "What political coalitions need to be assembled for this strategy to be implemented?",
+            "Which interests are not represented in our planning process and why?",
+            "What are the political side-payments required to secure commitment to this plan?",
+            "How robust is this plan to shifts in the internal power balance?"
+          ],
+          "realWorldExample": "The development of the Airbus A380 super-jumbo reflects Power School planning. The decision was as much a political settlement among European governments and national aerospace interests as it was a commercially rational strategic choice — a fact that contributed to the programme's commercial difficulties.",
+          "strengths": [
+            "Produces politically buildable strategies rather than analytically elegant but politically fragile ones",
+            "Surfaces the real decision-making process rather than the official rational narrative",
+            "Essential for strategy in contexts where multiple powerful stakeholders must be aligned"
+          ],
+          "limitations": [
+            "Political planning can produce lowest-common-denominator strategies",
+            "May underweight analytical rigor in favour of political palatability",
+            "Can legitimise poor strategic choices if the winning coalition is powerful but wrong"
+          ],
+          "modernRelevance": "Stakeholder capitalism, ESG governance, and multi-stakeholder strategy all require Power School planning capabilities — the ability to navigate complex political landscapes, not just optimise for shareholder value."
+        },
+        "pattern": {
+          "emphasis": 4,
+          "title": "Patterns Shaped by Political Dynamics",
+          "corePhilosophy": "Strategic patterns emerge substantially from recurring power dynamics, stable coalitions, and political processes within and around the organization — consistency in strategy often reflects consistency in power structure",
+          "keyBelief": "Stable strategic patterns are often the behavioural signature of stable power configurations; when power shifts, strategy shifts — and predicting strategic change means understanding power dynamics, not just market logic",
+          "approach": "Maps the power configurations that produce strategic patterns; identifies the political conditions for strategic stability and change; analyses how shifts in power coalitions drive strategic discontinuities",
+          "toolsAndMethods": [
+            "Power structure mapping over time",
+            "Political process analysis (Pettigrew)",
+            "Coalition stability assessment",
+            "Resource dependence pattern analysis",
+            "Longitudinal political history of strategy"
+          ],
+          "processDescription": "Pettigrew's longitudinal studies of strategic change at ICI showed that strategic patterns were far more persistent than market logic would predict — not because managers were irrational, but because the political conditions required for change did not exist. Strategic patterns persisted because the power configurations that produced them persisted. Pattern change required political change first.",
+          "keyQuestions": [
+            "Which power configurations are producing our current strategic patterns?",
+            "How stable are the political coalitions that support our strategic direction?",
+            "What political shifts would be required to alter our strategic patterns?",
+            "Are our strategic patterns the product of political stability rather than strategic optimality?",
+            "Which emerging power shifts foreshadow future changes in our strategic patterns?"
+          ],
+          "realWorldExample": "The decades-long strategic pattern of US airlines' hub-and-spoke routing reflected regulatory capture and political power as much as operational logic — the pattern was sustained partly because incumbent airlines had political power to shape the regulatory environment that made it optimal.",
+          "strengths": [
+            "Explains the persistence of strategic patterns that market logic would predict should change",
+            "Provides a framework for predicting strategic discontinuities from political shifts",
+            "Links internal organisational politics to strategic consistency or change"
+          ],
+          "limitations": [
+            "Risk of reducing all strategic patterns to political explanation, overlooking genuine strategic logic",
+            "Political pattern analysis is retrospective — less useful for prediction than for explanation",
+            "May produce cynicism about the possibility of genuinely strategic (as opposed to political) decisions"
+          ],
+          "modernRelevance": "Understanding how political dynamics in boards, C-suites, and regulatory environments shape strategic patterns is essential for corporate governance and activist shareholder engagement."
+        },
+        "position": {
+          "emphasis": 2,
+          "title": "Position Secondary to Political Legitimacy",
+          "corePhilosophy": "Market positioning is less important than managing the political landscape of stakeholders whose support or opposition shapes what strategic positions are accessible and sustainable",
+          "keyBelief": "Even the best competitive position is fragile if key stakeholders withdraw legitimacy, resources, or political support — sustainable competitive position requires political sustainability as a precondition",
+          "approach": "Analyses the political conditions for competitive positioning; maps the stakeholder support required to enter and sustain specific positions; incorporates political risk and legitimacy into positioning decisions",
+          "toolsAndMethods": [
+            "Political risk assessment for market positions",
+            "Legitimacy and institutional analysis",
+            "Stakeholder coalition mapping for positioning",
+            "Regulatory environment analysis",
+            "Pfeffer & Salancik: resource dependence and positioning"
+          ],
+          "processDescription": "The Power School does not dismiss competitive positioning but contextualises it within a political framework. Many apparent competitive choices are actually politically constrained — regulatory environments, government relationships, industry coalitions, and societal legitimacy all define the accessible space of competitive positions. A company may have the analytical capability to occupy a position that is politically inaccessible.",
+          "keyQuestions": [
+            "Which stakeholders control access to our most important competitive positions?",
+            "What political risks threaten our current market position?",
+            "Are there competitively attractive positions we cannot access because we lack political legitimacy?",
+            "What regulatory or political changes could undermine our current competitive position?",
+            "How dependent are we on specific political relationships to sustain our strategic position?"
+          ],
+          "realWorldExample": "Google's competitive position in online advertising depends substantially on political legitimacy — regulatory acceptance by antitrust authorities in Europe and the US. The Power School would analyse Google's lobbying, regulatory strategy, and political coalition building as integral to its competitive positioning, not as separate activities.",
+          "strengths": [
+            "Reveals the political conditions that enable or disable competitive positioning",
+            "Essential for regulated industries where political access shapes competitive space",
+            "Integrates non-market strategy with competitive positioning"
+          ],
+          "limitations": [
+            "Can overemphasise political constraints at the expense of genuine competitive differentiation",
+            "May produce risk-averse positioning that avoids politically exposed but strategically superior positions",
+            "Less applicable in markets with weak political dimensions"
+          ],
+          "modernRelevance": "Non-market strategy — managing the political, regulatory, and social environments that frame competitive positioning — is increasingly central to corporate strategy, particularly for large platform companies."
+        },
+        "perspective": {
+          "emphasis": 3,
+          "title": "Perspective as Political Construction",
+          "corePhilosophy": "Organizational perspective reflects the worldview of those with power — strategic perspective is not a neutral cognitive map but a politically shaped interpretation of the world that serves the interests of dominant coalitions",
+          "keyBelief": "To change organizational perspective is often to change the power structure; and conversely, when power shifts, perspective shifts — strategic perspective and political power are mutually constitutive",
+          "approach": "Analyses whose interests are embedded in the dominant strategic perspective; examines how alternative perspectives are marginalised; creates conditions for suppressed perspectives to surface",
+          "toolsAndMethods": [
+            "Stakeholder perspective analysis",
+            "Power-interest mapping",
+            "Critical discourse analysis of strategic narratives",
+            "Coalition analysis for perspective change",
+            "Inclusion of marginalised voices in strategy processes"
+          ],
+          "processDescription": "The Power School treats organisational perspective as politically produced. The strategic worldview that dominates an organisation — what counts as a threat or opportunity, what performance means, what the organisation is for — reflects the interests and mental models of those who have prevailed in political competition. Alternative perspectives exist but are suppressed or marginalised. Strategic change often requires perspective change, which in turn requires political change.",
+          "keyQuestions": [
+            "Whose interests are embedded in our dominant strategic perspective?",
+            "What alternative perspectives are marginalised in our organisation and why?",
+            "How does the current distribution of power shape what we are even able to see as strategic opportunities?",
+            "What would a genuinely different political coalition inside our organisation prioritise?",
+            "How can we create conditions for suppressed strategic perspectives to surface safely?"
+          ],
+          "realWorldExample": "The collapse of Enron reflected a dominant strategic perspective — 'mark-to-market accounting maximises shareholder value' — that served the interests of a powerful internal coalition. Alternative perspectives existed internally but were politically suppressed. The dominant perspective collapsed when the power coalition behind it collapsed.",
+          "strengths": [
+            "Reveals whose interests are encoded in apparently neutral strategic frameworks",
+            "Provides analytical tools for understanding organisational resistance to strategic change",
+            "Essential for understanding strategy in politically contested organisations"
+          ],
+          "limitations": [
+            "Risk of producing cynicism — treating all strategic perspectives as mere political constructions",
+            "Difficult to act constructively from this analysis without normative commitments",
+            "May underweight the possibility of genuinely shared strategic perspectives across political differences"
+          ],
+          "modernRelevance": "Stakeholder capitalism debates, board diversity, and ESG strategy all implicate Power School questions about whose perspectives shape the dominant strategic worldview."
+        },
+        "ploy": {
+          "emphasis": 5,
+          "title": "Strategy as Political Maneuver and Competitive Deception",
+          "corePhilosophy": "Strategic moves are fundamentally political — designed to build power, neutralise opposition, and create fait accompli conditions; competitive deception is a legitimate and important strategic instrument when used to shift power relations in the organisation's favour",
+          "keyBelief": "Mintzberg's narrowest definition of strategy — a specific maneuver to outwit an opponent — finds its natural home here; Power School treats deliberate misdirection, strategic signaling, and political maneuver as core strategic competencies",
+          "approach": "Designs competitive moves for their political and psychological effect on opponents, not just their direct market impact; uses signalling, threats, commitments, and coalition building as strategic weapons; maintains strategic ambiguity to deny opponents the information they need to respond effectively",
+          "toolsAndMethods": [
+            "Strategic signalling and commitment theory (Schelling)",
+            "Deterrence and preemption",
+            "Coalition disruption of competitor alliances",
+            "Political maneuver: co-optation, neutralisation, outflanking",
+            "Regulatory and political competition (non-market strategy)",
+            "Allison's governmental politics model applied to competitive strategy"
+          ],
+          "processDescription": "The Power School elevates competitive deception and political maneuver to strategic tools. Strategic signalling — announcing capacity expansions to deter competitor entry, filing patents to signal technological commitment, making public commitments to lock in beneficial political outcomes — are all Power School tactics. The goal is to shape the strategic landscape in the organisation's favour by influencing how competitors, regulators, and other stakeholders perceive and respond to its actions. Schelling's work on commitment and deterrence provides the theoretical foundation.",
+          "keyQuestions": [
+            "What signals can we send that will shape competitor behaviour in our favour?",
+            "Which competitor alliances can we disrupt through targeted political action?",
+            "How can we create political fait accompli conditions before opponents can organise a response?",
+            "What strategic ambiguity is worth maintaining to deny competitors intelligence about our intentions?",
+            "How can we use regulatory and political channels as competitive weapons?"
+          ],
+          "realWorldExample": "Intel's 'Intel Inside' campaign (early 1990s) was a Power School ploy of remarkable sophistication: by building brand recognition with end consumers, Intel shifted power away from PC manufacturers (who had previously been able to switch between chip suppliers) toward itself. The campaign was simultaneously a marketing move, a political maneuver against competitors, and a structural shift in the PC industry's power dynamics.",
+          "strengths": [
+            "Takes competitive dynamics seriously as a source of strategic insight",
+            "Provides tools for operating in highly competitive and politically charged environments",
+            "Recognises that competitive advantage is often built through maneuver and positioning, not just capability"
+          ],
+          "limitations": [
+            "Risk of escalating competitive dynamics into destructive rivalry",
+            "Deceptive tactics can damage trust and reputation if detected",
+            "Political maneuver can become an end in itself, disconnected from genuine value creation"
+          ],
+          "modernRelevance": "Platform competition, regulatory arbitrage, and geopolitical competition between firms operating across jurisdictions all require Power School ploy capabilities — the ability to compete politically and strategically simultaneously."
+        }
+      },
+      "keyText": "Allison, Graham T. — Essence of Decision: Explaining the Cuban Missile Crisis (1971)",
+      "historicalContext": "The Power School developed through the 1970s-80s as organizational scholars recognized that political dynamics had been systematically excluded from strategy theory. Allison's analysis of the Cuban Missile Crisis (1971) showed that governmental decisions could not be explained by rational actor models. Pfeffer and Salancik's resource dependence theory (1978) provided the micro- level foundation. Pettigrew's longitudinal studies (from 1973 onward) demonstrated that strategic change was as much a political process as an analytical one.",
+      "paradoxPositions": {
+        "thinking": {
+          "pole": "right",
+          "note": "Strategic decisions reflect political bargaining, not pure analytical reasoning"
+        },
+        "formation": {
+          "pole": "both",
+          "note": "Power School sees strategy formation as politically negotiated — neither fully deliberate nor fully emergent"
+        },
+        "network": {
+          "pole": "right",
+          "note": "Coalition-building, alliances, and macro power require cooperative relationships"
+        },
+        "response": {
+          "pole": "both",
+          "note": "Political actors exercise choice but within constraints shaped by power dependencies"
+        },
+        "locus": {
+          "pole": "left",
+          "note": "Political realities often favor business unit autonomy when units have different stakeholder environments"
+        }
+      },
+      "tensionsWith": [
+        {
+          "school": "cultural",
+          "tension": "Both reject rational design, but for different reasons: Power locates strategic direction in political dynamics among competing interests; Cultural locates it in shared beliefs and collective values. These can conflict — politically dominant interests may not share the organization's values."
+        },
+        {
+          "school": "design",
+          "tension": "Design assumes the CEO rationally designs strategy; Power argues the CEO is one political actor among many, whose plans require coalition support to be implemented."
+        }
+      ]
     },
     {
       "id": "cultural",
@@ -1108,21 +1892,21 @@
       "shortName": "Cultural",
       "group": "Descriptive",
       "description": "Strategy as cultural phenomenon: collective beliefs, shared values, and deeply embedded assumptions that guide organizational behavior and strategic choices.",
-      "longDescription": "The Cultural School views strategy formation as a deeply social process rooted in organizational culture. Like anthropologists studying societies, this school recognizes that strategy is influenced by the organization's shared beliefs, values, traditions, and collective assumptions about 'how we do things here.' Culture acts as both a resource (providing direction and motivation) and a constraint (filtering out options that don't 'fit'). Strategic change becomes a process of cultural evolution rather than rational redesign, requiring patience and sensitivity to deeply held organizational beliefs.",
+      "longDescription": "The Cultural School views strategy formation as a deeply social process rooted in organizational culture — the shared beliefs, values, traditions, and collective assumptions that define 'how we do things here.' Edgar Schein's model of organizational culture (artifacts, espoused values, and basic underlying assumptions) provides the school's analytical vocabulary: the deepest level of culture consists of taken-for-granted assumptions that members cannot easily articulate but that powerfully constrain strategic choice.\n\nGerry Johnson's *cultural web* operationalized this insight: an organization's strategy is embedded in and sustained by its stories, symbols, rituals, power structures, organizational structure, and control systems — all of which reinforce the dominant *organizational paradigm*. Strategic change that fails to address the cultural web fails entirely, because the new strategy cannot take root in soil prepared for the old one.\n\nThe school partly emerged from the challenge of explaining Japanese corporate success in the 1980s. Toyota's Production System — lean manufacturing, kaizen, respect for people — was not a strategy that could be copied by purchasing the tools; it was a cultural phenomenon that took decades to develop and is still imperfectly replicated. Andrew Pettigrew's work showed how culture shapes the political processes through which strategy is formed and resisted.",
       "keyFigures": [
         "Edgar Schein",
-        "Richard Pettigrew",
+        "Andrew Pettigrew",
         "Gerry Johnson"
       ],
       "originPeriod": "1980s",
       "realWorldExample": "Toyota's Production System demonstrates cultural strategy - a management philosophy deeply embedded in organizational culture that shapes every strategic and operational decision.",
       "whenToUse": "Critical for understanding strategy in organizations with strong cultures, during mergers and acquisitions, and when implementing major cultural changes.",
       "coreBeliefs": [
-        "Strategy is fundamentally rooted in organizational culture and shared beliefs",
-        "Culture acts as a powerful filter for strategic choice and change",
-        "Collective processes and social interaction shape strategic direction",
-        "Organizational traditions and history influence current strategic options",
-        "Sustainable strategy must be culturally authentic and consistent"
+        "Strategy is rooted in and sustained by organizational culture (Schein)",
+        "The cultural web (Johnson) — stories, symbols, rituals, power, structure, controls — shapes strategic options",
+        "The organizational paradigm filters what is perceived as a strategic opportunity or threat",
+        "Sustainable strategy must be culturally authentic — it cannot be grafted onto a hostile culture",
+        "Cultural change is a prerequisite for deep strategic change, not a consequence of it"
       ],
       "strengths": [
         "Emphasizes the crucial cultural dimension often overlooked in strategy",
@@ -1346,7 +2130,45 @@
           ],
           "modernRelevance": "Culture-consistent competitive approaches become important as stakeholders increasingly expect organizational behavior to align with stated values and cultural commitments."
         }
-      }
+      },
+      "keyText": "Schein, Edgar H. — Organizational Culture and Leadership (1985)",
+      "historicalContext": "The Cultural School emerged in the 1980s partly as an attempt to explain Japanese corporate success — Toyota, Sony, and Honda were outperforming Western competitors with strategies that didn't fit the analytical frameworks. Ouchi's Theory Z (1981) and Peters & Waterman's In Search of Excellence (1982) brought culture to mainstream management attention. Schein (1985), Pettigrew, and Johnson provided the academic foundations. The school argued that culture was not soft and peripheral but central and determinative.",
+      "paradoxPositions": {
+        "thinking": {
+          "pole": "right",
+          "note": "Strategic insight comes from collective cultural sensemaking, not formal analysis"
+        },
+        "formation": {
+          "pole": "right",
+          "note": "Strategy emerges from cultural processes and shared beliefs over time"
+        },
+        "change": {
+          "pole": "right",
+          "note": "Cultural evolution rather than revolutionary disruption — deep change is slow"
+        },
+        "industrial": {
+          "pole": "right",
+          "note": "Culture-based resources and capabilities are the basis of sustainable advantage — inside-out"
+        },
+        "organizational": {
+          "pole": "left",
+          "note": "Strong cultures create high coherence and consistency — a form of cultural control"
+        },
+        "geographical": {
+          "pole": "right",
+          "note": "Cultural School strongly favors localization — local cultures require local strategic responses"
+        }
+      },
+      "tensionsWith": [
+        {
+          "school": "positioning",
+          "tension": "Positioning is external and competitive in orientation; Cultural is internal and collective. Cultural school argues that sustainable competitive advantage is rooted in culture — something positioning analysis cannot identify or replicate."
+        },
+        {
+          "school": "environmental",
+          "tension": "Environmental focuses on external selection pressures; Cultural focuses on internal shared meaning. Both question managerial choice, but Cultural locates constraint in culture while Environmental locates it in the external environment."
+        }
+      ]
     },
     {
       "id": "environmental",
@@ -1354,7 +2176,7 @@
       "shortName": "Environmental",
       "group": "Descriptive",
       "description": "Strategy as environmental response: organizational adaptation to external forces and constraints largely beyond management control.",
-      "longDescription": "The Environmental School views strategy formation as primarily reactive, with organizations responding to environmental pressures and constraints largely beyond their control. Like biologists studying evolution, this school sees organizations as subject to natural selection pressures from their environment - technological change, regulatory shifts, economic cycles, and competitive forces. Strategic choice is limited; successful organizations are those that can sense environmental changes early and adapt quickly. The environment is the central actor, not organizational leadership or planning processes.",
+      "longDescription": "The Environmental School is the most deterministic of the ten: it views the environment as the primary actor in strategy formation, with organizations as largely reactive respondents to external forces they cannot control. The school encompasses several distinct theoretical traditions that share this core premise.\n\n*Population ecology* (Hannan & Freeman, Carroll) draws on evolutionary biology: just as species compete for niches in ecological systems, organizations compete for resources in organizational populations. Hannan and Freeman's central argument is that organizations face *structural inertia* — internal and external pressures that make fundamental change slow and costly. Environments therefore *select* organizations rather than organizations adapting to environments: firms survive because their form matches environmental conditions, not because they made good strategic choices.\n\n*Institutional theory* (DiMaggio & Powell, Meyer & Rowan) adds a different mechanism: organizations become similar not through competitive selection but through *isomorphism* — mimicking each other (mimetic), responding to regulatory requirements (coercive), or conforming to professional norms (normative). In this view, strategy is heavily determined by what is institutionally legitimate, not just what is economically optimal.\n\nBoth traditions challenge the voluntarist assumptions of most strategy theory: the idea that managers make meaningful strategic choices. This makes the Environmental School deeply uncomfortable for practitioners — but also intellectually important for understanding why organizations in the same industry often converge on similar strategies.",
       "keyFigures": [
         "Michael Hannan",
         "John Freeman",
@@ -1364,11 +2186,11 @@
       "realWorldExample": "The music industry's response to digital disruption illustrates environmental strategy - record companies had to adapt to technological forces (internet, streaming) largely beyond their control.",
       "whenToUse": "Most relevant in highly regulated industries, during major technological disruptions, or in environments with powerful external constraints.",
       "coreBeliefs": [
-        "The environment is the central determinant of organizational strategy",
-        "Organizations must adapt to environmental demands or face extinction",
-        "Strategic choice is severely limited by environmental constraints",
-        "Survival depends on fit between organization and environment",
-        "Environmental selection pressures determine strategic success"
+        "Structural inertia (Hannan & Freeman) limits organizations' capacity to adapt strategically",
+        "Environmental selection, not organizational adaptation, explains organizational survival",
+        "Institutional isomorphism (DiMaggio & Powell) makes organizations similar through mimicry, coercion, and norms",
+        "Strategic choice is more constrained than most strategy theories acknowledge",
+        "The environment actively shapes organizational form — organizations do not simply choose their environments"
       ],
       "strengths": [
         "Acknowledges the powerful influence of environmental constraints",
@@ -1378,11 +2200,11 @@
         "Provides insights into timing of strategic responses"
       ],
       "weaknesses": [
-        "May underestimate the degree of strategic choice available to organizations",
-        "Can be overly deterministic about environmental influence",
-        "Provides limited guidance for proactive strategic management",
-        "Risk of strategic fatalism and reactive mindset",
-        "May discourage innovation and industry transformation efforts"
+        "Overstates environmental determinism — empirically, some managers do make consequential strategic choices",
+        "Population ecology studies populations over long time periods; limited guidance for individual firm strategy",
+        "Institutional theory struggles to explain strategic differentiation within institutional fields",
+        "Risk of strategic fatalism — useful as critique of voluntarism, less useful as action guide",
+        "Undertheorizes how organizations sometimes successfully reshape their environments"
       ],
       "values": [
         1,
@@ -1391,7 +2213,7 @@
         2,
         2
       ],
-      "modernRelevance": "Increasingly important as organizations face rapid environmental changes from technology, climate, regulation, and global interconnectedness.",
+      "modernRelevance": "Institutional theory has become highly relevant as ESG pressures, regulatory convergence, and industry self-regulation produce powerful isomorphic pressures. Understanding *why* organizations converge on similar strategies — even when differentiation would be advantageous — is an Environmental School question. Population ecology remains relevant for studying industry evolution and organizational mortality rates.",
       "pApproaches": {
         "plan": {
           "emphasis": 1,
@@ -1593,7 +2415,45 @@
           ],
           "modernRelevance": "Environmental tactical approaches become important as organizations face increasing regulatory complexity and stakeholder expectations requiring sophisticated compliance and defensive capabilities."
         }
-      }
+      },
+      "keyText": "Hannan, Michael T. & Freeman, John — \"The Population Ecology of Organizations\" (American Journal of Sociology, 1977)",
+      "historicalContext": "The Environmental School spans two distinct academic traditions that converged in the 1970s. Population ecology (Hannan & Freeman, 1977) applied evolutionary biology to organizations, arguing that structural inertia limits strategic adaptation. Institutional theory (Meyer & Rowan, 1977; DiMaggio & Powell, 1983) argued that organizations adopt structures and strategies to achieve legitimacy, not just efficiency. Both traditions challenged the voluntarist assumptions of all other schools — the idea that managers make meaningful strategic choices.",
+      "paradoxPositions": {
+        "thinking": {
+          "pole": "left",
+          "note": "Environmental analysis is systematic — scan and adapt to objective selection pressures"
+        },
+        "formation": {
+          "pole": "right",
+          "note": "Strategy is reactive and adaptive, not deliberately formulated in advance"
+        },
+        "change": {
+          "pole": "right",
+          "note": "Selection pressures favor incremental adaptation; revolutionary change often destroys fit with environment"
+        },
+        "response": {
+          "pole": "left",
+          "note": "Environmental School is the definitive compliance perspective — selection pressures, not managerial choice, determine survival"
+        },
+        "industrial": {
+          "pole": "left",
+          "note": "Industry and population-level forces (not internal capabilities) drive strategic outcomes"
+        }
+      },
+      "tensionsWith": [
+        {
+          "school": "entrepreneurial",
+          "tension": "The deepest tension in strategy theory: Environmental argues that structural inertia and selection pressures constrain what any manager can achieve; Entrepreneurial argues that bold individual vision can reshape competitive landscapes. Schumpeter vs Hannan & Freeman."
+        },
+        {
+          "school": "positioning",
+          "tension": "Positioning assumes managers exercise meaningful strategic choice within industry structures; Environmental's population ecology argues the environment selects firms, not vice versa — the industry structure is not a set of options to choose from, but a selection environment."
+        },
+        {
+          "school": "learning",
+          "tension": "Learning argues organizations can and should adapt through experience; Environmental (especially population ecology) argues that adaptation is too slow to matter — selection happens faster than learning."
+        }
+      ]
     },
     {
       "id": "configuration",
@@ -1601,7 +2461,7 @@
       "shortName": "Configuration",
       "group": "Descriptive",
       "description": "Strategy as transformation: integrating multiple perspectives through organizational configurations and episodic change between stable periods.",
-      "longDescription": "The Configuration School attempts to integrate the insights of all other schools by recognizing that different approaches may be appropriate at different times and in different contexts. Like systems theorists studying complex adaptive systems, this school sees organizations as configurations - coherent clusters of characteristics and behaviors. Strategy formation alternates between periods of stability (where organizations maintain their configuration) and periods of transformation (where they shift to new configurations). The key insight is that strategy, structure, culture, and leadership must all align in coherent configurations.",
+      "longDescription": "The Configuration School — Mintzberg's own preferred synthesis — attempts to integrate the insights of all other schools by recognizing that different approaches to strategy are appropriate in different organizational contexts. Its central insight is that organizations can be understood as *configurations*: coherent clusters of characteristics (strategy, structure, culture, leadership style, planning systems) that hang together in recognizable patterns.\n\nMintzberg identified five archetypal configurations: the *Simple Structure* (entrepreneurial, centralized, flexible), the *Machine Bureaucracy* (formalized, efficient, inflexible), the *Professional Bureaucracy* (expert-driven, decentralized expertise), the *Divisionalized Form* (portfolio of semi-autonomous units), and the *Adhocracy* (innovative, organic, project-based). Each configuration works well in its matching environment and implodes when the environment changes.\n\nDanny Miller's *Icarus Paradox* (1992) captures the school's deepest insight about strategic failure: successful firms tend to amplify the characteristics that made them successful until those strengths become fatal excesses. The bold entrepreneur becomes the reckless gambler. The quality craftsman becomes the perfectionist who cannot ship. Success creates a configuration so coherent and internally reinforced that adaptation becomes impossible.\n\nStrategy formation in this school alternates between *quantum leaps* (rapid, revolutionary transformation from one configuration to another) and periods of *quantum stability* (incremental adaptation within a configuration). The strategic challenge is managing the transition without destroying the coherence that made the current configuration work.",
       "keyFigures": [
         "Danny Miller",
         "Peter Friesen",
@@ -1611,11 +2471,11 @@
       "realWorldExample": "IBM's transformation from hardware manufacturer to services company demonstrates configuration thinking - aligning strategy, structure, culture, and capabilities in a coherent new configuration.",
       "whenToUse": "Valuable for understanding organizational transformation, managing strategic change, and integrating multiple strategic perspectives.",
       "coreBeliefs": [
-        "Organizations can be understood as coherent configurations of characteristics",
-        "Strategy formation is episodic - periods of stability interrupted by transformation",
-        "Different strategic approaches are appropriate in different configurations",
-        "Effective organizations maintain consistency among strategy, structure, and culture",
-        "Integration of multiple perspectives provides richer understanding than any single school"
+        "Organizations are configurations — coherent clusters of strategy, structure, culture, and leadership",
+        "Mintzberg's five archetypes (Simple Structure, Machine Bureaucracy, Professional Bureaucracy, Divisionalized Form, Adhocracy) capture most organizational forms",
+        "The Icarus Paradox (Miller): success amplifies strengths until they become fatal excesses",
+        "Strategy formation is episodic — periods of quantum stability interrupted by revolutionary transformation",
+        "Integration of multiple strategic perspectives provides richer understanding than any single school"
       ],
       "strengths": [
         "Integrates insights from multiple schools of strategic thought",
@@ -1638,7 +2498,7 @@
         4,
         2
       ],
-      "modernRelevance": "Highly relevant for understanding digital transformation and helping organizations navigate between different strategic configurations as business models evolve.",
+      "modernRelevance": "Configuration thinking is highly relevant for digital transformation: companies shifting from product to platform, or from asset-heavy to asset-light models, face exactly the quantum leap challenge Mintzberg describes. The Icarus Paradox explains why market leaders so often fail to navigate disruption — their configuration is too coherent to adapt.",
       "pApproaches": {
         "plan": {
           "emphasis": 3,
@@ -1797,7 +2657,8 @@
             "Requires sophisticated understanding of multiple strategic perspectives",
             "Difficult to implement integrated perspective across large organizations"
           ],
-          "modernRelevance": "Integrative perspective development becomes crucial as organizations face complex strategic challenges requiring synthesis of multiple strategic approaches and adaptive perspective evolution."
+          "modernRelevance": "Integrative perspective development becomes crucial as organizations face complex strategic challenges requiring synthesis of multiple strategic approaches and adaptive perspective evolution.",
+          "processDescription": "The Configuration School develops organizational perspective through a process of recognizing which configuration the organization occupies and what worldview that configuration requires. In the Simple Structure (entrepreneurial phase), perspective is largely the founder's personal vision, articulated and embodied rather than formally analyzed. In the Machine Bureaucracy, perspective is shaped by the planning culture — analytical, efficiency-oriented, focused on optimization of the existing model. In the Professional Bureaucracy, perspective is distributed among expert communities with their own professional norms. In the Adhocracy, perspective is dynamic and project-driven, shaped by each new strategic challenge. During transformation between configurations — the quantum leap — perspective must undergo a fundamental shift that is often the hardest element of the transition: people can adopt new structures and new plans before they have genuinely changed how they see the world."
         },
         "ploy": {
           "emphasis": 2,
@@ -1839,7 +2700,49 @@
           ],
           "modernRelevance": "Configuration-contingent tactics become important as organizations need sophisticated tactical approaches that adapt to their specific configuration and competitive context while integrating multiple strategic perspectives."
         }
-      }
+      },
+      "keyText": "Miller, Danny & Friesen, Peter — Organizations: A Quantum View (1984)",
+      "historicalContext": "The Configuration School represents Mintzberg's own synthesis of the preceding nine schools — his answer to the question 'who is right?' His answer: all of them, in different contexts. Miller and Friesen's empirical work on organizational archetypes (1977-1984) showed that organizations cluster into recognizable configurations. Mintzberg's typology of organizational forms (1979) provided the structural foundation. The school argues that strategy theory's contradictions dissolve when you recognize that different approaches are appropriate for different organizational types and life-cycle phases.",
+      "paradoxPositions": {
+        "thinking": {
+          "pole": "both",
+          "note": "Different configurations require different thinking modes — no single approach is universally correct"
+        },
+        "formation": {
+          "pole": "both",
+          "note": "Stable periods favor deliberateness; transformation periods require emergent learning"
+        },
+        "change": {
+          "pole": "both",
+          "note": "Configuration School explicitly models both: quantum stability (evolution) and quantum leap (revolution)"
+        },
+        "response": {
+          "pole": "both",
+          "note": "Level of strategic choice depends on the configuration and life cycle stage"
+        },
+        "industrial": {
+          "pole": "both",
+          "note": "Different configurations favor different approaches — entrepreneurial configs are inside-out, machine bureaucracies outside-in"
+        },
+        "organizational": {
+          "pole": "both",
+          "note": "Control vs chaos depends on the configuration: machine bureaucracy (control) vs adhocracy (chaos)"
+        },
+        "locus": {
+          "pole": "both",
+          "note": "Divisionalized Form configuration explicitly models the responsiveness-synergy tension"
+        }
+      },
+      "tensionsWith": [
+        {
+          "school": "design",
+          "tension": "Design assumes one optimal strategy; Configuration argues the right strategy depends entirely on the organizational configuration and lifecycle phase — there is no universally optimal approach."
+        },
+        {
+          "school": "positioning",
+          "tension": "Positioning offers universal frameworks (Five Forces, generic strategies); Configuration argues that what looks like a universal principle is actually phase-specific — the same framework is powerful in one configuration and damaging in another."
+        }
+      ]
     }
   ]
 }
