@@ -4,9 +4,7 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig(({ mode }) => ({
 	plugins: [tailwindcss(), sveltekit()],
-	resolve: {
-		conditions: mode === 'test' ? ['browser'] : []
-	},
+	...(mode === 'test' ? { resolve: { conditions: ['browser'] } } : {}),
 	test: {
 		name: 'client',
 		environment: 'jsdom',
