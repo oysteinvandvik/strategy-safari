@@ -3,7 +3,7 @@
     "title": "Strategy Explorer Library",
     "description": "A curated collection of essential strategy books organized by the voices they emphasize and the paradoxes they explore.",
     "last_updated": "2026-05-20",
-    "total_books": 24
+    "total_books": 27
   },
   "books": [
     {
@@ -66,7 +66,7 @@
       "isbn_10": "0393310353",
       "publication_year": "1991 (1991)",
       "publisher": "W. W. Norton & Company",
-      "description": "Game theory applications to strategic decision-making. Logical, systematic approach to competitive situations.",
+      "description": "The popular introduction to game theory applied to competitive interaction — deterrence, commitment, credible threats, signaling, and brinkmanship. It comes from economics rather than the business-strategy tradition, but it is the most accessible statement of the game-theoretic foundation behind Mintzberg's Ploy: strategy as a deliberate maneuver to outwit a specific opponent.",
       "category": "analytical",
       "cover_url": "https://books.google.com/books/content?vid=ISBN:9780393310351&printsec=frontcover&img=1&zoom=5",
       "cover_medium": "https://books.google.com/books/content?vid=ISBN:9780393310351&printsec=frontcover&img=1&zoom=1",
@@ -85,13 +85,12 @@
       "paradox_position": "logical",
       "tags": [
         "game-theory",
-        "logical-thinking",
-        "competitive-analysis"
+        "ploy",
+        "competitive-signaling"
       ],
       "reading_level": "intermediate",
       "page_count": 393,
       "schools": [
-        "positioning",
         "power"
       ]
     },
@@ -267,7 +266,7 @@
       "publication_year": "1990 (2006)",
       "publisher": "Doubleday",
       "description": "Systems thinking approach to organizational learning and change. Emphasizes continuous adaptation and evolution.",
-      "category": "systemic",
+      "category": "emergent",
       "cover_url": "https://books.google.com/books/content?vid=ISBN:9780385517256&printsec=frontcover&img=1&zoom=5",
       "cover_medium": "https://books.google.com/books/content?vid=ISBN:9780385517256&printsec=frontcover&img=1&zoom=1",
       "cover_small": "https://books.google.com/books/content?vid=ISBN:9780385517256&printsec=frontcover&img=1&zoom=0",
@@ -346,7 +345,7 @@
       "publication_year": "2009 (2009)",
       "publisher": "Harvard Business Review Press",
       "description": "Collective approach to leadership and strategy. Emphasizes adaptive capacity and organizational collaboration.",
-      "category": "adaptive",
+      "category": "leadership",
       "cover_url": "https://books.google.com/books/content?vid=ISBN:9781422105764&printsec=frontcover&img=1&zoom=5",
       "cover_medium": "https://books.google.com/books/content?vid=ISBN:9781422105764&printsec=frontcover&img=1&zoom=1",
       "cover_small": "https://books.google.com/books/content?vid=ISBN:9781422105764&printsec=frontcover&img=1&zoom=0",
@@ -386,7 +385,7 @@
       "publication_year": "2005 (2015)",
       "publisher": "Harvard Business Review Press",
       "description": "Create new market spaces rather than compete in existing ones. Focus on value innovation and strategic choice.",
-      "category": "innovative",
+      "category": "transformative",
       "cover_url": "https://books.google.com/books/content?vid=ISBN:9781591396192&printsec=frontcover&img=1&zoom=5",
       "cover_medium": "https://books.google.com/books/content?vid=ISBN:9781591396192&printsec=frontcover&img=1&zoom=1",
       "cover_small": "https://books.google.com/books/content?vid=ISBN:9781591396192&printsec=frontcover&img=1&zoom=0",
@@ -426,7 +425,7 @@
       "publication_year": "2013 (2013)",
       "publisher": "Harvard Business Review Press",
       "description": "Framework for making strategic choices. Clear methodology for defining where to play and how to win.",
-      "category": "systematic",
+      "category": "analytical",
       "cover_url": "https://books.google.com/books/content?vid=ISBN:9781422187395&printsec=frontcover&img=1&zoom=5",
       "cover_medium": "https://books.google.com/books/content?vid=ISBN:9781422187395&printsec=frontcover&img=1&zoom=1",
       "cover_small": "https://books.google.com/books/content?vid=ISBN:9781422187395&printsec=frontcover&img=1&zoom=0",
@@ -582,7 +581,7 @@
       "publication_year": "1995 (1997)",
       "publisher": "Addison-Wesley",
       "description": "Argues that market leaders must choose one of three value disciplines — operational excellence, customer intimacy, or product leadership — based on their firm-specific capabilities, then align the entire organization around delivering that value proposition.",
-      "category": "capability-based",
+      "category": "analytical",
       "cover_url": "https://books.google.com/books/content?vid=ISBN:9780201407198&printsec=frontcover&img=1&zoom=5",
       "cover_medium": "https://books.google.com/books/content?vid=ISBN:9780201407198&printsec=frontcover&img=1&zoom=1",
       "cover_small": "https://books.google.com/books/content?vid=ISBN:9780201407198&printsec=frontcover&img=1&zoom=0",
@@ -661,7 +660,7 @@
       "publication_year": "2014 (2014)",
       "publisher": "PublicAffairs",
       "description": "Understanding cultural diversity in global organizations. How to navigate and leverage cultural differences for strategic advantage.",
-      "category": "cultural",
+      "category": "organizational",
       "cover_url": "https://books.google.com/books/content?vid=ISBN:9781610392501&printsec=frontcover&img=1&zoom=5",
       "cover_medium": "https://books.google.com/books/content?vid=ISBN:9781610392501&printsec=frontcover&img=1&zoom=1",
       "cover_small": "https://books.google.com/books/content?vid=ISBN:9781610392501&printsec=frontcover&img=1&zoom=0",
@@ -728,45 +727,6 @@
       ]
     },
     {
-      "id": "managing-across-cultures",
-      "title": "Managing Across Cultures",
-      "authors": [
-        "Susan C. Schneider",
-        "Jean-Louis Barsoux"
-      ],
-      "isbn": "9780273646303",
-      "isbn_10": "0273646303",
-      "publication_year": "1997 (2003)",
-      "publisher": "Financial Times Prentice Hall",
-      "description": "Local adaptation and cultural responsiveness in global organizations. Balancing global efficiency with local effectiveness.",
-      "category": "multicultural",
-      "cover_url": "https://books.google.com/books/content?vid=ISBN:9780273646303&printsec=frontcover&img=1&zoom=5",
-      "cover_medium": "https://books.google.com/books/content?vid=ISBN:9780273646303&printsec=frontcover&img=1&zoom=1",
-      "cover_small": "https://books.google.com/books/content?vid=ISBN:9780273646303&printsec=frontcover&img=1&zoom=0",
-      "openlibrary_url": "https://openlibrary.org/isbn/9780273646303",
-      "voices_emphasis": {
-        "plan": 2,
-        "pattern": 4,
-        "position": 3,
-        "perspective": 5,
-        "ploy": 2
-      },
-      "paradoxes_explored": [
-        "geographical"
-      ],
-      "paradox_position": "local",
-      "tags": [
-        "local-adaptation",
-        "cultural-responsiveness",
-        "multicultural-management"
-      ],
-      "reading_level": "intermediate",
-      "page_count": 384,
-      "schools": [
-        "cultural"
-      ]
-    },
-    {
       "id": "a-new-way-to-think",
       "title": "A New Way to Think: Your Guide to Superior Management Effectiveness",
       "authors": [
@@ -777,7 +737,7 @@
       "publication_year": "2022 (2022)",
       "publisher": "Harvard Business Review Press",
       "description": "Challenges 13 dominant management models and proposes better alternatives. Argues that organizations are held back by inherited mental models about strategy, competition, planning and leadership.",
-      "category": "integrative",
+      "category": "analytical",
       "cover_url": "https://books.google.com/books/content?vid=ISBN:9781647823511&printsec=frontcover&img=1&zoom=5",
       "cover_medium": "https://books.google.com/books/content?vid=ISBN:9781647823511&printsec=frontcover&img=1&zoom=1",
       "cover_small": "https://books.google.com/books/content?vid=ISBN:9781647823511&printsec=frontcover&img=1&zoom=0",
@@ -859,7 +819,7 @@
       "publication_year": "2016 (2016)",
       "publisher": "W. W. Norton & Company",
       "description": "The definitive guide to platform business models. Explains how network effects dictate competitive advantage and how to design, build, and scale platform businesses.",
-      "category": "innovative",
+      "category": "transformative",
       "cover_url": "https://books.google.com/books/content?vid=ISBN:9780393249132&printsec=frontcover&img=1&zoom=5",
       "cover_medium": "https://books.google.com/books/content?vid=ISBN:9780393249132&printsec=frontcover&img=1&zoom=1",
       "cover_small": "https://books.google.com/books/content?vid=ISBN:9780393249132&printsec=frontcover&img=1&zoom=0",
@@ -941,7 +901,7 @@
       "publication_year": "2015 (2015)",
       "publisher": "Harvard Business Review Press",
       "description": "A meta-framework for strategy. Provides a guide to selecting the right strategic approach (Classical, Adaptive, Visionary, Shaping, Renewal) based on the specific business environment.",
-      "category": "integrative",
+      "category": "analytical",
       "cover_url": "https://books.google.com/books/content?vid=ISBN:9781625275868&printsec=frontcover&img=1&zoom=5",
       "cover_medium": "https://books.google.com/books/content?vid=ISBN:9781625275868&printsec=frontcover&img=1&zoom=1",
       "cover_small": "https://books.google.com/books/content?vid=ISBN:9781625275868&printsec=frontcover&img=1&zoom=0",
@@ -968,6 +928,161 @@
       "page_count": 272,
       "schools": [
         "configuration"
+      ]
+    },
+    {
+      "id": "corporate-strategy-ansoff",
+      "title": "Corporate Strategy",
+      "authors": [
+        "H. Igor Ansoff"
+      ],
+      "isbn": "9780140091120",
+      "isbn_10": "0140091122",
+      "publication_year": "1965 (1987)",
+      "publisher": "Penguin Books",
+      "description": "The founding text of the Planning School. Ansoff turns strategy into a formal, programmable analytical procedure — gap analysis, the product/market growth matrix, and synergy as the connecting logic of corporate-level strategy.",
+      "category": "foundational",
+      "cover_url": "https://books.google.com/books/content?vid=ISBN:9780140091120&printsec=frontcover&img=1&zoom=5",
+      "cover_medium": "https://books.google.com/books/content?vid=ISBN:9780140091120&printsec=frontcover&img=1&zoom=1",
+      "cover_small": "https://books.google.com/books/content?vid=ISBN:9780140091120&printsec=frontcover&img=1&zoom=0",
+      "openlibrary_url": "https://openlibrary.org/isbn/9780140091120",
+      "voices_emphasis": {
+        "plan": 5,
+        "pattern": 1,
+        "position": 4,
+        "perspective": 2,
+        "ploy": 2
+      },
+      "paradoxes_explored": [
+        "formation"
+      ],
+      "paradox_position": "planned",
+      "tags": [
+        "strategic-planning",
+        "gap-analysis",
+        "synergy"
+      ],
+      "reading_level": "advanced",
+      "page_count": 224,
+      "schools": [
+        "planning"
+      ]
+    },
+    {
+      "id": "strategy-international-perspective",
+      "title": "Strategy: An International Perspective",
+      "authors": [
+        "Bob de Wit",
+        "Ron Meyer"
+      ],
+      "isbn": "9781473765085",
+      "isbn_10": "1473765080",
+      "publication_year": "1994 (2017)",
+      "publisher": "Cengage Learning",
+      "description": "The source text for the strategic paradoxes in this app. De Wit & Meyer organize the whole field around unresolved tensions — deliberateness vs emergence, markets vs resources, compliance vs choice — and insist that strategy is the ongoing management of these dualities rather than a choice between poles.",
+      "category": "foundational",
+      "cover_url": "https://books.google.com/books/content?vid=ISBN:9781473765085&printsec=frontcover&img=1&zoom=5",
+      "cover_medium": "https://books.google.com/books/content?vid=ISBN:9781473765085&printsec=frontcover&img=1&zoom=1",
+      "cover_small": "https://books.google.com/books/content?vid=ISBN:9781473765085&printsec=frontcover&img=1&zoom=0",
+      "openlibrary_url": "https://openlibrary.org/isbn/9781473765085",
+      "voices_emphasis": {
+        "plan": 3,
+        "pattern": 3,
+        "position": 3,
+        "perspective": 4,
+        "ploy": 2
+      },
+      "paradoxes_explored": [
+        "thinking",
+        "formation",
+        "change"
+      ],
+      "paradox_position": "balanced",
+      "tags": [
+        "paradox",
+        "strategy-process",
+        "strategy-content"
+      ],
+      "reading_level": "advanced",
+      "page_count": 1024,
+      "schools": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "concept-of-corporate-strategy",
+      "title": "The Concept of Corporate Strategy",
+      "authors": [
+        "Kenneth R. Andrews"
+      ],
+      "isbn": "9780870943416",
+      "isbn_10": "0870943413",
+      "publication_year": "1971 (1987)",
+      "publisher": "Irwin",
+      "description": "The founding text of the Design School. Andrews frames strategy as a deliberate act of conception — matching a firm's distinctive competence to environmental opportunity through SWOT, with the CEO as chief architect of a single, explicit strategy.",
+      "category": "foundational",
+      "cover_url": "https://books.google.com/books/content?vid=ISBN:9780870943416&printsec=frontcover&img=1&zoom=5",
+      "cover_medium": "https://books.google.com/books/content?vid=ISBN:9780870943416&printsec=frontcover&img=1&zoom=1",
+      "cover_small": "https://books.google.com/books/content?vid=ISBN:9780870943416&printsec=frontcover&img=1&zoom=0",
+      "openlibrary_url": "https://openlibrary.org/isbn/9780870943416",
+      "voices_emphasis": {
+        "plan": 5,
+        "pattern": 2,
+        "position": 3,
+        "perspective": 3,
+        "ploy": 1
+      },
+      "paradoxes_explored": [
+        "formation"
+      ],
+      "paradox_position": "planned",
+      "tags": [
+        "swot",
+        "distinctive-competence",
+        "corporate-strategy"
+      ],
+      "reading_level": "advanced",
+      "page_count": 132,
+      "schools": [
+        "design"
+      ]
+    },
+    {
+      "id": "thinking-fast-and-slow",
+      "title": "Thinking, Fast and Slow",
+      "authors": [
+        "Daniel Kahneman"
+      ],
+      "isbn": "9780374533557",
+      "isbn_10": "0374533555",
+      "publication_year": "2011 (2013)",
+      "publisher": "Farrar, Straus and Giroux",
+      "description": "The foundational work behind the Cognitive School and modern behavioral strategy. Kahneman maps the two systems of thought — fast intuition and slow deliberation — and the cognitive biases that systematically distort judgment, explaining why strategists facing the same evidence reach very different conclusions.",
+      "category": "foundational",
+      "cover_url": "https://books.google.com/books/content?vid=ISBN:9780374533557&printsec=frontcover&img=1&zoom=5",
+      "cover_medium": "https://books.google.com/books/content?vid=ISBN:9780374533557&printsec=frontcover&img=1&zoom=1",
+      "cover_small": "https://books.google.com/books/content?vid=ISBN:9780374533557&printsec=frontcover&img=1&zoom=0",
+      "openlibrary_url": "https://openlibrary.org/isbn/9780374533557",
+      "voices_emphasis": {
+        "plan": 2,
+        "pattern": 2,
+        "position": 1,
+        "perspective": 5,
+        "ploy": 1
+      },
+      "paradoxes_explored": [
+        "thinking"
+      ],
+      "paradox_position": "balanced",
+      "tags": [
+        "cognitive-bias",
+        "behavioral-economics",
+        "decision-making"
+      ],
+      "reading_level": "intermediate",
+      "page_count": 499,
+      "schools": [
+        "cognitive"
       ]
     }
   ],
