@@ -73,6 +73,14 @@
     function navigateToOtherP(pId: string) {
       goto(`/ps/${pId}`);
     }
+
+    // Outgoing interactions: how THIS voice plays against the other four.
+    $: interactions =
+      allPsData?.interactions?.matrix?.filter((e: any) => e.from === pData?.id) ?? [];
+
+    function getP(id: string) {
+      return allPsData?.ps?.find((p: any) => p.id === id);
+    }
   </script>
   
   <svelte:head>
@@ -186,6 +194,41 @@
           </div>
         </section>
   
+        <!-- How this voice interacts with the others (collapsed by default) -->
+        {#if interactions.length > 0}
+          <section class="mb-12" in:fly={{ y: 30, duration: 800, delay: 450, easing: quintOut }}>
+            <details class="group rounded-xl border bg-card overflow-hidden">
+              <summary class="flex items-center justify-between gap-3 p-5 cursor-pointer list-none hover:bg-secondary/30 transition-colors">
+                <span class="flex items-center gap-2 font-semibold">
+                  <span class="text-xl">🕸️</span>
+                  How {pData.label} plays against the other voices
+                </span>
+                <span class="text-muted-foreground text-sm group-open:rotate-180 transition-transform">▾</span>
+              </summary>
+              <div class="px-5 pb-5 pt-1 space-y-3 border-t">
+                <p class="text-sm text-muted-foreground pt-3">
+                  The five voices don't act alone. Here's how {pData.label} shapes — and is shaped by — each of the others.
+                </p>
+                {#each interactions as edge}
+                  {@const target = getP(edge.to)}
+                  <div class="flex items-start gap-3 p-4 rounded-lg bg-background border">
+                    <span class="text-xl flex-shrink-0">{target?.icon ?? '•'}</span>
+                    <div>
+                      <button
+                        class="font-medium text-sm hover:underline {target ? getTextColor(target.color) : ''}"
+                        on:click={() => navigateToOtherP(edge.to)}
+                      >
+                        {pData.label} → {target?.label ?? edge.to} →
+                      </button>
+                      <p class="text-sm text-muted-foreground leading-relaxed mt-1">{edge.relationship}</p>
+                    </div>
+                  </div>
+                {/each}
+              </div>
+            </details>
+          </section>
+        {/if}
+
         <!-- Navigation to Other P's -->
         <section class="mb-12" in:fly={{ y: 30, duration: 800, delay: 500, easing: quintOut }}>
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">

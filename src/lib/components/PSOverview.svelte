@@ -178,7 +178,15 @@
         </div>
         
         <div class="space-y-4">
-          <a href="/radar" 
+          <a href="/ps/connections"
+             class="flex items-center gap-3 p-3 rounded-lg border hover:bg-secondary/50 transition-colors group">
+            <span class="text-lg">🕸️</span>
+            <div>
+              <div class="font-medium group-hover:text-primary transition-colors">See how the five voices influence one another</div>
+            </div>
+          </a>
+
+          <a href="/radar"
              class="flex items-center gap-3 p-3 rounded-lg border hover:bg-secondary/50 transition-colors group">
             <span class="text-lg">📊</span>
             <div>
