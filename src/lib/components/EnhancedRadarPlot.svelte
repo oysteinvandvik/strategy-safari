@@ -9,7 +9,7 @@
     
     let canvas: HTMLCanvasElement;
     let chart: Chart;
-    let isAnimating = false;
+    let prevDataKey = '';
     
     const colors = [
       { bg: 'rgba(99, 102, 241, 0.2)', border: 'rgb(99, 102, 241)' }, // Indigo
@@ -54,13 +54,7 @@
           maintainAspectRatio: false,
           animation: {
             duration: animationDuration,
-            easing: 'easeOutQuart',
-            onProgress: (animation) => {
-              isAnimating = animation.currentStep < animation.numSteps;
-            },
-            onComplete: () => {
-              isAnimating = false;
-            }
+            easing: 'easeOutQuart'
           },
           interaction: {
             intersect: false,
@@ -157,48 +151,38 @@
       });
     };
   
-    // Enhanced update function with staggered animations
-    const updateChart = async () => {
+    const updateChart = () => {
       if (!chart) return;
-      
-      isAnimating = true;
-      
-      // Animate out old data
-      chart.data.datasets.forEach(dataset => {
-        dataset.data = dataset.data.map(() => 0);
-      });
-      chart.update('none');
-      
-      // Small delay before animating in new data
-      setTimeout(() => {
-        chart.data.datasets = filteredData.map((school, index) => ({
-          label: school.school,
-          data: school.values,
-          fill: true,
-          backgroundColor: colors[index % colors.length].bg,
-          borderColor: colors[index % colors.length].border,
-          borderWidth: 3,
-          pointBackgroundColor: colors[index % colors.length].border,
-          pointBorderColor: '#ffffff',
-          pointBorderWidth: 2,
-          pointRadius: 6,
-          pointHoverRadius: 8,
-          pointHoverBackgroundColor: colors[index % colors.length].border,
-          pointHoverBorderColor: '#ffffff',
-          pointHoverBorderWidth: 3,
-          tension: 0.1
-        }));
-        
-        chart.update('active');
-      }, 150);
+      chart.data.datasets = filteredData.map((school, index) => ({
+        label: school.school,
+        data: school.values,
+        fill: true,
+        backgroundColor: colors[index % colors.length].bg,
+        borderColor: colors[index % colors.length].border,
+        borderWidth: 3,
+        pointBackgroundColor: colors[index % colors.length].border,
+        pointBorderColor: '#ffffff',
+        pointBorderWidth: 2,
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        pointHoverBackgroundColor: colors[index % colors.length].border,
+        pointHoverBorderColor: '#ffffff',
+        pointHoverBorderWidth: 3,
+        tension: 0.1
+      }));
+      chart.update('active');
     };
   
     onMount(() => {
       createChart();
     });
   
-    $: if (chart && filteredData) {
-      updateChart();
+    $: {
+      const key = filteredData.map(d => `${d.school}:${d.values.join(',')}`).join('|');
+      if (chart && key !== prevDataKey) {
+        prevDataKey = key;
+        updateChart();
+      }
     }
   
     onDestroy(() => {
@@ -209,13 +193,6 @@
   <div class="relative bg-card border border-border rounded-xl p-6 shadow-lg overflow-hidden">
     <!-- Animated background gradient -->
     <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-50"></div>
-    
-    <!-- Loading indicator during animations -->
-    {#if isAnimating}
-      <div class="absolute top-4 right-4 z-10">
-        <div class="w-4 h-4 border-2 border-primary/30 border-t-primary rounded-full animate-spin"></div>
-      </div>
-    {/if}
     
     <!-- Chart title with animation -->
     <div class="relative z-10 mb-4">
