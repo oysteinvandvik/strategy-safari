@@ -3,7 +3,6 @@
     import { createEventDispatcher, onMount } from 'svelte';
     import { fly, scale } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
-    import { spring } from 'svelte/motion';
     import { goto } from '$app/navigation';
     import type { StrategicParadox } from '$lib/types';
     import { landscapeStore, loadReflection, saveReflection as persistReflection } from '$lib/stores/landscape';
@@ -20,9 +19,6 @@
     let showReflection = false;
     let userReflection = '';
     let sectionsVisible = false;
-
-    const smoothPosition = spring(position, { stiffness: 0.1, damping: 0.4 });
-    $: smoothPosition.set(position);
 
     onMount(() => {
       userReflection = loadReflection(paradox.id);
@@ -132,15 +128,10 @@
           max="100"
           bind:value={position}
           on:input={handleSliderChange}
-          class="w-full h-3 bg-gradient-to-r from-orange-200 to-blue-200 dark:from-orange-900/30 dark:to-blue-900/30 rounded-lg appearance-none cursor-pointer slider"
-          style="background: linear-gradient(to right, #f97316 0%, #f97316 {$smoothPosition}%, #3b82f6 {$smoothPosition}%, #3b82f6 100%)"
+          aria-label="Your position between {paradox.left_label} and {paradox.right_label}"
+          class="w-full h-3 rounded-lg appearance-none cursor-pointer slider"
+          style="background: linear-gradient(to right, #f97316 0%, #f97316 {position}%, #3b82f6 {position}%, #3b82f6 100%)"
         />
-        
-        <!-- Position indicator -->
-        <div 
-          class="absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-white border-3 border-primary rounded-full shadow-lg transition-all duration-300 pointer-events-none"
-          style="left: calc({$smoothPosition}% - 12px)"
-        ></div>
       </div>
   
       <!-- Position feedback -->
