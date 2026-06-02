@@ -4,8 +4,10 @@ import { render, screen } from '@testing-library/svelte';
 import Page from './+page.svelte';
 
 describe('/+page.svelte', () => {
-	test('should render h1', () => {
+	test('should render h1', async () => {
 		render(Page);
-		expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
+		// Hero content is gated behind a pageVisible flag set in onMount + setTimeout,
+		// so the heading appears asynchronously — poll for it with findBy*.
+		expect(await screen.findByRole('heading', { level: 1 })).toBeInTheDocument();
 	});
 });

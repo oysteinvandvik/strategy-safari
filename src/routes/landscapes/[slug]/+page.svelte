@@ -10,6 +10,7 @@
 
   let paradox: StrategicParadox | null = null;
   let allParadoxes: StrategicParadox[] = [];
+  let schoolNames: Record<string, string> = {};
   let loading = true;
   let error: string | null = null;
   let userPosition: number | null = null;
@@ -19,27 +20,32 @@
 
   onMount(async () => {
     try {
-      const res = await fetch('/data/landscapes.json');
-      if (!res.ok) throw new Error('Failed to load paradoxes data');
-      allParadoxes = await res.json();
-      
-      console.log('All paradoxes loaded:', allParadoxes.length);
-      console.log('Looking for slug:', slug);
-      
+      const [paradoxRes, schoolsRes] = await Promise.all([
+        fetch('/data/landscapes.json'),
+        fetch('/data/schools.json')
+      ]);
+      if (!paradoxRes.ok) throw new Error('Failed to load paradoxes data');
+      allParadoxes = await paradoxRes.json();
+
+      // Build school id → name map for the "Which Schools Stand Where" section
+      if (schoolsRes.ok) {
+        const schoolsData = await schoolsRes.json();
+        schoolNames = Object.fromEntries(
+          schoolsData.schools.map((s: { id: string; name: string }) => [s.id, s.name])
+        );
+      }
+
       // Find the specific paradox based on the slug
       paradox = allParadoxes.find(p => p.id === slug) || null;
-      
+
       if (!paradox) {
-        console.error(`Paradox not found for slug: ${slug}`);
         error = `Strategic paradox "${slug}" not found`;
       } else {
-        console.log('Found paradox:', paradox.name);
         // Load user position if saved
         const positions = JSON.parse(localStorage.getItem('landscape-positions') || '{}');
         userPosition = positions[paradox.id] || null;
       }
     } catch (err) {
-      console.error('Error loading paradoxes:', err);
       error = err instanceof Error ? err.message : 'Unknown error';
     } finally {
       loading = false;
@@ -174,8 +180,9 @@
 
     <!-- Main Content -->
     <div in:fly={{ y: 30, duration: 600, easing: quintOut }}>
-      <ParadoxDetail 
-        {paradox} 
+      <ParadoxDetail
+        {paradox}
+        {schoolNames}
         initialPosition={userPosition}
         on:positionChanged={handlePositionChanged}
         on:reflectionSaved={handleReflectionSaved}

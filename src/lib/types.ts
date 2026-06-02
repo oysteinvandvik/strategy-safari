@@ -54,6 +54,26 @@ export interface StrategicParadox {
 		left: string;
 		right: string;
 	};
+	// Cross-references to Mintzberg's schools (added in content-enrichment pass)
+	schoolsAtPoles?: {
+		left: string[];
+		right: string[];
+	};
+	leftThinkers?: string[];
+	rightThinkers?: string[];
+	dwChapter?: number;
+}
+
+// A school's stance within a single strategic paradox
+export interface SchoolParadoxPosition {
+	pole: 'left' | 'right' | 'both';
+	note: string;
+}
+
+// A school's tension with another school
+export interface SchoolTension {
+	school: string;
+	tension: string;
 }
 
 export interface ParadoxPosition {

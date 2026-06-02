@@ -5,25 +5,47 @@
     import { goto } from '$app/navigation';
     import { fly, scale } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
-  
+    import type { SchoolParadoxPosition } from '$lib/types';
+
     let schoolData: any = null;
     let allSchoolsData: any = null;
+    let schoolNames: Record<string, string> = {};
+    let paradoxMeta: Record<string, { name: string; left_label: string; right_label: string }> = {};
     let loading = true;
     let error: string | null = null;
     let sectionsVisible = false;
-  
+
     // Get the slug from the URL
     $: slug = $page.params.slug;
-  
+
     onMount(async () => {
       try {
-        const res = await fetch('/data/schools.json');
+        const [res, paradoxRes] = await Promise.all([
+          fetch('/data/schools.json'),
+          fetch('/data/landscapes.json')
+        ]);
         if (!res.ok) throw new Error('Failed to load schools data');
         allSchoolsData = await res.json();
-        
+
+        // id → name map, for the "Tensions with other schools" links
+        schoolNames = Object.fromEntries(
+          allSchoolsData.schools.map((s: any) => [s.id, s.name])
+        );
+
+        // paradox id → metadata, for the "Position in strategic paradoxes" links
+        if (paradoxRes.ok) {
+          const paradoxes = await paradoxRes.json();
+          paradoxMeta = Object.fromEntries(
+            paradoxes.map((p: any) => [
+              p.id,
+              { name: p.name, left_label: p.left_label, right_label: p.right_label }
+            ])
+          );
+        }
+
         // Find the specific school based on the slug
         schoolData = allSchoolsData.schools.find((school: any) => school.id === slug);
-        
+
         if (!schoolData) {
           error = `Strategy school "${slug}" not found`;
         } else {
@@ -36,6 +58,22 @@
         loading = false;
       }
     });
+
+    function getPoleColor(pole: string) {
+      switch (pole) {
+        case 'left': return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300';
+        case 'right': return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300';
+        default: return 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300';
+      }
+    }
+
+    function getPoleLabel(paradoxId: string, pole: string): string {
+      const meta = paradoxMeta[paradoxId];
+      if (!meta) return pole;
+      if (pole === 'left') return meta.left_label;
+      if (pole === 'right') return meta.right_label;
+      return 'Both poles';
+    }
   
     function getGroupColor(group: string) {
       return group === 'Prescriptive' 
@@ -227,8 +265,27 @@
             Overview
           </h2>
           <div class="prose prose-lg max-w-none">
-            <p class="text-lg text-muted-foreground leading-relaxed">{schoolData.longDescription}</p>
+            <p class="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">{schoolData.longDescription}</p>
           </div>
+
+          {#if schoolData.historicalContext}
+            <div class="mt-6 bg-card border rounded-xl p-6">
+              <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                <span>🕰️</span> Historical Context
+              </h3>
+              <p class="text-muted-foreground leading-relaxed whitespace-pre-line">{schoolData.historicalContext}</p>
+            </div>
+          {/if}
+
+          {#if schoolData.keyText}
+            <div class="mt-4 flex items-start gap-3 bg-secondary/30 border-l-4 border-primary rounded-r-lg p-4">
+              <span class="text-xl">📚</span>
+              <div>
+                <div class="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1">Foundational text</div>
+                <p class="text-sm font-medium">{schoolData.keyText}</p>
+              </div>
+            </div>
+          {/if}
         </section>
   
         <!-- Three columns: Core Beliefs, Strengths, Weaknesses -->
@@ -288,6 +345,62 @@
           </div>
         </section>
   
+        <!-- Position in Strategic Paradoxes -->
+        {#if schoolData.paradoxPositions && Object.keys(schoolData.paradoxPositions).length > 0}
+          <section class="mb-12" in:fly={{ y: 30, duration: 800, delay: 350, easing: quintOut }}>
+            <h2 class="text-2xl font-bold mb-2 flex items-center gap-2">
+              <span class="text-2xl">🗺️</span>
+              Position in the Strategic Paradoxes
+            </h2>
+            <p class="text-muted-foreground mb-6">
+              Where this school stands in the tensions framed by De Wit &amp; Meyer. Click a paradox to explore it.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4">
+              {#each Object.entries(schoolData.paradoxPositions) as [paradoxId, pos] (paradoxId)}
+                {@const p = pos as SchoolParadoxPosition}
+                <button
+                  class="text-left bg-card border rounded-xl p-5 hover:shadow-lg hover:border-primary/50 transition-all"
+                  on:click={() => goto(`/landscapes/${paradoxId}`)}
+                >
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span class="font-semibold">{paradoxMeta[paradoxId]?.name ?? paradoxId}</span>
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-medium whitespace-nowrap {getPoleColor(p.pole)}">
+                      {getPoleLabel(paradoxId, p.pole)}
+                    </span>
+                  </div>
+                  <p class="text-sm text-muted-foreground">{p.note}</p>
+                </button>
+              {/each}
+            </div>
+          </section>
+        {/if}
+
+        <!-- Tensions with Other Schools -->
+        {#if schoolData.tensionsWith && schoolData.tensionsWith.length > 0}
+          <section class="mb-12" in:fly={{ y: 30, duration: 800, delay: 380, easing: quintOut }}>
+            <h2 class="text-2xl font-bold mb-2 flex items-center gap-2">
+              <span class="text-2xl">⚔️</span>
+              Tensions with Other Schools
+            </h2>
+            <p class="text-muted-foreground mb-6">
+              Where {schoolData.shortName} School disagrees with its rivals — the debates that define the field.
+            </p>
+            <div class="space-y-4">
+              {#each schoolData.tensionsWith as t}
+                <div class="bg-card border rounded-xl p-5">
+                  <button
+                    class="inline-flex items-center gap-2 mb-2 font-semibold text-primary hover:underline"
+                    on:click={() => navigateToOtherSchool(t.school)}
+                  >
+                    vs. {schoolNames[t.school] ?? t.school} →
+                  </button>
+                  <p class="text-sm text-muted-foreground leading-relaxed">{t.tension}</p>
+                </div>
+              {/each}
+            </div>
+          </section>
+        {/if}
+
         <!-- Navigation to Other Schools -->
         <section class="mb-12" in:fly={{ y: 30, duration: 800, delay: 400, easing: quintOut }}>
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">

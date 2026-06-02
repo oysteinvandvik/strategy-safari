@@ -4,11 +4,14 @@
     import { fly, scale } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
     import { spring } from 'svelte/motion';
+    import { goto } from '$app/navigation';
     import type { StrategicParadox } from '$lib/types';
     import { landscapeStore, loadReflection, saveReflection as persistReflection } from '$lib/stores/landscape';
 
     export let paradox: StrategicParadox;
     export let initialPosition: number | null = null;
+    /** Map of school id → display name, used to render the school links at each pole. */
+    export let schoolNames: Record<string, string> = {};
 
     const dispatch = createEventDispatcher();
 
@@ -226,9 +229,83 @@
     </section>
   {/if}
   
+  <!-- Schools at the Poles -->
+  {#if sectionsVisible && paradox.schoolsAtPoles}
+    <section
+      in:fly={{ y: 30, duration: 500, delay: 700, easing: quintOut }}
+      class="bg-card border rounded-lg p-8 mb-8"
+    >
+      <div class="text-center mb-2">
+        <h2 class="text-2xl font-semibold">Which Schools Stand Where</h2>
+      </div>
+      <p class="text-sm text-muted-foreground text-center mb-6">
+        How Mintzberg's ten schools of strategy map onto this tension
+        {#if paradox.dwChapter}
+          · De Wit &amp; Meyer, Ch. {paradox.dwChapter}
+        {/if}
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Left pole -->
+        <div class="bg-gradient-to-br from-orange-50 to-orange-100/50 dark:from-orange-950/20 dark:to-orange-900/10 rounded-lg p-5 border border-orange-200/60 dark:border-orange-900/40">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-3 h-3 bg-orange-500 rounded-full"></div>
+            <h3 class="font-semibold text-orange-600 dark:text-orange-400">{paradox.left_label}</h3>
+          </div>
+
+          {#if paradox.schoolsAtPoles.left.length > 0}
+            <div class="flex flex-wrap gap-2 mb-4">
+              {#each paradox.schoolsAtPoles.left as schoolId}
+                <button
+                  on:click={() => goto(`/schools/${schoolId}`)}
+                  class="px-3 py-1 bg-white dark:bg-orange-950/40 text-orange-700 dark:text-orange-300 text-sm rounded-full border border-orange-200 dark:border-orange-800 hover:bg-orange-100 dark:hover:bg-orange-900/40 transition-colors"
+                >
+                  {schoolNames[schoolId] ?? schoolId} →
+                </button>
+              {/each}
+            </div>
+          {/if}
+
+          {#if paradox.leftThinkers && paradox.leftThinkers.length > 0}
+            <p class="text-xs text-muted-foreground">
+              <span class="font-medium">Key thinkers:</span> {paradox.leftThinkers.join(', ')}
+            </p>
+          {/if}
+        </div>
+
+        <!-- Right pole -->
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-950/20 dark:to-blue-900/10 rounded-lg p-5 border border-blue-200/60 dark:border-blue-900/40">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <h3 class="font-semibold text-blue-600 dark:text-blue-400">{paradox.right_label}</h3>
+          </div>
+
+          {#if paradox.schoolsAtPoles.right.length > 0}
+            <div class="flex flex-wrap gap-2 mb-4">
+              {#each paradox.schoolsAtPoles.right as schoolId}
+                <button
+                  on:click={() => goto(`/schools/${schoolId}`)}
+                  class="px-3 py-1 bg-white dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-sm rounded-full border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors"
+                >
+                  {schoolNames[schoolId] ?? schoolId} →
+                </button>
+              {/each}
+            </div>
+          {/if}
+
+          {#if paradox.rightThinkers && paradox.rightThinkers.length > 0}
+            <p class="text-xs text-muted-foreground">
+              <span class="font-medium">Key thinkers:</span> {paradox.rightThinkers.join(', ')}
+            </p>
+          {/if}
+        </div>
+      </div>
+    </section>
+  {/if}
+
   <!-- Book Recommendations -->
   {#if sectionsVisible}
-    <section 
+    <section
       in:fly={{ y: 30, duration: 500, delay: 800, easing: quintOut }}
       class="mb-8"
     >
