@@ -29,6 +29,18 @@
     { href: '/radar', label: 'Radar', icon: '📊' },
     { href: '/about', label: 'About', icon: 'ℹ️' }
   ];
+
+  // "Your Thread" is the user's own through-line — kept separate from the
+  // content modules above.
+  const threadItem = { href: '/landscapes/profile', label: 'Your Thread', icon: '🧵' };
+
+  function isActive(href: string, path: string): boolean {
+    if (href === '/landscapes/profile') return path === '/landscapes/profile';
+    if (href === '/landscapes')
+      return path === '/landscapes' || (path.startsWith('/landscapes/') && path !== '/landscapes/profile');
+    if (href === '/ps' || href === '/library' || href === '/schools') return path.startsWith(href);
+    return path === href;
+  }
 </script>
 
 <header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -50,13 +62,22 @@
         {#each navigationItems as item}
           <a
             href={item.href}
-            class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary {$currentPath === item.href || ($currentPath.startsWith('/ps') && item.href === '/ps') || ($currentPath.startsWith('/landscapes') && item.href === '/landscapes') || ($currentPath.startsWith('/library') && item.href === '/library') ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}"
+            class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary {isActive(item.href, $currentPath) ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}"
           >
             <span class="text-base">{item.icon}</span>
             <span>{item.label}</span>
           </a>
         {/each}
-        
+
+        <!-- Your Thread — the user's own destination, set apart -->
+        <a
+          href={threadItem.href}
+          class="flex items-center gap-2 ml-3 pl-3 border-l px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary {isActive(threadItem.href, $currentPath) ? 'bg-primary text-primary-foreground' : 'text-foreground'}"
+        >
+          <span class="text-base">{threadItem.icon}</span>
+          <span>{threadItem.label}</span>
+        </a>
+
         <div class="ml-4">
           <ThemeToggle />
         </div>
@@ -92,13 +113,23 @@
           {#each navigationItems as item}
             <a
               href={item.href}
-              class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors {$currentPath === item.href || ($currentPath.startsWith('/ps') && item.href === '/ps') || ($currentPath.startsWith('/landscapes') && item.href === '/landscapes') || ($currentPath.startsWith('/library') && item.href === '/library') ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'}"
+              class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors {isActive(item.href, $currentPath) ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'}"
               on:click={closeMobileMenu}
             >
               <span class="text-lg">{item.icon}</span>
               <span>{item.label}</span>
             </a>
           {/each}
+
+          <!-- Your Thread — set apart with a divider -->
+          <a
+            href={threadItem.href}
+            class="flex items-center gap-3 mt-2 pt-3 border-t px-3 py-2 rounded-md text-sm font-medium transition-colors {isActive(threadItem.href, $currentPath) ? 'bg-primary text-primary-foreground' : 'text-foreground hover:bg-secondary'}"
+            on:click={closeMobileMenu}
+          >
+            <span class="text-lg">{threadItem.icon}</span>
+            <span>{threadItem.label}</span>
+          </a>
         </nav>
         
         <div class="mt-4 pt-4 border-t">

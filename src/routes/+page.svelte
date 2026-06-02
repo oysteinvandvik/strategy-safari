@@ -52,6 +52,15 @@
       href: '/radar',
       color: 'from-orange-500 to-red-600',
       gradient: 'bg-gradient-to-br from-orange-50 to-red-100 dark:from-orange-950/20 dark:to-red-900/20'
+    },
+    {
+      id: 'thread',
+      title: 'Your Thread',
+      icon: '🧵',
+      description: 'Your own through-line: where you stand on the paradoxes, the schools closest to your thinking, books to read next, and your saved reflections.',
+      href: '/landscapes/profile',
+      color: 'from-cyan-500 to-blue-600',
+      gradient: 'bg-gradient-to-br from-cyan-50 to-blue-100 dark:from-cyan-950/20 dark:to-blue-900/20'
     }
   ];
 
@@ -61,12 +70,6 @@
       icon: '🎭',
       description: 'Encounter narrative dilemmas that surface trade-offs and tensions. Ideal for team discussions.',
       gradient: 'bg-gradient-to-br from-rose-50 to-pink-100 dark:from-rose-950/20 dark:to-pink-900/20'
-    },
-    {
-      title: 'Your Thread',
-      icon: '🧵',
-      description: 'Track reflections and evolving strategic thinking. Weave your insights into the fabric of strategy.',
-      gradient: 'bg-gradient-to-br from-cyan-50 to-blue-100 dark:from-cyan-950/20 dark:to-blue-900/20'
     }
   ];
 
@@ -210,11 +213,11 @@
         <!-- Coming Soon -->
         <div class="text-center mb-8">
           <h3 class="text-2xl font-semibold text-muted-foreground mb-8">Coming Soon</h3>
-          <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
             {#each comingSoon as item, index}
               <div
                 in:scale={{ duration: 400, delay: 1800 + (index * 100), easing: quintOut }}
-                class="group {item.gradient} rounded-xl p-6 border opacity-60 hover:opacity-80 transition-opacity duration-300"
+                class="group {item.gradient} rounded-xl p-6 border opacity-60 hover:opacity-80 transition-opacity duration-300 w-full sm:w-80"
               >
                 <div class="text-3xl mb-3">{item.icon}</div>
                 <h4 class="text-lg font-semibold mb-2">{item.title}</h4>
