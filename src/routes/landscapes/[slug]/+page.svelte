@@ -1,134 +1,56 @@
 <!-- src/routes/landscapes/[slug]/+page.svelte -->
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { fly } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import ParadoxDetail from '$lib/components/ParadoxDetail.svelte';
   import type { StrategicParadox } from '$lib/types';
+  import type { PageData } from './$types';
 
-  let paradox: StrategicParadox | null = null;
-  let allParadoxes: StrategicParadox[] = [];
-  let schoolNames: Record<string, string> = {};
-  let loading = true;
-  let error: string | null = null;
+  export let data: PageData;
+
+  $: paradox = data.paradox as StrategicParadox;
+  $: allParadoxes = data.allParadoxes as StrategicParadox[];
+  $: schoolNames = data.schoolNames as Record<string, string>;
+
+  // Books that explore this paradox
+  $: paradoxBooks = ((data as any).books ?? []).filter(
+    (b: any) => Array.isArray(b.paradoxes_explored) && b.paradoxes_explored.includes(paradox?.id)
+  );
+
   let userPosition: number | null = null;
 
-  // Get the slug from the URL
-  $: slug = $page.params.slug;
-
-  onMount(async () => {
-    try {
-      const [paradoxRes, schoolsRes] = await Promise.all([
-        fetch('/data/landscapes.json'),
-        fetch('/data/schools.json')
-      ]);
-      if (!paradoxRes.ok) throw new Error('Failed to load paradoxes data');
-      allParadoxes = await paradoxRes.json();
-
-      // Build school id → name map for the "Which Schools Stand Where" section
-      if (schoolsRes.ok) {
-        const schoolsData = await schoolsRes.json();
-        schoolNames = Object.fromEntries(
-          schoolsData.schools.map((s: { id: string; name: string }) => [s.id, s.name])
-        );
-      }
-
-      // Find the specific paradox based on the slug
-      paradox = allParadoxes.find(p => p.id === slug) || null;
-
-      if (!paradox) {
-        error = `Strategic paradox "${slug}" not found`;
-      } else {
-        // Load user position if saved
-        const positions = JSON.parse(localStorage.getItem('landscape-positions') || '{}');
-        userPosition = positions[paradox.id] || null;
-      }
-    } catch (err) {
-      error = err instanceof Error ? err.message : 'Unknown error';
-    } finally {
-      loading = false;
-    }
+  onMount(() => {
+    const positions = JSON.parse(localStorage.getItem('landscape-positions') || '{}');
+    userPosition = positions[paradox.id] ?? null;
   });
 
-  function handlePositionChanged(event: CustomEvent) {
-    console.log('Position changed:', event.detail);
-  }
-
-  function handleReflectionSaved(event: CustomEvent) {
-    console.log('Reflection saved:', event.detail);
-  }
+  function handlePositionChanged(_event: CustomEvent) {}
+  function handleReflectionSaved(_event: CustomEvent) {}
 
   function getNextParadox() {
-    if (!paradox || !allParadoxes.length) {
-      console.log('getNextParadox: Missing paradox or allParadoxes');
-      return null;
-    }
-    
+    if (!paradox || !allParadoxes.length) return null;
     const currentIndex = allParadoxes.findIndex(p => p.id === paradox.id);
-    console.log('Current index:', currentIndex, 'of', allParadoxes.length);
-    
-    if (currentIndex === -1) {
-      console.log('Current paradox not found in array');
-      return null;
-    }
-    
-    const nextIndex = (currentIndex + 1) % allParadoxes.length;
-    const nextParadox = allParadoxes[nextIndex];
-    console.log('Next index:', nextIndex, 'Next paradox:', nextParadox?.name);
-    
-    return nextParadox;
+    if (currentIndex === -1) return null;
+    return allParadoxes[(currentIndex + 1) % allParadoxes.length];
   }
 
   function getPrevParadox() {
-    if (!paradox || !allParadoxes.length) {
-      console.log('getPrevParadox: Missing paradox or allParadoxes');
-      return null;
-    }
-    
+    if (!paradox || !allParadoxes.length) return null;
     const currentIndex = allParadoxes.findIndex(p => p.id === paradox.id);
-    console.log('Current index for prev:', currentIndex, 'of', allParadoxes.length);
-    
-    if (currentIndex === -1) {
-      console.log('Current paradox not found in array');
-      return null;
-    }
-    
-    const prevIndex = (currentIndex - 1 + allParadoxes.length) % allParadoxes.length;
-    const prevParadox = allParadoxes[prevIndex];
-    console.log('Prev index:', prevIndex, 'Prev paradox:', prevParadox?.name);
-    
-    return prevParadox;
+    if (currentIndex === -1) return null;
+    return allParadoxes[(currentIndex - 1 + allParadoxes.length) % allParadoxes.length];
   }
 
   function handleNext() {
-    console.log('Next clicked, current paradox:', paradox?.name);
-    console.log('All paradoxes:', allParadoxes.map(p => p.id));
-    
     const next = getNextParadox();
-    console.log('Next paradox:', next?.name);
-    
-    if (next) {
-      console.log('Navigating to:', `/landscapes/${next.id}`);
-      goto(`/landscapes/${next.id}`);
-    } else {
-      console.log('No next paradox found');
-    }
+    if (next) goto(`/landscapes/${next.id}`);
   }
 
   function handlePrev() {
-    console.log('Prev clicked, current paradox:', paradox?.name);
-    
     const prev = getPrevParadox();
-    console.log('Prev paradox:', prev?.name);
-    
-    if (prev) {
-      console.log('Navigating to:', `/landscapes/${prev.id}`);
-      goto(`/landscapes/${prev.id}`);
-    } else {
-      console.log('No prev paradox found');
-    }
+    if (prev) goto(`/landscapes/${prev.id}`);
   }
 </script>
 
@@ -142,26 +64,7 @@
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-8">
-  {#if loading}
-    <div class="flex items-center justify-center min-h-[400px]">
-      <div class="text-center">
-        <div class="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4 mx-auto"></div>
-        <p class="text-muted-foreground">Loading paradox...</p>
-      </div>
-    </div>
-  {:else if error}
-    <div class="text-center py-12">
-      <div class="text-red-500 text-6xl mb-4">⚠️</div>
-      <h2 class="text-xl font-semibold mb-2">Paradox Not Found</h2>
-      <p class="text-muted-foreground mb-6">{error}</p>
-      <button 
-        class="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
-        on:click={() => goto('/landscapes')}
-      >
-        Back to Landscapes
-      </button>
-    </div>
-  {:else if paradox}
+  {#if paradox}
     <!-- Breadcrumb Navigation -->
     <nav 
       in:fly={{ y: -20, duration: 500, easing: quintOut }}
@@ -189,6 +92,40 @@
       />
     </div>
 
+    <!-- Books exploring this paradox -->
+    {#if paradoxBooks.length > 0}
+      <section class="mt-8" in:fly={{ y: 20, duration: 500, delay: 300, easing: quintOut }}>
+        <h2 class="text-2xl font-semibold mb-2 flex items-center gap-2">
+          <span class="text-2xl">📚</span>
+          Books That Explore This Tension
+        </h2>
+        <p class="text-muted-foreground mb-6">
+          Read further on the {paradox.left_label} ↔ {paradox.right_label} paradox.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {#each paradoxBooks as book}
+            <button
+              class="flex gap-4 text-left bg-card border rounded-xl p-4 hover:shadow-lg hover:border-primary/50 transition-all"
+              on:click={() => goto(`/library/${book.id}`)}
+            >
+              {#if book.cover_small || book.cover_url}
+                <img
+                  src={book.cover_small || book.cover_url}
+                  alt="{book.title} cover"
+                  class="w-12 h-16 object-cover rounded flex-shrink-0 bg-muted"
+                  loading="lazy"
+                />
+              {/if}
+              <div class="min-w-0">
+                <div class="font-medium text-sm leading-snug mb-1">{book.title}</div>
+                <div class="text-xs text-muted-foreground">{book.authors?.[0]}{book.publication_year ? ` · ${book.publication_year}` : ''}</div>
+              </div>
+            </button>
+          {/each}
+        </div>
+      </section>
+    {/if}
+
     <!-- Navigation Controls -->
     <div 
       in:fly={{ y: 20, duration: 500, delay: 400, easing: quintOut }}
@@ -198,10 +135,7 @@
         {#if getPrevParadox()}
           <button
             class="flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-secondary/80 text-secondary-foreground rounded-lg transition-colors"
-            on:click={() => {
-              console.log('Previous button clicked!');
-              handlePrev();
-            }}
+            on:click={handlePrev}
           >
             ← Previous
           </button>
@@ -217,10 +151,7 @@
         {#if getNextParadox()}
           <button
             class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors"
-            on:click={() => {
-              console.log('Next button clicked!');
-              handleNext();
-            }}
+            on:click={handleNext}
           >
             Next →
           </button>

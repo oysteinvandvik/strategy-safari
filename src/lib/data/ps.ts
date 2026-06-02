@@ -22,9 +22,21 @@ export interface PsItem {
 	questions: unknown[];
 }
 
+export interface PsInteraction {
+	from: string;
+	to: string;
+	relationship: string;
+}
+
+export interface PsInteractions {
+	description: string;
+	matrix: PsInteraction[];
+}
+
 export interface PsData {
 	framework: PsFramework;
 	ps: PsItem[];
+	interactions: PsInteractions;
 }
 
 export async function fetchPs(fetch: typeof globalThis.fetch): Promise<PsData> {

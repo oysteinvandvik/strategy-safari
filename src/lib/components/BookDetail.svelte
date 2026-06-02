@@ -16,52 +16,28 @@
       description: string;
       category: string;
       cover_url: string;
-      cover_medium: string;
-      cover_small: string;
-      openlibrary_url: string;
-      voices_emphasis: {
-        plan: number;
-        pattern: number;
-        position: number;
-        perspective: number;
-        ploy: number;
-      };
+      cover_medium?: string;
+      cover_small?: string;
+      openlibrary_url?: string;
+      voices_emphasis: Record<string, number>;
       paradoxes_explored: string[];
       paradox_position?: string;
+      schools?: string[];
       tags: string[];
       reading_level: string;
       page_count: number;
     }
-  
-    export let bookId: string;
-  
-    let book: Book | null = null;
-    let allBooks: Book[] = [];
-    let categories: Record<string, any> = {};
-    let loading = true;
-    let error: string | null = null;
+
+    export let book: Book;
+    export let allBooks: Book[] = [];
+    export let categories: Record<string, any> = {};
+    export let schoolNames: Record<string, string> = {};
+    export let paradoxNames: Record<string, string> = {};
+
     let sectionsVisible = false;
-  
-    onMount(async () => {
-      try {
-        const res = await fetch('/data/books.json');
-        if (!res.ok) throw new Error('Failed to load books data');
-        const data = await res.json();
-        
-        allBooks = data.books;
-        categories = data.categories;
-        book = allBooks.find(b => b.id === bookId) || null;
-        
-        if (!book) {
-          error = `Book "${bookId}" not found`;
-        } else {
-          setTimeout(() => sectionsVisible = true, 100);
-        }
-      } catch (err) {
-        error = err instanceof Error ? err.message : 'Unknown error';
-      } finally {
-        loading = false;
-      }
+
+    onMount(() => {
+      setTimeout(() => (sectionsVisible = true), 100);
     });
   
     function getVoiceColor(voice: string): string {
@@ -123,26 +99,7 @@
     }
   </script>
   
-  {#if loading}
-    <div class="flex items-center justify-center min-h-[400px]">
-      <div class="text-center">
-        <div class="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4 mx-auto"></div>
-        <p class="text-muted-foreground">Loading book details...</p>
-      </div>
-    </div>
-  {:else if error}
-    <div class="text-center py-12">
-      <div class="text-red-500 text-6xl mb-4">📚</div>
-      <h2 class="text-xl font-semibold mb-2">Book Not Found</h2>
-      <p class="text-muted-foreground mb-6">{error}</p>
-      <button 
-        class="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
-        on:click={() => goto('/library')}
-      >
-        Back to Library
-      </button>
-    </div>
-  {:else if book}
+  {#if book}
     <!-- Breadcrumb -->
     {#if sectionsVisible}
       <nav 
@@ -302,10 +259,29 @@
                     href="/landscapes/{paradox}"
                     class="inline-flex items-center gap-2 px-3 py-2 bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 rounded-lg hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors"
                   >
-                    <span class="capitalize">{paradox}</span>
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
+                    <span>{paradoxNames[paradox] ?? paradox}</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                {/each}
+              </div>
+            </div>
+          {/if}
+
+          <!-- Strategy Schools -->
+          {#if book.schools && book.schools.length > 0}
+            <div class="bg-card border rounded-lg p-6">
+              <h2 class="text-xl font-semibold mb-4">Strategy Schools</h2>
+              <p class="text-muted-foreground mb-6">
+                Which of Mintzberg's ten schools this book speaks for
+              </p>
+              <div class="flex flex-wrap gap-3">
+                {#each book.schools as school}
+                  <a
+                    href="/schools/{school}"
+                    class="inline-flex items-center gap-2 px-3 py-2 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors"
+                  >
+                    <span>{schoolNames[school] ?? school}</span>
+                    <span aria-hidden="true">→</span>
                   </a>
                 {/each}
               </div>

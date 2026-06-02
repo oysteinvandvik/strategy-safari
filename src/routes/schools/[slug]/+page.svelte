@@ -1,62 +1,39 @@
 <!-- src/routes/schools/[slug]/+page.svelte -->
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { page } from '$app/stores';
     import { goto } from '$app/navigation';
     import { fly, scale } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
     import type { SchoolParadoxPosition } from '$lib/types';
+    import type { PageData } from './$types';
 
-    let schoolData: any = null;
-    let allSchoolsData: any = null;
-    let schoolNames: Record<string, string> = {};
-    let paradoxMeta: Record<string, { name: string; left_label: string; right_label: string }> = {};
-    let loading = true;
-    let error: string | null = null;
+    export let data: PageData;
+
+    $: schoolData = data.school as any;
+    $: allSchoolsData = { schools: data.allSchools as any[] };
+
+    // id → name map, for the "Tensions with other schools" links
+    $: schoolNames = Object.fromEntries(
+      (allSchoolsData.schools ?? []).map((s: any) => [s.id, s.name])
+    ) as Record<string, string>;
+
+    // paradox id → metadata, for the "Position in strategic paradoxes" links
+    $: paradoxMeta = Object.fromEntries(
+      ((data as any).paradoxes ?? []).map((p: any) => [
+        p.id,
+        { name: p.name, left_label: p.left_label, right_label: p.right_label }
+      ])
+    ) as Record<string, { name: string; left_label: string; right_label: string }>;
+
+    // Books tagged with this school
+    $: schoolBooks = ((data as any).books ?? []).filter((b: any) =>
+      Array.isArray(b.schools) && b.schools.includes(schoolData?.id)
+    );
+
     let sectionsVisible = false;
 
-    // Get the slug from the URL
-    $: slug = $page.params.slug;
-
-    onMount(async () => {
-      try {
-        const [res, paradoxRes] = await Promise.all([
-          fetch('/data/schools.json'),
-          fetch('/data/landscapes.json')
-        ]);
-        if (!res.ok) throw new Error('Failed to load schools data');
-        allSchoolsData = await res.json();
-
-        // id → name map, for the "Tensions with other schools" links
-        schoolNames = Object.fromEntries(
-          allSchoolsData.schools.map((s: any) => [s.id, s.name])
-        );
-
-        // paradox id → metadata, for the "Position in strategic paradoxes" links
-        if (paradoxRes.ok) {
-          const paradoxes = await paradoxRes.json();
-          paradoxMeta = Object.fromEntries(
-            paradoxes.map((p: any) => [
-              p.id,
-              { name: p.name, left_label: p.left_label, right_label: p.right_label }
-            ])
-          );
-        }
-
-        // Find the specific school based on the slug
-        schoolData = allSchoolsData.schools.find((school: any) => school.id === slug);
-
-        if (!schoolData) {
-          error = `Strategy school "${slug}" not found`;
-        } else {
-          // Trigger staggered animations
-          setTimeout(() => sectionsVisible = true, 200);
-        }
-      } catch (err) {
-        error = err instanceof Error ? err.message : 'Unknown error';
-      } finally {
-        loading = false;
-      }
+    onMount(() => {
+      setTimeout(() => (sectionsVisible = true), 200);
     });
 
     function getPoleColor(pole: string) {
@@ -125,24 +102,7 @@
     {/if}
   </svelte:head>
   
-  {#if loading}
-    <div class="max-w-7xl mx-auto px-4 py-16 text-center">
-      <div class="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
-      <p class="mt-4 text-muted-foreground">Loading school details...</p>
-    </div>
-  
-  {:else if error}
-    <div class="max-w-7xl mx-auto px-4 py-16">
-      <div class="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-        <h2 class="text-xl font-semibold text-red-800 mb-2">Strategy School Not Found</h2>
-        <p class="text-red-600 mb-4">{error}</p>
-        <a href="/schools" class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
-          ← Back to Schools Overview
-        </a>
-      </div>
-    </div>
-  
-  {:else if schoolData}
+  {#if schoolData}
     <div class="max-w-7xl mx-auto px-4 py-8">
       
       <!-- Breadcrumb -->
@@ -396,6 +356,40 @@
                   </button>
                   <p class="text-sm text-muted-foreground leading-relaxed">{t.tension}</p>
                 </div>
+              {/each}
+            </div>
+          </section>
+        {/if}
+
+        <!-- Books from this School -->
+        {#if schoolBooks.length > 0}
+          <section class="mb-12" in:fly={{ y: 30, duration: 800, delay: 390, easing: quintOut }}>
+            <h2 class="text-2xl font-bold mb-2 flex items-center gap-2">
+              <span class="text-2xl">📚</span>
+              Read This School
+            </h2>
+            <p class="text-muted-foreground mb-6">
+              Books in the library that speak in this school's voice.
+            </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {#each schoolBooks as book}
+                <button
+                  class="flex gap-4 text-left bg-card border rounded-xl p-4 hover:shadow-lg hover:border-primary/50 transition-all"
+                  on:click={() => goto(`/library/${book.id}`)}
+                >
+                  {#if book.cover_small || book.cover_url}
+                    <img
+                      src={book.cover_small || book.cover_url}
+                      alt="{book.title} cover"
+                      class="w-12 h-16 object-cover rounded flex-shrink-0 bg-muted"
+                      loading="lazy"
+                    />
+                  {/if}
+                  <div class="min-w-0">
+                    <div class="font-medium text-sm leading-snug mb-1">{book.title}</div>
+                    <div class="text-xs text-muted-foreground">{book.authors?.[0]}{book.publication_year ? ` · ${book.publication_year}` : ''}</div>
+                  </div>
+                </button>
               {/each}
             </div>
           </section>

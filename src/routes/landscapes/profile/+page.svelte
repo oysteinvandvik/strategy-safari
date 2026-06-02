@@ -5,35 +5,74 @@
     import { quintOut } from 'svelte/easing';
     import { goto } from '$app/navigation';
     import type { StrategicParadox } from '$lib/types';
-  
-    let paradoxes: StrategicParadox[] = [];
+    import { loadReflection } from '$lib/stores/landscape';
+    import type { PageData } from './$types';
+
+    export let data: PageData;
+
+    $: paradoxes = (data.paradoxes ?? []) as StrategicParadox[];
+    $: schoolNames = (data.schoolNames ?? {}) as Record<string, string>;
+    $: books = ((data as any).books ?? []) as any[];
+
     let userPositions: Record<string, number> = {};
-    let loading = true;
-    let error: string | null = null;
+    let reflections: Record<string, string> = {};
     let sectionsVisible = false;
-  
-    onMount(async () => {
-      try {
-        const res = await fetch('/data/landscapes.json');
-        if (!res.ok) throw new Error('Failed to load paradoxes data');
-        paradoxes = await res.json();
-        
-        // Load user positions
-        const saved = localStorage.getItem('landscape-positions');
-        if (saved) {
-          userPositions = JSON.parse(saved);
-        }
-        
-        setTimeout(() => sectionsVisible = true, 100);
-      } catch (err) {
-        error = err instanceof Error ? err.message : 'Unknown error';
-      } finally {
-        loading = false;
-      }
+
+    onMount(() => {
+      const saved = localStorage.getItem('landscape-positions');
+      if (saved) userPositions = JSON.parse(saved);
+      setTimeout(() => (sectionsVisible = true), 100);
     });
-  
+
     $: exploredParadoxes = paradoxes.filter(p => userPositions[p.id] !== undefined);
     $: unexploredParadoxes = paradoxes.filter(p => userPositions[p.id] === undefined);
+
+    // Reflections the user has written, keyed by paradox id (browser-only)
+    $: if (exploredParadoxes.length >= 0 && typeof window !== 'undefined') {
+      reflections = Object.fromEntries(
+        exploredParadoxes
+          .map((p) => [p.id, loadReflection(p.id)])
+          .filter(([, text]) => text)
+      );
+    }
+
+    // Which pole the user leans toward in a paradox (or null if balanced)
+    function poleFor(pos: number): 'left' | 'right' | null {
+      if (pos <= 45) return 'left';
+      if (pos >= 55) return 'right';
+      return null;
+    }
+
+    // Aggregate the schools that sit on the user's chosen poles → "closest schools"
+    $: closestSchools = (() => {
+      const counts: Record<string, number> = {};
+      for (const p of exploredParadoxes) {
+        const pole = poleFor(userPositions[p.id]);
+        if (!pole || !p.schoolsAtPoles) continue;
+        for (const sid of p.schoolsAtPoles[pole] ?? []) {
+          counts[sid] = (counts[sid] ?? 0) + 1;
+        }
+      }
+      return Object.entries(counts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 4)
+        .map(([id, count]) => ({ id, count }));
+    })();
+
+    // Books that explore the paradoxes the user has engaged, ranked by overlap
+    $: recommendedBooks = (() => {
+      const exploredIds = new Set(exploredParadoxes.map((p) => p.id));
+      if (exploredIds.size === 0) return [];
+      return books
+        .map((b: any) => ({
+          book: b,
+          overlap: (b.paradoxes_explored ?? []).filter((id: string) => exploredIds.has(id)).length
+        }))
+        .filter((x: any) => x.overlap > 0)
+        .sort((a: any, b: any) => b.overlap - a.overlap)
+        .slice(0, 4)
+        .map((x: any) => x.book);
+    })();
   
     function getPositionDescription(pos: number, paradox: StrategicParadox) {
       if (pos < 20) return `Strongly ${paradox.left_label}`;
@@ -88,20 +127,7 @@
   </svelte:head>
   
   <div class="max-w-5xl mx-auto px-4 py-8">
-    {#if loading}
-      <div class="flex items-center justify-center min-h-[400px]">
-        <div class="text-center">
-          <div class="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4 mx-auto"></div>
-          <p class="text-muted-foreground">Loading your profile...</p>
-        </div>
-      </div>
-    {:else if error}
-      <div class="text-center py-12">
-        <div class="text-red-500 text-6xl mb-4">⚠️</div>
-        <h2 class="text-xl font-semibold mb-2">Failed to Load Profile</h2>
-        <p class="text-muted-foreground">{error}</p>
-      </div>
-    {:else}
+    {#if true}
       <!-- Header -->
       {#if sectionsVisible}
         <section 
@@ -180,9 +206,72 @@
           </div>
         {/if}
   
+        <!-- Synthesis: closest schools + recommended reading -->
+        {#if sectionsVisible && (closestSchools.length > 0 || recommendedBooks.length > 0)}
+          <section
+            in:fly={{ y: 30, duration: 500, delay: 300, easing: quintOut }}
+            class="grid md:grid-cols-2 gap-6 mb-12"
+          >
+            <!-- Closest schools -->
+            {#if closestSchools.length > 0}
+              <div class="bg-gradient-to-br from-primary/5 to-purple-600/5 border rounded-xl p-6">
+                <h2 class="text-xl font-semibold mb-2 flex items-center gap-2">
+                  <span class="text-2xl">🧭</span>
+                  Your Closest Schools
+                </h2>
+                <p class="text-sm text-muted-foreground mb-4">
+                  Based on where you stand, your thinking aligns most with these schools.
+                </p>
+                <div class="space-y-2">
+                  {#each closestSchools as s}
+                    <button
+                      class="w-full flex items-center justify-between gap-2 text-left bg-card border rounded-lg px-4 py-3 hover:border-primary/50 hover:shadow-sm transition-all"
+                      on:click={() => goto(`/schools/${s.id}`)}
+                    >
+                      <span class="font-medium text-sm">{schoolNames[s.id] ?? s.id}</span>
+                      <span class="text-xs text-muted-foreground whitespace-nowrap">
+                        {s.count} {s.count === 1 ? 'alignment' : 'alignments'} →
+                      </span>
+                    </button>
+                  {/each}
+                </div>
+              </div>
+            {/if}
+
+            <!-- Recommended reading -->
+            {#if recommendedBooks.length > 0}
+              <div class="bg-gradient-to-br from-primary/5 to-purple-600/5 border rounded-xl p-6">
+                <h2 class="text-xl font-semibold mb-2 flex items-center gap-2">
+                  <span class="text-2xl">📚</span>
+                  Recommended Reading
+                </h2>
+                <p class="text-sm text-muted-foreground mb-4">
+                  Books that engage the tensions you've been exploring.
+                </p>
+                <div class="space-y-2">
+                  {#each recommendedBooks as book}
+                    <button
+                      class="w-full flex gap-3 text-left bg-card border rounded-lg px-4 py-3 hover:border-primary/50 hover:shadow-sm transition-all"
+                      on:click={() => goto(`/library/${book.id}`)}
+                    >
+                      {#if book.cover_small || book.cover_url}
+                        <img src={book.cover_small || book.cover_url} alt="" class="w-8 h-11 object-cover rounded flex-shrink-0 bg-muted" loading="lazy" />
+                      {/if}
+                      <div class="min-w-0">
+                        <div class="font-medium text-sm leading-snug">{book.title}</div>
+                        <div class="text-xs text-muted-foreground">{book.authors?.[0]}</div>
+                      </div>
+                    </button>
+                  {/each}
+                </div>
+              </div>
+            {/if}
+          </section>
+        {/if}
+
         <!-- Explored Paradoxes -->
         {#if sectionsVisible}
-          <section 
+          <section
             in:fly={{ y: 30, duration: 500, delay: 400, easing: quintOut }}
             class="mb-12"
           >
@@ -244,6 +333,13 @@
                         {Math.round(position)}% towards {position > 50 ? paradox.right_label : paradox.left_label}
                       </div>
                     </div>
+
+                    {#if reflections[paradox.id]}
+                      <div class="mt-2 flex items-start gap-2 bg-secondary/30 rounded-lg p-3 text-left">
+                        <span class="text-sm">💭</span>
+                        <p class="text-sm text-muted-foreground italic">"{reflections[paradox.id]}"</p>
+                      </div>
+                    {/if}
                   </div>
                 </div>
               {/each}

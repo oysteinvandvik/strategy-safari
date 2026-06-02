@@ -1,40 +1,25 @@
 <!-- src/routes/ps/[slug]/+page.svelte -->
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { page } from '$app/stores';
     import { goto } from '$app/navigation';
     import { fly, scale } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
-  
-    let pData: any = null;
-    let allPsData: any = null;
-    let loading = true;
-    let error: string | null = null;
+    import type { PageData } from './$types';
+
+    export let data: PageData;
+
+    $: pData = data.pItem as any;
+    $: allPsData = { ps: data.allPs, interactions: (data as any).interactions };
+
+    // Books that emphasize this voice strongly (score ≥ 4)
+    $: voiceBooks = ((data as any).books ?? [])
+      .filter((b: any) => (b.voices_emphasis?.[pData?.id] ?? 0) >= 4)
+      .sort((a: any, b: any) => (b.voices_emphasis?.[pData?.id] ?? 0) - (a.voices_emphasis?.[pData?.id] ?? 0));
+
     let sectionsVisible = false;
-  
-    // Get the slug from the URL
-    $: slug = $page.params.slug;
-  
-    onMount(async () => {
-      try {
-        const res = await fetch('/data/ps.json');
-        if (!res.ok) throw new Error('Failed to load P data');
-        allPsData = await res.json();
-        
-        // Find the specific P based on the slug
-        pData = allPsData.ps.find((p: any) => p.id === slug);
-        
-        if (!pData) {
-          error = `Strategy P "${slug}" not found`;
-        } else {
-          // Trigger staggered animations
-          setTimeout(() => sectionsVisible = true, 200);
-        }
-      } catch (err) {
-        error = err instanceof Error ? err.message : 'Unknown error';
-      } finally {
-        loading = false;
-      }
+
+    onMount(() => {
+      setTimeout(() => (sectionsVisible = true), 200);
     });
   
     function getColorClasses(color: string) {
@@ -90,24 +75,7 @@
     {/if}
   </svelte:head>
   
-  {#if loading}
-    <div class="max-w-7xl mx-auto px-4 py-16 text-center">
-      <div class="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto"></div>
-      <p class="mt-4 text-muted-foreground">Loading strategy details...</p>
-    </div>
-  
-  {:else if error}
-    <div class="max-w-7xl mx-auto px-4 py-16">
-      <div class="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-        <h2 class="text-xl font-semibold text-red-800 mb-2">Strategy P Not Found</h2>
-        <p class="text-red-600 mb-4">{error}</p>
-        <a href="/ps" class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
-          ← Back to 5 P's Overview
-        </a>
-      </div>
-    </div>
-  
-  {:else if pData}
+  {#if pData}
     <div class="max-w-7xl mx-auto px-4 py-8">
       
       <!-- Breadcrumb -->
@@ -226,6 +194,44 @@
                 {/each}
               </div>
             </details>
+          </section>
+        {/if}
+
+        <!-- Books that emphasize this voice -->
+        {#if voiceBooks.length > 0}
+          <section class="mb-12" in:fly={{ y: 30, duration: 800, delay: 480, easing: quintOut }}>
+            <h2 class="text-2xl font-bold mb-2 flex items-center gap-2">
+              <span class="text-2xl">📚</span>
+              Hear This Voice in the Library
+            </h2>
+            <p class="text-muted-foreground mb-6">
+              Books that emphasize {pData.label} strongly.
+            </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {#each voiceBooks as book}
+                <button
+                  class="flex gap-4 text-left bg-card border rounded-xl p-4 hover:shadow-lg transition-all"
+                  style="border-color: {pData.color}20"
+                  on:click={() => goto(`/library/${book.id}`)}
+                >
+                  {#if book.cover_small || book.cover_url}
+                    <img
+                      src={book.cover_small || book.cover_url}
+                      alt="{book.title} cover"
+                      class="w-12 h-16 object-cover rounded flex-shrink-0 bg-muted"
+                      loading="lazy"
+                    />
+                  {/if}
+                  <div class="min-w-0">
+                    <div class="font-medium text-sm leading-snug mb-1">{book.title}</div>
+                    <div class="text-xs text-muted-foreground mb-1">{book.authors?.[0]}{book.publication_year ? ` · ${book.publication_year}` : ''}</div>
+                    <div class="inline-flex items-center gap-1 text-xs font-medium" style="color: {pData.color}">
+                      {pData.label} {book.voices_emphasis[pData.id]}/5
+                    </div>
+                  </div>
+                </button>
+              {/each}
+            </div>
           </section>
         {/if}
 
