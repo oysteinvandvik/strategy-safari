@@ -5,7 +5,7 @@
     import { quintOut } from 'svelte/easing';
     import { goto } from '$app/navigation';
     import type { StrategicParadox } from '$lib/types';
-    import { loadReflection } from '$lib/stores/landscape';
+    import { loadReflection } from '$lib/stores/landscape.svelte';
     import type { PageData } from './$types';
 
     export let data: PageData;

@@ -1,5 +1,4 @@
 import { browser } from '$app/environment';
-import { writable, derived } from 'svelte/store';
 import type { ParadoxPosition } from '$lib/types';
 
 const POSITIONS_KEY = 'landscape-positions';
@@ -15,33 +14,34 @@ function loadPositions(): Record<string, number> {
 }
 
 function createLandscapeStore() {
-	const positions = writable<Record<string, number>>(loadPositions());
+	let positions = $state<Record<string, number>>(loadPositions());
 
-	if (browser) {
-		positions.subscribe((value) => {
-			localStorage.setItem(POSITIONS_KEY, JSON.stringify(value));
-		});
+	function persist() {
+		if (browser) localStorage.setItem(POSITIONS_KEY, JSON.stringify(positions));
 	}
 
 	function setPosition(paradoxId: string, position: number) {
-		positions.update((p) => ({ ...p, [paradoxId]: position }));
+		positions = { ...positions, [paradoxId]: position };
+		persist();
 	}
 
 	function getPosition(paradoxId: string): number | null {
-		let result: number | null = null;
-		positions.subscribe((p) => {
-			result = p[paradoxId] ?? null;
-		})();
-		return result;
+		return positions[paradoxId] ?? null;
 	}
 
-	const positionList = derived(positions, ($positions) =>
-		Object.entries($positions).map(
+	const positionList = $derived(
+		Object.entries(positions).map(
 			([paradoxId, position]): ParadoxPosition => ({ paradoxId, position })
 		)
 	);
 
-	return { subscribe: positions.subscribe, setPosition, getPosition, positionList };
+	return {
+		setPosition,
+		getPosition,
+		get positionList() {
+			return positionList;
+		}
+	};
 }
 
 export const landscapeStore = createLandscapeStore();

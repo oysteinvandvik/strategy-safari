@@ -5,7 +5,7 @@ export * from './data/ps';
 export * from './data/books';
 
 // Stores
-export * from './stores/landscape';
+export * from './stores/landscape.svelte';
 
 // Types
 export type * from './types';

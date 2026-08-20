@@ -1,12 +1,9 @@
 <!-- src/lib/components/Header.svelte -->
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { derived } from 'svelte/store';
+  import { page } from '$app/state';
   import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
-  const currentPath = derived(page, ($page) => $page.url.pathname);
-  
-  let mobileMenuOpen = false;
+  let mobileMenuOpen = $state(false);
 
   const toggleMobileMenu = () => {
     mobileMenuOpen = !mobileMenuOpen;
@@ -17,9 +14,10 @@
   };
 
   // Close mobile menu when route changes
-  $: if ($currentPath) {
+  $effect(() => {
+    page.url.pathname;
     mobileMenuOpen = false;
-  }
+  });
 
   const navigationItems = [
     { href: '/schools', label: 'Schools', icon: '🏛️' },
@@ -62,7 +60,7 @@
         {#each navigationItems as item}
           <a
             href={item.href}
-            class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary {isActive(item.href, $currentPath) ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}"
+            class="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary {isActive(item.href, page.url.pathname) ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}"
           >
             <span class="text-base">{item.icon}</span>
             <span>{item.label}</span>
@@ -72,7 +70,7 @@
         <!-- Your Thread — the user's own destination, set apart -->
         <a
           href={threadItem.href}
-          class="flex items-center gap-2 ml-3 pl-3 border-l px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary {isActive(threadItem.href, $currentPath) ? 'bg-primary text-primary-foreground' : 'text-foreground'}"
+          class="flex items-center gap-2 ml-3 pl-3 border-l px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-secondary {isActive(threadItem.href, page.url.pathname) ? 'bg-primary text-primary-foreground' : 'text-foreground'}"
         >
           <span class="text-base">{threadItem.icon}</span>
           <span>{threadItem.label}</span>
@@ -113,7 +111,7 @@
           {#each navigationItems as item}
             <a
               href={item.href}
-              class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors {isActive(item.href, $currentPath) ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'}"
+              class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors {isActive(item.href, page.url.pathname) ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-secondary'}"
               on:click={closeMobileMenu}
             >
               <span class="text-lg">{item.icon}</span>
@@ -124,7 +122,7 @@
           <!-- Your Thread — set apart with a divider -->
           <a
             href={threadItem.href}
-            class="flex items-center gap-3 mt-2 pt-3 border-t px-3 py-2 rounded-md text-sm font-medium transition-colors {isActive(threadItem.href, $currentPath) ? 'bg-primary text-primary-foreground' : 'text-foreground hover:bg-secondary'}"
+            class="flex items-center gap-3 mt-2 pt-3 border-t px-3 py-2 rounded-md text-sm font-medium transition-colors {isActive(threadItem.href, page.url.pathname) ? 'bg-primary text-primary-foreground' : 'text-foreground hover:bg-secondary'}"
             on:click={closeMobileMenu}
           >
             <span class="text-lg">{threadItem.icon}</span>

@@ -5,7 +5,7 @@
     import { quintOut } from 'svelte/easing';
     import { goto } from '$app/navigation';
     import type { StrategicParadox } from '$lib/types';
-    import { landscapeStore, loadReflection, saveReflection as persistReflection } from '$lib/stores/landscape';
+    import { landscapeStore, loadReflection, saveReflection as persistReflection } from '$lib/stores/landscape.svelte';
 
     export let paradox: StrategicParadox;
     export let initialPosition: number | null = null;

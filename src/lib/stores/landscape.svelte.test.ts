@@ -1,16 +1,18 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { get } from 'svelte/store';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 // Importerer etter vi har satt opp miljøet
 // landscapeStore er en singleton — vi bruker unike nøkler per test for å unngå tilstandslekkasje
 
 describe('landscapeStore', () => {
-	let landscapeStore: Awaited<typeof import('./landscape')>['landscapeStore'];
+	let landscapeStore: Awaited<typeof import('./landscape.svelte')>['landscapeStore'];
 
 	beforeEach(async () => {
+		// jsdom sin localStorage er ekte og deles på tvers av tester i samme fil,
+		// så den må også nullstilles her — ikke bare modulregisteret.
+		localStorage.clear();
 		// Re-import for å unngå caching av singleton-tilstand mellom tests
 		vi.resetModules();
-		({ landscapeStore } = await import('./landscape'));
+		({ landscapeStore } = await import('./landscape.svelte'));
 	});
 
 	it('returnerer null for ukjent paradoxId', () => {
@@ -38,13 +40,13 @@ describe('landscapeStore', () => {
 	it('positionList inneholder alle satte posisjoner', () => {
 		landscapeStore.setPosition('x', 3);
 		landscapeStore.setPosition('y', 7);
-		const list = get(landscapeStore.positionList);
+		const list = landscapeStore.positionList;
 		expect(list.find((p) => p.paradoxId === 'x')?.position).toBe(3);
 		expect(list.find((p) => p.paradoxId === 'y')?.position).toBe(7);
 	});
 
 	it('positionList er tom ved oppstart (ingen localStorage i testmiljø)', () => {
-		const list = get(landscapeStore.positionList);
+		const list = landscapeStore.positionList;
 		expect(list).toEqual([]);
 	});
 });
